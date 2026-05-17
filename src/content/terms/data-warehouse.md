@@ -147,3 +147,8 @@ The modern approach extracts this logic out of the warehouse entirely and centra
 ### Conclusion
 
 The traditional data warehouse was a revolutionary concept that successfully decoupled analytical processing from operational systems, providing the foundation for modern business intelligence. Its rigorous enforcement of schema-on-write guaranteed data quality but ultimately sacrificed the flexibility required for the AI era. As the industry transitions to the data lakehouse, the monolithic warehouse is being disassembled. Its storage is migrating to open Iceberg tables, its compute is being replaced by distributed Arrow-native engines, and its governance is being centralized in universal semantic layers. The future of analytics retains the reliability of the data warehouse, but completely eliminates the lock-in, enabling organizations to democratize their data for the next generation of intelligent workloads.
+
+
+## Learn More
+
+To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.

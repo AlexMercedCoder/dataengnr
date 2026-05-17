@@ -119,3 +119,8 @@ Instead of relying on the slow and inconsistent directory listing operations of 
 Modernizing a legacy data lake into a high-performance data lakehouse requires a deliberate engineering strategy. The most critical step is standardizing on open formats. Organizations must actively migrate their raw, unstructured data into optimized, columnar Parquet files and register those files as Apache Iceberg tables. This migration immediately unlocks ACID transactions, schema evolution, and time travel capabilities.
 
 Furthermore, organizations must deploy a centralized, open catalog, such as Apache Polaris, to track these Iceberg tables and enforce Role-Based Access Control globally. By combining the cost-effective scalability of cloud object storage, the transactional reliability of Apache Iceberg, the open interoperability of Apache Polaris, and the high-performance semantic abstraction of Dremio, organizations successfully transform their stagnant data lakes into dynamic, governed, and lightning-fast data lakehouses. This unified architecture is the definitive foundation for the future of enterprise data engineering and Agentic AI.
+
+
+## Learn More
+
+To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.

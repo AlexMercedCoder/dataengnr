@@ -133,3 +133,8 @@ The primary value proposition of the data lakehouse is optionality. However, tru
 ### Conclusion
 
 The data lakehouse represents the convergence of storage economics and analytical performance. By layering transactionality, governance, and semantic abstraction over open object storage, it eliminates the need for brittle two-tier architectures. Platforms like Dremio, combined with standards like Apache Iceberg and Apache Arrow, empower organizations to democratize their data. As the demands of analytics evolve toward Agentic AI and real-time processing, the open lakehouse provides the scalable, governed foundation required to support the next decade of data engineering innovation.
+
+
+## Learn More
+
+To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
