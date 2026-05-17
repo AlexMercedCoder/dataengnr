@@ -1,37 +1,45 @@
 ---
 title: "Partition Evolution"
-description: "A guide to partition evolution in Apache Iceberg, the ability to change a table's partitioning strategy without rewriting existing data files, enabling non-disruptive partition scheme upgrades in production lakehouses."
+description: "A guide to Apache Iceberg partition evolution, the capability that allows table partitioning to be changed without rewriting data, enabling partition strategies to adapt to changing query patterns and data volumes without downtime or costly migrations."
 date: 2026-05-17
-tags: ["Partition Evolution", "Apache Iceberg", "Data Lakehouse", "Data Engineering"]
+tags: ["Partition Evolution", "Apache Iceberg", "Data Partitioning", "Data Engineering", "Data Lakehouse"]
 ---
 
-# The Immutable Partition Problem
+# Partitioning Locked at Table Creation
 
-Traditional Hive-based data lakes store partition information in the directory structure of the file system. A table partitioned by year and month stores data at paths like `s3://bucket/table/year=2024/month=01/`. This directory-based partition scheme is immutable once established. Changing the partition scheme from monthly to daily requires creating a new table directory structure, rewriting all existing data files into the new partition directories, updating all downstream queries to reference the new paths, and migrating all metadata in the Hive Metastore.
+In Hive-style partitioned tables, the partition columns are defined once at table creation and cannot be changed without rebuilding the entire table. A table created with `PARTITIONED BY (year INT, month INT)` retains that partition scheme forever. If query patterns change (daily partitioning would now be more efficient, or the partition column's data type needs to change), the only option is to create a new table with the new partition scheme and rewrite all existing data into the new partitions. For a petabyte-scale table, this is a multi-day migration that must be carefully coordinated with all readers and writers.
 
-For a production table containing years of historical data, this migration is a significant engineering project involving days of compute time for data rewriting, careful coordination to avoid breaking downstream consumers, and considerable operational risk. In practice, organizations often accept suboptimal partition schemes indefinitely rather than undertake this migration, resulting in tables with partition strategies that no longer match their evolved query patterns.
+Apache Iceberg's partition evolution solves this limitation by decoupling the partition scheme from the data files. In Iceberg, each table can have multiple partition specs (partition strategies) active simultaneously. When the partition spec changes, new data files are written using the new partition spec. Old data files retain their original partition layout. The query planner understands both old and new partition specs and applies the appropriate pruning logic when planning scans across files with different partition schemes.
 
-Apache Iceberg solves this problem through partition evolution: the ability to change a table's partitioning strategy for future data without rewriting existing data files. Iceberg's metadata-driven architecture stores partition specifications in the table metadata rather than in the file system directory structure, enabling partition scheme changes that are atomic, non-destructive, and backward-compatible.
+This means a partition spec change in Iceberg is instantaneous (a metadata-only operation) and requires no data rewriting. Old and new data coexist in the same table with different partition layouts, and the query planner handles both correctly.
 
-## How Partition Evolution Works
+## Partition Spec Changes
 
-Every Iceberg table has a partition spec: a specification of which columns (and which transforms applied to those columns) define the table's partitioning. When a new snapshot is committed to an Iceberg table, the data files in that snapshot are assigned to partitions according to the current partition spec.
+Iceberg supports several types of partition spec evolution:
 
-When partition evolution changes the partition spec, Iceberg creates a new partition spec version and records it in the table metadata alongside the old spec. Future data files are written according to the new partition spec and associated with the new spec version. Existing data files remain associated with the old spec version and continue to be stored at their original paths, completely untouched.
+**Adding a partition field**: Adding a new dimension to the partition scheme. A table previously partitioned by `month(event_time)` can be evolved to partition by `month(event_time), region`. New data files are written into the two-dimensional partition structure; old data files retain the single-dimension structure. Queries filtering on region can still benefit from partition pruning for new data (skipping files outside the queried region), while old data files are scanned using the original month-based pruning.
 
-When a query is executed against an evolved table, Iceberg's query planning logic reads all active partition specs and plans file access according to each spec's layout. Files under the old spec are accessed using the old partition boundaries; files under the new spec are accessed using the new partition boundaries. The query engine sees a unified, consistent view of the complete table data across both partition scheme generations.
+**Replacing a partition field**: Changing the granularity of time-based partitions as data volumes grow. A table originally partitioned by `year(event_time)` can evolve to `month(event_time)` as the table grows and monthly partitions become the right size. New data is partitioned by month; old annual partitions remain unchanged.
 
-![Partition Evolution in Apache Iceberg](/images/terms/partition_evolution.png)
+**Removing a partition field**: Removing a dimension that is no longer useful for pruning. New data files are written without that partition dimension; old files retain it.
 
-## Common Partition Evolution Scenarios
+**Changing a partition transform**: Changing from `identity(region)` partitioning (exact match on string values) to `bucket(region, 50)` partitioning (hashing region values into 50 buckets to prevent small-file problems with many distinct regions).
 
-**Monthly to daily migration**: A logs table originally partitioned by month grows to the point where month-level partitions contain too much data for efficient query performance. Adding daily partitioning for new data (while leaving historical monthly partitions intact) immediately improves query performance for current data without any historical data rewriting.
+![Partition Evolution Architecture](/images/terms/partition_evolution.png)
 
-**Adding a second partition column**: A sales table partitioned by date adds a region partition column to improve regional filtering performance. Future data is partitioned by both date and region; historical data retains its date-only partitioning. Queries that filter by both date and region will benefit from the improved partitioning on new data while still correctly accessing historical data through the old spec.
+## Hidden Partitioning and Partition Transforms
 
-**Changing partition transform**: A table using monthly bucketing (partition by `MONTH(event_timestamp)`) evolves to daily bucketing (partition by `DAY(event_timestamp)`) as query patterns shift toward more granular time-based analysis. Iceberg's hidden partitioning model means that no query rewrite is required; queries that previously used `WHERE event_timestamp BETWEEN ...` automatically benefit from the finer-grained partitioning on new data.
+Iceberg's partition evolution is enabled by hidden partitioning: instead of exposing raw partition column values to writers and readers, Iceberg applies partition transform functions to compute partition values from data columns. Common transforms include:
 
-Dremio reads partition-evolved Iceberg tables correctly, planning queries that efficiently span both the historical and current partition specs without any user configuration. This makes Dremio the optimal query layer for tables that have evolved their partitioning over time, delivering partition pruning benefits on all data regardless of which spec generation it was written under.
+- `identity(col)`: Partition by the raw column value (equivalent to Hive-style partitioning)
+- `year(timestamp_col)`: Partition by the year extracted from a timestamp column
+- `month(timestamp_col)`: Partition by year-month extracted from a timestamp column
+- `day(timestamp_col)`: Partition by the date extracted from a timestamp column
+- `hour(timestamp_col)`: Partition by the hour of a timestamp column
+- `bucket(col, N)`: Partition by hashing the column value into N buckets
+- `truncate(col, W)`: Partition by truncating string or integer columns to width W
+
+Because partition transforms are applied by the table format rather than by the writer, writers do not need to know the partition scheme or compute partition values manually. And because the transforms are stored in the partition spec metadata, readers can apply predicate pushdown against the transform (a query `WHERE event_time >= '2024-01-01'` automatically translates to partition pruning against `year(event_time) >= 2024 OR (year = 2024 AND month >= 1)`, even when the table uses month-level partitioning).
 
 ## Learn More
 
