@@ -1,57 +1,49 @@
 ---
 title: "Slowly Changing Dimensions (SCD)"
-description: "A guide to Slowly Changing Dimensions, the patterns for tracking historical attribute changes in data warehouse Dimension tables for accurate analytical reporting."
+description: "A guide to Slowly Changing Dimensions (SCD), the data warehouse design patterns for tracking how dimension attribute values change over time, from simple overwrites to full historical preservation for accurate point-in-time analysis."
 date: 2026-05-17
-tags: ["Data Modeling", "SCD", "Data Warehouse", "Dimensional Modeling"]
+tags: ["Slowly Changing Dimensions", "SCD", "Dimensional Modeling", "Data Warehouse", "Data Engineering"]
 ---
 
-# The Problem of Changing Reality
+# When Dimension Data Changes
 
-Data warehouses are built on Dimension tables describing customers, products, employees, and stores. These descriptions feel permanent but business reality is not static. Customers move to new cities. Products are reclassified into new categories. Employees are reassigned to different regions.
+Dimension tables in a star schema describe the context of business events: who, what, where. These descriptions change over time. A customer moves to a different city. A product is reclassified into a new category. A salesperson transfers to a different region. A store is renamed or rebranded.
 
-Each change creates an analytical dilemma. When a customer moves from Boston to Chicago and the Customer Dimension is updated, every historical transaction for that customer suddenly appears to originate from Chicago, even if those transactions occurred while the customer lived in Boston. Executives reviewing historical Q3 sales by city see inaccurate results because the report reflects current addresses rather than those accurate when each transaction occurred.
+How the data warehouse handles these changes determines the accuracy of historical analysis. If a customer's city changes from "New York" to "Austin" and the customer record is simply overwritten with the new city, all historical sales for that customer will appear to have come from Austin, even those that actually occurred when the customer lived in New York. A regional revenue analysis for New York City will undercount historical sales because some genuinely New York sales are now attributed to Austin.
 
-Ralph Kimball formalized techniques for managing these changes under the term Slowly Changing Dimensions (SCD), recognizing that different business requirements call for different approaches. The term "slowly" acknowledges that these changes happen less frequently than transactional events but must still be handled systematically.
-
-## SCD Type 0: Retain Original
-
-SCD Type 0 is the simplest approach: once a Dimension attribute is set, it never changes regardless of source system updates. This approach is appropriate for attributes where the original state is analytically significant.
-
-A common example is `original_acquisition_channel`: the marketing channel through which a customer was first acquired. Marketing analysts want to analyze long-term customer value by original acquisition channel, so preserving the original value is intentional. Type 0 requires no special implementation beyond standard insert-only loading.
+Slowly Changing Dimensions (SCD) are the design patterns for managing dimension attribute changes in ways that preserve historical accuracy while remaining queryable through standard SQL. The three primary SCD types represent a tradeoff between simplicity, storage cost, and historical accuracy.
 
 ## SCD Type 1: Overwrite
 
-SCD Type 1 simply overwrites the existing Dimension attribute with the new value. When a customer's address changes from Boston to Chicago, the Customer Dimension row is updated in place. No historical record of the previous address is retained.
+SCD Type 1 simply overwrites the old attribute value with the new value. When a customer's city changes from New York to Austin, the city column in the customer dimension row is updated to Austin. No history of the old city value is preserved.
 
-This approach is appropriate when historical accuracy for the attribute is not analytically required, such as correcting data entry errors or maintaining always-current contact information. The significant downside is that it retroactively changes historical reporting, making it impossible to reproduce historical reports exactly. This is problematic for auditing and regulatory compliance.
+Type 1 is appropriate for correcting data quality errors (the customer's city was misspelled and is being corrected) or for attributes where historical accuracy is irrelevant (a customer's preferred language, which is only meaningful in its current value).
 
-## SCD Type 2: Add a Row
+Type 1 is not appropriate for attributes where historical accuracy matters for analysis. After a Type 1 update, all historical fact rows referencing this customer will appear to be associated with the new attribute value, regardless of when the transaction actually occurred.
 
-SCD Type 2 is the most analytically powerful and widely implemented SCD pattern. Rather than overwriting the existing Dimension row, Type 2 adds a new row to the Dimension table for each change, preserving complete attribute history.
+Type 1 implementation in Iceberg: `UPDATE customer_dim SET city = 'Austin' WHERE customer_id = 12345`. Iceberg's Merge-on-Read delete files handle this efficiently without rewriting the entire Parquet file.
 
-When a customer's city changes, the existing row is retained with its original values. Two new columns are updated: `valid_to` is set to the current date, and `is_current` is set to False. A new row is inserted with `city = 'Chicago'`, `valid_from` set to the current date, `valid_to` set to a far-future sentinel date (December 31, 9999), and `is_current` set to True.
+## SCD Type 2: Add New Row
 
-Each row in the Fact table references a specific Dimension surrogate key. Historical Fact rows recorded when the customer lived in Boston still point to the Boston version of the Customer Dimension row. New Fact rows recorded after the move point to the Chicago version. Historical reporting is completely accurate because the Fact-to-Dimension join returns the version active at the time of the transaction.
+SCD Type 2 preserves full history by adding a new dimension row for each attribute change, with date range columns indicating when each version of the dimension record was valid. The old row is closed (end_date set to yesterday, is_current set to false) and a new row is inserted with the new attribute values, today as start_date, and is_current set to true.
 
-![SCD Type 2 Row Versioning](/images/terms/scd_type2_versioning.png)
+When a customer moves from New York to Austin, the customer dimension table contains two rows: the New York row (valid from 2020-01-01 to 2024-06-14, is_current=false) and the Austin row (valid from 2024-06-15 to 9999-12-31, is_current=true). Historical fact rows referencing the surrogate key of the New York row correctly show New York as the customer's city. Fact rows after the move reference the Austin surrogate key.
 
-### Implementing SCD Type 2 with Apache Iceberg
+Point-in-time correct analysis joins fact rows to the dimension version valid at the time of the fact event: `JOIN customer_dim c ON f.customer_key = c.customer_key WHERE f.transaction_date BETWEEN c.start_date AND c.end_date`.
 
-Apache Iceberg's MERGE INTO statement provides the ideal mechanism for Type 2 in a modern lakehouse. A single MERGE statement atomically executes the full Type 2 update: it matches the existing current Dimension row by business key, updates its `valid_to` and `is_current` columns, and simultaneously inserts the new version row. Because Iceberg executes MERGE with ACID guarantees, there is no window where a partial update is visible to readers.
+![SCD Types Architecture](/images/terms/scd_types.png)
 
-## SCD Type 3: Add a Column
+## SCD Type 3: Add New Column
 
-SCD Type 3 preserves limited history by adding new columns rather than new rows. When a customer's city changes, both `previous_city` and `current_city` columns exist in the Dimension. Type 3 is appropriate only when exactly one historical version of an attribute is needed and the business wants to report on both current and immediately previous values without join complexity.
+SCD Type 3 adds new columns to the dimension row to retain a limited history of attribute changes, typically the previous value and current value. A customer dimension with Type 3 for city has columns: `current_city = 'Austin'`, `previous_city = 'New York'`, `city_change_date = '2024-06-15'`.
 
-The limitation is that Type 3 can track only one level of history per attribute. If a customer moves three times, only the most recent previous address is retained. Earlier addresses are permanently lost.
+Type 3 is rarely used in practice because it only retains one historical value and requires schema changes for each new attribute tracked. It is useful for specific scenarios where only the immediate prior state matters.
 
-## SCD Type 4: Historical Table
+## SCD Implementation in the Iceberg Lakehouse
 
-SCD Type 4 separates current and historical data into two physical tables. A current Dimension table contains only the most recent version of each entity, while a separate historical Dimension table stores all previous versions with effective date columns. Queries against the current Dimension table are fast because every row is by definition the current version, with no need to filter on `is_current`.
+All three SCD types are implemented in Iceberg lakehouses through `MERGE INTO` operations. A dbt model with incremental materialization handles the SCD logic: matching incoming source records to existing dimension rows on the natural key, detecting changes, closing old rows (Type 2), and inserting new rows.
 
-## Choosing the Right SCD Strategy
-
-Real-world dimensional models typically apply different SCD types to different attributes within the same Dimension table. A Customer Dimension might apply Type 1 to `email_address`, Type 2 to `geographic_region`, and Type 0 to `original_acquisition_channel`. Dremio's Semantic Layer can abstract these SCD complexities from business users through Virtual Datasets that expose simple, filtered views without requiring analysts to understand the underlying SCD versioning mechanics.
+Iceberg's ACID MERGE INTO semantics ensure that the multi-row Type 2 update (updating the old row and inserting the new row) is atomic, maintaining dimension table consistency throughout the operation.
 
 ## Learn More
 
