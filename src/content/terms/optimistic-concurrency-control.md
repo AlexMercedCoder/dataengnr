@@ -1,47 +1,43 @@
 ---
-title: "Optimistic Concurrency Control (OCC)"
-description: "A guide to Optimistic Concurrency Control in Apache Iceberg and modern data lakehouses, the mechanism that enables safe concurrent writes without distributed locks by detecting conflicts at commit time."
+title: "Optimistic Concurrency Control"
+description: "A guide to Optimistic Concurrency Control (OCC) in Apache Iceberg, the conflict detection strategy that enables high-throughput parallel writes to the same table without distributed locking, detecting and resolving conflicts at commit time."
 date: 2026-05-17
-tags: ["Apache Iceberg", "Concurrency", "ACID", "Data Lakehouse"]
+tags: ["Optimistic Concurrency Control", "Apache Iceberg", "ACID", "Concurrency", "Data Engineering"]
 ---
 
-# Concurrency Without Locks
+# Locks Are Expensive
 
-When multiple processes attempt to write to the same data store simultaneously, the system must prevent them from corrupting each other's work. Traditional relational databases handle this through pessimistic locking: before a transaction reads or writes data, it acquires a lock that prevents other transactions from accessing the same rows. While effective, pessimistic locking creates severe throughput bottlenecks when many concurrent writers compete for the same locks, and it is impractical in distributed systems where obtaining a distributed lock across multiple nodes requires expensive network coordination.
+Pessimistic concurrency control - the approach used by most relational databases - acquires locks before modifying data. A writer acquires a write lock on the table (or rows), performs its modifications, then releases the lock. While the write lock is held, no other writer can modify the table. This prevents conflicts but serializes all writes, making it impossible to scale write throughput by adding more concurrent writers.
 
-Object storage services like Amazon S3 do not support distributed locks at all. S3's consistency model provides strongly consistent PUT and GET operations for individual objects, but there is no native mechanism for atomic multi-object transactions or distributed locking across writers. This means that any transactional guarantees for data stored in S3-backed lakehouses must be implemented entirely in the metadata layer above the storage.
+In distributed data systems processing high-volume event streams, serialized writes through a locking mechanism become a catastrophic bottleneck. A Flink job processing 1 million events per second needs to write to an Iceberg table continuously; waiting to acquire a write lock before each micro-batch write would reduce throughput to whatever rate the lock manager can grant locks.
 
-Apache Iceberg uses Optimistic Concurrency Control (OCC) to achieve ACID-compliant concurrent writes on top of object storage without requiring distributed locks. OCC's core insight is that most write operations in analytical workloads do not actually conflict with each other. If Writer A is updating records in the March partition while Writer B is inserting records into the April partition, they are completely independent operations with no possibility of interference. OCC allows both writers to proceed concurrently without blocking each other, checking only at commit time whether their changes actually conflict.
+Optimistic Concurrency Control (OCC) takes a different approach: allow multiple writers to proceed simultaneously without locking, detect conflicts at commit time, and retry or fail conflicting commits. OCC is "optimistic" because it assumes that conflicts between concurrent writers will be rare - most of the time, concurrent writers are modifying different parts of the data, and conflicts are only detected occasionally.
 
-## How OCC Works in Iceberg
+## OCC in Apache Iceberg
 
-The OCC workflow in Apache Iceberg follows a three-phase pattern: read, write, and commit.
+Apache Iceberg implements Optimistic Concurrency Control through its atomic metadata swap mechanism. Each write operation proceeds in three phases:
 
-**Read Phase**: The writer reads the current table state by reading the current metadata file and identifying the current Snapshot. The writer records the Snapshot ID it is working against.
+**1. Read the current table state**: The writer reads the current metadata file pointer from the catalog (e.g., from the Hive Metastore or REST Catalog) to get the current snapshot.
 
-**Write Phase**: The writer performs its data work, writing new Parquet data files to object storage. This write phase is completely independent of any other concurrent writers. Multiple writers can be in this phase simultaneously, all reading and writing their respective files without any coordination.
+**2. Prepare the new snapshot**: The writer creates new data files, builds new manifest and metadata files reflecting the new state of the table (the current snapshot plus the new changes), and writes these files to object storage. The writer does not yet update the catalog pointer.
 
-**Commit Phase**: The writer attempts to commit by writing a new metadata file that references both the new data files it produced and the Snapshot it read in the read phase. This commit attempt uses a conditional write operation. In practice, Iceberg uses the catalog (Hive Metastore, AWS Glue, or a REST catalog like Apache Polaris) to perform an atomic compare-and-swap: the new metadata file is only accepted if the current table Snapshot still matches the Snapshot the writer read in the read phase. If another writer committed in the interim (changing the current Snapshot), the compare-and-swap fails.
+**3. Atomic commit**: The writer attempts to atomically update the catalog's metadata pointer from the version it read in step 1 to the new metadata file. This is a conditional atomic operation: "Update the pointer IF AND ONLY IF it still points to the version I read in step 1."
 
-When a commit fails due to a concurrent modification, the writer does not give up immediately. Iceberg implements retry logic with conflict analysis. The writer re-reads the new current Snapshot, determines whether its changes are compatible with the intervening commit (do the newly committed files overlap with the partition range this writer was modifying?), and if there is no actual conflict, automatically rebases its commit against the new Snapshot and retries. Only if the retry analysis reveals a genuine conflict (both writers modified the same data files) does the retry fail permanently, requiring the application to resolve the conflict explicitly.
+If the catalog pointer has not changed since step 1 (no other writer committed between steps 1 and 3), the commit succeeds atomically. If another writer committed between steps 1 and 3 (the catalog pointer changed), the commit fails with a conflict. The failed writer reads the new current state, evaluates whether its changes are still valid (conflict resolution), rewrites its metadata to apply its changes on top of the new state, and retries the commit.
 
-![OCC Concurrent Write Flow](/images/terms/occ_concurrent_writes.png)
+![Optimistic Concurrency Control](/images/terms/occ_iceberg.png)
 
-## Conflict Analysis and Isolation Levels
+## Conflict Resolution
 
-Iceberg's conflict analysis during retry is nuanced and supports different isolation levels.
+When an OCC commit conflict is detected, the Iceberg writer applies conflict resolution logic to determine whether the conflict is resolvable or irresolvable.
 
-**Serializable Isolation**: The strongest isolation level. A write fails if any other write committed to the same table since the read phase, regardless of whether the committed data physically overlaps. This level guarantees complete serializability but produces the most retries in high-concurrency environments.
+**Non-conflicting concurrent writes**: Two Spark jobs writing to different partitions of the same Iceberg table have non-conflicting changes. Even if both jobs started from the same snapshot and both attempted to commit simultaneously, Iceberg can resolve the conflict by applying both sets of changes: the second writer reads the first writer's commit, sees that it modified different partitions, and rebases its commit on top of the first writer's commit, then retries. Both commits succeed.
 
-**Snapshot Isolation**: Iceberg's default. A write succeeds on retry if the intervening commits do not modify the same data files that the current writer modified. Two writers updating different date partitions of the same table can both commit successfully under snapshot isolation, even though they ran concurrently. This level provides practical, high-throughput concurrent writes while still preventing the data corruption that would result from two writers modifying the same files simultaneously.
+**Conflicting concurrent writes**: If two writers both attempt to overwrite the same partition (complete partition overwrite), their changes conflict: both cannot succeed, as the second overwrite would eliminate the first's changes. In this case, Iceberg fails the second commit and requires the writer to decide how to handle the conflict (typically by retrying from scratch after reading the new state).
 
-The partition-based conflict detection under snapshot isolation aligns naturally with the Medallion Architecture pattern of ingesting data into distinct time-partitioned batches. Multiple ingestion jobs writing to different daily partitions of the same Bronze or Silver Iceberg table can all run concurrently under snapshot isolation without coordination overhead.
+**Append-only conflicts**: Pure append operations (inserting new rows, creating new data files) almost never conflict in Iceberg, because appending new files does not modify existing files. Multiple Flink streaming jobs can write simultaneously to the same Iceberg table using append operations with high throughput and very low conflict rates.
 
-## OCC in the Broader Lakehouse Context
-
-Delta Lake implements a similar OCC mechanism through its transaction log: a commit is accepted only if the transaction log version the writer read is still the current version. If another commit advanced the log, Delta Lake's conflict checker analyzes whether the concurrent commit touched the same data files, applying retry logic analogous to Iceberg's.
-
-Dremio's write operations against Iceberg tables, including Data Reflection refreshes and MERGE INTO operations executed through the Semantic Layer, all use Iceberg's OCC mechanism. When Dremio runs a large Reflection refresh concurrently with an ongoing streaming ingestion job writing to the same table, the OCC layer ensures both operations complete correctly without data corruption, automatically retrying any commits that encounter benign concurrent modifications.
+The OCC model enables Apache Iceberg to support high-throughput concurrent writes from multiple engines (multiple Flink jobs, a Spark job and a Flink job) simultaneously against the same table, without the distributed locking overhead that would serialize all writes.
 
 ## Learn More
 
