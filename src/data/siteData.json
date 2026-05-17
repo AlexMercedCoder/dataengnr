@@ -17,14 +17,6 @@
       "localImg": "/images/books/cover_1.webp"
     },
     {
-      "title": "Agentic AI for Dummies",
-      "desc": "Dremio Special Edition by Wiley. The plain-English guide to autonomous AI systems.",
-      "img": "images/cover_2.webp",
-      "url": "https://hello.dremio.com/wp-resources-agentic-ai-for-dummies-reg.html?utm_source=link_page&utm_medium=influencer&utm_campaign=iceberg&utm_term=qr-link-list-04-07-2026&utm_content=alexmerced",
-      "tag": "Free",
-      "localImg": "/images/books/cover_2.webp"
-    },
-    {
       "title": "Federation, Semantic Layer & Lakehouse for Agentic AI",
       "desc": "How to leverage federation, the semantic layer and the lakehouse for agentic AI.",
       "img": "images/leveraging-federation-the-semantic-layer-and-thelakehouse.webp",
