@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dataengr.com/sitemap-index.xml

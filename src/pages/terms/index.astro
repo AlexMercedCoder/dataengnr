@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+import { getCollection } from 'astro:content';
+
+const allTerms = await getCollection('terms');
+allTerms.sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<BaseLayout title="Knowledge Base" description="A comprehensive glossary and knowledge base for data engineering terms.">
+  <section class="py-12">
+    <div class="flex items-center justify-between mb-8 border-b border-ash-text/20 pb-4">
+      <h1 class="font-ivy text-heading-lg text-pure-white">Knowledge Base</h1>
+    </div>
+    
+    <div class="mb-12 max-w-3xl">
+      <p class="text-white-frost text-body mb-6">Explore our growing database of data engineering terms, concepts, and technologies.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {allTerms.map((term: any) => (
+        <a href={`/terms/${term.id}`} class="block h-full group">
+          <Card hoverEffect={true} class="flex flex-col h-full bg-charcoal-canvas">
+            <h2 class="text-subheading font-semibold text-pure-white mb-3 group-hover:text-golden-gradient transition-colors">{term.data.title}</h2>
+            <p class="text-sm text-ash-text mb-6 line-clamp-3 flex-grow">{term.data.description}</p>
+            <span class="text-sm font-medium text-white-frost mt-auto inline-flex items-center gap-2 group-hover:text-pure-white transition-colors">
+              Read Definition <span aria-hidden="true">&rarr;</span>
+            </span>
+          </Card>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

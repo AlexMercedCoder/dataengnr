@@ -1,17 +1,97 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+import PillButton from '../components/PillButton.astro';
+import siteData from '../data/siteData.json';
 
+const mustReadArticles = [
+  { title: "Semantic Layer: The Definitive Guide", url: "https://www.dremio.com/blog/semantic-layer-the-definitive-guide/", desc: "Understand why the semantic layer is essential for the modern data stack." },
+  { title: "Apache Polaris: The Catalog Standard", url: "https://www.dremio.com/blog/apache-polaris-the-catalog-standard-for-lakehouses-and-ai/", desc: "Discover how Polaris standardizes the lakehouse catalog for AI." },
+  { title: "Table Formats Explained", url: "https://www.dremio.com/blog/what-are-table-formats-and-why-were-they-needed/", desc: "Learn what table formats are and why they are critical for your data architecture." },
+  { title: "What is Dremio?", url: "https://www.dremio.com/blog/what-is-dremio/", desc: "A comprehensive look at the unified lakehouse platform." },
+  { title: "What Apache Iceberg Native Means", url: "https://www.dremio.com/blog/what-apache-iceberg-native-actually-means/", desc: "Exploring the true meaning of native Iceberg support." },
+  { title: "Open Source and The Lakehouse", url: "https://www.dremio.com/blog/open-source-and-the-data-lakehouse/", desc: "How open source standards shape the modern data lakehouse." },
+  { title: "What is Agentic Analytics?", url: "https://www.dremio.com/blog/what-is-agentic-analytics/", desc: "An introduction to AI-driven agentic analytics workflows." },
+];
+
+const { communities = [], events = [] } = siteData;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Home" description="The ultimate resource for data engineers building the next generation of lakehouses and AI systems.">
+  
+  <section class="flex flex-col items-center justify-center text-center py-20">
+    <h1 class="font-ivy text-5xl md:text-[88px] leading-none tracking-tight mb-8">
+      Data<span class="text-golden-gradient bg-clip-text text-transparent bg-[image:var(--background-image-golden-gradient)]">Engr</span>.com
+    </h1>
+    <p class="text-subheading text-white-frost max-w-2xl mb-12">
+      The ultimate resource hub for data engineers building modern lakehouse architectures and agentic analytics systems.
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <PillButton href="/terms">Explore Knowledge Base</PillButton>
+      <PillButton href="/blogroll" class="!bg-transparent !text-pure-white border !border-pure-white hover:!bg-pure-white/10">Read the Blogroll</PillButton>
+    </div>
+  </section>
+
+  <section id="must-read">
+    <div class="flex items-center justify-between mb-12 border-b border-ash-text/20 pb-4">
+      <h2 class="font-ivy text-heading-lg text-pure-white">Must Read Articles</h2>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {mustReadArticles.map(article => (
+        <Card hoverEffect={true} class="flex flex-col h-full">
+          <h3 class="text-subheading font-semibold text-pure-white mb-4 flex-grow">{article.title}</h3>
+          <p class="text-body text-white-frost mb-8">{article.desc}</p>
+          <a href={article.url} target="_blank" class="text-sm font-medium text-golden-gradient hover:text-pure-white transition-colors mt-auto inline-flex items-center gap-2">
+            Read Article <span aria-hidden="true">&rarr;</span>
+          </a>
+        </Card>
+      ))}
+    </div>
+  </section>
+
+  <section id="community-events">
+    <div class="flex items-center justify-between mb-12 border-b border-ash-text/20 pb-4">
+      <h2 class="font-ivy text-heading-lg text-pure-white">Communities & Events</h2>
+    </div>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Communities -->
+      <div>
+        <h3 class="text-heading font-medium text-pure-white mb-6">Join the Conversation</h3>
+        <div class="flex flex-col gap-4">
+          {communities.map((community: any) => (
+            <a href={community.url} target="_blank" class="block bg-charcoal-canvas p-6 rounded-md border border-ash-text/10 hover:border-golden-gradient/50 transition-colors">
+              <div class="flex items-start gap-4">
+                <span class="text-2xl">{community.icon}</span>
+                <div>
+                  <h4 class="text-body font-semibold text-pure-white">{community.title}</h4>
+                  <p class="text-sm text-ash-text mt-1">{community.desc}</p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Events -->
+      <div>
+        <h3 class="text-heading font-medium text-pure-white mb-6">Upcoming Events</h3>
+        <div class="flex flex-col gap-4">
+          {events.map((event: any) => (
+            <a href={event.url} target="_blank" class="block bg-charcoal-canvas p-6 rounded-md border border-ash-text/10 hover:border-golden-gradient/50 transition-colors">
+              <div class="flex items-start gap-4">
+                <span class="text-2xl">{event.icon}</span>
+                <div>
+                  <h4 class="text-body font-semibold text-pure-white">{event.title}</h4>
+                  <p class="text-sm text-ash-text mt-1">{event.desc}</p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

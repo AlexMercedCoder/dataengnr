@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+import GhostLink from '../components/GhostLink.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonicalUrl?: string;
+}
+
+const { 
+  title, 
+  description = "Premier resource hub for data engineers. Learn about Apache Iceberg, data lakehouses, and agentic analytics.",
+  canonicalUrl = Astro.url.href
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="bg-midnight-ink text-pure-white font-inter antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | DataEngr.com</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={`${title} | DataEngr.com`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="min-h-screen flex flex-col bg-midnight-ink text-pure-white font-inter">
+    <!-- Sticky Nav -->
+    <header class="sticky top-0 z-50 bg-midnight-ink/80 backdrop-blur-md border-b border-ash-text/20">
+      <div class="max-w-[1216px] mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="/" class="font-ivy font-medium text-2xl tracking-wide text-pure-white hover:text-white-frost transition-colors">
+          DataEngr.com
+        </a>
+        <nav class="hidden md:flex items-center gap-6">
+          <GhostLink href="/terms">Knowledge Base</GhostLink>
+          <GhostLink href="/blogroll">Blogroll</GhostLink>
+          <GhostLink href="/books">Books</GhostLink>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-grow w-full max-w-[1216px] mx-auto px-6 py-12 md:py-20 flex flex-col gap-[160px]">
+      <slot />
+    </main>
+
+    <footer class="border-t border-ash-text/20 py-12 mt-auto">
+      <div class="max-w-[1216px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-ash-text">
+        <p>&copy; {new Date().getFullYear()} Alex Merced. All rights reserved.</p>
+        <div class="flex gap-4">
+          <a href="https://whoisalexmerced.com" target="_blank" class="hover:text-pure-white transition-colors">About Alex</a>
+          <a href="https://alexmerced.com" target="_blank" class="hover:text-pure-white transition-colors">Links</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,420 @@
+{
+  "freeBooks": [
+    {
+      "title": "Apache Iceberg: The Definitive Guide",
+      "desc": "The complete guide to Apache Iceberg by Tomer Shiran, Jason Hughes & Alex Merced from Dremio.",
+      "img": "images/cover_0.webp",
+      "url": "https://drmevn.fyi/linkpageiceberg",
+      "tag": "Free",
+      "localImg": "/images/books/cover_0.webp"
+    },
+    {
+      "title": "Apache Polaris: The Definitive Guide",
+      "desc": "Deep dive into Polaris, the modern Iceberg-native catalog for scalable lakehouse architectures.",
+      "img": "images/cover_1.webp",
+      "url": "https://drmevn.fyi/linkpagepolaris",
+      "tag": "Free",
+      "localImg": "/images/books/cover_1.webp"
+    },
+    {
+      "title": "Agentic AI for Dummies",
+      "desc": "Dremio Special Edition by Wiley. The plain-English guide to autonomous AI systems.",
+      "img": "images/cover_2.webp",
+      "url": "https://hello.dremio.com/wp-resources-agentic-ai-for-dummies-reg.html?utm_source=link_page&utm_medium=influencer&utm_campaign=iceberg&utm_term=qr-link-list-04-07-2026&utm_content=alexmerced",
+      "tag": "Free",
+      "localImg": "/images/books/cover_2.webp"
+    },
+    {
+      "title": "Federation, Semantic Layer & Lakehouse for Agentic AI",
+      "desc": "How to leverage federation, the semantic layer and the lakehouse for agentic AI.",
+      "img": "images/leveraging-federation-the-semantic-layer-and-thelakehouse.webp",
+      "url": "https://hello.dremio.com/wp-resources-agentic-analytics-guide-reg.html?utm_source=link_page&utm_medium=influencer&utm_campaign=iceberg&utm_term=qr-link-list-04-07-2026&utm_content=alexmerced",
+      "tag": "Free",
+      "localImg": "/images/books/leveraging-federation-the-semantic-layer-and-thelakehouse.webp"
+    },
+    {
+      "title": "Apache Iceberg in 100 Pages",
+      "desc": "Understanding and getting hands-on with Apache Iceberg in a compact, accessible format.",
+      "img": "images/apache-iceberg-100-pages.webp",
+      "url": "https://forms.gle/xdsun6JiRvFY9rB36",
+      "tag": "Free w/ Survey",
+      "localImg": "/images/books/apache-iceberg-100-pages.webp"
+    },
+    {
+      "title": "The Apache Iceberg Digest: Vol 1",
+      "desc": "A curated collection of Apache Iceberg insights and best practices by PuppyGraph.",
+      "img": "images/cover_5.webp",
+      "url": "https://www.puppygraph.com/ebooks/apache-iceberg-digest-vol-1",
+      "tag": "Free",
+      "localImg": "/images/books/cover_5.webp"
+    }
+  ],
+  "otherBooks": [
+    {
+      "title": "Architecting an Apache Iceberg Lakehouse",
+      "desc": "Architecture patterns for building Iceberg-based data platforms.",
+      "img": "images/cover_6.webp",
+      "url": "https://hubs.la/Q03GfY4f0",
+      "tag": "Discount: SQLBits26",
+      "localImg": "/images/books/cover_6.webp"
+    },
+    {
+      "title": "The 2026 Guide to Lakehouses, Apache Iceberg and Agentic AI",
+      "desc": "Comprehensive guide to lakehouse architecture and AI.",
+      "img": "images/cover_7.webp",
+      "url": "https://www.amazon.com/dp/B0GQNY21TD",
+      "tag": "Amazon",
+      "localImg": "/images/books/cover_7.webp"
+    },
+    {
+      "title": "The Book on Using Apache Iceberg with Python",
+      "desc": "Hands-on guide using Iceberg with Python tools.",
+      "img": "images/cover_8.webp",
+      "url": "https://www.amazon.com/dp/B0GNZ454FF",
+      "tag": "Amazon",
+      "localImg": "/images/books/cover_8.webp"
+    },
+    {
+      "title": "The Book on Agentic Analytics",
+      "desc": "Foundations of agentic data architecture.",
+      "img": "images/cover_9.webp",
+      "url": "https://www.amazon.com/dp/B0GQN4Q41Y",
+      "tag": "Amazon",
+      "localImg": "/images/books/cover_9.webp"
+    },
+    {
+      "title": "The AI Lakehouse: Architecting Data Platforms for AI",
+      "desc": "Building AI systems on a data lakehouse.",
+      "img": "images/cover_10.webp",
+      "url": "https://www.amazon.com/AI-Lakehouse-Architecting-Data-Platforms/dp/B0GSMQ6M2J/",
+      "tag": "Amazon",
+      "localImg": "/images/books/cover_10.webp"
+    },
+    {
+      "title": "Constructing Context and Semantics for AI Agents",
+      "desc": "Practical guide to embeddings, knowledge graphs, memory, RAG, and production agent systems.",
+      "img": "images/cover_11.webp",
+      "url": "https://www.amazon.com/Constructing-Context-Semantics-Agents-Embeddings/dp/B0GSHRZNZ5/",
+      "tag": "Amazon",
+      "localImg": "/images/books/cover_11.webp"
+    },
+    {
+      "title": "Enabling Agentic Analytics with Apache Iceberg and Dremio",
+      "desc": "Building AI-ready lakehouse systems.",
+      "img": "images/cover_12.webp",
+      "url": "https://www.amazon.com/dp/B0GQXT6W3N",
+      "tag": "Amazon",
+      "localImg": "/images/books/cover_12.webp"
+    },
+    {
+      "title": "Using AI Agents for Data Engineering and Data Analysis",
+      "desc": "Practical guide to AI-driven workflows.",
+      "img": "images/cover_13.webp",
+      "url": "https://www.amazon.com/dp/B0GR6PYJT9",
+      "tag": "Amazon",
+      "localImg": "/images/books/cover_13.webp"
+    },
+    {
+      "title": "Apache Iceberg for Agentic AI",
+      "desc": "Enabling Agentic AI on an Iceberg Lakehouse.",
+      "img": "images/cover_14.webp",
+      "url": "https://www.amazon.com/Apache-Iceberg-Agentic-Connecting-Structured-ebook/dp/B0DYTX2WZY/",
+      "tag": "Amazon",
+      "localImg": "/images/books/cover_14.webp"
+    },
+    {
+      "title": "The Open Source Lakehouse",
+      "desc": "Architecting the decoupled analytical foundation.",
+      "img": "images/cover_15.webp",
+      "url": "https://www.amazon.com/Open-Source-Lakehouse-Architecting-Analytical-ebook/dp/B0D46P3VB7/",
+      "tag": "Amazon",
+      "localImg": "/images/books/cover_15.webp"
+    },
+    {
+      "title": "The Agentic Enterprise",
+      "desc": "Deploying AI agents across the modern organization.",
+      "img": "images/cover_16.webp",
+      "url": "https://www.amazon.com/Agentic-Enterprise-Deploying-Agents-Organization/dp/B0GSN3NNS5/",
+      "tag": "Amazon",
+      "localImg": "/images/books/cover_16.webp"
+    },
+    {
+      "title": "The AI Engineering Handbook",
+      "desc": "Full-stack reference for AI systems.",
+      "img": "images/cover_17.webp",
+      "url": "https://www.amazon.com/dp/B0GSS4R9FK",
+      "tag": "Amazon",
+      "localImg": "/images/books/cover_17.webp"
+    },
+    {
+      "title": "AI-Ready Data",
+      "desc": "Designing data platforms for LLMs, agents, and RAG.",
+      "img": "images/cover_18.webp",
+      "url": "https://www.amazon.com/AI-Ready-Data-Designing-Platforms-Agents/dp/B0GSN7GLH2/",
+      "tag": "Amazon",
+      "localImg": "/images/books/cover_18.webp"
+    },
+    {
+      "title": "The 2026 Guide to AI-Assisted Development",
+      "desc": "Prompt engineering and agent workflows.",
+      "img": "images/cover_19.webp",
+      "url": "https://www.amazon.com/dp/B0GQW7CTML",
+      "tag": "Amazon",
+      "localImg": "/images/books/cover_19.webp"
+    },
+    {
+      "title": "Evaluating AI Systems",
+      "desc": "Testing LLMs, RAG, and agents.",
+      "img": "images/cover_20.webp",
+      "url": "https://www.amazon.com/Evaluating-AI-Systems-Testing-Agents/dp/B0GSVPQ667/",
+      "tag": "Amazon",
+      "localImg": "/images/books/cover_20.webp"
+    },
+    {
+      "title": "AI Application Architecture",
+      "desc": "Patterns for building intelligent systems.",
+      "img": "images/cover_21.webp",
+      "url": "https://www.amazon.com/AI-Application-Architecture-Patterns-Intelligent/dp/B0GSVFT3H4/",
+      "tag": "Amazon",
+      "localImg": "/images/books/cover_21.webp"
+    },
+    {
+      "title": "Building Knowledge Systems for AI",
+      "desc": "Graphs, RAG, memory, and context.",
+      "img": "images/cover_22.webp",
+      "url": "https://www.amazon.com/Building-Knowledge-Systems-AI-Context/dp/B0GSWFSSRC/",
+      "tag": "Amazon",
+      "localImg": "/images/books/cover_22.webp"
+    },
+    {
+      "title": "Shipping AI",
+      "desc": "From prototype to production systems.",
+      "img": "images/cover_23.webp",
+      "url": "https://www.amazon.com/Shipping-AI-Prototype-Production-Systems/dp/B0GSR2GRZX/",
+      "tag": "Amazon",
+      "localImg": "/images/books/cover_23.webp"
+    },
+    {
+      "title": "Governing AI Systems",
+      "desc": "How to best govern AI systems.",
+      "img": "images/cover_24.webp",
+      "url": "https://www.amazon.com/Governing-AI-Systems/dp/B0GSMVQ1TH/",
+      "tag": "Amazon",
+      "localImg": "/images/books/cover_24.webp"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Dremio 101",
+      "desc": "Introduction to Dremio and the Agentic Lakehouse platform.",
+      "url": "https://www.youtube.com/watch?v=LDUcMrbH9To",
+      "icon": "▶️"
+    },
+    {
+      "title": "Iceberg 101",
+      "desc": "Getting started with Apache Iceberg and open table formats.",
+      "url": "https://www.youtube.com/watch?v=lQ1bwjhFBTE",
+      "icon": "🧊"
+    },
+    {
+      "title": "Dremio AI Agent UI Demo",
+      "desc": "See Dremio's AI Agent interface in action with natural language analytics.",
+      "url": "https://www.youtube.com/watch?v=1bet0llP5no",
+      "icon": "🤖"
+    },
+    {
+      "title": "Dremio Semantic Layer Demo",
+      "desc": "Walkthrough of Dremio's semantic layer for governed, business-friendly data access.",
+      "url": "https://www.youtube.com/watch?v=Baw4xB05hFg",
+      "icon": "🎬"
+    },
+    {
+      "title": "Dremio University",
+      "desc": "Earn badges on Iceberg, MCP, and more with structured learning paths.",
+      "url": "https://drmevn.fyi/linkpageuni",
+      "icon": "🎓"
+    },
+    {
+      "title": "Dremio.com Blog",
+      "desc": "Technical articles, tutorials, and insights from the Dremio team.",
+      "url": "https://drmevn.fyi/dremio-blog",
+      "icon": "📝"
+    },
+    {
+      "title": "Dremio Medium Blog",
+      "desc": "Data engineering insights and deep dives on Medium.",
+      "url": "https://medium.com/data-engineering-with-dremio",
+      "icon": "✍️"
+    },
+    {
+      "title": "How Dremio is the Iceberg Native Platform",
+      "desc": "Deep dive into Dremio's Apache Iceberg integration and capabilities.",
+      "url": "https://www.dremio.com/platform/apache-iceberg/?utm_source=link_page&utm_medium=influencer&utm_campaign=iceberg&utm_term=qr-link-list-04-07-2026&utm_content=alexmerced",
+      "icon": "❄️"
+    },
+    {
+      "title": "Semantic Layer: The Definitive Guide",
+      "desc": "The semantic layer is not a one-time project. It is a living system that grows with your organization's data needs.",
+      "url": "https://www.dremio.com/blog/semantic-layer-the-definitive-guide/",
+      "icon": "📖"
+    },
+    {
+      "title": "Apache Polaris: The Catalog Standard",
+      "desc": "Organizations are already using Polaris RBAC, catalog federation, credential vending, and generic tables to govern multi-engine lakehouses at scale.",
+      "url": "https://www.dremio.com/blog/apache-polaris-the-catalog-standard-for-lakehouses-and-ai/",
+      "icon": "⭐"
+    },
+    {
+      "title": "What Are Table Formats?",
+      "desc": "A table format defines how to organize metadata about data files so that query engines can treat them as reliable, transactional tables.",
+      "url": "https://www.dremio.com/blog/what-are-table-formats-and-why-were-they-needed/",
+      "icon": "📊"
+    },
+    {
+      "title": "What is Dremio?",
+      "desc": "Dremio is a unified platform that eliminates data silos, secures object storage with an Iceberg-based lakehouse, and accelerates insights with Agentic AI.",
+      "url": "https://www.dremio.com/blog/what-is-dremio/",
+      "icon": "🚀"
+    },
+    {
+      "title": "What 'Apache Iceberg Native' Actually Means",
+      "desc": "If your intention is to make Iceberg your primary analytics format, then 'supports Iceberg' and 'built for Iceberg' lead to very different outcomes.",
+      "url": "https://www.dremio.com/blog/what-apache-iceberg-native-actually-means/",
+      "icon": "🧊"
+    },
+    {
+      "title": "Open Source and the Data Lakehouse",
+      "desc": "The data lakehouse deconstructs components into modular, interchangeable layers, each built on open-source standards like Apache Parquet, Iceberg, and Arrow.",
+      "url": "https://www.dremio.com/blog/open-source-and-the-data-lakehouse/",
+      "icon": "🌐"
+    },
+    {
+      "title": "What is Agentic Analytics?",
+      "desc": "If agentic analytics is on your roadmap, it's worth auditing where your current platform sits to avoid data quality issues and permission errors.",
+      "url": "https://www.dremio.com/blog/what-is-agentic-analytics/",
+      "icon": "🤖"
+    }
+  ],
+  "communities": [
+    {
+      "title": "The Data Lakehouse Hub Slack",
+      "desc": "Community Slack for data lakehouse practitioners and enthusiasts.",
+      "url": "https://join.slack.com/t/thedatalakehousehub/shared_invite/zt-274yc8sza-mI2zhCW8LGkOh1uxuf8T5Q",
+      "icon": "💬",
+      "region": "Global"
+    },
+    {
+      "title": "Data Events Organizing Slack",
+      "desc": "Slack community for organizing and coordinating data events.",
+      "url": "https://join.slack.com/t/data-events/shared_invite/zt-38vgrooy9-U9ral_gr3NAz_Siih1QwmQ",
+      "icon": "📅",
+      "region": "Global"
+    },
+    {
+      "title": "Dremio Developer Community",
+      "desc": "Join the Dremio developer community for support and collaboration.",
+      "url": "https://developer.dremio.com?utm_source=link_page&utm_medium=influencer&utm_campaign=iceberg&utm_term=qr-link-list-04-07-2026&utm_content=alexmerced",
+      "icon": "🛠️",
+      "region": "Global"
+    },
+    {
+      "title": "Dremio Dev Slack",
+      "desc": "Direct Slack workspace for Dremio developers.",
+      "url": "https://dremio-dev.slack.com/join/shared_invite/zt-3c8zajmhw-b6KfiD343kuIopaaJ1bZ6w#/shared-invite/email",
+      "icon": "💬",
+      "region": "Global"
+    },
+    {
+      "title": "Apache Iceberg Community",
+      "desc": "Official Apache Iceberg open source community.",
+      "url": "https://iceberg.apache.org/community/",
+      "icon": "🧊",
+      "region": "Open Source"
+    },
+    {
+      "title": "Apache Polaris Community",
+      "desc": "Official Apache Polaris open source community.",
+      "url": "https://polaris.apache.org/",
+      "icon": "⭐",
+      "region": "Open Source"
+    },
+    {
+      "title": "Apache Arrow Community",
+      "desc": "Official Apache Arrow open source community.",
+      "url": "https://arrow.apache.org/community/",
+      "icon": "➡️",
+      "region": "Open Source"
+    }
+  ],
+  "events": [
+    {
+      "title": "Dremio Events & Workshops",
+      "desc": "Register for upcoming Dremio workshops, webinars, and hands-on sessions.",
+      "url": "https://www.dremio.com/workshops/?utm_source=link_page&utm_medium=influencer&utm_campaign=iceberg&utm_term=qr-link-list-04-07-2026&utm_content=alexmerced",
+      "icon": "🎪"
+    },
+    {
+      "title": "International Data Lakehouse Meetups",
+      "desc": "Luma calendar for worldwide lakehouse events and meetups.",
+      "url": "https://lu.ma/datalakehousemeetupsinternational",
+      "icon": "🌍",
+      "region": "International"
+    },
+    {
+      "title": "Open Data Lakehouse Meetups",
+      "desc": "Global meetup group for open data lakehouse enthusiasts.",
+      "url": "https://www.meetup.com/iceberg-data-lakehouse-meetups/",
+      "icon": "🏠",
+      "region": "Global"
+    },
+    {
+      "title": "North American Open Data Lakehouse Linkups",
+      "desc": "Connect with lakehouse practitioners across North America.",
+      "url": "https://www.meetup.com/north-american-open-data-lakehouse-linkups/",
+      "icon": "🇺🇸",
+      "region": "USA"
+    },
+    {
+      "title": "NA Community Run Apache Iceberg Meetups",
+      "desc": "Community-organized Apache Iceberg meetups across North America.",
+      "url": "https://www.meetup.com/na-apache-iceberg-meetups/",
+      "icon": "🧊",
+      "region": "USA"
+    },
+    {
+      "title": "Lakehouse Linkups",
+      "desc": "Lakehouse linkup events calendar on Luma.",
+      "url": "https://lu.ma/Lakehouselinkups",
+      "icon": "🔗",
+      "region": "USA"
+    },
+    {
+      "title": "NYC Data Lakehouse Events",
+      "desc": "Data lakehouse events in the New York City area.",
+      "url": "https://lu.ma/NYCDataLakehouse",
+      "icon": "🗽",
+      "region": "NYC"
+    },
+    {
+      "title": "Orlando Data Events",
+      "desc": "Data community events in the Orlando, Florida area.",
+      "url": "https://lu.ma/Orlandodata",
+      "icon": "🌴",
+      "region": "Orlando"
+    },
+    {
+      "title": "West Coast US Data Lakehouse Events",
+      "desc": "Events in SF, Seattle, Denver, and more.",
+      "url": "https://lu.ma/westcoastlakehouse",
+      "icon": "🌉",
+      "region": "West Coast"
+    },
+    {
+      "title": "East Coast US Data Lakehouse Events",
+      "desc": "Events in NYC, Boston, Atlanta, Austin, and more.",
+      "url": "https://lu.ma/EastCoastLakehouse",
+      "icon": "🏙️",
+      "region": "East Coast"
+    }
+  ]
+}

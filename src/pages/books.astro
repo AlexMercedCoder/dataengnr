@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+import siteData from '../data/siteData.json';
+
+const allBooks = [...(siteData.freeBooks || []), ...(siteData.otherBooks || [])];
+---
+
+<BaseLayout title="Books" description="Lakehouse and AI books by Alex Merced.">
+  <section class="py-12">
+    <div class="flex items-center justify-between mb-12 border-b border-ash-text/20 pb-4">
+      <h1 class="font-ivy text-heading-lg text-pure-white">Books by Alex Merced</h1>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      {allBooks.map((book: any) => (
+        <a href={book.url} target="_blank" class="group block h-full">
+          <Card hoverEffect={true} class="flex flex-col h-full !p-0 overflow-hidden bg-charcoal-canvas">
+            {book.localImg ? (
+              <div class="aspect-[2/3] w-full overflow-hidden bg-midnight-ink relative">
+                <img src={book.localImg} alt={book.title} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                {book.tag && (
+                  <span class="absolute top-4 right-4 bg-midnight-ink/80 text-white-frost text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm border border-ash-text/20">
+                    {book.tag}
+                  </span>
+                )}
+              </div>
+            ) : (
+              <div class="aspect-[2/3] w-full bg-slate-gray flex items-center justify-center p-6 text-center border-b border-ash-text/10">
+                <span class="text-ash-text font-ivy text-xl">{book.title}</span>
+              </div>
+            )}
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-body font-semibold text-pure-white mb-2 line-clamp-2">{book.title}</h3>
+              <p class="text-sm text-ash-text mb-4 line-clamp-3 flex-grow">{book.desc}</p>
+              <span class="text-sm font-medium text-golden-gradient mt-auto inline-flex items-center gap-2 group-hover:text-pure-white transition-colors">
+                Get Book <span aria-hidden="true">&rarr;</span>
+              </span>
+            </div>
+          </Card>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
