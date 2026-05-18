@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Search" 
+  description="Search the DataEngr knowledge base for articles, terms, and resources."
+>
+  <section class="w-full flex flex-col gap-12">
+    <div class="text-center space-y-6">
+      <h1 class="font-ivy text-5xl md:text-7xl font-semibold tracking-tight text-pure-white">
+        Search Knowledge Base
+      </h1>
+      <p class="font-inter text-lg md:text-xl text-ash-text max-w-2xl mx-auto leading-relaxed">
+        Instantly search across our 200+ data engineering terms, articles, and architectures.
+      </p>
+    </div>
+
+    <div class="w-full max-w-4xl mx-auto bg-midnight-ink/50 backdrop-blur-sm border border-ash-text/10 rounded-2xl p-8">
+      <div id="search"></div>
+    </div>
+  </section>
+
+  <!-- Pagefind Script & Styles -->
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+  <script src="/pagefind/pagefind-ui.js" is:inline></script>
+  
+  <script is:inline>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ 
+        element: "#search",
+        showSubResults: true,
+        pageSize: 10
+      });
+    });
+  </script>
+
+  <!-- Custom Pagefind Theme Overrides -->
+  <style is:global>
+    :root {
+      --pagefind-ui-scale: 1.1;
+      --pagefind-ui-primary: #FF6B35;
+      --pagefind-ui-text: #FFFFFF;
+      --pagefind-ui-background: transparent;
+      --pagefind-ui-border: rgba(168, 178, 209, 0.2);
+      --pagefind-ui-tag: rgba(255, 107, 53, 0.1);
+      --pagefind-ui-border-width: 1px;
+      --pagefind-ui-border-radius: 8px;
+      --pagefind-ui-image-border-radius: 8px;
+      --pagefind-ui-image-box-ratio: 3 / 2;
+      --pagefind-ui-font: 'Inter', sans-serif;
+    }
+
+    /* Additional custom styling to make it look native to our site */
+    .pagefind-ui__search-input {
+      background-color: rgba(11, 19, 43, 0.8) !important;
+      color: #FFFFFF !important;
+      border: 1px solid rgba(168, 178, 209, 0.3) !important;
+      border-radius: 12px !important;
+      padding: 1rem 1rem 1rem 3rem !important;
+      font-weight: 400 !important;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      transition: border-color 0.2s ease;
+    }
+    .pagefind-ui__search-input:focus {
+      outline: none;
+      border-color: #FF6B35 !important;
+    }
+    .pagefind-ui__search-clear {
+      background-color: transparent !important;
+      color: #A8B2D1 !important;
+      border-radius: 8px !important;
+      padding: 0 1rem !important;
+    }
+    .pagefind-ui__search-clear:hover {
+      color: #FF6B35 !important;
+    }
+    .pagefind-ui__message {
+      color: #A8B2D1 !important;
+      font-weight: 500 !important;
+      padding: 1.5rem 0 !important;
+    }
+    .pagefind-ui__result {
+      border-color: rgba(168, 178, 209, 0.1) !important;
+      padding: 2rem 0 !important;
+    }
+    .pagefind-ui__result-title .pagefind-ui__result-link {
+      color: #FFFFFF !important;
+      font-family: 'IvyPresto Display', serif !important;
+      font-size: 1.5rem !important;
+      font-weight: 600 !important;
+      text-decoration: none !important;
+      transition: color 0.2s ease;
+    }
+    .pagefind-ui__result-title .pagefind-ui__result-link:hover {
+      color: #FF6B35 !important;
+    }
+    .pagefind-ui__result-excerpt {
+      color: #A8B2D1 !important;
+      line-height: 1.6 !important;
+      margin-top: 0.75rem !important;
+    }
+    .pagefind-ui__button {
+      background-color: transparent !important;
+      color: #FF6B35 !important;
+      border: 1px solid #FF6B35 !important;
+      border-radius: 9999px !important;
+      padding: 0.5rem 1.5rem !important;
+      font-weight: 500 !important;
+      transition: all 0.2s ease !important;
+    }
+    .pagefind-ui__button:hover {
+      background-color: #FF6B35 !important;
+      color: #0B132B !important;
+    }
+    mark {
+      background-color: rgba(255, 107, 53, 0.2) !important;
+      color: #FF6B35 !important;
+      border-radius: 2px;
+      padding: 0 2px;
+    }
+  </style>
+</BaseLayout>
