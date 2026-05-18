@@ -17,19 +17,19 @@ Trust takes months to build and seconds to destroy. A single high-profile dashbo
 
 Data trust is not a technology; it is a cultural outcome supported by four technical and operational pillars:
 
-**1. Data Quality and Reliability**: The data must actually be correct. This requires rigorous DataOps practices: automated testing in the CI/CD pipeline, runtime data quality assertions (dbt tests), anomaly detection for volume and freshness, and immediate alerting when pipelines fail.
+**1. [Data Quality](/terms/data-quality) and Reliability**: The data must actually be correct. This requires rigorous [DataOps](/terms/dataops) practices: automated testing in the CI/CD pipeline, runtime data quality assertions (dbt tests), anomaly detection for volume and freshness, and immediate alerting when pipelines fail.
 
-**2. Transparent Lineage**: When a user questions a metric, they need to know where it came from. Transparent data lineage allows a user to trace the "Total Sales" metric on a dashboard back through the Semantic Layer, through the dbt transformations, all the way to the raw Bronze ingestion tables. Transparency proves that the number wasn't magically invented.
+**2. Transparent Lineage**: When a user questions a metric, they need to know where it came from. Transparent [data lineage](/terms/data-lineage) allows a user to trace the "Total Sales" metric on a dashboard back through the [Semantic Layer](/terms/semantic-layer), through the dbt transformations, all the way to the raw Bronze ingestion tables. Transparency proves that the number wasn't magically invented.
 
-**3. Clear Ownership**: Every data product (table, dashboard, metric) must have a designated human owner. If the "Customer Churn" table looks suspicious, the data catalog must clearly list who is responsible for that table so the consumer knows who to contact for clarification or bug reporting. "Orphaned" data inherently lacks trust.
+**3. Clear Ownership**: Every data product (table, dashboard, metric) must have a designated human owner. If the "Customer Churn" table looks suspicious, the [data catalog](/terms/data-catalog) must clearly list who is responsible for that table so the consumer knows who to contact for clarification or bug reporting. "Orphaned" data inherently lacks trust.
 
 ![Data Trust Architecture](/images/terms/data_trust.png)
 
 ## Designing for Trust in the Lakehouse
 
-In the modern lakehouse architecture, trust is engineered into the system through the Write-Audit-Publish (WAP) pattern. 
+In the modern lakehouse architecture, trust is engineered into the system through the [Write-Audit-Publish (WAP)](/terms/write-audit-publish) pattern. 
 
-Using Apache Iceberg's branching capabilities, data pipelines write new data to an invisible `staging` branch. Automated audit queries run against this branch to verify data quality constraints (no null primary keys, revenue within expected historical bounds). If the audit passes, the branch is atomically merged into the `main` branch, instantly updating the dashboards. If the audit fails, the merge is blocked, the data team is alerted, and the dashboards continue to show the last known good state.
+Using [Apache Iceberg](/terms/apache-iceberg)'s branching capabilities, data pipelines write new data to an invisible `staging` branch. Automated audit queries run against this branch to verify data quality constraints (no null primary keys, revenue within expected historical bounds). If the audit passes, the branch is atomically merged into the `main` branch, instantly updating the dashboards. If the audit fails, the merge is blocked, the data team is alerted, and the dashboards continue to show the last known good state.
 
 This architectural pattern guarantees that bad data never enters the production serving layer. By treating data quality as a hard engineering constraint rather than a retrospective monitoring task, the data team can guarantee the reliability of the semantic layer, systematically building and maintaining the business's data trust.
 

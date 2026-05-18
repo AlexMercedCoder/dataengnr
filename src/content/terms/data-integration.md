@@ -9,15 +9,15 @@ tags: ["Data Integration", "ETL", "Data Engineering", "Data Architecture", "Anal
 
 Modern businesses run on dozens of specialized applications: Stripe for payments, Salesforce for CRM, Shopify for e-commerce, Zendesk for support, and Google Analytics for web traffic. Each application contains a crucial piece of the business puzzle, but analyzing the data in isolation limits its value. To understand the true Customer Acquisition Cost (CAC), an organization must combine marketing spend data (from Google Ads) with sales revenue (from Stripe). To predict churn, support ticket history (from Zendesk) must be combined with product usage behavior (from Mixpanel).
 
-Data integration is the process of combining this data from disparate sources into unified, consistent, and reliable datasets. It is the core engineering challenge of building a modern analytical data platform. Without data integration, organizations suffer from data silos; with data integration, organizations achieve a holistic 360-degree view of their operations.
+Data integration is the process of combining this data from disparate sources into unified, consistent, and reliable datasets. It is the core engineering challenge of building a modern analytical data platform. Without data integration, organizations suffer from [data silos](/terms/data-silos); with data integration, organizations achieve a holistic 360-degree view of their operations.
 
 ## Methods of Data Integration
 
-Historically, data integration was synonymous with **ETL (Extract, Transform, Load)**: extracting data from sources, transforming it into a strict unified schema in an intermediate server, and loading it into a data warehouse. This approach was rigid, brittle, and scaled poorly as data volumes grew.
+Historically, data integration was synonymous with **ETL (Extract, Transform, Load)**: extracting data from sources, transforming it into a strict unified schema in an intermediate server, and loading it into a [data warehouse](/terms/data-warehouse). This approach was rigid, brittle, and scaled poorly as data volumes grew.
 
-The modern data stack shifted to **ELT (Extract, Load, Transform)**: raw data is extracted from sources and loaded directly into the data lakehouse in its original structure. The transformation (joining, cleaning, structuring) happens entirely within the lakehouse using SQL (via tools like dbt) leveraging the massive scalable compute of engines like Spark, Trino, or Dremio.
+The modern data stack shifted to **ELT (Extract, Load, Transform)**: raw data is extracted from sources and loaded directly into the [data lakehouse](/terms/data-lakehouse) in its original structure. The transformation (joining, cleaning, structuring) happens entirely within the lakehouse using SQL (via tools like dbt) leveraging the massive scalable compute of engines like Spark, [Trino](/terms/trino), or [Dremio](/terms/dremio).
 
-More recently, **Data Virtualization** (federated queries) provides an alternative integration pattern where data is not moved at all; instead, a query engine connects to the disparate source systems and joins the data in memory at query time.
+More recently, **[Data Virtualization](/terms/data-virtualization)** (federated queries) provides an alternative integration pattern where data is not moved at all; instead, a query engine connects to the disparate source systems and joins the data in memory at query time.
 
 ![Data Integration Architecture](/images/terms/data_integration.png)
 

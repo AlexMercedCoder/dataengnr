@@ -28,9 +28,9 @@ Because the data cannot move, the company is forced to run their machine learnin
 
 Data gravity cannot be eliminated, but modern data engineering architectures attempt to mitigate its negative effects through specific design patterns:
 
-**Open Table Formats**: Storing data in proprietary database formats (like a Snowflake internal table) compounds gravity because the data is locked into that specific vendor's ecosystem. By storing data in open formats like Apache Iceberg on generic object storage, the data's gravity remains, but its accessibility increases. Multiple different compute engines (Dremio, Spark, Trino) can spin up in the same cloud region and access the Iceberg data simultaneously without moving it.
+**Open Table Formats**: Storing data in proprietary database formats (like a Snowflake internal table) compounds gravity because the data is locked into that specific vendor's ecosystem. By storing data in open formats like [Apache Iceberg](/terms/apache-iceberg) on generic [object storage](/terms/object-storage), the data's gravity remains, but its accessibility increases. Multiple different compute engines ([Dremio](/terms/dremio), Spark, [Trino](/terms/trino)) can spin up in the same cloud region and access the Iceberg data simultaneously without moving it.
 
-**Data Mesh and Federation**: Instead of trying to pull all enterprise data into a single, massive central repository (which creates a massive gravity well), a Data Mesh architecture leaves data in its distributed domains. Query Federation tools are used to logically join data across these domains at query time, minimizing physical data movement while still providing a unified view to analysts.
+**[Data Mesh](/terms/data-mesh-architecture) and Federation**: Instead of trying to pull all enterprise data into a single, massive central repository (which creates a massive gravity well), a [Data Mesh](/terms/data-mesh) architecture leaves data in its distributed domains. [Query Federation](/terms/query-federation) tools are used to logically join data across these domains at query time, minimizing physical data movement while still providing a unified view to analysts.
 
 ## Learn More
 

@@ -7,15 +7,15 @@ tags: ["Schema Registry", "Streaming", "Apache Kafka", "Data Governance", "Data 
 
 # Enforcing Contracts in Motion
 
-In a monolithic application, if a developer changes the structure of a database table (e.g., changing an `order_id` from an Integer to a String), the application code can be updated simultaneously. However, in modern distributed data architectures and event-driven microservices, systems are highly decoupled. 
+In a monolithic application, if a developer changes the structure of a database table (e.g., changing an `order_id` from an Integer to a String), the application code can be updated simultaneously. However, in modern distributed data architectures and event-driven [microservices](/terms/microservices), systems are highly decoupled. 
 
-A "Producer" team might write order events into an Apache Kafka topic, while three different "Consumer" teams (Fraud Detection, Inventory, and Analytics) read from that topic. If the Producer team unilaterally changes the structure (the schema) of the JSON payload they are sending, the Consumer applications will break catastrophically when they try to parse a String expecting an Integer.
+A "Producer" team might write order events into an [Apache Kafka](/terms/apache-kafka) topic, while three different "Consumer" teams (Fraud Detection, Inventory, and Analytics) read from that topic. If the Producer team unilaterally changes the structure (the schema) of the JSON payload they are sending, the Consumer applications will break catastrophically when they try to parse a String expecting an Integer.
 
 A Schema Registry (like the Confluent Schema Registry for Kafka) solves this by enforcing a strict "data contract" between producers and consumers. It acts as an independent, centralized repository of data schemas.
 
 ## How a Schema Registry Works
 
-Instead of sending raw JSON, producers serialize their messages using a binary format like Apache Avro or Protobuf. 
+Instead of sending raw JSON, producers serialize their messages using a binary format like [Apache Avro](/terms/apache-avro) or Protobuf. 
 
 **1. Registration**: Before sending a new type of message, the Producer registers the schema (e.g., `OrderSchema v1`) with the Schema Registry.
 
@@ -25,7 +25,7 @@ Instead of sending raw JSON, producers serialize their messages using a binary f
 
 ![Schema Registry Architecture](/images/terms/schema_registry.png)
 
-## Managing Schema Evolution
+## Managing [Schema Evolution](/terms/schema-evolution)
 
 The true power of a Schema Registry is managing change over time. Businesses evolve, and schemas must evolve with them (Schema Evolution). 
 
@@ -36,7 +36,7 @@ If the Producer team wants to add a new `discount_code` field to the order event
 
 If the new schema breaks the defined compatibility rules (e.g., deleting a required field, or changing an integer to a string), the Schema Registry rejects the registration, and the Producer is physically prevented from publishing the breaking messages to the topic. 
 
-By enforcing these data contracts at the architectural level, a Schema Registry prevents "poison pill" messages from corrupting streaming pipelines and ensures the long-term stability of the data lakehouse ingestion layer.
+By enforcing these [data contracts](/terms/data-contracts) at the architectural level, a Schema Registry prevents "poison pill" messages from corrupting streaming pipelines and ensures the long-term stability of the [data lakehouse](/terms/data-lakehouse) ingestion layer.
 
 ## Learn More
 

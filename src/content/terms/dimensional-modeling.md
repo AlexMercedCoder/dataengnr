@@ -13,13 +13,13 @@ The problem emerges the moment an analyst tries to write an analytical query. An
 
 Ralph Kimball, working at Xerox's Palo Alto Research Center and later at his own consulting firm, spent decades studying why business intelligence projects failed. His conclusion was consistent: the schema design imposed on analysts was wrong for analytical work. His solution was dimensional modeling, a deliberately denormalized structure that organizes data the way humans think about business rather than the way databases minimize redundancy.
 
-Dimensional modeling has two primary implementations: the Star Schema and the Snowflake Schema. Both organize data around a central Fact table surrounded by Dimension tables, differing only in how much they normalize the Dimension tables themselves.
+Dimensional modeling has two primary implementations: the [Star Schema](/terms/star-schema) and the [Snowflake Schema](/terms/snowflake-schema). Both organize data around a central Fact table surrounded by [Dimension tables](/terms/dimension-tables), differing only in how much they normalize the Dimension tables themselves.
 
 ## The Star Schema in Depth
 
 The Star Schema gets its name from its visual representation: a central Fact table radiating outward to Dimension tables through foreign key relationships, forming a star shape. This structure is intentionally denormalized compared to an operational OLTP schema, trading storage efficiency for query simplicity and speed.
 
-### Fact Tables: Measuring Business Events
+### [Fact Tables](/terms/fact-tables): Measuring Business Events
 
 The Fact table is the analytical core of the Star Schema. Every row in a Fact table represents a single measurable business event: a sales transaction, a web page view, a customer service call, a sensor reading, or an insurance claim. Fact tables have two categories of columns.
 
@@ -41,7 +41,7 @@ The **Customer Dimension** stores demographic and behavioral attributes: `custom
 
 The query simplicity advantage of the Star Schema is dramatic. The six-table join nightmare from the normalized operational schema becomes a clean, readable query joining the Fact table to the relevant Dimensions, filtering on Dimension attributes, and summing Fact measures. A SQL query that requires 40 lines against a normalized operational schema often requires only 10 lines against a Star Schema, and it executes dramatically faster because the Dimension joins are optimized lookups from compact integer keys to small lookup tables.
 
-Modern columnar query engines (Dremio, Trino, DuckDB) are specifically tuned to exploit the Star Schema structure. They use Bloom filters and hash join optimizations that treat the small Dimension tables as broadcast hash tables, joining them against the large Fact tables without disk spills.
+Modern columnar query engines ([Dremio](/terms/dremio), [Trino](/terms/trino), [DuckDB](/terms/duckdb)) are specifically tuned to exploit the Star Schema structure. They use [Bloom filters](/terms/bloom-filters) and hash join optimizations that treat the small Dimension tables as broadcast hash tables, joining them against the large Fact tables without disk spills.
 
 ![Star Schema vs Snowflake Schema](/images/terms/star_vs_snowflake_schema.png)
 
@@ -55,11 +55,11 @@ The trade-off is query complexity. Queries against a Snowflake Schema require ad
 
 Most dimensional modeling practitioners recommend the Star Schema for its superior query performance and simplicity, reserving the Snowflake Schema for cases where a specific Dimension hierarchy has genuinely large cardinality and the normalization produces a meaningful storage or update management benefit.
 
-## Dimensional Modeling in the Apache Iceberg Lakehouse
+## Dimensional Modeling in the [Apache Iceberg](/terms/apache-iceberg) Lakehouse
 
-Dimensional models built on Apache Iceberg tables gain capabilities that traditional data warehouse dimensional models cannot match. Iceberg's MERGE INTO statement provides the mechanism for applying Slowly Changing Dimension (SCD) Type 2 updates atomically, preserving historical dimension rows while adding new rows reflecting attribute changes. Iceberg Time Travel allows analysts to query the Fact table and Dimension tables as of any historical snapshot, enabling fully accurate as-of-date analytical queries that answer "What did we know about our customers as of January 1st of last year?"
+Dimensional models built on Apache Iceberg tables gain capabilities that traditional [data warehouse](/terms/data-warehouse) dimensional models cannot match. Iceberg's MERGE INTO statement provides the mechanism for applying Slowly Changing Dimension (SCD) Type 2 updates atomically, preserving historical dimension rows while adding new rows reflecting attribute changes. Iceberg Time Travel allows analysts to query the Fact table and Dimension tables as of any historical snapshot, enabling fully accurate as-of-date analytical queries that answer "What did we know about our customers as of January 1st of last year?"
 
-Dremio's Semantic Layer sits on top of the physical Iceberg-backed dimensional model to provide the final governance layer. Data engineers create Virtual Datasets in Dremio that join Fact tables to their Dimension tables and expose the results under business-friendly column names. Row-level security policies ensure that regional managers can only query Fact rows where the `region_key` maps to their authorized territory. Data Reflections pre-compute the most common fact-to-dimension join patterns, delivering sub-second BI dashboard performance against petabyte-scale Fact tables backed by Iceberg Parquet files on cloud object storage.
+Dremio's [Semantic Layer](/terms/semantic-layer) sits on top of the physical Iceberg-backed dimensional model to provide the final governance layer. Data engineers create Virtual Datasets in Dremio that join Fact tables to their Dimension tables and expose the results under business-friendly column names. [Row-level security](/terms/row-level-security) policies ensure that regional managers can only query Fact rows where the `region_key` maps to their authorized territory. Data Reflections pre-compute the most common fact-to-dimension join patterns, delivering sub-second BI dashboard performance against petabyte-scale Fact tables backed by Iceberg Parquet files on cloud [object storage](/terms/object-storage).
 
 ## Learn More
 

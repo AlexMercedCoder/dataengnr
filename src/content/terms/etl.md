@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Integration", "ETL", "Data Pipelines", "Data Engineering"]
 ---
 
-# The Origins of Data Integration
+# The Origins of [Data Integration](/terms/data-integration)
 
 Long before the era of cloud computing and distributed data platforms, enterprises faced a persistent and fundamental challenge: their operational data was scattered across dozens of isolated departmental databases. The accounting department ran its own proprietary financial system, the sales department operated a separate customer management database, and the manufacturing division maintained its own production tracking system. Each of these systems spoke a different query language, used a different data format, and enforced a different schema.
 
@@ -21,7 +21,7 @@ Understanding ETL requires a precise examination of each of its three constituen
 
 ### Extract
 
-The Extract phase is concerned solely with acquiring data from source systems. Sources are typically diverse: relational databases (Oracle, SQL Server, PostgreSQL), ERP systems (SAP, Oracle Fusion), CRM platforms (Salesforce), flat files on network shares, and FTP servers delivering files from external partners.
+The Extract phase is concerned solely with acquiring data from source systems. Sources are typically diverse: [relational databases](/terms/relational-databases) (Oracle, SQL Server, PostgreSQL), ERP systems (SAP, Oracle Fusion), CRM platforms (Salesforce), flat files on network shares, and FTP servers delivering files from external partners.
 
 Extraction strategies vary depending on how much data must be transferred. Full extraction reads the complete contents of a source table on every pipeline run. While simple to implement, full extraction is inefficient for large tables, as it transfers data that has not changed since the last run. Incremental extraction identifies only the rows that have changed since the previous extraction by querying a timestamp column, a row version number, or a dedicated change log. Incremental extraction dramatically reduces the volume of data transferred and is the standard approach for high-volume production pipelines.
 
@@ -41,7 +41,7 @@ Business logic application is the most analytically significant transformation. 
 
 ### Load
 
-The Load phase transfers the transformed data into the destination system, typically a relational data warehouse. Loading strategies vary by the destination table type and the frequency of the pipeline run.
+The Load phase transfers the transformed data into the destination system, typically a relational [data warehouse](/terms/data-warehouse). Loading strategies vary by the destination table type and the frequency of the pipeline run.
 
 Full load truncates the destination table and reloads all records from scratch on every pipeline run. This guarantees the destination always reflects the current state of the source but is expensive for large tables. Incremental load appends new records or applies updates to existing records using merge (upsert) logic, which is efficient but requires robust change detection in the extraction phase. Slowly Changing Dimension (SCD) loading implements specific strategies for handling historical changes to dimensional attributes, such as preserving the previous address of a customer when they move, to support accurate historical reporting.
 
@@ -63,13 +63,13 @@ This inversion provides significant architectural benefits. Raw data is availabl
 
 The ELT model underpins modern tools like dbt (Data Build Tool), which allows data engineers to express transformations as SQL `SELECT` statements version-controlled in Git, run directly against the destination data warehouse or lakehouse. This approach brings software engineering best practices (code review, unit testing, version control) to data transformation, replacing the opaque graphical transformation environments of legacy ETL tools.
 
-## Modern ETL and ELT with Dremio
+## Modern ETL and ELT with [Dremio](/terms/dremio)
 
-In the modern lakehouse architecture, Dremio's Zero-ETL philosophy represents the logical endpoint of the ELT evolution. For many analytical use cases, the transformation step can be entirely virtualized within Dremio's Semantic Layer, eliminating the need to physically write any transformed data to a separate destination table.
+In the modern lakehouse architecture, Dremio's Zero-ETL philosophy represents the logical endpoint of the ELT evolution. For many analytical use cases, the transformation step can be entirely virtualized within Dremio's [Semantic Layer](/terms/semantic-layer), eliminating the need to physically write any transformed data to a separate destination table.
 
-Data engineers build virtual datasets in Dremio that define the transformation logic as parameterized SQL views directly over the raw Apache Iceberg tables in the lakehouse. When a BI tool queries the Semantic Layer, Dremio dynamically applies the transformation logic at query time and returns the results. For performance-sensitive workloads, Dremio Data Reflections automatically pre-compute and cache the most frequently queried transformations as optimized Iceberg tables, delivering data warehouse performance without requiring a separate physical ETL pipeline or destination table.
+Data engineers build virtual datasets in Dremio that define the transformation logic as parameterized SQL views directly over the raw [Apache Iceberg](/terms/apache-iceberg) tables in the lakehouse. When a BI tool queries the Semantic Layer, Dremio dynamically applies the transformation logic at query time and returns the results. For performance-sensitive workloads, Dremio Data Reflections automatically pre-compute and cache the most frequently queried transformations as optimized Iceberg tables, delivering data warehouse performance without requiring a separate physical ETL pipeline or destination table.
 
-This approach does not render traditional ETL obsolete. For complex historical corrections, cross-database reconciliation, and specialized data quality workflows, physical ETL and ELT pipelines remain valuable tools. However, for the majority of analytical use cases, the combination of the raw data lakehouse, the Iceberg table format, and the Dremio Semantic Layer dramatically reduces the scope and complexity of the ETL work required to deliver governed, high-performance analytical access to enterprise data.
+This approach does not render traditional ETL obsolete. For complex historical corrections, cross-database reconciliation, and specialized [data quality](/terms/data-quality) workflows, physical ETL and ELT pipelines remain valuable tools. However, for the majority of analytical use cases, the combination of the raw [data lakehouse](/terms/data-lakehouse), the Iceberg table format, and the Dremio Semantic Layer dramatically reduces the scope and complexity of the ETL work required to deliver governed, high-performance analytical access to enterprise data.
 
 ![ELT vs ETL in the Lakehouse](/images/terms/etl_vs_elt_lakehouse.png)
 

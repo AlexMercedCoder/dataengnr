@@ -7,15 +7,15 @@ tags: ["Lakehouse Concurrency", "Apache Iceberg", "Data Engineering", "ACID", "D
 
 # Managing the Chaos of Simultaneous Access
 
-In a modern enterprise, the data platform is a hyper-active intersection. At any given second, an automated streaming pipeline might be `INSERT`ing new web clicks, a dbt batch job might be `UPDATE`ing customer records, a data privacy script might be `DELETE`ing a user's data for GDPR compliance, and 500 business analysts might be running `SELECT` queries to render their morning dashboards.
+In a modern enterprise, the data platform is a hyper-active intersection. At any given second, an automated streaming pipeline might be `INSERT`ing new web clicks, a dbt batch job might be `UPDATE`ing customer records, a [data privacy](/terms/data-privacy) script might be `DELETE`ing a user's data for GDPR compliance, and 500 business analysts might be running `SELECT` queries to render their morning dashboards.
 
-If all these operations hit the same raw CSV or Parquet files on cloud object storage simultaneously, chaos ensues. A BI query might read a file while a pipeline is halfway through writing it, resulting in a dashboard showing incomplete, corrupted data. 
+If all these operations hit the same raw CSV or Parquet files on cloud [object storage](/terms/object-storage) simultaneously, chaos ensues. A BI query might read a file while a pipeline is halfway through writing it, resulting in a dashboard showing incomplete, corrupted data. 
 
-Lakehouse concurrency is the set of architectural mechanisms that prevent this chaos, ensuring that thousands of simultaneous readers and writers can access the data lake safely, achieving the ACID (Atomicity, Consistency, Isolation, Durability) guarantees traditionally reserved for monolithic relational databases.
+Lakehouse concurrency is the set of architectural mechanisms that prevent this chaos, ensuring that thousands of simultaneous readers and writers can access the [data lake](/terms/data-lake) safely, achieving the ACID (Atomicity, Consistency, Isolation, Durability) guarantees traditionally reserved for monolithic [relational databases](/terms/relational-databases).
 
-## Optimistic Concurrency Control (OCC)
+## [Optimistic Concurrency Control](/terms/optimistic-concurrency-control) (OCC)
 
-Apache Iceberg achieves high concurrency through a mechanism called Optimistic Concurrency Control (OCC). 
+[Apache Iceberg](/terms/apache-iceberg) achieves high concurrency through a mechanism called Optimistic Concurrency Control (OCC). 
 
 Unlike traditional databases that use "Pessimistic Concurrency" (where a writer places a strict lock on a table, forcing everyone else to wait in line until the write finishes), OCC assumes that conflicts are rare. 
 
@@ -29,7 +29,7 @@ What happens if another pipeline committed a change a millisecond earlier, updat
 
 In OCC, the first pipeline's commit fails. However, Iceberg handles this gracefully. It evaluates what the other pipeline changed. If Pipeline B simply added new files to the table, and Pipeline A was also just adding new files, Iceberg automatically retries the commit, merging both sets of changes to create Version 12. 
 
-If the conflict is unresolvable (e.g., Pipeline B deleted a file that Pipeline A was trying to update), Iceberg fails the operation, protecting the integrity of the data. The orchestration tool (like Airflow) then simply retries the job.
+If the conflict is unresolvable (e.g., Pipeline B deleted a file that Pipeline A was trying to update), Iceberg fails the operation, protecting the integrity of the data. The [orchestration](/terms/orchestration) tool (like Airflow) then simply retries the job.
 
 ![Lakehouse Concurrency Architecture](/images/terms/lakehouse_concurrency.png)
 

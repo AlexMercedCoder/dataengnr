@@ -18,27 +18,27 @@ Historically, organizations stored unstructured data in data lakes purely for ar
 
 ## Unlocking Value with AI
 
-The generative AI boom has transformed unstructured data from a storage burden into an organization's most valuable asset. Machine learning models, specifically Large Language Models (LLMs) and computer vision models, act as the translation layer between unstructured content and structured analytics.
+The [generative AI](/terms/generative-ai) boom has transformed unstructured data from a storage burden into an organization's most valuable asset. Machine learning models, specifically [Large Language Models](/terms/large-language-models) (LLMs) and computer vision models, act as the translation layer between unstructured content and structured analytics.
 
 **Information Extraction**: AI models scan thousands of PDF legal contracts to extract the `parties_involved`, `contract_value`, and `expiration_date`, writing this structured output into an Iceberg table that business analysts can query with standard SQL.
 
 **Sentiment Analysis**: Natural Language Processing (NLP) models read daily customer support transcripts and assign a sentiment score (-1.0 to 1.0) and a categorization tag ("Billing Issue", "Feature Request") to each interaction, enabling product managers to track customer satisfaction trends over time.
 
-**Semantic Search**: Unstructured documents are converted into vector embeddings and stored in a vector database, powering Retrieval-Augmented Generation (RAG) applications that allow employees to "chat" with their corporate knowledge base.
+**[Semantic Search](/terms/semantic-search)**: Unstructured documents are converted into [vector embeddings](/terms/vector-embeddings) and stored in a vector database, powering [Retrieval-Augmented Generation (RAG)](/terms/rag-architecture) applications that allow employees to "chat" with their corporate knowledge base.
 
 ![Unstructured Data Architecture](/images/terms/unstructured_data.png)
 
 ## Architecture for Unstructured Data
 
-The modern data lakehouse provides the unified architecture necessary to manage both structured and unstructured data.
+The modern [data lakehouse](/terms/data-lakehouse) provides the unified architecture necessary to manage both structured and unstructured data.
 
-**1. Object Storage**: The raw unstructured files (PDFs, JPEGs, MP4s) are landed in cheap, highly durable cloud object storage (Amazon S3, Azure Data Lake).
+**1. [Object Storage](/terms/object-storage)**: The raw unstructured files (PDFs, JPEGs, MP4s) are landed in cheap, highly durable cloud object storage (Amazon S3, Azure [Data Lake](/terms/data-lake)).
 
-**2. Metadata Catalogs**: While you cannot easily query an MP4 file with SQL, you can query its metadata. Unstructured files are cataloged in systems like Apache Polaris or Unity Catalog as unstructured volume assets. The catalog tracks the file's location, size, creation date, ownership, and access control policies.
+**2. Metadata Catalogs**: While you cannot easily query an MP4 file with SQL, you can query its metadata. Unstructured files are cataloged in systems like [Apache Polaris](/terms/apache-polaris) or [Unity Catalog](/terms/unity-catalog) as unstructured volume assets. The catalog tracks the file's location, size, creation date, ownership, and access control policies.
 
-**3. Multimodal Processing Pipelines**: Data engineering pipelines (using Apache Spark or Ray) read the unstructured files from object storage, pass them through AI inference endpoints (e.g., passing an image to an AI model to identify objects), and write the resulting structured metadata back to the lakehouse as Apache Iceberg tables.
+**3. Multimodal Processing Pipelines**: Data engineering pipelines (using [Apache Spark](/terms/apache-spark) or Ray) read the unstructured files from object storage, pass them through AI inference endpoints (e.g., passing an image to an AI model to identify objects), and write the resulting structured metadata back to the lakehouse as [Apache Iceberg](/terms/apache-iceberg) tables.
 
-This architecture bridges the gap: the massive unstructured files live securely on cheap object storage, while their AI-extracted structured metadata lives in high-performance Iceberg tables, instantly queryable by Dremio and business intelligence tools.
+This architecture bridges the gap: the massive unstructured files live securely on cheap object storage, while their AI-extracted structured metadata lives in high-performance Iceberg tables, instantly queryable by [Dremio](/terms/dremio) and business intelligence tools.
 
 ## Learn More
 

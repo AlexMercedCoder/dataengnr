@@ -17,15 +17,15 @@ If a retail executive asks "What were our total sales last quarter?", "Which pro
 
 While the output of descriptive analytics seems simple (a bar chart or a single KPI number), the data engineering required to produce that number accurately and consistently at enterprise scale is complex.
 
-To reliably answer "What happened?", data engineers build the foundational Medallion architecture:
+To reliably answer "What happened?", data engineers build the foundational [Medallion architecture](/terms/medallion-architecture):
 
-**1. Ingestion**: Raw data must be extracted from disparate source systems (CRM, ERP, web logs) and landed in the Bronze layer of the data lakehouse.
+**1. Ingestion**: Raw data must be extracted from disparate source systems (CRM, ERP, web logs) and landed in the Bronze layer of the [data lakehouse](/terms/data-lakehouse).
 
 **2. Transformation and Integration**: The data must be cleaned, deduplicated, and joined in the Silver layer. If "Total Sales" requires data from both Shopify and retail POS systems, that integration happens here.
 
-**3. Dimensional Modeling**: The data is aggregated into fact and dimension tables in the Gold layer (often using star schemas) to make querying fast and intuitive for BI tools.
+**3. Dimensional Modeling**: The data is aggregated into fact and [dimension tables](/terms/dimension-tables) in the Gold layer (often using star schemas) to make querying fast and intuitive for BI tools.
 
-**4. Semantic Layer**: Metrics are strictly defined (e.g., "Revenue = Gross Sales - Returns - Discounts") in a Semantic Layer like Dremio so that when different dashboards query the data, they calculate the descriptive metrics identically.
+**4. [Semantic Layer](/terms/semantic-layer)**: Metrics are strictly defined (e.g., "Revenue = Gross Sales - Returns - Discounts") in a Semantic Layer like [Dremio](/terms/dremio) so that when different dashboards query the data, they calculate the descriptive metrics identically.
 
 ![Descriptive Analytics](/images/terms/descriptive_analytics.png)
 
@@ -33,9 +33,9 @@ To reliably answer "What happened?", data engineers build the foundational Medal
 
 Descriptive analytics is essential for operational monitoring and basic business intelligence. It provides the scoreboard for the business. However, it is inherently backward-looking.
 
-Descriptive analytics can tell you that customer churn increased by 5% last month, but it cannot tell you *why* it increased (Diagnostic Analytics), *who* is likely to churn next month (Predictive Analytics), or *what* actions you should take to prevent them from churning (Prescriptive Analytics).
+Descriptive analytics can tell you that customer churn increased by 5% last month, but it cannot tell you *why* it increased ([Diagnostic Analytics](/terms/diagnostic-analytics)), *who* is likely to churn next month ([Predictive Analytics](/terms/predictive-analytics)), or *what* actions you should take to prevent them from churning ([Prescriptive Analytics](/terms/prescriptive-analytics)).
 
-Despite these limitations, an organization cannot skip descriptive analytics. Trying to implement advanced machine learning models before establishing a reliable, trusted baseline of historical reporting usually fails, because the data quality issues that descriptive analytics uncovers will poison the predictive models. Building a trusted descriptive analytics foundation is the prerequisite for all advanced data initiatives.
+Despite these limitations, an organization cannot skip descriptive analytics. Trying to implement advanced machine learning models before establishing a reliable, trusted baseline of historical reporting usually fails, because the [data quality](/terms/data-quality) issues that descriptive analytics uncovers will poison the predictive models. Building a trusted descriptive analytics foundation is the prerequisite for all advanced data initiatives.
 
 ## Learn More
 

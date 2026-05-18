@@ -7,7 +7,7 @@ tags: ["Star Schema", "Dimensional Modeling", "Data Warehouse", "Data Modeling",
 
 # The Foundation of Dimensional Modeling
 
-Star schema is the most widely used data modeling pattern in analytical data warehouses and lakehouses. Developed and popularized by Ralph Kimball in the 1990s, the star schema organizes analytical data around two types of tables: fact tables that record measurable business events and dimension tables that provide the context describing those events.
+Star schema is the most widely used [data modeling](/terms/data-modeling) pattern in analytical data warehouses and lakehouses. Developed and popularized by Ralph Kimball in the 1990s, the star schema organizes analytical data around two types of tables: [fact tables](/terms/fact-tables) that record measurable business events and [dimension tables](/terms/dimension-tables) that provide the context describing those events.
 
 The name "star schema" derives from its visual appearance: a central fact table is connected to multiple surrounding dimension tables by foreign key relationships, forming a shape that resembles a star with the fact table at the center.
 
@@ -19,7 +19,7 @@ A fact table records measurable business events. Each row in a fact table repres
 
 Fact table columns fall into two categories. **Measures** (also called facts) are the numeric values being analyzed: revenue amount, order quantity, session duration, page views, call minutes. **Foreign keys** are the references to dimension tables that provide context for each event: which customer made the purchase (customer_key), which product was purchased (product_key), when the purchase occurred (date_key), which store location processed the purchase (store_key).
 
-The combination of fact measures with dimension context enables analytical queries like "Sum of revenue by product category by month by region for the last 12 months" through simple joins and group-bys, which execute efficiently on columnar storage engines like Dremio reading from Iceberg Parquet tables.
+The combination of fact measures with dimension context enables analytical queries like "Sum of revenue by product category by month by region for the last 12 months" through simple joins and group-bys, which execute efficiently on columnar storage engines like [Dremio](/terms/dremio) reading from Iceberg Parquet tables.
 
 ![Star Schema Model](/images/terms/star_schema.png)
 
@@ -37,7 +37,7 @@ Iceberg's support for row-level updates (Merge-on-Read delete files) and time tr
 
 Star schema dimensional models map naturally to Iceberg table implementations in the lakehouse Gold layer. Fact tables are typically the largest Iceberg tables in the lakehouse, partitioned by date or event type, and compacted regularly for optimal analytical query performance. Dimension tables are relatively small and often stored as unpartitioned Iceberg tables, fully read on each query.
 
-Dremio's query planner is particularly effective at optimizing star schema queries, pushing down fact table partition filters before joining with dimension tables and applying dimension attribute filters (WHERE product_category = 'Electronics') as early as possible to minimize the data volume flowing through joins.
+Dremio's [query planner](/terms/query-planner) is particularly effective at optimizing star schema queries, pushing down fact table partition filters before joining with dimension tables and applying dimension attribute filters (WHERE product_category = 'Electronics') as early as possible to minimize the data volume flowing through joins.
 
 ## Learn More
 

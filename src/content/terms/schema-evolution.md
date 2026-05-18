@@ -9,7 +9,7 @@ tags: ["Schema Evolution", "Data Architecture", "Apache Iceberg", "Data Engineer
 
 Data is not static; it constantly evolves to reflect the changing reality of a business. When a company launches a new product, they might start collecting a new metric (like `shipping_weight`). If a privacy law passes, they might suddenly need to delete a column containing user phone numbers.
 
-In traditional relational databases, changing the structure of a massive table (a process known as an `ALTER TABLE` statement) was historically a terrifying, blocking operation. To add a single column to a 10-terabyte table, the database often had to lock the entire table, physically rewrite every single row on the hard drive to include the new empty column, and keep the application offline for hours.
+In traditional [relational databases](/terms/relational-databases), changing the structure of a massive table (a process known as an `ALTER TABLE` statement) was historically a terrifying, blocking operation. To add a single column to a 10-terabyte table, the database often had to lock the entire table, physically rewrite every single row on the hard drive to include the new empty column, and keep the application offline for hours.
 
 Schema evolution is the modern architectural solution to this problem. It allows data engineers to seamlessly and safely alter the structure (the schema) of massive datasets instantaneously, without rewriting historical files and without taking the system offline.
 
@@ -27,13 +27,13 @@ Renaming a column, dropping a column, or changing the data type (e.g., from `INT
 
 ## Schema Evolution in the Lakehouse (Iceberg)
 
-Managing schema evolution in a data lake composed of raw Parquet files on S3 was historically impossible. If you added a column, you broke the downstream Spark jobs.
+Managing schema evolution in a [data lake](/terms/data-lake) composed of raw Parquet files on S3 was historically impossible. If you added a column, you broke the downstream Spark jobs.
 
-Apache Iceberg solved this by introducing **First-Class Schema Evolution**. Iceberg does not track columns by their names; it tracks them by immutable internal IDs.
+[Apache Iceberg](/terms/apache-iceberg) solved this by introducing **First-Class Schema Evolution**. Iceberg does not track columns by their names; it tracks them by immutable internal IDs.
 
 If you have a column named `tax_amount` (Internal ID: 4), and you rename it to `tax_usd`, Iceberg simply updates its metadata file to say, "ID 4 is now called tax_usd." It does not touch the terabytes of historical Parquet files on S3. 
 
-When a query engine like Dremio reads the old Parquet files, it looks at ID 4 and projects it as `tax_usd`. You can drop columns, rename them, or even add a new column, drop it, and add a completely different column with the same name later-Iceberg handles it all perfectly through metadata pointers without ever risking data corruption or requiring a full rewrite of the historical data.
+When a query engine like [Dremio](/terms/dremio) reads the old Parquet files, it looks at ID 4 and projects it as `tax_usd`. You can drop columns, rename them, or even add a new column, drop it, and add a completely different column with the same name later-Iceberg handles it all perfectly through metadata pointers without ever risking data corruption or requiring a full rewrite of the historical data.
 
 ## Learn More
 

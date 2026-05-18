@@ -9,7 +9,7 @@ tags: ["Large Language Models", "Generative AI", "Artificial Intelligence", "Mac
 
 For decades, getting computers to understand human language was a brittle, frustrating process. Early Natural Language Processing (NLP) relied on hard-coded grammar rules and dictionaries. If a human used slang, sarcasm, or complex sentence structures, the computer failed to understand the intent.
 
-Large Language Models (LLMs) completely revolutionized this field. An LLM (like GPT-4, Claude, or LLaMA) is a specific type of Generative AI model designed exclusively to understand and generate text. They do not rely on grammar rules; they rely on pure statistical probability derived from reading billions of pages of human text.
+Large Language Models (LLMs) completely revolutionized this field. An LLM (like GPT-4, Claude, or LLaMA) is a specific type of [Generative AI](/terms/generative-ai) model designed exclusively to understand and generate text. They do not rely on grammar rules; they rely on pure statistical probability derived from reading billions of pages of human text.
 
 ## The Transformer Architecture
 

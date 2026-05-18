@@ -7,9 +7,9 @@ tags: ["Diagnostic Analytics", "Analytics", "Business Intelligence", "Data Explo
 
 # Answering 'Why Did It Happen?'
 
-If descriptive analytics provides the business scoreboard, diagnostic analytics provides the instant replay. When a descriptive dashboard shows a sudden 15% drop in monthly recurring revenue (MRR), the immediate next question from the executive team is "Why?"
+If [descriptive analytics](/terms/descriptive-analytics) provides the business scoreboard, diagnostic analytics provides the instant replay. When a descriptive dashboard shows a sudden 15% drop in monthly recurring revenue (MRR), the immediate next question from the executive team is "Why?"
 
-Diagnostic analytics is the process of examining data to understand the root causes of past events and behaviors. It involves deeper data exploration, drill-downs, data discovery, and correlation analysis to identify anomalies and the factors that drove them.
+Diagnostic analytics is the process of examining data to understand the root causes of past events and behaviors. It involves deeper data exploration, drill-downs, [data discovery](/terms/data-discovery), and correlation analysis to identify anomalies and the factors that drove them.
 
 While descriptive analytics is typically consumed via static or lightly interactive dashboards built for a broad audience, diagnostic analytics is typically performed by data analysts doing ad-hoc querying, slicing and dicing data across multiple dimensions to find the hidden signal.
 
@@ -25,15 +25,15 @@ While descriptive analytics is typically consumed via static or lightly interact
 
 ## The Lakehouse Advantage for Diagnostics
 
-Diagnostic analytics requires immense flexibility from the underlying data architecture. A traditional data warehouse, heavily optimized for specific pre-aggregated descriptive dashboards, often struggles with diagnostic ad-hoc queries because the analyst frequently needs to query data outside the pre-aggregated cubes.
+Diagnostic analytics requires immense flexibility from the underlying [data architecture](/terms/data-architecture). A traditional [data warehouse](/terms/data-warehouse), heavily optimized for specific pre-aggregated descriptive dashboards, often struggles with diagnostic ad-hoc queries because the analyst frequently needs to query data outside the pre-aggregated cubes.
 
-The data lakehouse provides the ideal environment for diagnostic analytics:
+The [data lakehouse](/terms/data-lakehouse) provides the ideal environment for diagnostic analytics:
 
 **1. Access to Raw Granularity**: When an analyst needs to drill down from a high-level KPI to the individual transactional records to diagnose an anomaly, the lakehouse allows seamless querying from the Gold aggregated tables down to the Silver or Bronze event-level data without switching systems.
 
-**2. Engine Flexibility**: While SQL is the primary tool for diagnostics, an analyst diagnosing a complex behavioral anomaly might need the expressive power of Python (Pandas/Polars) or Apache Spark. The open architecture of the Iceberg lakehouse allows analysts to spin up a Jupyter notebook and query the exact same data using Python libraries without waiting for data engineers to export it.
+**2. Engine Flexibility**: While SQL is the primary tool for diagnostics, an analyst diagnosing a complex behavioral anomaly might need the expressive power of Python (Pandas/[Polars](/terms/polars)) or [Apache Spark](/terms/apache-spark). The open architecture of the Iceberg lakehouse allows analysts to spin up a Jupyter notebook and query the exact same data using Python libraries without waiting for data engineers to export it.
 
-**3. Interactive Performance**: Tools like Dremio use raw and aggregation Data Reflections to accelerate ad-hoc diagnostic queries, ensuring the analyst maintains their "train of thought" with sub-second query responses while slicing and dicing across billions of rows.
+**3. Interactive Performance**: Tools like [Dremio](/terms/dremio) use raw and aggregation Data Reflections to accelerate ad-hoc diagnostic queries, ensuring the analyst maintains their "train of thought" with sub-second query responses while slicing and dicing across billions of rows.
 
 ## Learn More
 

@@ -17,7 +17,7 @@ A feature store is the ML infrastructure component that solves training-serving 
 
 A feature store has two storage tiers with different performance characteristics.
 
-**Offline store**: A historical feature store that retains feature values for all entities over time, used for model training and batch inference. The offline store is optimized for bulk reads: training jobs retrieve historical feature values for millions of entities to build training datasets. The offline store is commonly implemented on Apache Iceberg tables, providing time-travel capability for point-in-time correct feature retrieval (ensuring the training data does not contain future information that would not be available at inference time).
+**Offline store**: A historical feature store that retains feature values for all entities over time, used for model training and batch inference. The offline store is optimized for bulk reads: training jobs retrieve historical feature values for millions of entities to build training datasets. The offline store is commonly implemented on [Apache Iceberg](/terms/apache-iceberg) tables, providing time-travel capability for point-in-time correct feature retrieval (ensuring the training data does not contain future information that would not be available at inference time).
 
 **Online store**: A low-latency feature store that retains only the latest feature values for each entity, used for real-time model inference. The online store is optimized for single-entity reads with millisecond latency: an inference request for user ID 12345 retrieves that user's current feature vector from the online store in under 10 milliseconds. Online stores are commonly implemented on Redis, DynamoDB, or Cassandra.
 
@@ -31,7 +31,7 @@ Feature stores integrate naturally with Iceberg-based lakehouses. The lakehouse'
 
 Point-in-time correct feature retrieval from the offline store leverages Iceberg's time travel: the training pipeline specifies the timestamp at which each training example's label was observed, and the feature store retrieves the feature values that were current at that timestamp using Iceberg's AS OF TIMESTAMP query syntax. This ensures that training examples contain only features that would have been available at prediction time, preventing label leakage.
 
-Dremio's integration with Iceberg enables direct analytical queries against feature store offline tables, supporting feature engineering exploration, feature drift monitoring, and feature quality dashboards through SQL without requiring a Spark session.
+[Dremio](/terms/dremio)'s integration with Iceberg enables direct analytical queries against feature store offline tables, supporting [feature engineering](/terms/feature-engineering) exploration, feature drift monitoring, and feature quality dashboards through SQL without requiring a Spark session.
 
 ## Learn More
 

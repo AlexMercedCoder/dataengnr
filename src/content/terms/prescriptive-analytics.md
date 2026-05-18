@@ -7,7 +7,7 @@ tags: ["Prescriptive Analytics", "Analytics", "Optimization", "Machine Learning"
 
 # Answering 'What Should We Do?'
 
-The analytics maturity model is a progression of increasing business value and increasing technical complexity. Descriptive analytics tells you *what happened* (sales are down). Diagnostic analytics tells you *why* (inventory shortages). Predictive analytics tells you *what will happen* (you have a 90% chance of stocking out of winter coats next week).
+The analytics maturity model is a progression of increasing business value and increasing technical complexity. [Descriptive analytics](/terms/descriptive-analytics) tells you *what happened* (sales are down). [Diagnostic analytics](/terms/diagnostic-analytics) tells you *why* (inventory shortages). [Predictive analytics](/terms/predictive-analytics) tells you *what will happen* (you have a 90% chance of stocking out of winter coats next week).
 
 Prescriptive analytics is the pinnacle of this maturity model. It goes beyond predicting the future to actively recommending the optimal course of action to take advantage of that prediction. It answers the question: "Given what is likely to happen, what specific actions should we take to maximize our desired outcome?"
 
@@ -35,7 +35,7 @@ In a fully mature data platform, the pipeline looks like this:
 3. A prescriptive rules engine evaluates the score against business logic and constraints.
 4. The prescriptive engine automatically executes the recommended action via API (e.g., automatically declining the transaction and locking the user's account).
 
-This level of automation requires immense trust in the underlying data platform. The data engineering foundation must be flawless: data quality checks must be rigorous, pipeline latency must be tightly monitored, and model drift must be actively managed. A prescriptive engine acting automatically on bad data will execute bad decisions at machine speed, creating catastrophic business impact. Thus, prescriptive analytics is only possible when built upon a rock-solid, governed, and observable data lakehouse architecture.
+This level of automation requires immense trust in the underlying data platform. The data engineering foundation must be flawless: [data quality](/terms/data-quality) checks must be rigorous, pipeline latency must be tightly monitored, and [model drift](/terms/model-drift) must be actively managed. A prescriptive engine acting automatically on bad data will execute bad decisions at machine speed, creating catastrophic business impact. Thus, prescriptive analytics is only possible when built upon a rock-solid, governed, and observable [data lakehouse architecture](/terms/data-lakehouse-architecture).
 
 ## Learn More
 

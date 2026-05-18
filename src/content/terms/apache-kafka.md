@@ -11,7 +11,7 @@ Before Apache Kafka, enterprise systems communicated through point-to-point inte
 
 Apache Kafka, developed at LinkedIn in 2011 and open-sourced the same year, introduced a fundamentally different architectural pattern: the publish-subscribe event log. Rather than sending data directly to consumers, producers write events to a central, durable, ordered log. Consumers independently read from this log at their own pace. System A writes events once; Systems B, C, D, and E all read the same events independently, with no coordination between them. Adding System F requires only a new consumer reading from the existing Kafka log, with no modification to System A or any other existing system.
 
-This decoupling of producers from consumers is the foundational architectural contribution of Kafka. It transformed enterprise data integration from a O(n^2) point-to-point integration problem into a O(n) hub-and-spoke architecture where the Kafka cluster is the central data integration hub.
+This decoupling of producers from consumers is the foundational architectural contribution of Kafka. It transformed enterprise [data integration](/terms/data-integration) from a O(n^2) point-to-point integration problem into a O(n) hub-and-spoke architecture where the Kafka cluster is the central data integration hub.
 
 ## Topics, Partitions, and Offsets
 
@@ -27,7 +27,7 @@ Each event in a partition is identified by its offset: a monotonically increasin
 
 ## Kafka as the CDC Integration Hub
 
-Apache Kafka serves as the central integration hub for Change Data Capture pipelines. Debezium captures database change events and publishes them to Kafka topics, one topic per source database table. Downstream consumers (Apache Flink jobs, Spark Structured Streaming jobs, Kafka Connect sink connectors) independently consume from these CDC topics at their own pace.
+Apache Kafka serves as the central integration hub for Change Data Capture pipelines. Debezium captures database change events and publishes them to Kafka topics, one topic per source database table. Downstream consumers ([Apache Flink](/terms/apache-flink) jobs, [Spark Structured Streaming](/terms/spark-structured-streaming) jobs, Kafka Connect sink connectors) independently consume from these CDC topics at their own pace.
 
 This architecture provides several critical advantages over direct database-to-database CDC integration. Kafka acts as a buffer, absorbing write bursts from the source database without overwhelming downstream consumers. Multiple downstream systems can consume the same CDC events independently, allowing a single Debezium capture pipeline to feed both a Flink-based Iceberg writer (for the analytical lakehouse) and an Elasticsearch indexer (for full-text search) without any coordination between them. The event retention policy means that a downstream consumer that was offline for maintenance can replay the missed events when it comes back online.
 
@@ -35,9 +35,9 @@ This architecture provides several critical advantages over direct database-to-d
 
 Kafka Connect is a managed framework for running Kafka connectors, pre-built integration components that move data between Kafka and external systems. Source connectors ingest data from external systems into Kafka topics; sink connectors deliver data from Kafka topics to external systems.
 
-The Iceberg Kafka Connect sink connector writes Kafka topic events directly to Apache Iceberg tables, providing a zero-code ingestion path from any Kafka-producing source system to the data lakehouse. Organizations with existing Kafka infrastructure can land all their event streams into Iceberg tables through the Kafka Connect sink connector without writing any custom ingestion code.
+The Iceberg Kafka Connect sink connector writes Kafka topic events directly to [Apache Iceberg](/terms/apache-iceberg) tables, providing a zero-code ingestion path from any Kafka-producing source system to the [data lakehouse](/terms/data-lakehouse). Organizations with existing Kafka infrastructure can land all their event streams into Iceberg tables through the Kafka Connect sink connector without writing any custom ingestion code.
 
-Dremio connects to the Iceberg tables populated by Kafka-sourced pipelines through its standard Iceberg table reading capability, providing governed SQL access to the near-real-time event data flowing through the Kafka-to-Iceberg pipeline.
+[Dremio](/terms/dremio) connects to the Iceberg tables populated by Kafka-sourced pipelines through its standard Iceberg table reading capability, providing governed SQL access to the near-real-time event data flowing through the Kafka-to-Iceberg pipeline.
 
 ## Learn More
 

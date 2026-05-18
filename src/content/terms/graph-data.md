@@ -7,7 +7,7 @@ tags: ["Graph Data", "Data Modeling", "Data Architecture", "Analytics", "Data En
 
 # When the Relationships Are the Data
 
-Relational databases are excellent at storing entities and linking them via foreign keys. If you want to know all the orders placed by a specific customer, a simple SQL `JOIN` between the `customers` table and the `orders` table answers the question instantly. 
+[Relational databases](/terms/relational-databases) are excellent at storing entities and linking them via foreign keys. If you want to know all the orders placed by a specific customer, a simple SQL `JOIN` between the `customers` table and the `orders` table answers the question instantly. 
 
 However, relational databases struggle when the questions involve deep, recursive relationships, indirect connections, or pathfinding. If you want to ask "Which of Customer A's friends bought the same product as Customer B's friends?", the required SQL query involves multiple recursive self-joins that become computationally impossible to execute as the dataset grows.
 
@@ -29,9 +29,9 @@ Graph analytics shines when the connections between entities are the primary sou
 
 Historically, graph analytics required migrating data entirely into specialized, expensive operational graph databases like Neo4j.
 
-While operational graph databases are still necessary for real-time, transactional graph queries, the modern data lakehouse supports massive-scale analytical graph processing without moving the data.
+While operational graph databases are still necessary for real-time, transactional graph queries, the modern [data lakehouse](/terms/data-lakehouse) supports massive-scale analytical graph processing without moving the data.
 
-Using frameworks like GraphX (part of Apache Spark), data engineers can take standard tabular data from Iceberg (e.g., an `accounts` table and a `transactions` table), logically project them as a massive Graph of nodes and edges in memory, and run distributed graph algorithms across the cluster. 
+Using frameworks like GraphX (part of [Apache Spark](/terms/apache-spark)), data engineers can take standard tabular data from Iceberg (e.g., an `accounts` table and a `transactions` table), logically project them as a massive Graph of nodes and edges in memory, and run distributed graph algorithms across the cluster. 
 
 Algorithms like PageRank (to find the most influential nodes in a network), Connected Components (to find isolated clusters), and Shortest Path can be executed over billions of edges stored in the lakehouse, generating analytical scores (e.g., a "Fraud Risk Score" based on network proximity to known bad actors) that are written back to standard Iceberg tables for consumption by BI tools.
 

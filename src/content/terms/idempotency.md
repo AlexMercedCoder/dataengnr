@@ -29,9 +29,9 @@ Making a pipeline idempotent requires moving away from naive `INSERT` statements
 
 ## Idempotency and Iceberg
 
-Apache Iceberg natively supports highly performant idempotent operations. Iceberg's `MERGE INTO` command handles row-level upserts efficiently, even across petabytes of data, rewriting only the necessary Parquet files. 
+[Apache Iceberg](/terms/apache-iceberg) natively supports highly performant idempotent operations. Iceberg's `MERGE INTO` command handles row-level upserts efficiently, even across petabytes of data, rewriting only the necessary Parquet files. 
 
-More importantly, Iceberg's Write-Audit-Publish (WAP) pattern provides ultimate idempotency. If a pipeline runs, it writes data to a hidden branch. If it fails midway, that branch is simply discarded. The main table is never touched until the pipeline successfully completes and the branch is merged. If the pipeline is retried, it simply starts over on a fresh hidden branch, guaranteeing that partial, duplicate data is never exposed to downstream consumers.
+More importantly, Iceberg's [Write-Audit-Publish (WAP)](/terms/write-audit-publish) pattern provides ultimate idempotency. If a pipeline runs, it writes data to a hidden branch. If it fails midway, that branch is simply discarded. The main table is never touched until the pipeline successfully completes and the branch is merged. If the pipeline is retried, it simply starts over on a fresh hidden branch, guaranteeing that partial, duplicate data is never exposed to downstream consumers.
 
 ## Learn More
 

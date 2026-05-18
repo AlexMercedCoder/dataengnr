@@ -9,7 +9,7 @@ tags: ["DataOps", "DevOps", "Data Engineering", "CI/CD", "Data Quality"]
 
 Software engineering transformed dramatically when DevOps emerged as the methodology for building and operating software at scale: version-controlled code, automated testing (CI), automated deployment (CD), infrastructure as code, monitoring and alerting in production. Code changes that would have required weeks of manual testing and coordination could be deployed to production multiple times per day with confidence.
 
-Data engineering has historically lagged behind software engineering in adopting these practices. Data pipelines are often written as ad-hoc scripts without version control. Schema changes are applied manually by running SQL against production databases. Deployment involves copying notebooks from development to production without validation. Production data quality issues are discovered by business users, not automated monitoring.
+Data engineering has historically lagged behind software engineering in adopting these practices. Data pipelines are often written as ad-hoc scripts without version control. Schema changes are applied manually by running SQL against production databases. Deployment involves copying notebooks from development to production without validation. Production [data quality](/terms/data-quality) issues are discovered by business users, not automated monitoring.
 
 DataOps applies DevOps principles to data engineering: version control for all data artifacts (SQL, Python, DAGs, schema definitions), automated testing for data pipelines (schema tests, data quality assertions, business logic validation), automated deployment pipelines (CI/CD for data), infrastructure as code for data infrastructure (declarative warehouse and catalog configuration), and automated monitoring for production data quality and freshness.
 
@@ -19,7 +19,7 @@ In a DataOps-mature organization, all data artifacts are version-controlled in G
 
 **dbt projects**: All SQL transformation logic, schema definitions, data quality tests, and documentation are committed to a Git repository. Pull requests require code review before merge, ensuring that SQL changes are reviewed by a second engineer. The dbt project history provides a complete audit trail of all transformation changes.
 
-**Airflow DAGs**: All orchestration logic is defined as Python code in a Git repository, deployed to Airflow through a CI/CD pipeline rather than manually uploaded. DAG changes go through pull request review and automated validation before deployment.
+**Airflow DAGs**: All [orchestration](/terms/orchestration) logic is defined as Python code in a Git repository, deployed to Airflow through a CI/CD pipeline rather than manually uploaded. DAG changes go through pull request review and automated validation before deployment.
 
 **Infrastructure as code**: Warehouse configurations, catalog registrations, and compute resource definitions are defined in Terraform or Pulumi and version-controlled, enabling consistent, reproducible infrastructure deployment across development, staging, and production environments.
 
@@ -37,7 +37,7 @@ DataOps CI/CD pipelines automate validation and deployment of data code changes:
 
 Production data quality monitoring is a core DataOps practice. Automated data quality monitors check production tables on a schedule (hourly, daily), alerting on anomalies: row count drops outside expected ranges, freshness lag beyond SLA thresholds, null rates exceeding baselines, distribution shifts in key columns.
 
-Tools like Monte Carlo, Acyl, or custom dbt tests provide automated anomaly detection and alerting. Dremio's monitoring integrations track query performance, reflection staleness, and source freshness, providing the operational observability layer for the lakehouse serving layer.
+Tools like Monte Carlo, Acyl, or custom dbt tests provide automated anomaly detection and alerting. [Dremio](/terms/dremio)'s monitoring integrations track query performance, reflection staleness, and source freshness, providing the operational observability layer for the lakehouse serving layer.
 
 In an Iceberg lakehouse, snapshot freshness monitoring is a key DataOps indicator: each Iceberg table's latest snapshot timestamp is tracked against the expected update frequency, alerting when tables have not been refreshed within their SLA window.
 

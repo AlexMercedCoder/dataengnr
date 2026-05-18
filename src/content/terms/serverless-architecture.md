@@ -15,7 +15,7 @@ Serverless architecture represents the final stage of this evolution. In a serve
 
 ## The Mechanics of Serverless
 
-**Dynamic Scaling**: A serverless compute engine (like AWS Lambda or serverless Dremio Cloud) idles at zero cost when not in use. When a user submits a massive SQL query, the serverless engine instantly and automatically provisions the exact amount of compute required (perhaps scaling from 0 to 100 nodes in milliseconds), executes the query, returns the result, and immediately scales back down to zero. 
+**Dynamic Scaling**: A serverless compute engine (like AWS Lambda or serverless [Dremio](/terms/dremio) Cloud) idles at zero cost when not in use. When a user submits a massive SQL query, the serverless engine instantly and automatically provisions the exact amount of compute required (perhaps scaling from 0 to 100 nodes in milliseconds), executes the query, returns the result, and immediately scales back down to zero. 
 
 **Consumption-Based Pricing**: Because the scaling is entirely dynamic and managed by the provider, pricing shifts from a fixed capital expense (buying servers) to a pure operational expense. You pay only for the exact milliseconds of compute or the exact bytes of data processed.
 
@@ -29,7 +29,7 @@ Serverless architectures are fundamentally changing how modern data platforms ar
 
 **Serverless Data Warehouses/Lakehouses**: Platforms like Google BigQuery or Serverless Dremio offer "serverless SQL." A data analyst simply pastes a query into a web browser and clicks "Run." They do not know, nor do they care, how many servers executed the query; they only care about the result. 
 
-This abstraction allows data engineering teams to transition from being "system administrators" to becoming true "data developers," focusing 100% of their effort on business logic, SQL optimization, and data quality.
+This abstraction allows data engineering teams to transition from being "system administrators" to becoming true "data developers," focusing 100% of their effort on business logic, SQL optimization, and [data quality](/terms/data-quality).
 
 ## Learn More
 

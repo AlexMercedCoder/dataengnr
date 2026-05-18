@@ -9,15 +9,15 @@ tags: ["Data Archiving", "Cloud Computing", "Data Architecture", "Storage", "Dat
 
 Not all data is created equal. A customer's purchase from yesterday is "hot" data; the marketing team will query it a dozen times today to adjust their ad spend. A customer's purchase from seven years ago is "cold" data; no one will look at it today, but the finance department is legally required by tax authorities to keep the record just in case of an audit.
 
-Keeping 50 Terabytes of 7-year-old cold data in a high-performance Relational Database or pinned to the SSDs of a Dremio compute cluster is a colossal waste of money. 
+Keeping 50 Terabytes of 7-year-old cold data in a high-performance Relational Database or pinned to the SSDs of a [Dremio](/terms/dremio) compute cluster is a colossal waste of money. 
 
 Data archiving is the automated lifecycle process of migrating this cold, infrequently accessed data away from expensive, fast storage and dumping it into incredibly cheap, deep storage tiers. The data is preserved safely and durably, but retrieving it may take hours instead of milliseconds.
 
 ## Storage Tiers in the Cloud
 
-Modern cloud object storage providers (like AWS S3) offer specific archiving tiers to facilitate this process:
+Modern cloud [object storage](/terms/object-storage) providers (like AWS S3) offer specific archiving tiers to facilitate this process:
 
-**S3 Standard (Hot)**: High cost, millisecond retrieval. Used for the active data lakehouse powering daily dashboards.
+**S3 Standard (Hot)**: High cost, millisecond retrieval. Used for the active [data lakehouse](/terms/data-lakehouse) powering daily dashboards.
 **S3 Standard-IA (Infrequent Access)**: Cheaper storage, but you pay a fee every time you retrieve the data. Used for data that is only queried once a month.
 **S3 Glacier (Archive)**: Extremely cheap storage (a fraction of a cent per gigabyte), but retrieving the data takes several minutes or hours.
 **S3 Glacier Deep Archive (Cold)**: The absolute cheapest storage on earth, but retrieving the data takes 12 to 48 hours.

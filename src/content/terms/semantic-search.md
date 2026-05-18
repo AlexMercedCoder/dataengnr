@@ -15,7 +15,7 @@ Semantic search fundamentally changes this paradigm. Instead of searching for ma
 
 ## How Semantic Search Works
 
-The magic of semantic search is powered by Large Language Models (LLMs) and Vector Embeddings.
+The magic of semantic search is powered by [Large Language Models](/terms/large-language-models) (LLMs) and [Vector Embeddings](/terms/vector-embeddings).
 
 **1. Creating the Embeddings**: The semantic search pipeline begins by passing every document in the corporate knowledge base through an embedding model (like OpenAI's `text-embedding-ada-002`). The model reads the text and converts its semantic meaning into a dense vector-a massive array of floating-point numbers (often 1,536 dimensions long). These vectors are stored in a specialized Vector Database (like Pinecone, Milvus, or pgvector).
 
@@ -31,7 +31,7 @@ Semantic search is the foundational technology powering the modern AI revolution
 
 When an employee asks an internal AI chatbot a complex HR question, the chatbot does not rely on its underlying generic training data. Instead, it executes a semantic search against the company's internal HR policy documents. It retrieves the three most conceptually relevant paragraphs (even if the employee used completely different phrasing than the official policy manual), and feeds those paragraphs into an LLM to generate a perfectly accurate, context-aware answer. 
 
-Semantic search unlocks the value of the massive troves of unstructured data (PDFs, transcripts, emails) sitting dormant in the data lake.
+Semantic search unlocks the value of the massive troves of [unstructured data](/terms/unstructured-data) (PDFs, transcripts, emails) sitting dormant in the [data lake](/terms/data-lake).
 
 ## Learn More
 

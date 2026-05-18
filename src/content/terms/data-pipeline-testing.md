@@ -9,7 +9,7 @@ tags: ["Data Pipeline Testing", "Data Quality", "dbt", "Great Expectations", "Da
 
 Software engineers test code. Unit tests verify that individual functions behave correctly in isolation. Integration tests verify that components interact correctly. End-to-end tests verify that the complete system behavior matches requirements. When code changes break existing tests, the CI/CD pipeline fails and the change is blocked from reaching production.
 
-Data pipelines are software. Yet many data engineering organizations deploy pipeline changes without systematic testing, discovering data quality issues only when business users report anomalies in dashboards or when downstream ML models start producing incorrect predictions. The cost of discovering a data quality issue in production is dramatically higher than discovering it during development: production data may be corrupted, downstream consumers may have built on incorrect data, and remediation requires backfilling, reprocessing, and communicating the issue to all affected stakeholders.
+Data pipelines are software. Yet many data engineering organizations deploy pipeline changes without systematic testing, discovering [data quality](/terms/data-quality) issues only when business users report anomalies in dashboards or when downstream ML models start producing incorrect predictions. The cost of discovering a data quality issue in production is dramatically higher than discovering it during development: production data may be corrupted, downstream consumers may have built on incorrect data, and remediation requires [backfilling](/terms/backfilling), reprocessing, and communicating the issue to all affected stakeholders.
 
 Data pipeline testing is the discipline of applying the same testing rigor to data transformations that software engineers apply to application code. A comprehensive data pipeline testing strategy includes multiple testing layers, each catching different categories of issues.
 
@@ -21,7 +21,7 @@ dbt's built-in tests (`not_null`, `unique`, `accepted_values`, `relationships`) 
 
 ## Data Quality Tests
 
-Data quality tests validate that the data's content meets business requirements. Row count tests verify that the output table contains the expected number of rows (a pipeline producing 0 rows due to a WHERE clause error is caught immediately). Distribution tests verify that numeric column values fall within expected ranges (an exchange rate column with values greater than 1000 is flagged). Referential integrity tests verify that foreign keys in fact tables have matching rows in dimension tables.
+Data quality tests validate that the data's content meets business requirements. Row count tests verify that the output table contains the expected number of rows (a pipeline producing 0 rows due to a WHERE clause error is caught immediately). Distribution tests verify that numeric column values fall within expected ranges (an exchange rate column with values greater than 1000 is flagged). Referential integrity tests verify that foreign keys in [fact tables](/terms/fact-tables) have matching rows in [dimension tables](/terms/dimension-tables).
 
 Great Expectations provides a rich library of data quality assertions (called "expectations") that can be embedded in pipelines as validation steps. A `expect_column_values_to_be_between` expectation on a revenue column that fires when any value is negative catches calculation errors before bad data reaches consumers.
 
@@ -31,7 +31,7 @@ Great Expectations provides a rich library of data quality assertions (called "e
 
 Business logic tests validate that transformations implement the correct business rules. A revenue calculation test asserts that `unit_price * quantity * (1 - discount_rate)` equals the calculated `net_revenue` column. A customer churn calculation test asserts that customers with `last_purchase_date` more than 90 days ago are correctly classified as churned. These tests catch logic errors in SQL transformations that schema and data quality tests would miss.
 
-## Idempotency Tests
+## [Idempotency](/terms/idempotency) Tests
 
 Idempotency tests verify that running the pipeline multiple times produces the same result as running it once. A pipeline that appends records without deduplication fails idempotency: running it twice produces duplicate rows. Idempotency tests are critical for pipeline reliability because pipelines are frequently re-run after failures.
 

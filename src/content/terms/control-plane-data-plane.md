@@ -7,7 +7,7 @@ tags: ["Control Plane", "Data Plane", "Data Architecture", "Cloud Computing", "D
 
 # Managing the Machinery
 
-Modern distributed data platforms-whether they are cloud data warehouses, orchestration tools, or streaming engines-are incredibly complex systems managing thousands of moving parts. To maintain stability, security, and scalability, these systems fundamentally divide their architecture into two distinct layers: the Control Plane and the Data Plane.
+Modern distributed data platforms-whether they are cloud data warehouses, [orchestration](/terms/orchestration) tools, or streaming engines-are incredibly complex systems managing thousands of moving parts. To maintain stability, security, and scalability, these systems fundamentally divide their architecture into two distinct layers: the Control Plane and the Data Plane.
 
 This concept originally comes from software-defined networking (SDN) but has become the standard architectural blueprint for modern SaaS data platforms.
 
@@ -17,8 +17,8 @@ The Control Plane is the centralized management layer. It is the "brain" that ma
 
 Responsibilities of the Control Plane:
 - **Authentication & Authorization**: Verifying user logins and checking RBAC policies (e.g., "Is User A allowed to access Table B?").
-- **Metadata Management**: Storing the schema definitions and table locations (e.g., an Apache Iceberg catalog like Nessie or Polaris acts entirely within the control plane).
-- **Query Planning**: Taking a SQL string, parsing it, and generating the optimized execution plan using a Cost-Based Optimizer.
+- **Metadata Management**: Storing the schema definitions and table locations (e.g., an [Apache Iceberg](/terms/apache-iceberg) catalog like Nessie or Polaris acts entirely within the control plane).
+- **Query Planning**: Taking a SQL string, parsing it, and generating the optimized execution plan using a [Cost-Based Optimizer](/terms/cost-based-optimizer).
 - **Cluster Provisioning**: Monitoring workloads and telling the cloud provider to spin up 5 new compute nodes because a massive query was just submitted.
 
 ## The Data Plane (The Muscle)
@@ -36,7 +36,7 @@ Responsibilities of the Data Plane:
 
 Separating these planes provides massive benefits for security and SaaS deployment models.
 
-In a modern "Bring Your Own Cloud" (BYOC) deployment, a vendor (like Dremio or Databricks) hosts the Control Plane in their own managed cloud account. The vendor's engineers manage the upgrades, the UI, and the metadata catalog. 
+In a modern "Bring Your Own Cloud" (BYOC) deployment, a vendor (like [Dremio](/terms/dremio) or Databricks) hosts the Control Plane in their own managed cloud account. The vendor's engineers manage the upgrades, the UI, and the metadata catalog. 
 
 However, the Data Plane (the actual compute clusters and the S3 storage buckets containing the highly sensitive corporate data) lives entirely within the customer's private Virtual Private Cloud (VPC). 
 

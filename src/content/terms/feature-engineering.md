@@ -24,7 +24,7 @@ If one column represents `Customer Age` (ranging from 18 to 90) and another repr
 
 ![Feature Engineering Architecture](/images/terms/feature_engineering.png)
 
-## The Feature Store
+## The [Feature Store](/terms/feature-store)
 
 Historically, data scientists would write complex Python scripts in a Jupyter Notebook to perform feature engineering. This created massive problems: the code was isolated on their laptop, and the engineering team had to completely rewrite the logic in Java or Scala to deploy the model into a production streaming pipeline. If the two scripts were slightly different (Training-Serving Skew), the model would fail in production.
 

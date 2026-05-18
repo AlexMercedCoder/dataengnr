@@ -21,19 +21,19 @@ Data reliability engineering involves establishing automated checks across sever
 
 **Schema Stability**: Has the structure of the data changed? A reliable pipeline detects schema drift. If an upstream SaaS application drops a column or changes a field type from Integer to String without warning, schema monitoring catches the change before it breaks downstream transformations.
 
-**Data Quality (Distribution)**: Does the data make sense? A reliable pipeline monitors the statistical distribution of column values. If the `null` rate of a critical `user_id` column jumps from 0% to 25%, or if an `age` column suddenly contains negative numbers, quality alerts trigger an investigation.
+**[Data Quality](/terms/data-quality) (Distribution)**: Does the data make sense? A reliable pipeline monitors the statistical distribution of column values. If the `null` rate of a critical `user_id` column jumps from 0% to 25%, or if an `age` column suddenly contains negative numbers, quality alerts trigger an investigation.
 
 ![Data Reliability Architecture](/images/terms/data_reliability.png)
 
 ## Implementing Reliability in the Lakehouse
 
-Data reliability is implemented through a combination of pipeline testing (DataOps) and data observability tools.
+Data reliability is implemented through a combination of pipeline testing ([DataOps](/terms/dataops)) and [data observability](/terms/data-observability) tools.
 
 **Pre-computation Testing (dbt tests)**: Before a pipeline step writes data to the final analytical table, it runs assertions (dbt `not_null`, `unique`, `accepted_values` tests). If the tests fail, the pipeline run halts, preventing bad data from polluting the Gold layer. This is the data equivalent of software unit tests.
 
 **Post-computation Monitoring (Observability)**: Tools like Monte Carlo or Anomalo connect directly to the Iceberg tables in the lakehouse and continuously monitor the data at rest using machine learning models to detect anomalies in volume, freshness, and distribution without requiring manual threshold configuration by engineers.
 
-**Circuit Breakers and the WAP Pattern**: The Write-Audit-Publish (WAP) pattern enabled by Iceberg table branching is the ultimate reliability mechanism. Data is written to an invisible branch, reliability tests (audits) are executed against the branch, and the branch is only published to the main table if the tests pass. If the data is unreliable, the main table is never updated, protecting consumers from data downtime.
+**Circuit Breakers and the WAP Pattern**: The [Write-Audit-Publish (WAP)](/terms/write-audit-publish) pattern enabled by [Iceberg table branching](/terms/iceberg-branching) is the ultimate reliability mechanism. Data is written to an invisible branch, reliability tests (audits) are executed against the branch, and the branch is only published to the main table if the tests pass. If the data is unreliable, the main table is never updated, protecting consumers from data downtime.
 
 ## Learn More
 

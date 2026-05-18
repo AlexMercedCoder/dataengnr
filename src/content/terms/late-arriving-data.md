@@ -19,13 +19,13 @@ If the data team runs a rigid batch job at 10:15 AM to calculate "Total Sales Be
 
 In traditional batch pipelines (like daily dbt runs), handling late-arriving data is computationally expensive. If a late event from Tuesday arrives on Friday, the naive approach is to simply rerun Tuesday's entire batch job. 
 
-A more modern approach leverages the MERGE capabilities of table formats like Apache Iceberg. The pipeline processes the late event on Friday, realizes it belongs to Tuesday's partition based on its Event Time timestamp, and performs an Upsert directly into Tuesday's historical Parquet files, correcting the record without requiring a full daily rerun.
+A more modern approach leverages the MERGE capabilities of table formats like [Apache Iceberg](/terms/apache-iceberg). The pipeline processes the late event on Friday, realizes it belongs to Tuesday's partition based on its Event Time timestamp, and performs an Upsert directly into Tuesday's historical Parquet files, correcting the record without requiring a full daily rerun.
 
 ![Late-Arriving Data Architecture](/images/terms/late_arriving_data.png)
 
 ## Handling Late Data in Streaming (Watermarks)
 
-In continuous streaming engines like Apache Flink, late-arriving data is handled through a sophisticated mechanism called "Watermarking."
+In continuous streaming engines like [Apache Flink](/terms/apache-flink), late-arriving data is handled through a sophisticated mechanism called "Watermarking."
 
 If Flink is calculating a rolling 5-minute sum of sales (e.g., the 10:00 to 10:05 window), it needs to know when it is "safe" to officially close that window and emit the final number. It cannot wait forever, but if it closes it too early, it misses late data.
 

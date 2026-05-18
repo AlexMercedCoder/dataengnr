@@ -7,7 +7,7 @@ tags: ["Cost-Based Optimizer", "Database Internals", "Performance Optimization",
 
 # Guessing the Price of Execution
 
-When a database query planner receives a complex SQL query involving multiple joins and aggregations, there are often hundreds of different valid physical paths (Execution Plans) it could take to generate the final result.
+When a database [query planner](/terms/query-planner) receives a complex SQL query involving multiple joins and aggregations, there are often hundreds of different valid physical paths (Execution Plans) it could take to generate the final result.
 
 If the planner chooses the wrong path, a query that should take 5 seconds could take 5 hours. To make the correct choice, modern analytical databases rely on a Cost-Based Optimizer (CBO).
 
@@ -27,11 +27,11 @@ To know this, the database maintains metadata statistics for every table and col
 
 ## The Lakehouse CBO Challenge
 
-In a traditional, monolithic data warehouse (like Oracle or SQL Server), the database controls the storage layer, so it constantly updates its internal statistics every time data is inserted. The CBO always has fresh data.
+In a traditional, monolithic [data warehouse](/terms/data-warehouse) (like Oracle or SQL Server), the database controls the storage layer, so it constantly updates its internal statistics every time data is inserted. The CBO always has fresh data.
 
-In a modern data lakehouse, the storage layer consists of open Parquet files sitting on S3. An external Spark job might write 100 new Parquet files, and the query engine (like Dremio or Trino) won't inherently know the statistics of that new data. If the engine's CBO has stale statistics, it will make terrible execution decisions.
+In a modern [data lakehouse](/terms/data-lakehouse), the storage layer consists of open Parquet files sitting on S3. An external Spark job might write 100 new Parquet files, and the query engine (like [Dremio](/terms/dremio) or [Trino](/terms/trino)) won't inherently know the statistics of that new data. If the engine's CBO has stale statistics, it will make terrible execution decisions.
 
-Apache Iceberg solves this fundamental lakehouse problem. Iceberg maintains column-level statistics (min, max, null counts) directly in its manifest metadata files. When a query engine reads the Iceberg table, it immediately accesses these rich statistics without having to scan the raw Parquet files. This provides the CBO with the accurate, up-to-date mathematical fuel it needs to generate highly optimized execution plans against decoupled cloud object storage.
+[Apache Iceberg](/terms/apache-iceberg) solves this fundamental lakehouse problem. Iceberg maintains column-level statistics (min, max, null counts) directly in its manifest metadata files. When a query engine reads the Iceberg table, it immediately accesses these rich statistics without having to scan the raw Parquet files. This provides the CBO with the accurate, up-to-date mathematical fuel it needs to generate highly optimized execution plans against decoupled cloud [object storage](/terms/object-storage).
 
 ## Learn More
 

@@ -5,11 +5,11 @@ date: 2026-05-17
 tags: ["Trino", "SQL Query Engine", "Distributed SQL", "Apache Iceberg", "Data Engineering"]
 ---
 
-# Distributed SQL Without a Data Warehouse
+# Distributed SQL Without a [Data Warehouse](/terms/data-warehouse)
 
 Trino (formerly known as PrestoSQL, then PrestoSQL, renamed Trino in 2021) is an open-source distributed SQL query engine developed at Facebook in 2012 and now maintained by the Trino Software Foundation. Trino was designed for one specific purpose: execute SQL queries fast across data stored in external systems, without moving the data into a centralized warehouse.
 
-Trino's "query-in-place" architecture connects to data sources through a connector plugin system. A Trino connector translates Trino's distributed query execution against an external system's native API. The Iceberg connector reads Iceberg table metadata from any Iceberg catalog (Hive Metastore, Glue, Nessie, REST Catalog) and executes distributed scan tasks against the Parquet data files in object storage. The PostgreSQL connector pushes SQL operations to a PostgreSQL database through JDBC. The Kafka connector reads event streams from Kafka topics. Queries joining an Iceberg table with a PostgreSQL table and a Kafka topic are executed in a single SQL statement through Trino's connector-agnostic query planning.
+Trino's "query-in-place" architecture connects to data sources through a connector plugin system. A Trino connector translates Trino's distributed query execution against an external system's native API. The Iceberg connector reads Iceberg table metadata from any Iceberg catalog (Hive Metastore, Glue, Nessie, REST Catalog) and executes distributed scan tasks against the Parquet data files in [object storage](/terms/object-storage). The PostgreSQL connector pushes SQL operations to a PostgreSQL database through JDBC. The Kafka connector reads event streams from Kafka topics. Queries joining an Iceberg table with a PostgreSQL table and a Kafka topic are executed in a single SQL statement through Trino's connector-agnostic query planning.
 
 ## Trino's Execution Architecture
 
@@ -21,15 +21,15 @@ For Iceberg queries, Trino's Iceberg connector performs aggressive optimization:
 
 ![Trino Architecture](/images/terms/trino_architecture.png)
 
-## Trino vs. Dremio and Spark
+## Trino vs. [Dremio](/terms/dremio) and Spark
 
 Trino, Dremio, and Spark occupy different niches in the lakehouse query engine ecosystem.
 
-**Trino** excels at interactive SQL analytics with low query latency and wide connector support. Its open-source self-managed deployment model gives engineering teams full control. Starburst (the commercial Trino distribution) adds enterprise features like RBAC, data products, and managed cloud deployment.
+**Trino** excels at interactive SQL analytics with low query latency and wide connector support. Its open-source self-managed deployment model gives engineering teams full control. Starburst (the commercial Trino distribution) adds enterprise features like RBAC, [data products](/terms/data-products), and managed cloud deployment.
 
-**Dremio** excels at governed, business-facing analytics with its Semantic Layer (Virtual Datasets, column masking, row-level security), Data Reflections (transparent query acceleration), and Arrow Flight high-performance data delivery. Dremio provides a managed SaaS experience with significantly less operational overhead than self-managed Trino, and its native Iceberg integration is more deeply optimized (Arctic catalog, WAP workflow support, reflection-based acceleration).
+**Dremio** excels at governed, business-facing analytics with its [Semantic Layer](/terms/semantic-layer) (Virtual Datasets, [column masking](/terms/column-masking), [row-level security](/terms/row-level-security)), Data Reflections (transparent query acceleration), and [Arrow Flight](/terms/arrow-flight) high-performance data delivery. Dremio provides a managed SaaS experience with significantly less operational overhead than self-managed Trino, and its native Iceberg integration is more deeply optimized (Arctic catalog, WAP workflow support, reflection-based acceleration).
 
-**Apache Spark** excels at batch data transformation pipelines, ML workloads, and complex multi-step ETL operations. Spark is not primarily an interactive query engine but a general distributed computation platform.
+**[Apache Spark](/terms/apache-spark)** excels at batch data transformation pipelines, ML workloads, and complex multi-step ETL operations. Spark is not primarily an interactive query engine but a general distributed computation platform.
 
 For organizations that want a self-managed, open-source SQL engine for Iceberg queries, Trino is a strong choice. For organizations that want enterprise governance, semantic modeling, and managed cloud deployment, Dremio is the stronger choice.
 

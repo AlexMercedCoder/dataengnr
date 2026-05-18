@@ -7,21 +7,21 @@ tags: ["Data Lakehouse", "Data Warehouse", "Architecture", "Apache Iceberg", "Da
 
 # Two Architectures for Analytical Data
 
-The data warehouse and the data lakehouse are both architectures for enabling analytical queries on large volumes of business data. Both provide SQL query interfaces, data governance, and support for BI tools and dashboards. But their underlying designs reflect fundamentally different philosophies about how analytical data infrastructure should be built.
+The [data warehouse](/terms/data-warehouse) and the [data lakehouse](/terms/data-lakehouse) are both architectures for enabling analytical queries on large volumes of business data. Both provide SQL query interfaces, [data governance](/terms/data-governance), and support for BI tools and dashboards. But their underlying designs reflect fundamentally different philosophies about how analytical data infrastructure should be built.
 
 Understanding the genuine trade-offs between these architectures is essential for making informed infrastructure decisions, rather than following industry trends without understanding their applicability to your specific context.
 
 ## The Data Warehouse Model
 
-A traditional data warehouse (Snowflake, Redshift, BigQuery) is a fully integrated, proprietary analytical database. Data is stored in the warehouse's proprietary format (Snowflake's Hybrid Columnar Storage, Redshift's columnar format) in the warehouse's managed infrastructure. The warehouse controls storage, compute, query optimization, metadata management, and access control as a unified, managed system.
+A traditional data warehouse (Snowflake, Redshift, BigQuery) is a fully integrated, proprietary analytical database. Data is stored in the warehouse's proprietary format (Snowflake's Hybrid Columnar Storage, Redshift's columnar format) in the warehouse's managed infrastructure. The warehouse controls storage, compute, [query optimization](/terms/query-optimization), metadata management, and access control as a unified, managed system.
 
-The data warehouse model's strengths: exceptional query performance (decades of optimization for SQL analytics), minimal operational overhead (fully managed, no infrastructure to operate), strong governance tooling (access control, auditing, data sharing), and a simple pricing model (pay for compute and storage, no infrastructure management).
+The data warehouse model's strengths: exceptional query performance (decades of optimization for SQL analytics), minimal operational overhead (fully managed, no infrastructure to operate), strong governance tooling (access control, auditing, [data sharing](/terms/data-sharing)), and a simple pricing model (pay for compute and storage, no infrastructure management).
 
-The data warehouse model's limitations: data is locked in the vendor's proprietary format (migrating to a different warehouse requires re-ingesting all data), high costs at scale (proprietary storage pricing is significantly higher than object storage), limited interoperability with ML tools and Python analytics (most warehouses require exporting data for ML workloads), and vendor dependency for all platform capabilities.
+The data warehouse model's limitations: data is locked in the vendor's proprietary format (migrating to a different warehouse requires re-ingesting all data), high costs at scale (proprietary storage pricing is significantly higher than [object storage](/terms/object-storage)), limited interoperability with ML tools and Python analytics (most warehouses require exporting data for ML workloads), and vendor dependency for all platform capabilities.
 
 ## The Data Lakehouse Model
 
-A data lakehouse stores data in open formats (Apache Parquet via Iceberg) in commodity object storage (S3, ADLS, GCS) that the organization controls. Query engines (Dremio, Spark, Trino, Flink) are separate from storage and connect to the open data through standard protocols (Iceberg REST Catalog, Arrow Flight). Different engines can be used for different workload types: Flink for streaming ingestion, Spark for heavy batch transformation, Dremio for governed BI analytics.
+A data lakehouse stores data in open formats ([Apache Parquet](/terms/apache-parquet) via Iceberg) in commodity object storage (S3, ADLS, GCS) that the organization controls. Query engines ([Dremio](/terms/dremio), Spark, [Trino](/terms/trino), Flink) are separate from storage and connect to the open data through standard protocols ([Iceberg REST Catalog](/terms/iceberg-rest-catalog), [Arrow Flight](/terms/arrow-flight)). Different engines can be used for different workload types: Flink for streaming ingestion, Spark for heavy batch transformation, Dremio for governed BI analytics.
 
 The lakehouse model's strengths: storage cost at object storage pricing (typically 5-10x cheaper than warehouse storage), complete data format openness (Parquet files can be read by any Iceberg-compatible engine, with no vendor lock-in), unified storage for all workload types (BI, ML, streaming analytics from the same data), and modular architecture (best-of-breed engines for each workload type).
 

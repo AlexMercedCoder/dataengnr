@@ -7,7 +7,7 @@ tags: ["Data Classification", "Data Governance", "Security", "Compliance", "Data
 
 # Knowing What You Have
 
-You cannot protect what you do not understand. In a modern data lakehouse containing petabytes of data, applying military-grade encryption and strict access controls to every single file is computationally expensive and paralyzes the business's ability to perform agile analytics. Conversely, leaving all data completely open exposes the organization to catastrophic regulatory fines and public relations disasters.
+You cannot protect what you do not understand. In a modern [data lakehouse](/terms/data-lakehouse) containing petabytes of data, applying military-grade encryption and strict access controls to every single file is computationally expensive and paralyzes the business's ability to perform agile analytics. Conversely, leaving all data completely open exposes the organization to catastrophic regulatory fines and public relations disasters.
 
 Data classification is the foundational governance process of solving this dilemma. It involves scanning, identifying, and tagging data assets based on their level of sensitivity, business value, and compliance risk. By categorizing data into tiers, an organization can apply appropriate, proportionate security controls: locking down the highly sensitive data while freely democratizing the non-sensitive data.
 
@@ -33,9 +33,9 @@ Modern data platforms implement automated classification. When raw data lands in
 - If a column matches the pattern of a Social Security Number (XXX-XX-XXXX), the scanner automatically tags the column as `Restricted_PII`. 
 - If a text field contains medical terminology, it is tagged as `HIPAA_PHI`.
 
-These classification tags are attached to the Apache Iceberg table metadata in the catalog (like Apache Polaris). 
+These classification tags are attached to the [Apache Iceberg](/terms/apache-iceberg) table metadata in the catalog (like [Apache Polaris](/terms/apache-polaris)). 
 
-Once tagged, Active Data Governance policies take over. A policy in the Dremio Semantic Layer might state: "If a column is tagged `Restricted_PII`, automatically apply a masking function unless the querying user is in the `Compliance_Auditors` active directory group." This creates a closed-loop system where data is automatically identified, classified, and protected the moment it enters the architecture, without human intervention.
+Once tagged, [Active Data Governance](/terms/active-data-governance) policies take over. A policy in the [Dremio](/terms/dremio) [Semantic Layer](/terms/semantic-layer) might state: "If a column is tagged `Restricted_PII`, automatically apply a masking function unless the querying user is in the `Compliance_Auditors` active directory group." This creates a closed-loop system where data is automatically identified, classified, and protected the moment it enters the architecture, without human intervention.
 
 ## Learn More
 

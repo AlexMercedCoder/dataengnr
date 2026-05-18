@@ -7,19 +7,19 @@ tags: ["Optimistic Concurrency Control", "Apache Iceberg", "ACID", "Concurrency"
 
 # Locks Are Expensive
 
-Pessimistic concurrency control - the approach used by most relational databases - acquires locks before modifying data. A writer acquires a write lock on the table (or rows), performs its modifications, then releases the lock. While the write lock is held, no other writer can modify the table. This prevents conflicts but serializes all writes, making it impossible to scale write throughput by adding more concurrent writers.
+Pessimistic concurrency control - the approach used by most [relational databases](/terms/relational-databases) - acquires locks before modifying data. A writer acquires a write lock on the table (or rows), performs its modifications, then releases the lock. While the write lock is held, no other writer can modify the table. This prevents conflicts but serializes all writes, making it impossible to scale write throughput by adding more concurrent writers.
 
 In distributed data systems processing high-volume event streams, serialized writes through a locking mechanism become a catastrophic bottleneck. A Flink job processing 1 million events per second needs to write to an Iceberg table continuously; waiting to acquire a write lock before each micro-batch write would reduce throughput to whatever rate the lock manager can grant locks.
 
 Optimistic Concurrency Control (OCC) takes a different approach: allow multiple writers to proceed simultaneously without locking, detect conflicts at commit time, and retry or fail conflicting commits. OCC is "optimistic" because it assumes that conflicts between concurrent writers will be rare - most of the time, concurrent writers are modifying different parts of the data, and conflicts are only detected occasionally.
 
-## OCC in Apache Iceberg
+## OCC in [Apache Iceberg](/terms/apache-iceberg)
 
 Apache Iceberg implements Optimistic Concurrency Control through its atomic metadata swap mechanism. Each write operation proceeds in three phases:
 
 **1. Read the current table state**: The writer reads the current metadata file pointer from the catalog (e.g., from the Hive Metastore or REST Catalog) to get the current snapshot.
 
-**2. Prepare the new snapshot**: The writer creates new data files, builds new manifest and metadata files reflecting the new state of the table (the current snapshot plus the new changes), and writes these files to object storage. The writer does not yet update the catalog pointer.
+**2. Prepare the new snapshot**: The writer creates new data files, builds new manifest and metadata files reflecting the new state of the table (the current snapshot plus the new changes), and writes these files to [object storage](/terms/object-storage). The writer does not yet update the catalog pointer.
 
 **3. Atomic commit**: The writer attempts to atomically update the catalog's metadata pointer from the version it read in step 1 to the new metadata file. This is a conditional atomic operation: "Update the pointer IF AND ONLY IF it still points to the version I read in step 1."
 

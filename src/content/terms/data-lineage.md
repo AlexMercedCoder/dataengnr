@@ -27,7 +27,7 @@ Think of data lineage as a supply chain map for information. Just as a food manu
 
 **Impact Analysis**: Before a data engineer drops a column from an upstream Silver table, they consult the lineage graph. The graph reveals that this specific column is used downstream by an executive dashboard and two machine learning models. The engineer can now proactively notify the owners of those downstream assets before making the breaking change.
 
-**Root Cause Analysis**: When a data quality alert fires on a Gold table, the engineer follows the lineage upstream. If the `user_age` column suddenly contains negative numbers, lineage allows the engineer to trace the column back through the dbt transformations to discover that the root cause was an API change in the source CRM system.
+**Root Cause Analysis**: When a [data quality](/terms/data-quality) alert fires on a Gold table, the engineer follows the lineage upstream. If the `user_age` column suddenly contains negative numbers, lineage allows the engineer to trace the column back through the dbt transformations to discover that the root cause was an API change in the source CRM system.
 
 **Regulatory Compliance**: Auditors for GDPR, CCPA, or financial regulations often require proof of how specific sensitive metrics are calculated and who has accessed them. Automated data lineage provides the immutable audit trail required to prove compliance.
 
@@ -35,7 +35,7 @@ Think of data lineage as a supply chain map for information. Just as a food manu
 
 Historically, data lineage was maintained manually in Excel spreadsheets or Confluence wikis, which meant it was instantly out of date. 
 
-In the modern data stack, lineage is generated automatically by parsing the code that transforms the data. Tools like dbt automatically generate a Directed Acyclic Graph (DAG) and lineage map based on the SQL `ref()` functions. Advanced data catalogs (like Alation or Datahub) parse the query logs from engines like Dremio or Snowflake to reverse-engineer column-level lineage automatically, ensuring the map is always an accurate reflection of the running code.
+In the modern data stack, lineage is generated automatically by parsing the code that transforms the data. Tools like dbt automatically generate a [Directed Acyclic Graph (DAG)](/terms/directed-acyclic-graph) and lineage map based on the SQL `ref()` functions. Advanced data catalogs (like Alation or Datahub) parse the query logs from engines like [Dremio](/terms/dremio) or Snowflake to reverse-engineer column-level lineage automatically, ensuring the map is always an accurate reflection of the running code.
 
 ## Learn More
 

@@ -11,7 +11,7 @@ A pervasive problem in enterprise analytics is the "dueling dashboards" scenario
 
 The discrepancy exists because business logic is fragmented. The Tableau analyst defined revenue as `sum(gross_sales) - sum(returns)`, while the Looker analyst defined it as `sum(gross_sales) - sum(returns) - sum(discounts)`. When metric definitions are locked inside the proprietary visualization layer of BI tools, consistency is impossible.
 
-A metric store (often referred to as Headless BI) solves this by decoupling metric definitions from the BI visualization tools. It acts as a centralized repository where data teams define business metrics as code (e.g., using a framework like dbt Semantic Layer or Cube). All downstream consumers - Tableau, Power BI, custom web apps, or AI chatbots - query the metric store rather than writing their own SQL against the data warehouse.
+A metric store (often referred to as [Headless BI](/terms/headless-bi)) solves this by decoupling metric definitions from the BI visualization tools. It acts as a centralized repository where data teams define business metrics as code (e.g., using a framework like dbt [Semantic Layer](/terms/semantic-layer) or Cube). All downstream consumers - Tableau, Power BI, custom web apps, or AI chatbots - query the metric store rather than writing their own SQL against the [data warehouse](/terms/data-warehouse).
 
 ## How a Metric Store Works
 
@@ -21,7 +21,7 @@ A metric store relies on a semantic definition language (usually YAML). A data e
 2. **Measures**: The base aggregations (`sum(sales_amount)`).
 3. **Metrics**: The business logic built on top of measures. `Revenue = sum(sales_amount) - sum(discount_amount)`.
 
-When a BI tool requests "Revenue by Region for Q3," it does not send a complex SQL query. It sends a semantic request via API or standard JDBC proxy to the Metric Store. The Metric Store dynamically compiles the correct SQL query, executes it against the underlying lakehouse (Iceberg/Dremio), and returns the consistently calculated result.
+When a BI tool requests "Revenue by Region for Q3," it does not send a complex SQL query. It sends a semantic request via API or standard JDBC proxy to the Metric Store. The Metric Store dynamically compiles the correct SQL query, executes it against the underlying lakehouse (Iceberg/[Dremio](/terms/dremio)), and returns the consistently calculated result.
 
 ![Metric Store Architecture](/images/terms/metric_store.png)
 

@@ -13,25 +13,25 @@ Unity Catalog addresses this fragmentation by providing a single metastore that 
 
 Unity Catalog organizes data assets in a three-level namespace: catalog, schema (database), and table. This three-level hierarchy enables organizations to structure their data assets logically by environment (dev, staging, prod catalogs), by data domain (finance, marketing, operations catalogs within the prod environment), and by subject area (schemas within each domain catalog). Fine-grained access control can be applied at any level of the hierarchy, from catalog-wide grants to column-level policies on individual tables.
 
-## Unity Catalog and Apache Iceberg
+## Unity Catalog and [Apache Iceberg](/terms/apache-iceberg)
 
-Unity Catalog implements the Apache Iceberg REST Catalog specification, making Unity Catalog tables accessible to any Iceberg-compatible engine through the standard REST API. Apache Spark, Apache Flink, Trino, DuckDB, and other Iceberg-compatible engines can connect to Unity Catalog as an Iceberg REST catalog and read or write Iceberg tables registered in Unity Catalog without requiring the Databricks runtime.
+Unity Catalog implements the Apache [Iceberg REST Catalog](/terms/iceberg-rest-catalog) specification, making Unity Catalog tables accessible to any Iceberg-compatible engine through the standard REST API. [Apache Spark](/terms/apache-spark), [Apache Flink](/terms/apache-flink), [Trino](/terms/trino), [DuckDB](/terms/duckdb), and other Iceberg-compatible engines can connect to Unity Catalog as an Iceberg REST catalog and read or write Iceberg tables registered in Unity Catalog without requiring the Databricks runtime.
 
-This open Iceberg REST Catalog support is a significant architectural evolution for Unity Catalog. Earlier versions of Unity Catalog used a proprietary Delta Lake format as the primary table format and provided limited interoperability with non-Databricks engines. The Iceberg REST Catalog implementation enables Unity Catalog to serve as a multi-engine governance layer, positioning it more directly in competition with Apache Polaris as a vendor-neutral catalog option.
+This open Iceberg REST Catalog support is a significant architectural evolution for Unity Catalog. Earlier versions of Unity Catalog used a proprietary [Delta Lake](/terms/delta-lake) format as the primary table format and provided limited interoperability with non-Databricks engines. The Iceberg REST Catalog implementation enables Unity Catalog to serve as a multi-engine governance layer, positioning it more directly in competition with [Apache Polaris](/terms/apache-polaris) as a vendor-neutral catalog option.
 
 ![Unity Catalog Architecture](/images/terms/unity_catalog_architecture.png)
 
 ## Unity Catalog vs. Apache Polaris
 
-Unity Catalog and Apache Polaris serve similar functions as multi-engine Iceberg catalogs with RBAC governance and credential vending, but differ in key architectural and strategic dimensions.
+Unity Catalog and Apache Polaris serve similar functions as multi-engine Iceberg catalogs with RBAC governance and [credential vending](/terms/credential-vending), but differ in key architectural and strategic dimensions.
 
 Unity Catalog is tightly integrated with the Databricks platform. While it exposes an Iceberg REST Catalog API for external engines, its primary user experience is within Databricks notebooks, jobs, and SQL Warehouse. The Unity Catalog UI, access control model, and operational tooling are deeply Databricks-native. Organizations building entirely on Databricks benefit from this integration; organizations using multiple cloud platforms or non-Databricks compute may find Unity Catalog's Databricks coupling limiting.
 
 Apache Polaris is a fully open-source, vendor-neutral Iceberg REST Catalog with no runtime dependencies on any specific compute platform. Any engine that implements the Iceberg REST Catalog specification can use Polaris as its catalog without any Polaris-specific client code. Polaris is governed by the Apache Software Foundation and contributions come from multiple vendors, including Snowflake (which donated the initial implementation), Apple, and others, providing broader community governance than a single-vendor catalog.
 
-For organizations with Dremio-centric lakehouse architectures, Apache Polaris provides the most direct integration path, with Polaris's credential vending model and Dremio's native Polaris connector enabling deep governance integration between the catalog and query layers.
+For organizations with [Dremio](/terms/dremio)-centric lakehouse architectures, Apache Polaris provides the most direct integration path, with Polaris's credential vending model and Dremio's native Polaris connector enabling deep governance integration between the catalog and query layers.
 
-## Data Lineage and Auditing in Unity Catalog
+## [Data Lineage](/terms/data-lineage) and Auditing in Unity Catalog
 
 Unity Catalog captures column-level lineage automatically for SQL operations executed in Databricks, tracking which source columns contributed to each output column through transformations and joins. This automated column-level lineage is displayed in the Unity Catalog UI and available through the lineage API, providing comprehensive data provenance without any manual annotation.
 

@@ -13,7 +13,7 @@ But traditional partitioning implementations, particularly in Hive-compatible sy
 
 This partition literacy requirement creates multiple classes of problems. Analysts who do not know the partition scheme write non-pruned queries that consume enormous compute resources. Schema changes that restructure partitions (switching from monthly to daily partitioning, or changing the partition column name) require all existing queries to be updated simultaneously or risk performance degradation. Data engineers become a bottleneck as they field questions about partition schemes and review queries for partition-aware correctness.
 
-Apache Iceberg's hidden partitioning feature was designed to completely eliminate this problem. With hidden partitioning, the query author does not need to know how the table is physically organized; the query engine automatically derives the correct partition filter from the query's predicates, applying partition pruning transparently regardless of how the data is organized on disk.
+[Apache Iceberg](/terms/apache-iceberg)'s hidden partitioning feature was designed to completely eliminate this problem. With hidden partitioning, the query author does not need to know how the table is physically organized; the query engine automatically derives the correct partition filter from the query's predicates, applying partition pruning transparently regardless of how the data is organized on disk.
 
 ## How Hidden Partitioning Works
 
@@ -25,7 +25,7 @@ This decoupling of physical organization from analytical semantics is the core v
 
 ![Iceberg Hidden Partitioning](/images/terms/iceberg_hidden_partitioning.png)
 
-## Partition Evolution
+## [Partition Evolution](/terms/partition-evolution)
 
 The most powerful consequence of hidden partitioning is that it enables partition evolution: changing the physical partitioning scheme of a table without breaking any existing queries and without rewriting any existing data.
 
@@ -39,13 +39,13 @@ With Iceberg partition evolution, the data engineering team adds the new `day(ev
 
 Iceberg hidden partitioning supports multi-column partition specs, enabling sophisticated physical data organization strategies that remain transparent to query authors.
 
-A table partitioned by `(day(event_timestamp), identity(region))` organizes data files first by day, then by region within each day. Queries filtering on both `event_timestamp` and `region` receive two-dimensional pruning, dramatically reducing the files read for regional time-series analysis. Neither the `day()` transform nor the `region` partition column needs to appear explicitly in the analyst's query predicate; Iceberg's query planner automatically resolves both pruning dimensions from the raw column predicates.
+A table partitioned by `(day(event_timestamp), identity(region))` organizes data files first by day, then by region within each day. Queries filtering on both `event_timestamp` and `region` receive two-dimensional pruning, dramatically reducing the files read for regional time-series analysis. Neither the `day()` transform nor the `region` partition column needs to appear explicitly in the analyst's query predicate; Iceberg's [query planner](/terms/query-planner) automatically resolves both pruning dimensions from the raw column predicates.
 
 Bucket partitioning is particularly valuable for high-cardinality columns like `user_id` or `order_id`. A `bucket(256, user_id)` partition spec distributes rows evenly across 256 buckets based on the hash of `user_id`. Queries filtering on specific `user_id` values are automatically routed to the correct bucket, providing efficient lookup performance even on very high-cardinality identifiers that cannot be partitioned by identity (because there would be millions of distinct partitions, one per user).
 
-## Dremio and Hidden Partition Optimization
+## [Dremio](/terms/dremio) and Hidden Partition Optimization
 
-Dremio's query planner natively understands Iceberg's hidden partitioning metadata and applies partition pruning as part of its distributed query planning process. When Dremio generates an execution plan for a query against an Iceberg table, it reads the partition spec from the Iceberg metadata, derives the applicable partition filters from the query predicates, and passes only the relevant data file paths to the distributed scan operators. Analysts querying Iceberg tables through Dremio's Semantic Layer receive full hidden partition pruning benefits automatically, regardless of whether they are using Dremio's SQL editor, a connected BI tool, or an AI agent generating queries through the REST API.
+Dremio's query planner natively understands Iceberg's hidden partitioning metadata and applies partition pruning as part of its distributed query planning process. When Dremio generates an execution plan for a query against an Iceberg table, it reads the partition spec from the Iceberg metadata, derives the applicable partition filters from the query predicates, and passes only the relevant data file paths to the distributed scan operators. Analysts querying Iceberg tables through Dremio's [Semantic Layer](/terms/semantic-layer) receive full hidden partition pruning benefits automatically, regardless of whether they are using Dremio's SQL editor, a connected BI tool, or an AI agent generating queries through the REST API.
 
 ## Learn More
 

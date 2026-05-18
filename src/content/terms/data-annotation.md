@@ -11,7 +11,7 @@ Machine learning models, particularly deep neural networks, are incredibly power
 
 To teach the model, you must provide it with examples. You must show it 10,000 pictures of cats, and crucially, you must explicitly tell the model: "This picture contains a cat." 
 
-Data annotation (or data labeling) is the process of attaching these ground-truth metadata tags to raw, unstructured data. In supervised machine learning, the model looks at the raw data (the input), looks at the human-provided annotation (the target output), and mathematically adjusts its internal parameters to learn the mapping between the two.
+Data annotation (or data labeling) is the process of attaching these ground-truth metadata tags to raw, [unstructured data](/terms/unstructured-data). In supervised machine learning, the model looks at the raw data (the input), looks at the human-provided annotation (the target output), and mathematically adjusts its internal parameters to learn the mapping between the two.
 
 ## Types of Data Annotation
 

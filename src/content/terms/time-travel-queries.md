@@ -9,13 +9,13 @@ tags: ["Apache Iceberg", "Time Travel", "Data Versioning", "Data Lakehouse"]
 
 Every data engineering team eventually faces a class of problem that traditional data systems handle poorly: the need to understand what data looked like at a specific moment in the past. These needs arise constantly in production environments.
 
-A data scientist reports that a machine learning model's predictions began degrading on March 15th. To diagnose the root cause, the team needs to query the training dataset exactly as it existed on that date, before any subsequent ETL jobs may have modified, corrected, or augmented it. In a traditional data lake where files are overwritten in place, that historical state simply does not exist anymore.
+A data scientist reports that a machine learning model's predictions began degrading on March 15th. To diagnose the root cause, the team needs to query the training dataset exactly as it existed on that date, before any subsequent ETL jobs may have modified, corrected, or augmented it. In a traditional [data lake](/terms/data-lake) where files are overwritten in place, that historical state simply does not exist anymore.
 
 A financial auditor requires the exact balance sheet figures that the analytical database contained on December 31st at 11:59 PM, the values used to generate the annual report. Any corrections or late-arriving transactions processed after midnight would make today's query return different numbers than those actually reported. The auditor needs the as-of-date view.
 
 A data engineer deployed an incorrect transformation job that corrupted 6 months of historical revenue aggregates. The corrupted data was written over the correct historical records. The engineer needs to identify what the table contained before the bad job ran in order to restore the correct values.
 
-Apache Iceberg's Time Travel feature addresses all three of these scenarios through its snapshot-based versioning system. Every write to an Iceberg table creates an immutable, uniquely identified Snapshot. Time Travel queries navigate to a historical Snapshot and present the table as it existed at that moment, reading only the data files that were part of that snapshot.
+[Apache Iceberg](/terms/apache-iceberg)'s Time Travel feature addresses all three of these scenarios through its snapshot-based versioning system. Every write to an Iceberg table creates an immutable, uniquely identified Snapshot. Time Travel queries navigate to a historical Snapshot and present the table as it existed at that moment, reading only the data files that were part of that snapshot.
 
 ## Syntax and Query Mechanisms
 
@@ -45,9 +45,9 @@ SELECT * FROM sales_fact VERSION AS OF 'audit_2024_q4';
 
 ## Practical Use Cases
 
-**Incremental Processing**: Time travel enables efficient incremental data pipelines. Rather than tracking which records have changed since the last pipeline run through complex watermarking logic, a pipeline can query the difference between two Iceberg Snapshots directly. The `tableChanges()` API returns all records added, updated, or deleted between two snapshots, providing a clean, reliable incremental extraction mechanism.
+**[Incremental Processing](/terms/incremental-processing)**: Time travel enables efficient incremental data pipelines. Rather than tracking which records have changed since the last pipeline run through complex watermarking logic, a pipeline can query the difference between two Iceberg Snapshots directly. The `tableChanges()` API returns all records added, updated, or deleted between two snapshots, providing a clean, reliable incremental extraction mechanism.
 
-**Debugging and Root Cause Analysis**: When data quality issues are discovered, time travel allows engineers to query the table at the exact moment a specific ETL job ran, compare the pre-job and post-job states, and identify exactly which records were modified incorrectly. This debugging capability that would take days of log analysis in traditional systems takes minutes with Iceberg's time travel.
+**Debugging and Root Cause Analysis**: When [data quality](/terms/data-quality) issues are discovered, time travel allows engineers to query the table at the exact moment a specific ETL job ran, compare the pre-job and post-job states, and identify exactly which records were modified incorrectly. This debugging capability that would take days of log analysis in traditional systems takes minutes with Iceberg's time travel.
 
 **Model Reproducibility**: Machine learning models must be reproducible. A model trained on data as of a specific date must be retrained on the exact same data when a bug in the training pipeline is discovered. With Iceberg time travel, the training dataset can be reconstructed exactly by querying the snapshot active at the original training date, regardless of how many subsequent transformations have been applied to the table.
 
@@ -57,9 +57,9 @@ SELECT * FROM sales_fact VERSION AS OF 'audit_2024_q4';
 
 Time travel is only possible for Snapshots that have been retained. Retaining every Snapshot indefinitely would consume significant storage for the associated metadata and data files. Apache Iceberg provides the `expire_snapshots` procedure to remove old Snapshots and their associated unreferenced data files.
 
-The typical retention policy balances time travel needs against storage costs. A common configuration retains all Snapshots from the last seven days (for operational debugging) and keeps only tagged Snapshots indefinitely (for regulatory audit requirements). Dremio's Arctic (now Nessie-based) catalog management includes automated snapshot lifecycle management that enforces retention policies without requiring manual execution of the expire_snapshots procedure.
+The typical retention policy balances time travel needs against storage costs. A common configuration retains all Snapshots from the last seven days (for operational debugging) and keeps only tagged Snapshots indefinitely (for regulatory audit requirements). [Dremio](/terms/dremio)'s Arctic (now Nessie-based) catalog management includes automated snapshot lifecycle management that enforces retention policies without requiring manual execution of the expire_snapshots procedure.
 
-When Dremio queries Iceberg tables through its Semantic Layer, analysts can use time travel syntax in their SQL queries directly. This allows BI tools connected to Dremio to issue time travel queries transparently, without requiring direct access to the Iceberg metadata layer.
+When Dremio queries Iceberg tables through its [Semantic Layer](/terms/semantic-layer), analysts can use time travel syntax in their SQL queries directly. This allows BI tools connected to Dremio to issue time travel queries transparently, without requiring direct access to the Iceberg metadata layer.
 
 ## Learn More
 

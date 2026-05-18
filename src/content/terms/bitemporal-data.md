@@ -13,7 +13,7 @@ However, standard SCD Type 2 fails when dealing with retroactive corrections. Im
 
 If an auditor asks, "What did our database *think* the customer's address was on January 15th?", standard SCD Type 2 struggles. The database has been corrected to show New Jersey since Jan 1st. The fact that the database *temporarily contained incorrect information* has been lost.
 
-Bitemporal data modeling solves this by tracking data across two entirely independent timelines simultaneously:
+Bitemporal [data modeling](/terms/data-modeling) solves this by tracking data across two entirely independent timelines simultaneously:
 
 **1. Valid Time (State Time)**: The time period when the fact was true in the real world. (e.g., The customer actually lived in New Jersey starting Jan 1st).
 
@@ -44,7 +44,7 @@ By querying across both timelines, analysts can answer highly complex audit ques
 
 **"As-Was" Queries**: "What did the database *think* the state of the world was on January 15th?" (Query where Jan 15 falls between `valid_from` and `valid_to`, AND Jan 15 falls between `transaction_from` and `transaction_to`). This will return the incorrect "New York" record, perfectly recreating the state of the system for compliance auditing.
 
-## Bitemporal vs. Apache Iceberg Time Travel
+## Bitemporal vs. [Apache Iceberg](/terms/apache-iceberg) Time Travel
 
 Apache Iceberg provides built-in "Time Travel," allowing users to query past snapshots of a table. Iceberg Time Travel natively handles the *Transaction Time* dimension: it allows you to see the database exactly as it existed at a past timestamp. 
 

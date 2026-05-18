@@ -11,11 +11,11 @@ Data that is no longer needed has a cost: storage costs accumulate, metadata man
 
 Data retention policies define the rules for how long data must be retained (to meet operational, legal, and regulatory requirements) and when it must be deleted or archived (to control costs and comply with data minimization requirements). Different data categories have different retention requirements: financial transaction records may need to be retained for seven years for tax compliance, while user session logs may only need to be retained for 90 days.
 
-Implementing retention policies in traditional data warehouses (updating rows in tables) is straightforward but slow at scale. Implementing retention policies in a data lake (deleting specific files from object storage) requires careful coordination with the table format's metadata to avoid leaving orphaned references.
+Implementing retention policies in traditional data warehouses (updating rows in tables) is straightforward but slow at scale. Implementing retention policies in a [data lake](/terms/data-lake) (deleting specific files from [object storage](/terms/object-storage)) requires careful coordination with the table format's metadata to avoid leaving orphaned references.
 
-## Iceberg Snapshot Expiration
+## Iceberg [Snapshot Expiration](/terms/snapshot-expiration)
 
-Apache Iceberg provides built-in snapshot expiration that is the primary mechanism for enforcing time-based retention policies. Each Iceberg snapshot records all the data files that were part of the table at that point in time. When a snapshot is expired (removed from the snapshot timeline), any data files that were exclusively referenced by that snapshot (not referenced by any retained snapshot) are marked for deletion.
+[Apache Iceberg](/terms/apache-iceberg) provides built-in snapshot expiration that is the primary mechanism for enforcing time-based retention policies. Each Iceberg snapshot records all the data files that were part of the table at that point in time. When a snapshot is expired (removed from the snapshot timeline), any data files that were exclusively referenced by that snapshot (not referenced by any retained snapshot) are marked for deletion.
 
 The Iceberg `expire_snapshots` procedure accepts a minimum snapshot age or a minimum number of snapshots to retain, and removes all snapshots that fall outside these parameters. Expired snapshots' orphaned data files are either deleted immediately (if the delete function is configured) or marked for cleanup by a subsequent orphan file deletion step.
 

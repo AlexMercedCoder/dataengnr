@@ -17,7 +17,7 @@ Profiling a new data source before building a pipeline converts implicit assumpt
 
 **Column-level statistics**: For each column, compute null count, unique count, min/max values (for ordered types), mean/standard deviation (for numeric types), and value frequency distributions. A column with 30% null values may need null handling logic in the pipeline. A column with exactly one unique value is probably a constant and unlikely to be useful as a join key or filter predicate.
 
-**Relationship profiling**: Profile foreign key relationships by computing the join cardinality between tables. A customer_id that appears in the orders table but not in the customers table is an orphaned foreign key, indicating a data quality issue in the source system that the pipeline must handle.
+**Relationship profiling**: Profile foreign key relationships by computing the join cardinality between tables. A customer_id that appears in the orders table but not in the customers table is an orphaned foreign key, indicating a [data quality](/terms/data-quality) issue in the source system that the pipeline must handle.
 
 **Temporal profiling**: Profile time-series columns (event timestamps, record creation dates) to understand data freshness, gaps in the time series, and unexpected temporal patterns. A timestamp column that has no records for certain days may indicate source system outages that affect downstream metrics.
 
@@ -29,11 +29,11 @@ Profiling a new data source before building a pipeline converts implicit assumpt
 
 Several tools support automated data profiling against Iceberg tables:
 
-**Apache Spark**: Spark's `DataFrame.describe()` method computes basic column statistics (count, mean, stddev, min, max) for a DataFrame. Custom profiling jobs can extend this with null counts, unique counts, and distribution histograms. Spark's ability to read Iceberg tables directly enables profiling of lakehouse tables at scale.
+**[Apache Spark](/terms/apache-spark)**: Spark's `DataFrame.describe()` method computes basic column statistics (count, mean, stddev, min, max) for a DataFrame. Custom profiling jobs can extend this with null counts, unique counts, and distribution histograms. Spark's ability to read Iceberg tables directly enables profiling of lakehouse tables at scale.
 
 **Great Expectations**: Beyond validation, Great Expectations can generate data profiles through its `DataAssistant` and `Profiler` APIs, automatically deriving expectations from observed data distributions. These auto-generated expectations become the basis for ongoing quality monitoring.
 
-**Dremio**: Dremio's metadata management includes column-level statistics collected during query execution, which serve as lightweight profiling data. More detailed profiling can be run through Dremio SQL queries against Iceberg tables without requiring a Spark cluster.
+**[Dremio](/terms/dremio)**: Dremio's metadata management includes column-level statistics collected during query execution, which serve as lightweight profiling data. More detailed profiling can be run through Dremio SQL queries against Iceberg tables without requiring a Spark cluster.
 
 **dbt**: dbt's source freshness checks and `dbt_profiler` package provide profiling capabilities integrated into dbt's transformation workflow, enabling profiling of sources and intermediate models as part of the standard dbt run.
 

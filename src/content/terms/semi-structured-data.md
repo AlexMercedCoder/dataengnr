@@ -7,9 +7,9 @@ tags: ["Semi-Structured Data", "JSON", "Data Architecture", "Data Lakehouse", "D
 
 # Flexibility with Structure
 
-In the spectrum of data types, semi-structured data occupies the massive middle ground between the rigid rows-and-columns of structured data and the completely schema-less chaos of unstructured data (like raw text or images).
+In the spectrum of data types, semi-structured data occupies the massive middle ground between the rigid rows-and-columns of structured data and the completely schema-less chaos of [unstructured data](/terms/unstructured-data) (like raw text or images).
 
-Semi-structured data contains internal tags or markers that separate semantic elements and enforce hierarchies of records and fields within the data, but it does not conform to the strict, pre-defined tabular structure associated with relational databases. The most common formats are JSON (JavaScript Object Notation), XML (eXtensible Markup Language), and YAML.
+Semi-structured data contains internal tags or markers that separate semantic elements and enforce hierarchies of records and fields within the data, but it does not conform to the strict, pre-defined tabular structure associated with [relational databases](/terms/relational-databases). The most common formats are JSON (JavaScript Object Notation), XML (eXtensible Markup Language), and YAML.
 
 A JSON document representing a customer order might contain an array of purchased items (where some items have a `warranty` field and others don't), nested address objects, and variable-length tags. This flexibility is perfect for application developers: a backend API can easily serialize a complex object to JSON and send it over the wire, and developers can add new fields to the JSON payload without running slow, locking database schema migrations.
 
@@ -25,9 +25,9 @@ Furthermore, querying deeply nested JSON arrays using standard SQL was notorious
 
 ## Analyzing JSON in the Lakehouse
 
-The modern data lakehouse, powered by Apache Iceberg, handles semi-structured data fundamentally differently, treating it as a first-class citizen rather than an annoying string to be parsed.
+The modern [data lakehouse](/terms/data-lakehouse), powered by [Apache Iceberg](/terms/apache-iceberg), handles semi-structured data fundamentally differently, treating it as a first-class citizen rather than an annoying string to be parsed.
 
-**Schema Evolution**: When semi-structured JSON data lands in the Bronze layer, engines like Apache Spark or Dremio can automatically infer the schema (schema-on-read). If the JSON structure changes (e.g., a new field appears), Iceberg's schema evolution capabilities seamlessly update the table metadata without breaking the pipeline or rewriting existing data.
+**[Schema Evolution](/terms/schema-evolution)**: When semi-structured JSON data lands in the Bronze layer, engines like [Apache Spark](/terms/apache-spark) or [Dremio](/terms/dremio) can automatically infer the schema ([schema-on-read](/terms/schema-on-read)). If the JSON structure changes (e.g., a new field appears), Iceberg's schema evolution capabilities seamlessly update the table metadata without breaking the pipeline or rewriting existing data.
 
 **Flattening and Shredding**: When pipelines move semi-structured data from the Bronze layer to the Silver layer, they "flatten" it. Complex nested arrays of objects (like the items in an order) are unnested (using functions like Spark's `explode()`) into distinct rows, and nested objects are flattened into distinct columns. 
 

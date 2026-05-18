@@ -9,7 +9,7 @@ tags: ["Bloom Filters", "Apache Iceberg", "Query Optimization", "Data Engineerin
 
 A Bloom filter is a probabilistic data structure that answers membership queries: "Is this value definitely NOT in this set?" with 100% accuracy, and "Is this value possibly in this set?" with a configurable false positive rate. A Bloom filter can definitively rule out values that are not in the set, but it cannot guarantee that a value it reports as "possibly present" is actually present (it may be a false positive).
 
-For data engineering, this asymmetric accuracy is extremely useful for query optimization. When a query filters on a specific value (e.g., `WHERE order_id = 'ORD-12345'`), the query engine needs to determine which data files might contain a row with that order ID. Without a Bloom filter, the engine must either scan all data files (expensive) or rely on min/max statistics that are ineffective for high-cardinality string columns (min/max statistics tell you the alphabetically first and last order IDs in a file, but not whether a specific ID in the middle of that range is present).
+For data engineering, this asymmetric accuracy is extremely useful for [query optimization](/terms/query-optimization). When a query filters on a specific value (e.g., `WHERE order_id = 'ORD-12345'`), the query engine needs to determine which data files might contain a row with that order ID. Without a Bloom filter, the engine must either scan all data files (expensive) or rely on min/max statistics that are ineffective for high-cardinality string columns (min/max statistics tell you the alphabetically first and last order IDs in a file, but not whether a specific ID in the middle of that range is present).
 
 A Bloom filter on the order_id column in each data file provides a definitive answer for "not present" queries in microseconds, without reading the data file. A query engine checks the Bloom filter for each candidate file: if the filter returns "definitely not present," the file is skipped. Only files where the filter returns "possibly present" are read and scanned. For queries filtering on high-cardinality IDs (user IDs, order IDs, session IDs), Bloom filters can reduce the number of files read by 99%+.
 
@@ -23,9 +23,9 @@ The memory cost of a Bloom filter is much smaller than storing the actual values
 
 ![Bloom Filter Architecture](/images/terms/bloom_filters.png)
 
-## Bloom Filters in Apache Iceberg and Parquet
+## Bloom Filters in [Apache Iceberg](/terms/apache-iceberg) and Parquet
 
-Apache Parquet supports Bloom filters at the column level within each row group. Bloom filters are written for specified columns when data files are created, stored in the Parquet file's footer alongside the column statistics. Query engines (Dremio, Spark, Trino) check the Bloom filter for each row group before reading that row group's data, skipping row groups where the filter rules out the query value.
+[Apache Parquet](/terms/apache-parquet) supports Bloom filters at the column level within each row group. Bloom filters are written for specified columns when data files are created, stored in the Parquet file's footer alongside the column statistics. Query engines ([Dremio](/terms/dremio), Spark, [Trino](/terms/trino)) check the Bloom filter for each row group before reading that row group's data, skipping row groups where the filter rules out the query value.
 
 Apache Iceberg extends Bloom filter support to the file level through its content file statistics. Iceberg's manifest files record per-column statistics (min, max, null count) for each data file. Iceberg does not natively support file-level Bloom filters in the manifest metadata, but Parquet-level Bloom filters within each data file provide row-group-level filtering.
 

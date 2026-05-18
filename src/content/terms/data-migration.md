@@ -7,7 +7,7 @@ tags: ["Data Migration", "Data Architecture", "Cloud Computing", "Data Engineeri
 
 # Moving the Mountain
 
-The transition from legacy on-premises data warehouses (like Teradata or Oracle) or first-generation Hadoop clusters to modern cloud data lakehouses (using Apache Iceberg) is rarely a simple "copy-paste" operation. 
+The transition from legacy on-premises data warehouses (like Teradata or Oracle) or first-generation Hadoop clusters to modern cloud data lakehouses (using [Apache Iceberg](/terms/apache-iceberg)) is rarely a simple "copy-paste" operation. 
 
 Data migration is the highly planned, complex engineering process of transferring data, schema definitions, and transformation logic from a source system to a target system. Because the source system is typically powering critical daily business operations, a migration must be executed without data loss, without corrupting data integrity, and ideally with minimal downtime for the business users.
 
@@ -17,15 +17,15 @@ A successful migration is not just moving bytes over a network; it is an opportu
 
 A massive enterprise data migration typically follows a structured, multi-phase approach:
 
-**1. Assessment and Profiling**: The team audits the legacy system to identify what data actually needs to move. Often, 30% of a legacy data warehouse consists of abandoned tables and obsolete reports. Profiling identifies dependencies, data quality issues, and the specific SQL dialects that must be rewritten for the new engine.
+**1. Assessment and Profiling**: The team audits the legacy system to identify what data actually needs to move. Often, 30% of a legacy [data warehouse](/terms/data-warehouse) consists of abandoned tables and obsolete reports. Profiling identifies dependencies, [data quality](/terms/data-quality) issues, and the specific SQL dialects that must be rewritten for the new engine.
 
 **2. Schema Translation and Provisioning**: The physical table structures are mapped to the new system. A proprietary legacy schema is translated into open Apache Iceberg table definitions. 
 
 **3. Initial Bulk Load (The Big Bang)**: The historical data is extracted from the legacy system and loaded into the cloud lakehouse. For petabyte-scale migrations, this is often done using physical hard drives shipped to the cloud provider (e.g., AWS Snowball) because transferring petabytes over the internet would take months.
 
-**4. Change Data Capture (CDC) and Sync**: While the bulk load is happening, the legacy system is still receiving new data. CDC tools (like Debezium or GoldenGate) are used to capture every new transaction in the legacy system and replicate it to the new lakehouse, ensuring the two systems remain perfectly synchronized.
+**4. [Change Data Capture (CDC)](/terms/change-data-capture) and Sync**: While the bulk load is happening, the legacy system is still receiving new data. CDC tools (like Debezium or GoldenGate) are used to capture every new transaction in the legacy system and replicate it to the new lakehouse, ensuring the two systems remain perfectly synchronized.
 
-**5. Cutover**: The moment of truth. The BI dashboards and downstream applications are repointed from the legacy system to the new lakehouse (e.g., routing Tableau from Teradata to Dremio). Once the cutover is validated, the legacy system is decommissioned.
+**5. Cutover**: The moment of truth. The BI dashboards and downstream applications are repointed from the legacy system to the new lakehouse (e.g., routing Tableau from Teradata to [Dremio](/terms/dremio)). Once the cutover is validated, the legacy system is decommissioned.
 
 ![Data Migration Architecture](/images/terms/data_migration.png)
 

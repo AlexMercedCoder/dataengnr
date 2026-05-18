@@ -7,7 +7,7 @@ tags: ["Property Graphs", "Graph Databases", "Data Modeling", "Data Engineering"
 
 # Modeling the Connections
 
-Relational databases (like PostgreSQL) are exceptional at storing highly structured, tabular data. However, they struggle immensely when tasked with querying deep, complex relationships. 
+[Relational databases](/terms/relational-databases) (like PostgreSQL) are exceptional at storing highly structured, tabular data. However, they struggle immensely when tasked with querying deep, complex relationships. 
 
 If you want to find "the friends of the friends of the friends of User A who also bought Product B," a relational database requires a series of massive `JOIN` operations across massive tables. As the network depth increases (from friends, to friends-of-friends, to third-degree connections), the SQL query becomes an unreadable nightmare, and the performance degrades exponentially.
 

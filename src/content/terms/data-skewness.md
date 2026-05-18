@@ -17,7 +17,7 @@ Skewness manifests in different forms. **Partition skewness** occurs when data i
 
 Skewness is detected through examining task-level timing metrics in the Spark UI or Flink Dashboard. If the median task duration is 5 seconds but the maximum task duration is 5 minutes, severe skewness is present. The ratio of max to median task duration is the primary skewness indicator.
 
-In Apache Iceberg tables, skewness at the file level is visible through the metadata layer: manifests that list files with dramatically different sizes indicate skew. Files produced by streaming pipelines that write per-event or per-micro-batch before compaction are uniformly small (under-sized), but after compaction, if partition-level skew exists, some partitions will have many more large files than others.
+In [Apache Iceberg](/terms/apache-iceberg) tables, skewness at the file level is visible through the metadata layer: manifests that list files with dramatically different sizes indicate skew. Files produced by streaming pipelines that write per-event or per-micro-batch before [compaction](/terms/compaction) are uniformly small (under-sized), but after compaction, if partition-level skew exists, some partitions will have many more large files than others.
 
 ![Data Skewness and Solutions](/images/terms/data_skewness.png)
 
@@ -27,11 +27,11 @@ In Apache Iceberg tables, skewness at the file level is visible through the meta
 
 **Spark AQE (Adaptive Query Execution)**: Spark's AQE feature automatically detects skewed partitions at runtime and splits them into smaller sub-partitions before executing the join, without requiring any manual salting or query rewrite. AQE skew join optimization is the preferred first approach for Spark workloads before resorting to manual salting.
 
-**Improved partitioning**: For partition skewness, the long-term solution is to choose partition columns with more uniform distribution. For Iceberg tables, partition evolution enables changing the partition strategy without data rewriting, allowing gradual migration to a better-distributed partition column.
+**Improved partitioning**: For partition skewness, the long-term solution is to choose partition columns with more uniform distribution. For Iceberg tables, [partition evolution](/terms/partition-evolution) enables changing the partition strategy without data rewriting, allowing gradual migration to a better-distributed partition column.
 
 **Pre-aggregation**: For aggregation skewness, pushing aggregations into the map phase before the reduce phase (two-stage aggregation) distributes the reduction work across many workers rather than concentrating it in a few reducers.
 
-Dremio's distributed query engine applies its own optimizer-level handling for skew-prone operations, using adaptive work distribution to rebalance tasks when runtime statistics reveal imbalance, providing automatic skewness mitigation without requiring query-level intervention.
+[Dremio](/terms/dremio)'s distributed query engine applies its own optimizer-level handling for skew-prone operations, using adaptive work distribution to rebalance tasks when runtime statistics reveal imbalance, providing automatic skewness mitigation without requiring query-level intervention.
 
 ## Learn More
 

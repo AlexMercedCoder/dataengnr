@@ -5,9 +5,9 @@ date: 2026-05-17
 tags: ["Apache Airflow", "Workflow Orchestration", "Data Pipelines", "Data Engineering"]
 ---
 
-# The Pipeline Orchestration Problem
+# The Pipeline [Orchestration](/terms/orchestration) Problem
 
-Data pipelines in production environments are rarely simple, linear chains of steps that always succeed. A production data pipeline for a financial analytics platform might involve 40 interdependent tasks: extracting data from three source systems, validating schema compatibility, running parallel transformation jobs, executing data quality checks, building Silver and Gold layer tables, refreshing BI dashboards, and sending success notifications. These tasks have complex dependency relationships (Task C cannot start until both Task A and Task B have completed successfully), must run on a schedule (daily at 3 AM), and must handle failures gracefully (retry failed tasks three times, alert on persistent failure, skip downstream dependents when an upstream task fails).
+Data pipelines in production environments are rarely simple, linear chains of steps that always succeed. A production data pipeline for a financial analytics platform might involve 40 interdependent tasks: extracting data from three source systems, validating schema compatibility, running parallel transformation jobs, executing [data quality](/terms/data-quality) checks, building Silver and Gold layer tables, refreshing BI dashboards, and sending success notifications. These tasks have complex dependency relationships (Task C cannot start until both Task A and Task B have completed successfully), must run on a schedule (daily at 3 AM), and must handle failures gracefully (retry failed tasks three times, alert on persistent failure, skip downstream dependents when an upstream task fails).
 
 Apache Airflow is the most widely deployed open-source solution for this class of problem. Airflow allows data engineers to define their pipeline workflows as Directed Acyclic Graphs (DAGs) in Python code, schedule those DAGs to run on configurable triggers, monitor their execution through a rich web UI, and manage failures through configurable retry policies, alerting mechanisms, and manual intervention capabilities.
 
@@ -23,11 +23,11 @@ The dependency structure between tasks is defined through the `>>` operator or e
 
 ## Airflow in the Lakehouse Pipeline
 
-Apache Airflow is the standard orchestration layer for complex Medallion Architecture pipelines. A typical lakehouse Airflow DAG orchestrates the complete Bronze-to-Gold pipeline: scheduling the Debezium CDC extraction to begin, waiting for the raw data to land in the Bronze Iceberg table, triggering the Spark transformation job that processes the Bronze-to-Silver layer, running dbt tests on the Silver tables, triggering the Gold layer aggregation jobs, refreshing Dremio Data Reflections for the updated Gold tables, and sending a pipeline completion notification to the Slack channel.
+Apache Airflow is the standard orchestration layer for complex [Medallion Architecture](/terms/medallion-architecture) pipelines. A typical lakehouse Airflow DAG orchestrates the complete Bronze-to-Gold pipeline: scheduling the Debezium CDC extraction to begin, waiting for the raw data to land in the Bronze Iceberg table, triggering the Spark transformation job that processes the Bronze-to-Silver layer, running dbt tests on the Silver tables, triggering the Gold layer aggregation jobs, refreshing [Dremio](/terms/dremio) Data Reflections for the updated Gold tables, and sending a pipeline completion notification to the Slack channel.
 
 Airflow's sensor tasks allow pipelines to wait for external conditions. An S3Sensor waits until a specific file appears in S3 before triggering downstream tasks. An IcebergTableSensor waits until a new Iceberg snapshot has been committed to a specific table. These sensors enable event-driven pipeline patterns where downstream jobs automatically trigger when upstream data is ready, without requiring fixed schedule offsets.
 
-Airflow integrates with Apache Iceberg pipelines through Spark, dbt, and direct Python Iceberg API calls. The `PyIceberg` library allows Airflow PythonOperator tasks to directly interact with Iceberg catalog APIs for catalog metadata operations (creating tables, running snapshot expiration, triggering compaction) without spawning a full Spark cluster for catalog-only operations.
+Airflow integrates with [Apache Iceberg](/terms/apache-iceberg) pipelines through Spark, dbt, and direct Python Iceberg API calls. The `PyIceberg` library allows Airflow PythonOperator tasks to directly interact with Iceberg catalog APIs for catalog metadata operations (creating tables, running [snapshot expiration](/terms/snapshot-expiration), triggering [compaction](/terms/compaction)) without spawning a full Spark cluster for catalog-only operations.
 
 ## Managed Airflow Services
 

@@ -23,17 +23,17 @@ The columnar layout enables CPU-level performance optimizations. Modern CPUs pro
 
 ![Apache Arrow Columnar Memory](/images/terms/apache_arrow_columnar.png)
 
-## Arrow Flight: High-Performance Data Transport
+## [Arrow Flight](/terms/arrow-flight): High-Performance Data Transport
 
 Arrow Flight is a high-performance RPC (Remote Procedure Call) framework built on top of Apache Arrow and gRPC that enables efficient streaming data transport between systems using the Arrow columnar format. Where traditional data APIs serialize data into row-oriented formats for network transmission, Arrow Flight streams data in Arrow columnar batches, preserving the columnar layout across the network boundary.
 
 The performance implications are significant. An Arrow Flight server can stream data to a client at network-saturating speeds with minimal CPU overhead because no serialization conversion is required. The Arrow-format data batches written to the network are directly usable by the receiving client's Arrow-capable query engine without deserialization.
 
-Dremio uses Arrow Flight as the primary data transfer protocol for its client connections. When a Python client (using PyArrow), a BI tool, or another query engine connects to Dremio and executes a query, results are streamed back through Arrow Flight in Arrow columnar format. A Python data scientist receiving Dremio query results through Arrow Flight gets an Arrow Table object that can be directly converted to a pandas DataFrame or a Polars DataFrame with zero data copying, representing a dramatic reduction in query-to-analysis latency compared to traditional JDBC/ODBC connections that transmit data as CSV or binary row formats.
+[Dremio](/terms/dremio) uses Arrow Flight as the primary data transfer protocol for its client connections. When a Python client (using PyArrow), a BI tool, or another query engine connects to Dremio and executes a query, results are streamed back through Arrow Flight in Arrow columnar format. A Python data scientist receiving Dremio query results through Arrow Flight gets an Arrow Table object that can be directly converted to a pandas DataFrame or a [Polars](/terms/polars) DataFrame with zero data copying, representing a dramatic reduction in query-to-analysis latency compared to traditional JDBC/ODBC connections that transmit data as CSV or binary row formats.
 
 ## Arrow and Parquet: The Performance Foundation
 
-Apache Arrow and Apache Parquet are complementary technologies that together form the performance foundation of the modern data lakehouse. Parquet is the on-disk columnar storage format; Arrow is the in-memory columnar processing format. Data flows from disk to memory through a Parquet-to-Arrow decoding process that is highly optimized to exploit the structural similarities between the two columnar formats.
+Apache Arrow and [Apache Parquet](/terms/apache-parquet) are complementary technologies that together form the performance foundation of the modern [data lakehouse](/terms/data-lakehouse). Parquet is the on-disk columnar storage format; Arrow is the in-memory columnar processing format. Data flows from disk to memory through a Parquet-to-Arrow decoding process that is highly optimized to exploit the structural similarities between the two columnar formats.
 
 When Dremio reads a Parquet file from an Iceberg table, it decodes the Parquet columnar data directly into Arrow columnar memory buffers. Because both formats are columnar and use similar encoding strategies, this decoding process is extremely efficient, with the decoded Arrow buffers immediately ready for vectorized query processing without any intermediate reformatting. This Parquet-to-Arrow pipeline is the critical performance path that enables Dremio and other Arrow-native engines to deliver interactive query performance on petabyte-scale lakehouses.
 

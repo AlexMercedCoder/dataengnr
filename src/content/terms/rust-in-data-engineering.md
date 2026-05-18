@@ -7,7 +7,7 @@ tags: ["Rust", "Data Engineering", "DataFusion", "Performance", "Data Tools"]
 
 # Memory Safety Meets Analytical Performance
 
-The data engineering ecosystem has historically been dominated by JVM-based tools (Apache Spark, Apache Flink, Apache Kafka, Apache Iceberg Java library) and Python tools (pandas, PyIceberg, dbt). JVM tools provide the strong ecosystem and the garbage collector manages memory, but garbage collection pauses, JVM startup overhead, and JVM memory overhead create operational challenges. Python tools are accessible and expressive but limited by the GIL (Global Interpreter Lock) for true CPU parallelism and Python's interpreted execution speed.
+The data engineering ecosystem has historically been dominated by JVM-based tools ([Apache Spark](/terms/apache-spark), [Apache Flink](/terms/apache-flink), [Apache Kafka](/terms/apache-kafka), [Apache Iceberg](/terms/apache-iceberg) Java library) and Python tools (pandas, [PyIceberg](/terms/pyiceberg), dbt). JVM tools provide the strong ecosystem and the garbage collector manages memory, but garbage collection pauses, JVM startup overhead, and JVM memory overhead create operational challenges. Python tools are accessible and expressive but limited by the GIL (Global Interpreter Lock) for true CPU parallelism and Python's interpreted execution speed.
 
 Rust has emerged as a third path: a systems programming language that provides C/C++-level performance (zero garbage collection pauses, minimal runtime overhead, native binary compilation) with memory safety guaranteed at compile time through its ownership and borrowing system. Rust programs cannot have buffer overflows, use-after-free bugs, or data races, enforced by the compiler's type system rather than runtime checks.
 
@@ -15,13 +15,13 @@ For data engineering tooling, Rust's combination of native performance and memor
 
 ## Key Rust Projects in Data Engineering
 
-**Apache Arrow DataFusion**: DataFusion is an in-process SQL query engine and query planning framework implemented in Rust on top of the Apache Arrow columnar memory format. DataFusion executes SQL queries against Arrow RecordBatches with vectorized SIMD execution, multi-threaded parallelism, and a cost-based query optimizer. DataFusion is the engine powering several data tools: InfluxDB IOx (time series), Ballista (distributed query), GlareDB (analytical database), and it serves as the query backbone for tools querying Iceberg tables through the iceberg-rust library.
+**[Apache Arrow](/terms/apache-arrow) DataFusion**: DataFusion is an in-process SQL query engine and query planning framework implemented in Rust on top of the Apache Arrow columnar memory format. DataFusion executes SQL queries against Arrow RecordBatches with vectorized SIMD execution, multi-threaded parallelism, and a cost-based query optimizer. DataFusion is the engine powering several data tools: InfluxDB IOx (time series), Ballista (distributed query), GlareDB (analytical database), and it serves as the query backbone for tools querying Iceberg tables through the iceberg-rust library.
 
 **iceberg-rust**: The official Apache Iceberg library for Rust provides a native Rust implementation of the Iceberg table format specification. iceberg-rust enables reading and writing Iceberg tables from Rust programs without a JVM dependency. Combined with DataFusion, iceberg-rust provides a complete SQL-over-Iceberg execution stack in pure Rust with no JVM requirement, making it suitable for embedding analytical query capabilities in Rust applications and edge/embedded environments.
 
-**delta-rs**: The official Delta Lake library for Rust (also exposing a Python API through PyO3). delta-rs reads and writes Delta Lake tables from Rust and Python without requiring Spark or a JVM. It powers tools like DeltaDiff and the popular `deltalake` Python package used by data scientists for lightweight Delta Lake access.
+**delta-rs**: The official [Delta Lake](/terms/delta-lake) library for Rust (also exposing a Python API through PyO3). delta-rs reads and writes Delta Lake tables from Rust and Python without requiring Spark or a JVM. It powers tools like DeltaDiff and the popular `deltalake` Python package used by data scientists for lightweight Delta Lake access.
 
-**Polars**: While Polars exposes a Python API, its execution engine is entirely implemented in Rust. The performance characteristics of Polars (described in the Polars article) derive from Rust's native execution on Arrow memory, parallel execution across all CPU cores, and zero-copy data sharing.
+**[Polars](/terms/polars)**: While Polars exposes a Python API, its execution engine is entirely implemented in Rust. The performance characteristics of Polars (described in the Polars article) derive from Rust's native execution on Arrow memory, parallel execution across all CPU cores, and zero-copy [data sharing](/terms/data-sharing).
 
 ![Rust in Data Engineering](/images/terms/rust_data_engineering.png)
 
@@ -37,7 +37,7 @@ ctx.register_table("sales", Arc::new(table))?;
 let df = ctx.sql("SELECT region, SUM(revenue) FROM sales GROUP BY region").await?;
 ```
 
-This Rust-native query path reads Iceberg metadata, applies partition pruning and column statistics for data skipping, reads Parquet data files in parallel across multiple CPU threads, and executes the SQL aggregation in vectorized Arrow computation, all in a single Rust binary without JVM, Python, or external query engine. The result is ultra-low latency, ultra-low memory overhead Iceberg query execution suitable for edge analytics, embedded systems, and high-performance microservices.
+This Rust-native query path reads Iceberg metadata, applies partition pruning and column statistics for [data skipping](/terms/data-skipping), reads Parquet data files in parallel across multiple CPU threads, and executes the SQL aggregation in vectorized Arrow computation, all in a single Rust binary without JVM, Python, or external query engine. The result is ultra-low latency, ultra-low memory overhead Iceberg query execution suitable for edge analytics, embedded systems, and high-performance [microservices](/terms/microservices).
 
 ## Learn More
 

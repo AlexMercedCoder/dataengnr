@@ -23,15 +23,15 @@ Over time, this results in conflicting truths across the organization: the marke
 
 ## Breaking Down Silos with the Lakehouse
 
-The historical solution to data silos was the enterprise data warehouse: extract all data from all silos and load it into a central relational database. This often failed due to the rigid schema requirements of warehouses and the massive effort required to model every department's data into a single, unified enterprise schema.
+The historical solution to data silos was the enterprise [data warehouse](/terms/data-warehouse): extract all data from all silos and load it into a central relational database. This often failed due to the rigid schema requirements of warehouses and the massive effort required to model every department's data into a single, unified enterprise schema.
 
-The data lakehouse provides a more agile approach to breaking down data silos:
+The [data lakehouse](/terms/data-lakehouse) provides a more agile approach to breaking down data silos:
 
-**1. Centralized Storage, Flexible Schema**: Data from all silos (SaaS APIs, relational databases, flat files) is ingested in its raw form into the Bronze layer of an Iceberg lakehouse on cheap object storage. The lakehouse accepts unstructured and semi-structured data immediately, eliminating the bottleneck of upfront schema design.
+**1. Centralized Storage, Flexible Schema**: Data from all silos (SaaS APIs, [relational databases](/terms/relational-databases), flat files) is ingested in its raw form into the Bronze layer of an Iceberg lakehouse on cheap [object storage](/terms/object-storage). The lakehouse accepts unstructured and [semi-structured data](/terms/semi-structured-data) immediately, eliminating the bottleneck of upfront schema design.
 
-**2. Incremental Conformation**: Instead of a massive enterprise modeling effort, data engineers incrementally clean and join the data in the Silver layer as business use cases demand. Zendesk tickets and Salesforce accounts are joined using dbt models to answer specific analytical questions, creating connected data products without waiting for a complete enterprise model.
+**2. Incremental Conformation**: Instead of a massive enterprise modeling effort, data engineers incrementally clean and join the data in the Silver layer as business use cases demand. Zendesk tickets and Salesforce accounts are joined using dbt models to answer specific analytical questions, creating connected [data products](/terms/data-products) without waiting for a complete enterprise model.
 
-**3. Federated Access**: For operational databases that cannot be easily ingested, query engines like Dremio provide data federation, allowing analysts to query across the lakehouse and operational databases simultaneously, bridging physical silos through logical integration.
+**3. Federated Access**: For operational databases that cannot be easily ingested, query engines like [Dremio](/terms/dremio) provide data federation, allowing analysts to query across the lakehouse and operational databases simultaneously, bridging physical silos through logical integration.
 
 ## Learn More
 

@@ -21,9 +21,9 @@ This is achieved using a Directed Acyclic Graph (DAG). A DAG is a conceptual rep
 
 ![DAG Architecture](/images/terms/dag_architecture.png)
 
-## DAGs in Practice: Orchestration
+## DAGs in Practice: [Orchestration](/terms/orchestration)
 
-The concept of the DAG is the foundational architecture for modern data orchestration tools, most notably Apache Airflow, Prefect, and Dagster.
+The concept of the DAG is the foundational architecture for modern data orchestration tools, most notably [Apache Airflow](/terms/apache-airflow), Prefect, and Dagster.
 
 When a data engineer writes an Airflow pipeline in Python, they are explicitly constructing a DAG. They define the individual operators (tasks) and use bitshift operators (`Task_A >> Task_B`) to define the directed edges. Airflow then reads this code and renders a visual graph of the pipeline.
 

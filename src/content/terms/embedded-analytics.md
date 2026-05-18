@@ -21,15 +21,15 @@ Embedded analytics can be implemented at varying levels of complexity and integr
 
 **2. Component Embedding**: Modern BI platforms provide JavaScript libraries or SDKs (Software Development Kits) that allow developers to embed specific charts or dashboard components natively into their application framework (React, Vue, Angular). This allows for deep integration: clicking a bar chart in the embedded analytics component can trigger an action in the host application's UI.
 
-**3. Custom API-Driven Analytics (Headless)**: The most advanced level. The application uses a Headless BI layer (a Metric Store) to query the data via API and uses modern frontend charting libraries (D3.js, Chart.js, Recharts) to render the visualizations completely from scratch. This provides total control over the user experience and pixel-perfect brand alignment.
+**3. Custom API-Driven Analytics (Headless)**: The most advanced level. The application uses a [Headless BI](/terms/headless-bi) layer (a [Metric Store](/terms/metric-store)) to query the data via API and uses modern frontend charting libraries (D3.js, Chart.js, Recharts) to render the visualizations completely from scratch. This provides total control over the user experience and pixel-perfect brand alignment.
 
 ![Embedded Analytics Architecture](/images/terms/embedded_analytics.png)
 
 ## Architectural Requirements
 
-Embedded analytics demands a highly scalable and performant underlying data architecture. A traditional BI dashboard used by 50 internal analysts has very different performance requirements than an embedded dashboard exposed to 50,000 external customers using a SaaS platform.
+Embedded analytics demands a highly scalable and performant underlying [data architecture](/terms/data-architecture). A traditional BI dashboard used by 50 internal analysts has very different performance requirements than an embedded dashboard exposed to 50,000 external customers using a SaaS platform.
 
-When embedding analytics in a customer-facing product, the underlying data platform (like an Iceberg lakehouse) must handle high-concurrency, low-latency API requests. Technologies like Dremio, which utilize Data Reflections to accelerate queries to sub-second response times, are critical. If the embedded dashboard takes 10 seconds to load while the rest of the application loads instantly, the user experience is ruined, and the analytics feature will be abandoned. Furthermore, strict multi-tenant Row-Level Security (RLS) must be enforced at the semantic layer to ensure a user only sees their own data within the embedded view.
+When embedding analytics in a customer-facing product, the underlying data platform (like an Iceberg lakehouse) must handle high-concurrency, low-latency API requests. Technologies like [Dremio](/terms/dremio), which utilize Data Reflections to accelerate queries to sub-second response times, are critical. If the embedded dashboard takes 10 seconds to load while the rest of the application loads instantly, the user experience is ruined, and the analytics feature will be abandoned. Furthermore, strict multi-tenant [Row-Level Security](/terms/row-level-security) (RLS) must be enforced at the [semantic layer](/terms/semantic-layer) to ensure a user only sees their own data within the embedded view.
 
 ## Learn More
 

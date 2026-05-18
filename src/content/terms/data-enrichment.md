@@ -25,9 +25,9 @@ Data enrichment is the pipeline process of augmenting this raw, sparse data with
 
 ## Enrichment in the Pipeline Architecture
 
-Enrichment typically occurs during the transition from the Bronze (raw) layer to the Silver (conformed) layer in a Medallion architecture, or occasionally in the Gold (business) layer for highly specific use cases.
+Enrichment typically occurs during the transition from the Bronze (raw) layer to the Silver (conformed) layer in a [Medallion architecture](/terms/medallion-architecture), or occasionally in the Gold (business) layer for highly specific use cases.
 
-**Batch Enrichment**: For data that is processed daily or hourly, enrichment is performed through SQL JOINs against dimension tables or API calls within Python/Spark processing jobs.
+**Batch Enrichment**: For data that is processed daily or hourly, enrichment is performed through SQL JOINs against [dimension tables](/terms/dimension-tables) or API calls within Python/Spark processing jobs.
 
 **Streaming Enrichment**: For real-time pipelines, enrichment must happen in flight. A Flink job consuming Kafka events performs "enrichment joins": joining the fast-moving event stream against a slow-moving dimension table (like a user profile database). Because calling external APIs for every event in a high-throughput stream causes massive bottlenecks and API rate limiting, streaming enrichment often relies on local caches or specialized key-value stores (like Redis) loaded with the reference data.
 

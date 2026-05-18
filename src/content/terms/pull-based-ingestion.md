@@ -7,15 +7,15 @@ tags: ["Pull-Based Ingestion", "ETL", "Batch Processing", "Data Architecture", "
 
 # Extracting the Data
 
-Unlike push-based ingestion where source systems actively send data, pull-based ingestion is a proactive strategy initiated by the data platform. In this architecture, the central data engineering pipeline (using tools like Airbyte, Fivetran, or custom Airflow Python scripts) reaches into the source system on a scheduled basis to extract (pull) the data it needs.
+Unlike [push-based ingestion](/terms/push-based-ingestion) where source systems actively send data, pull-based ingestion is a proactive strategy initiated by the data platform. In this architecture, the central data engineering pipeline (using tools like Airbyte, Fivetran, or custom Airflow Python scripts) reaches into the source system on a scheduled basis to extract (pull) the data it needs.
 
-If an organization needs to analyze its daily sales, an Airflow DAG triggers a job every night at 2:00 AM. The job connects via JDBC to the operational PostgreSQL database backing the sales application, executes a `SELECT * FROM sales WHERE created_at > [last_run_date]`, pulls the resulting records across the network, and writes them into the Bronze layer of the Iceberg data lakehouse.
+If an organization needs to analyze its daily sales, an Airflow DAG triggers a job every night at 2:00 AM. The job connects via JDBC to the operational PostgreSQL database backing the sales application, executes a `SELECT * FROM sales WHERE created_at > [last_run_date]`, pulls the resulting records across the network, and writes them into the Bronze layer of the Iceberg [data lakehouse](/terms/data-lakehouse).
 
 ## Benefits of Pull-Based Ingestion
 
 **No Burden on Software Developers**: The primary advantage of pull-based ingestion is that it requires zero custom code from the teams building the source applications. The data engineering team simply requests read-only database credentials and handles the entire extraction process using standard ETL connectors. 
 
-**Reliability and Backfilling**: Pull-based systems are inherently robust. If the overnight ETL job fails because the network drops, the orchestrator simply retries it an hour later. If the data team realizes they need an extra column from the source database, they simply update their `SELECT` query to pull it, and they can easily pull the entire historical table (a full refresh) to backfill the data lakehouse.
+**Reliability and [Backfilling](/terms/backfilling)**: Pull-based systems are inherently robust. If the overnight ETL job fails because the network drops, the orchestrator simply retries it an hour later. If the data team realizes they need an extra column from the source database, they simply update their `SELECT` query to pull it, and they can easily pull the entire historical table (a full refresh) to backfill the data lakehouse.
 
 ![Pull-Based Ingestion Architecture](/images/terms/pull_ingestion.png)
 

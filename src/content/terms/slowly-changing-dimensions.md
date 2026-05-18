@@ -7,9 +7,9 @@ tags: ["Slowly Changing Dimensions", "SCD", "Dimensional Modeling", "Data Wareho
 
 # When Dimension Data Changes
 
-Dimension tables in a star schema describe the context of business events: who, what, where. These descriptions change over time. A customer moves to a different city. A product is reclassified into a new category. A salesperson transfers to a different region. A store is renamed or rebranded.
+[Dimension tables](/terms/dimension-tables) in a [star schema](/terms/star-schema) describe the context of business events: who, what, where. These descriptions change over time. A customer moves to a different city. A product is reclassified into a new category. A salesperson transfers to a different region. A store is renamed or rebranded.
 
-How the data warehouse handles these changes determines the accuracy of historical analysis. If a customer's city changes from "New York" to "Austin" and the customer record is simply overwritten with the new city, all historical sales for that customer will appear to have come from Austin, even those that actually occurred when the customer lived in New York. A regional revenue analysis for New York City will undercount historical sales because some genuinely New York sales are now attributed to Austin.
+How the [data warehouse](/terms/data-warehouse) handles these changes determines the accuracy of historical analysis. If a customer's city changes from "New York" to "Austin" and the customer record is simply overwritten with the new city, all historical sales for that customer will appear to have come from Austin, even those that actually occurred when the customer lived in New York. A regional revenue analysis for New York City will undercount historical sales because some genuinely New York sales are now attributed to Austin.
 
 Slowly Changing Dimensions (SCD) are the design patterns for managing dimension attribute changes in ways that preserve historical accuracy while remaining queryable through standard SQL. The three primary SCD types represent a tradeoff between simplicity, storage cost, and historical accuracy.
 
@@ -17,7 +17,7 @@ Slowly Changing Dimensions (SCD) are the design patterns for managing dimension 
 
 SCD Type 1 simply overwrites the old attribute value with the new value. When a customer's city changes from New York to Austin, the city column in the customer dimension row is updated to Austin. No history of the old city value is preserved.
 
-Type 1 is appropriate for correcting data quality errors (the customer's city was misspelled and is being corrected) or for attributes where historical accuracy is irrelevant (a customer's preferred language, which is only meaningful in its current value).
+Type 1 is appropriate for correcting [data quality](/terms/data-quality) errors (the customer's city was misspelled and is being corrected) or for attributes where historical accuracy is irrelevant (a customer's preferred language, which is only meaningful in its current value).
 
 Type 1 is not appropriate for attributes where historical accuracy matters for analysis. After a Type 1 update, all historical fact rows referencing this customer will appear to be associated with the new attribute value, regardless of when the transaction actually occurred.
 

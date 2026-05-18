@@ -9,7 +9,7 @@ tags: ["Data Modeling", "Star Schema", "Data Architecture", "Analytics"]
 
 Every reliable analytical system is built on a foundation of intentional data structure. Data modeling is the discipline of deliberately designing how data is organized, related, and stored to accurately represent the real-world business processes it describes and to enable efficient, correct querying by downstream consumers.
 
-The importance of data modeling is frequently underestimated by organizations in the early stages of building analytics platforms. It is tempting to simply dump raw operational data into a data warehouse and allow analysts to write ad-hoc SQL queries against the raw tables. This approach fails rapidly at scale. Raw operational databases are designed to support transactional workloads, optimized for high-speed single-row INSERT, UPDATE, and DELETE operations. Their schemas are deeply normalized across dozens of tables, minimizing data redundancy to protect write performance. Attempting to run analytical aggregations across a heavily normalized operational schema results in enormously complex SQL queries full of multi-level joins that are difficult to write correctly, nearly impossible for non-engineers to understand, and prohibitively slow for the MPP engines of analytical platforms.
+The importance of data modeling is frequently underestimated by organizations in the early stages of building analytics platforms. It is tempting to simply dump raw operational data into a [data warehouse](/terms/data-warehouse) and allow analysts to write ad-hoc SQL queries against the raw tables. This approach fails rapidly at scale. Raw operational databases are designed to support transactional workloads, optimized for high-speed single-row INSERT, UPDATE, and DELETE operations. Their schemas are deeply normalized across dozens of tables, minimizing data redundancy to protect write performance. Attempting to run analytical aggregations across a heavily normalized operational schema results in enormously complex SQL queries full of multi-level joins that are difficult to write correctly, nearly impossible for non-engineers to understand, and prohibitively slow for the MPP engines of analytical platforms.
 
 Data modeling creates a purpose-built analytical structure that is separate from the operational schema. Rather than forcing analysts to navigate the normalized complexity of the operational system, data modelers denormalize and restructure the data specifically to answer business questions efficiently. The resulting analytical models are simpler to query, more comprehensible to business users, and dramatically faster to execute against the large analytical datasets typical of modern data platforms.
 
@@ -37,17 +37,17 @@ Logical modeling is where normalization decisions occur. Database normalization 
 
 The physical data model translates the logical model into the implementation-specific constructs of a particular database technology. It specifies data types using the exact syntax of the target platform (VARCHAR(255) vs TEXT, BIGINT vs INT), defines partitioning strategies for large tables, identifies which columns should be indexed, specifies clustering keys for warehouse platforms, and documents compression algorithms and storage formats.
 
-Physical modeling decisions have enormous performance implications for analytical workloads. Choosing the wrong partitioning strategy for a billion-row fact table can result in queries that perform full table scans instead of targeted partition reads, increasing query latency by orders of magnitude. In an Apache Iceberg Lakehouse context, physical modeling includes decisions about Iceberg's Hidden Partitioning transforms, file size targets for Parquet optimization, and sort order configuration for the physical data files.
+Physical modeling decisions have enormous performance implications for analytical workloads. Choosing the wrong partitioning strategy for a billion-row fact table can result in queries that perform full table scans instead of targeted partition reads, increasing query latency by orders of magnitude. In an [Apache Iceberg](/terms/apache-iceberg) Lakehouse context, physical modeling includes decisions about Iceberg's [Hidden Partitioning](/terms/hidden-partitioning) transforms, file size targets for Parquet optimization, and sort order configuration for the physical data files.
 
 ![Data Modeling Hierarchy](/images/terms/data_modeling_hierarchy.png)
 
-## The Star Schema: The Dominant Analytical Model
+## The [Star Schema](/terms/star-schema): The Dominant Analytical Model
 
 For analytical workloads, the Star Schema is the most widely used and most well-studied data modeling paradigm. Originally formalized by Ralph Kimball in the 1990s and 2000s, the Star Schema provides a specific denormalization pattern optimized for the query patterns typical of business intelligence reporting.
 
-A Star Schema organizes data around a central Fact table surrounded by multiple Dimension tables. The visual representation resembles a star, with the Fact table at the center and Dimension tables radiating outward, connected by foreign key relationships. This visual metaphor gives the pattern its name.
+A Star Schema organizes data around a central Fact table surrounded by multiple [Dimension tables](/terms/dimension-tables). The visual representation resembles a star, with the Fact table at the center and Dimension tables radiating outward, connected by foreign key relationships. This visual metaphor gives the pattern its name.
 
-### Fact Tables
+### [Fact Tables](/terms/fact-tables)
 
 The Fact table is the core of the Star Schema. It records the quantitative, measurable events that the business wants to analyze: individual sales transactions, web page views, support ticket submissions, or sensor readings. Each row in the Fact table represents a single measurable event.
 
@@ -74,9 +74,9 @@ Apache Iceberg's MERGE INTO syntax provides native SQL support for implementing 
 
 ## Data Vault: Enterprise Scalability and Auditability
 
-For organizations that require extremely high scalability, strict regulatory auditability, and the ability to integrate data from many heterogeneous source systems with minimal upfront modeling decisions, the Data Vault modeling pattern provides an alternative to Kimball-style dimensional modeling.
+For organizations that require extremely high scalability, strict regulatory auditability, and the ability to integrate data from many heterogeneous source systems with minimal upfront modeling decisions, the [Data Vault modeling](/terms/data-vault-modeling) pattern provides an alternative to Kimball-style dimensional modeling.
 
-Data Vault was developed by Dan Linstedt and is built around three core entity types: Hubs, Links, and Satellites. This normalized, insert-only structure is specifically designed to handle the challenges of large-scale, multi-source enterprise data integration.
+Data Vault was developed by Dan Linstedt and is built around three core entity types: Hubs, Links, and Satellites. This normalized, insert-only structure is specifically designed to handle the challenges of large-scale, multi-source enterprise [data integration](/terms/data-integration).
 
 **Hubs** represent the core business entities (Customer, Product, Order) by storing only their unique business keys (the raw identifiers used by the source systems) alongside a hash key, a load timestamp, and a source system identifier. Hubs contain no descriptive attributes whatsoever.
 
@@ -88,11 +88,11 @@ The Data Vault approach excels at ingesting data from dozens of heterogeneous so
 
 ## Data Modeling in the Lakehouse Era
 
-The principles of data modeling remain fully relevant in the modern Apache Iceberg Lakehouse, but the technical implementation has evolved significantly. Iceberg provides the transactional foundation that makes the Medallion Architecture the practical implementation of data modeling best practices in the lakehouse context.
+The principles of data modeling remain fully relevant in the modern Apache Iceberg Lakehouse, but the technical implementation has evolved significantly. Iceberg provides the transactional foundation that makes the [Medallion Architecture](/terms/medallion-architecture) the practical implementation of data modeling best practices in the lakehouse context.
 
 The Bronze layer contains raw, unmodeled data ingested directly from source systems. The Silver layer applies the logical modeling decisions: entities are cleansed, deduplicated, and organized into conformed Iceberg tables that implement the conceptual data model. The Gold layer implements the physical modeling decisions: Star Schema Fact and Dimension tables, Data Vault Hubs, Links, and Satellites, or custom business aggregates are materialized as optimized Iceberg Parquet files.
 
-Dremio's Semantic Layer sits above the physical Gold layer to handle the final presentation modeling. Virtual datasets define the exact joins, metric calculations, and column naming conventions that the BI tools and AI agents will use. Data Reflections manage the automatic physical optimization of these virtual views, ensuring that the complex join queries underlying the Star Schema return in milliseconds. This combination of physical Iceberg-backed dimensional models and logical Dremio Semantic Layer virtual datasets provides the most complete and powerful implementation of data modeling principles in the modern data engineering stack.
+[Dremio](/terms/dremio)'s [Semantic Layer](/terms/semantic-layer) sits above the physical Gold layer to handle the final presentation modeling. Virtual datasets define the exact joins, metric calculations, and column naming conventions that the BI tools and AI agents will use. Data Reflections manage the automatic physical optimization of these virtual views, ensuring that the complex join queries underlying the Star Schema return in milliseconds. This combination of physical Iceberg-backed dimensional models and logical Dremio Semantic Layer virtual datasets provides the most complete and powerful implementation of data modeling principles in the modern data engineering stack.
 
 ## Learn More
 

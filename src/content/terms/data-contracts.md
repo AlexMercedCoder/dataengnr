@@ -23,7 +23,7 @@ A data contract document typically contains several key sections.
 
 **SLA commitments**: The producer's commitment on data freshness (data updated daily by 6 AM UTC), retention (data retained for 2 years), and availability (table accessible 99.9% of the time).
 
-**Ownership and governance**: The owning team, the data classification level, applicable regulations (GDPR, HIPAA), and the list of registered consumers who have agreed to the contract terms.
+**Ownership and governance**: The owning team, the [data classification](/terms/data-classification) level, applicable regulations (GDPR, HIPAA), and the list of registered consumers who have agreed to the contract terms.
 
 **Versioning**: A semantic version number for the contract, with explicit compatibility policies (backward-compatible changes require minor version bump, breaking changes require major version bump and consumer migration period).
 
@@ -39,7 +39,7 @@ At **read time**, consumers validate the data they receive against the contract 
 
 At **deploy time**, schema changes to a contracted table are validated against the contract's compatibility policy before deployment. A CI/CD pipeline check detects that a proposed column rename violates the contract's backward compatibility commitment and blocks the deployment until either the consumer migration is completed or a new contract major version is negotiated.
 
-Tools like Soda Data, Great Expectations, and dedicated data contract platforms (Bitol, Datacontract.com's open specification) provide infrastructure for authoring, versioning, and enforcing data contracts. Apache Iceberg's schema evolution tracking provides the technical substrate for detecting contract violations at the schema level.
+Tools like Soda Data, Great Expectations, and dedicated data contract platforms (Bitol, Datacontract.com's open specification) provide infrastructure for authoring, versioning, and enforcing data contracts. [Apache Iceberg](/terms/apache-iceberg)'s [schema evolution](/terms/schema-evolution) tracking provides the technical substrate for detecting contract violations at the schema level.
 
 ## Learn More
 

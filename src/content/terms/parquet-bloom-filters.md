@@ -9,9 +9,9 @@ tags: ["Bloom Filters", "Apache Parquet", "Query Optimization", "Data Skipping",
 
 Parquet's row group-level min/max statistics are powerful for range queries. A query filtering `WHERE event_date BETWEEN '2024-01-01' AND '2024-01-31'` can use min/max statistics to eliminate row groups whose entire date range falls outside the query window. But min/max statistics are ineffective for point lookup queries on high-cardinality columns. A query filtering `WHERE order_id = 'ORD-847291'` cannot use min/max filtering effectively because the min/max range for any row group containing many orders spans most of the order ID value space, so almost every row group has a min/max range that includes the target value.
 
-Bloom filters address this gap. A bloom filter is a probabilistic data structure that can definitively answer whether a specific value is absent from a set (false negative rate = 0%) or probabilistically answer whether a value is present (some false positive rate, configurable). For the `WHERE order_id = 'ORD-847291'` query, a bloom filter on the order_id column tells the reader definitively whether 'ORD-847291' could possibly be in this row group. If the bloom filter says "no," the row group is skipped with certainty. If the bloom filter says "maybe," the row group is read and row-level filtering applied.
+[Bloom filters](/terms/bloom-filters) address this gap. A bloom filter is a probabilistic data structure that can definitively answer whether a specific value is absent from a set (false negative rate = 0%) or probabilistically answer whether a value is present (some false positive rate, configurable). For the `WHERE order_id = 'ORD-847291'` query, a bloom filter on the order_id column tells the reader definitively whether 'ORD-847291' could possibly be in this row group. If the bloom filter says "no," the row group is skipped with certainty. If the bloom filter says "maybe," the row group is read and row-level filtering applied.
 
-The Parquet 2.0 specification (Apache Parquet format version 2) introduced bloom filter support as an optional column metadata feature. When a Parquet file is written with bloom filters enabled for specific columns, the writer computes a bloom filter for each row group and each bloom-filter-enabled column and embeds the filter data in the file's metadata section.
+The Parquet 2.0 specification ([Apache Parquet](/terms/apache-parquet) format version 2) introduced bloom filter support as an optional column metadata feature. When a Parquet file is written with bloom filters enabled for specific columns, the writer computes a bloom filter for each row group and each bloom-filter-enabled column and embeds the filter data in the file's metadata section.
 
 ## Bloom Filter Construction
 
@@ -33,7 +33,7 @@ Bloom filters provide the largest query performance improvement for:
 
 Bloom filters provide less benefit for range queries (where min/max statistics are already effective), low-cardinality columns (where partition pruning already eliminates most files), and queries that must read most of the data regardless of filtering (full table scans for aggregations).
 
-Dremio's query planner reads Parquet bloom filter metadata when available and uses it to make row group skip decisions. When querying Iceberg tables with Parquet files written with bloom filter support, Dremio automatically leverages the bloom filter metadata for compatible filter predicates, reducing I/O for point lookup queries without any user configuration.
+[Dremio](/terms/dremio)'s [query planner](/terms/query-planner) reads Parquet bloom filter metadata when available and uses it to make row group skip decisions. When querying Iceberg tables with Parquet files written with bloom filter support, Dremio automatically leverages the bloom filter metadata for compatible filter predicates, reducing I/O for point lookup queries without any user configuration.
 
 ## Learn More
 

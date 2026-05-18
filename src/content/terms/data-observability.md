@@ -7,7 +7,7 @@ tags: ["Data Observability", "Data Quality", "Data Monitoring", "Data Engineerin
 
 # Beyond Testing: Continuous Data Health Monitoring
 
-Data quality testing (dbt tests, Great Expectations checks) validates that specific, known rules hold at pipeline execution time. If an engineer knows that the `customer_id` column should be non-null and unique, they can write a test for it. But data systems fail in ways that no test anticipated. The third-party data vendor that gradually started delivering 20% fewer records per day. The upstream database that changed a column's data type in a breaking way without notification. The pipeline that runs successfully but produces statistically different distributions from the historical baseline due to a subtle logic bug.
+[Data quality](/terms/data-quality) testing (dbt tests, Great Expectations checks) validates that specific, known rules hold at pipeline execution time. If an engineer knows that the `customer_id` column should be non-null and unique, they can write a test for it. But data systems fail in ways that no test anticipated. The third-party data vendor that gradually started delivering 20% fewer records per day. The upstream database that changed a column's data type in a breaking way without notification. The pipeline that runs successfully but produces statistically different distributions from the historical baseline due to a subtle logic bug.
 
 Data observability addresses the class of data issues that declarative tests cannot catch: unexpected behavioral changes, statistical drift, freshness degradation, and volume anomalies that are only detectable through continuous monitoring of historical patterns rather than point-in-time rule evaluation.
 
@@ -31,15 +31,15 @@ The data observability framework described by industry leaders like Monte Carlo 
 
 ## Data Observability Platforms
 
-Monte Carlo is the most widely adopted commercial data observability platform, integrating with data warehouses, lakehouses, and orchestration tools to provide automatic baseline learning and anomaly detection across all five observability dimensions. Acceldata, Bigeye, and Lightup offer similar capabilities.
+Monte Carlo is the most widely adopted commercial data observability platform, integrating with data warehouses, lakehouses, and [orchestration](/terms/orchestration) tools to provide automatic baseline learning and anomaly detection across all five observability dimensions. Acceldata, Bigeye, and Lightup offer similar capabilities.
 
 The open-source OpenTelemetry and OpenLineage standards are being adopted as the plumbing for data observability infrastructure, enabling observability data (freshness metrics, row counts, schema versions, lineage events) to be emitted by any pipeline tool and consumed by any observability platform through standardized interfaces.
 
 ## Observability in the Iceberg Lakehouse
 
-Apache Iceberg's metadata layer provides rich signals for data observability. Each Iceberg snapshot records the commit timestamp, the number of files added and removed, and the total record count delta. Monitoring tools can poll the Iceberg metadata layer for new snapshots and extract these signals automatically without query overhead. If no new snapshot has been committed within the freshness threshold, or if the row count delta is outside the expected volume range, the monitoring system generates an alert.
+[Apache Iceberg](/terms/apache-iceberg)'s metadata layer provides rich signals for data observability. Each Iceberg snapshot records the commit timestamp, the number of files added and removed, and the total record count delta. Monitoring tools can poll the Iceberg metadata layer for new snapshots and extract these signals automatically without query overhead. If no new snapshot has been committed within the freshness threshold, or if the row count delta is outside the expected volume range, the monitoring system generates an alert.
 
-Dremio's job history and catalog metadata provide additional observability signals: query execution patterns (which tables are being queried frequently, which queries are taking unusually long), reflection status (when was the last successful reflection refresh, are reflections stale), and Virtual Dataset dependency graphs. These signals complement Iceberg's metadata-level signals to provide comprehensive data platform health monitoring.
+[Dremio](/terms/dremio)'s job history and catalog metadata provide additional observability signals: query execution patterns (which tables are being queried frequently, which queries are taking unusually long), reflection status (when was the last successful reflection refresh, are reflections stale), and Virtual Dataset dependency graphs. These signals complement Iceberg's metadata-level signals to provide comprehensive data platform health monitoring.
 
 ## Learn More
 

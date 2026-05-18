@@ -9,7 +9,7 @@ tags: ["Prompt Engineering", "Large Language Models", "Generative AI", "Artifici
 
 Traditional software engineering is deterministic. If you write `print(2 + 2)` in Python, the compiler executes exact, rigid instructions and will always output `4`. If you forget a parenthesis, the code crashes immediately.
 
-Large Language Models (LLMs) are probabilistic. They do not execute code; they predict the most statistically likely next word based on the text you provide them. If you give an LLM a vague instruction like "Write a summary of this document," the model might give you a one-sentence summary, a five-paragraph essay, or a bulleted list. The output is entirely dependent on how you frame the request.
+[Large Language Models](/terms/large-language-models) (LLMs) are probabilistic. They do not execute code; they predict the most statistically likely next word based on the text you provide them. If you give an LLM a vague instruction like "Write a summary of this document," the model might give you a one-sentence summary, a five-paragraph essay, or a bulleted list. The output is entirely dependent on how you frame the request.
 
 Prompt engineering is the emerging discipline of crafting the input text (the prompt) to reliably guide the LLM toward the exact desired output. It is the art of "programming" an AI using natural human language rather than code.
 

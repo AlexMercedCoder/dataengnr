@@ -29,13 +29,13 @@ Analytical queries against time-series data differ significantly from standard r
 
 Historically, time-series data required specialized, expensive databases like InfluxDB or TimescaleDB. Today, the Iceberg lakehouse is increasingly used for massive-scale time-series storage and analysis.
 
-To make time-series data performant in Apache Iceberg, data engineers use specific optimization strategies:
+To make time-series data performant in [Apache Iceberg](/terms/apache-iceberg), data engineers use specific optimization strategies:
 
 **1. Aggressive Time Partitioning**: Time-series tables are strictly partitioned by time. Because data volumes are massive, partitioning by `day(timestamp)` or even `hour(timestamp)` is necessary so that queries can prune away irrelevant data instantly.
 
 **2. Sorting and Z-Ordering**: Within the Parquet data files, the data is explicitly sorted by the entity identifier (e.g., `sensor_id`) and the timestamp. This ensures that all readings for a specific sensor over a specific hour are contiguous on disk, allowing dictionary encoding and delta encoding to achieve massive compression ratios (often reducing data size by 90%+).
 
-**3. Rollup Tables**: Rather than querying the raw second-level data for a yearly report, data pipelines use Flink or dbt to continuously compute and store pre-aggregated "rollup" tables (e.g., minute-level, hourly, and daily aggregates). The raw data is aggressively expired (retained for only 30 days for deep diagnostics), while the hourly rollups are retained for years for long-term trend analysis.
+**3. [Rollup Tables](/terms/rollup-tables)**: Rather than querying the raw second-level data for a yearly report, data pipelines use Flink or dbt to continuously compute and store pre-aggregated "rollup" tables (e.g., minute-level, hourly, and daily aggregates). The raw data is aggressively expired (retained for only 30 days for deep diagnostics), while the hourly rollups are retained for years for long-term trend analysis.
 
 ## Learn More
 

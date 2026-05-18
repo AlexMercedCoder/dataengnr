@@ -11,19 +11,19 @@ In the world of data processing, there are two fundamental paradigms: Batch and 
 
 Batch processing (like traditional Hadoop or nightly dbt runs) processes massive chunks of static data at scheduled intervals (e.g., daily). It is highly efficient for complex aggregations but suffers from high latency; the data is always hours old.
 
-True continuous streaming (like Apache Flink) processes every single event individually the millisecond it arrives. It offers the lowest possible latency but is complex to manage, especially when dealing with distributed state and fault tolerance.
+True continuous streaming (like [Apache Flink](/terms/apache-flink)) processes every single event individually the millisecond it arrives. It offers the lowest possible latency but is complex to manage, especially when dealing with distributed state and fault tolerance.
 
 Micro-batching is the pragmatic architectural bridge between the two. Instead of processing data once a day, or processing it event-by-event, a micro-batching engine gathers incoming data into tiny chunks (e.g., 500 milliseconds, 1 second, or 5 seconds of data) and processes each chunk as a miniature, independent batch job. To the end-user looking at a dashboard updating every 2 seconds, it *looks* like true continuous streaming, but under the hood, the system is just running thousands of tiny batch jobs per hour.
 
 ## The Micro-batching Architecture
 
-Apache Spark Streaming (specifically Structured Streaming) is the most famous implementation of the micro-batching architecture. 
+[Apache Spark](/terms/apache-spark) Streaming (specifically Structured Streaming) is the most famous implementation of the micro-batching architecture. 
 
-When a Spark Structured Streaming job connects to a Kafka topic, it doesn't process events one by one. The architecture works like this:
+When a [Spark Structured Streaming](/terms/spark-structured-streaming) job connects to a Kafka topic, it doesn't process events one by one. The architecture works like this:
 1. The engine checks the Kafka topic and sees 10,000 new messages have arrived in the last second.
 2. It defines those 10,000 messages as "Batch 1."
 3. It spins up the massive distributed processing power of the Spark engine to execute a standard SQL transformation against Batch 1.
-4. It writes the result to the destination (e.g., an Apache Iceberg table).
+4. It writes the result to the destination (e.g., an [Apache Iceberg](/terms/apache-iceberg) table).
 5. The moment Batch 1 finishes, it immediately triggers "Batch 2" for whatever data has arrived since.
 
 ![Micro-batching Architecture](/images/terms/micro_batching.png)

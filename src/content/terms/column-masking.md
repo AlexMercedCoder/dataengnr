@@ -29,13 +29,13 @@ Column masking policies apply masking functions that transform the column's actu
 
 ![Column Masking Architecture](/images/terms/column_masking.png)
 
-## Column Masking in Dremio
+## Column Masking in [Dremio](/terms/dremio)
 
-Dremio implements column masking through its Semantic Layer's row and column access control features. A column masking policy is defined on a Virtual Dataset column and references the querying user's roles to determine which masking function to apply. The policy is expressed as a CASE expression: `CASE WHEN IS_MEMBER('privacy_officers') THEN customer_email WHEN IS_MEMBER('analytics') THEN LEFT(customer_email, 1) || '***@***' ELSE NULL END`.
+Dremio implements column masking through its [Semantic Layer](/terms/semantic-layer)'s row and column access control features. A column masking policy is defined on a Virtual Dataset column and references the querying user's roles to determine which masking function to apply. The policy is expressed as a CASE expression: `CASE WHEN IS_MEMBER('privacy_officers') THEN customer_email WHEN IS_MEMBER('analytics') THEN LEFT(customer_email, 1) || '***@***' ELSE NULL END`.
 
 This masking expression is automatically applied to every query against the Virtual Dataset, regardless of which tool the user uses (Tableau, Power BI, Jupyter notebook, direct SQL). The masking is transparent to the query: the user writes `SELECT customer_email FROM customer_transactions` and receives the masked value appropriate for their role, without any awareness that masking is being applied.
 
-Dremio's column masking integrates with its Arrow Flight query path, ensuring that data delivered through the high-performance Flight API is also subject to the same masking policies as data delivered through JDBC or the SQL UI.
+Dremio's column masking integrates with its [Arrow Flight](/terms/arrow-flight) query path, ensuring that data delivered through the high-performance Flight API is also subject to the same masking policies as data delivered through JDBC or the SQL UI.
 
 ## Learn More
 

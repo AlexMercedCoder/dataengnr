@@ -7,11 +7,11 @@ tags: ["Fact Tables", "Dimensional Modeling", "Data Warehouse", "Data Engineerin
 
 # The Measurements of the Business
 
-In dimensional modeling (the design methodology created by Ralph Kimball), data is categorized into two fundamental types: facts and dimensions. A fact table is the central table in a star schema, and it records the measurements, metrics, or facts of a specific business process.
+In dimensional modeling (the design methodology created by Ralph Kimball), data is categorized into two fundamental types: facts and dimensions. A fact table is the central table in a [star schema](/terms/star-schema), and it records the measurements, metrics, or facts of a specific business process.
 
 If a business process is "a customer purchases a product," the fact table (`fact_sales`) records the quantifiable metrics of that event: how many units were sold, what the total revenue was, and what the discount amount was.
 
-Fact tables are characteristically deep (containing millions or billions of rows) but narrow (containing relatively few columns). They are optimized for rapid aggregation (SUM, AVG, COUNT) across massive datasets. A typical analytical query groups data by attributes in dimension tables and calculates sums or averages over the numeric columns in the fact table.
+Fact tables are characteristically deep (containing millions or billions of rows) but narrow (containing relatively few columns). They are optimized for rapid aggregation (SUM, AVG, COUNT) across massive datasets. A typical analytical query groups data by attributes in [dimension tables](/terms/dimension-tables) and calculates sums or averages over the numeric columns in the fact table.
 
 ## Anatomy of a Fact Table
 
@@ -33,10 +33,10 @@ A well-designed fact table consists of two primary types of columns:
 
 ## Fact Tables in the Lakehouse
 
-In an Iceberg lakehouse, fact tables are stored in the Gold layer of the Medallion architecture. Because fact tables are massive, they require careful physical optimization:
+In an Iceberg lakehouse, fact tables are stored in the Gold layer of the [Medallion architecture](/terms/medallion-architecture). Because fact tables are massive, they require careful physical optimization:
 
 **Partitioning**: Fact tables are almost always partitioned by time (e.g., `day(transaction_date)` or `month(transaction_date)`) so that queries analyzing specific timeframes can prune irrelevant historical data.
-**Z-Ordering / Sorting**: To accelerate queries filtering by customer or product, fact tables are often Z-ordered or sorted by high-cardinality foreign keys (`customer_key`, `product_key`) to maximize file-level data skipping.
+**Z-Ordering / Sorting**: To accelerate queries filtering by customer or product, fact tables are often Z-ordered or sorted by high-cardinality foreign keys (`customer_key`, `product_key`) to maximize file-level [data skipping](/terms/data-skipping).
 
 ## Learn More
 

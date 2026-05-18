@@ -11,7 +11,7 @@ A query's execution time is fundamentally determined by how much data must be pr
 
 Query optimization in lakehouses operates at multiple levels: at the metadata level (avoiding reading data files whose content cannot contribute to the result), at the file level (avoiding reading entire files when only some rows or columns are needed), and at the query plan level (reordering joins and operations to minimize intermediate result sizes).
 
-## Predicate Pushdown
+## [Predicate Pushdown](/terms/predicate-pushdown)
 
 Predicate pushdown moves filter conditions (WHERE clause predicates) as close to the data source as possible in the query plan, reducing the amount of data that flows through subsequent operators. Without predicate pushdown, a query `SELECT * FROM events WHERE region = 'US-WEST' AND date > '2024-01-01'` would scan all events data, apply filters in memory, then return results. With predicate pushdown, the filter is pushed to the file scan: only files that can contain rows matching the filter are read.
 
@@ -27,13 +27,13 @@ For wide tables with many columns, column pruning can reduce data read by 10-20x
 
 ## Join Ordering and Cost-Based Optimization
 
-For queries joining multiple tables, the order in which joins are performed dramatically affects performance. A join between a billion-row fact table and a 100-row lookup table should filter the fact table first using the lookup values, not join all billion rows before filtering. A cost-based optimizer (CBO) uses table statistics (row counts, column cardinality, value distributions) to estimate the cost of different join orders and select the most efficient plan.
+For queries joining multiple tables, the order in which joins are performed dramatically affects performance. A join between a billion-row fact table and a 100-row lookup table should filter the fact table first using the lookup values, not join all billion rows before filtering. A [cost-based optimizer](/terms/cost-based-optimizer) (CBO) uses table statistics (row counts, column cardinality, value distributions) to estimate the cost of different join orders and select the most efficient plan.
 
-Dremio's adaptive query optimizer collects table and column statistics from Iceberg table metadata and query execution history to build accurate cost models for join ordering decisions. Dremio also supports adaptive execution: the query plan can be revised mid-execution based on observed intermediate result sizes, correcting for cases where statistics-based estimates are inaccurate.
+[Dremio](/terms/dremio)'s adaptive query optimizer collects table and column statistics from Iceberg table metadata and query execution history to build accurate cost models for join ordering decisions. Dremio also supports adaptive execution: the query plan can be revised mid-execution based on observed intermediate result sizes, correcting for cases where statistics-based estimates are inaccurate.
 
 ## Dremio Data Reflections for Query Acceleration
 
-For repeated queries against large tables, pre-computed materializations (Dremio Data Reflections) eliminate the need to scan and aggregate raw Iceberg data on every query. An Aggregation Reflection pre-computes common group-by patterns; a Raw Reflection pre-filters and projects a subset of the raw data. Dremio's query planner transparently rewrites incoming queries to use the most beneficial reflection, providing sub-second query performance without query changes.
+For repeated queries against large tables, pre-computed materializations (Dremio Data Reflections) eliminate the need to scan and aggregate raw Iceberg data on every query. An Aggregation Reflection pre-computes common group-by patterns; a Raw Reflection pre-filters and projects a subset of the raw data. Dremio's [query planner](/terms/query-planner) transparently rewrites incoming queries to use the most beneficial reflection, providing sub-second query performance without query changes.
 
 ## Learn More
 

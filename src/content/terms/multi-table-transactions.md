@@ -7,7 +7,7 @@ tags: ["Multi-Table Transactions", "Apache Iceberg", "ACID", "Data Engineering",
 
 # The Cross-Table Consistency Problem
 
-ACID transaction semantics in Apache Iceberg operate at the table level: a write to a single Iceberg table either succeeds atomically or fails completely, with no partial state visible to readers. But complex data engineering workflows often need to maintain consistency across multiple related tables simultaneously.
+ACID transaction semantics in [Apache Iceberg](/terms/apache-iceberg) operate at the table level: a write to a single Iceberg table either succeeds atomically or fails completely, with no partial state visible to readers. But complex data engineering workflows often need to maintain consistency across multiple related tables simultaneously.
 
 Consider a financial accounting system that updates a `journal_entries` table with new transaction records and updates a `account_balances` table with the resulting balance changes in the same pipeline step. If the `journal_entries` write succeeds but the `account_balances` write fails, the accounting data is inconsistent: journal entries record transactions whose effects are not reflected in the account balances. A reader querying both tables after the partial failure will see an inconsistent state.
 
@@ -19,7 +19,7 @@ Multi-table transactions enable atomic commits across multiple Iceberg tables: e
 
 Apache Iceberg's catalog API includes the `createTransaction` method for initiating a multi-table transaction. Within a transaction, multiple table write operations are accumulated and their resulting snapshot updates are committed atomically when the transaction is committed.
 
-A multi-table transaction in PyIceberg:
+A multi-table transaction in [PyIceberg](/terms/pyiceberg):
 
 ```python
 with catalog.create_multi_table_transaction() as txn:
@@ -38,13 +38,13 @@ The catalog implements the atomicity guarantee by writing all metadata updates t
 
 ![Multi-Table Transactions](/images/terms/multi_table_transactions.png)
 
-## Project Nessie and Multi-Table Transactions
+## [Project Nessie](/terms/project-nessie) and Multi-Table Transactions
 
 Project Nessie provides particularly strong multi-table transaction semantics through its Git-like branching model. Because Nessie tracks the complete catalog state (all tables' current metadata pointers) at each commit, a Nessie transaction is a commit to the catalog branch that atomically updates multiple tables' metadata pointers in a single branch commit.
 
 This branch-level atomicity is equivalent to a multi-table transaction: all tables' updates within a Nessie commit are visible atomically to readers. A reader on the main branch either sees all updates from the commit or none of them, providing cross-table consistency that aligns with Git's commit atomicity model applied to data.
 
-For complex data engineering pipelines requiring cross-table consistency guarantees, Nessie-backed Iceberg catalogs (available through Project Nessie or Dremio's Arctic catalog) provide the strongest multi-table consistency semantics in the open lakehouse ecosystem.
+For complex data engineering pipelines requiring cross-table consistency guarantees, Nessie-backed Iceberg catalogs (available through Project Nessie or [Dremio](/terms/dremio)'s Arctic catalog) provide the strongest multi-table consistency semantics in the open lakehouse ecosystem.
 
 ## Learn More
 

@@ -7,7 +7,7 @@ tags: ["Data Modeling", "Data Vault", "Enterprise Data Warehouse", "Data Enginee
 
 # When Dimensional Modeling Reaches Its Limits
 
-Ralph Kimball's dimensional modeling (Star Schema) dominates enterprise analytics for good reason: it is intuitive, fast, and well-suited to the reporting patterns of most business units. But dimensional modeling makes an assumption that breaks down in large, complex organizations: that the analytical team can reach upfront consensus on the schema. Building a Star Schema requires defining the grain of every Fact table, the attributes of every Dimension, and the relationships between them before data begins flowing.
+Ralph Kimball's dimensional modeling ([Star Schema](/terms/star-schema)) dominates enterprise analytics for good reason: it is intuitive, fast, and well-suited to the reporting patterns of most business units. But dimensional modeling makes an assumption that breaks down in large, complex organizations: that the analytical team can reach upfront consensus on the schema. Building a Star Schema requires defining the grain of every Fact table, the attributes of every Dimension, and the relationships between them before data begins flowing.
 
 In a small organization with a handful of data sources and a clear analytical mandate, this upfront design is achievable. In a Fortune 100 company integrating forty-seven source systems representing seven acquired businesses, each using different customer identifiers, different product taxonomies, and different transactional semantics, reaching schema consensus before ingesting data is practically impossible. The dimensional modeling project stalls in endless requirements workshops while business units wait months for analytical access to their data.
 
@@ -51,13 +51,13 @@ The Business Vault layer sits above the raw Data Vault and applies business rule
 
 Above the Business Vault, a reporting layer typically implements dimensional models (Star Schemas) or flat denormalized tables optimized for BI tool consumption. The Data Vault serves as the integration and historical storage layer, and the reporting models are generated from it. This separation means that multiple different reporting schemas can be derived from the same Data Vault without modifying the underlying integration layer.
 
-## Data Vault on Apache Iceberg
+## Data Vault on [Apache Iceberg](/terms/apache-iceberg)
 
 Apache Iceberg is an ideal physical storage substrate for Data Vault tables. The insert-only nature of Hubs, Links, and Satellites aligns perfectly with Iceberg's append-optimized write path. Iceberg's partition pruning and file-level statistics allow queries against Satellite tables to efficiently locate rows within specific date ranges without scanning the entire history.
 
-Iceberg's schema evolution capabilities allow new columns to be added to Satellite tables as source systems evolve, without requiring expensive full table rewrites. When a new attribute is added to the CRM system and needs to flow into the Customer CRM Satellite, the engineer adds the column to the Iceberg table schema with a single metadata operation and begins including it in new inserts. Historical rows that predate the new column retain null values for it, which is consistent with Data Vault's principle that history is never modified.
+Iceberg's [schema evolution](/terms/schema-evolution) capabilities allow new columns to be added to Satellite tables as source systems evolve, without requiring expensive full table rewrites. When a new attribute is added to the CRM system and needs to flow into the Customer CRM Satellite, the engineer adds the column to the Iceberg table schema with a single metadata operation and begins including it in new inserts. Historical rows that predate the new column retain null values for it, which is consistent with Data Vault's principle that history is never modified.
 
-Dremio's Semantic Layer is well-suited to virtualizing the complex join patterns of the Business Vault. Data engineers build Virtual Datasets in Dremio that encapsulate the multi-Hub, multi-Satellite join logic and expose simple, business-friendly views to analysts. Data Reflections pre-compute the most expensive Business Vault joins, delivering BI-grade performance without requiring the engineering overhead of physical materialization pipelines.
+[Dremio](/terms/dremio)'s [Semantic Layer](/terms/semantic-layer) is well-suited to virtualizing the complex join patterns of the Business Vault. Data engineers build Virtual Datasets in Dremio that encapsulate the multi-Hub, multi-Satellite join logic and expose simple, business-friendly views to analysts. Data Reflections pre-compute the most expensive Business Vault joins, delivering BI-grade performance without requiring the engineering overhead of physical materialization pipelines.
 
 ## Learn More
 

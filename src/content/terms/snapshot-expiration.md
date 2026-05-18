@@ -7,11 +7,11 @@ tags: ["Snapshot Expiration", "Table Maintenance", "Apache Iceberg", "Data Reten
 
 # The Hidden Cost of ACID History
 
-Apache Iceberg's ACID semantics are built on an append-only metadata model. Every write operation (INSERT, UPDATE, DELETE, MERGE, OPTIMIZE) creates a new snapshot that references a new set of data files. The old snapshot remains in the metadata, referencing the previous set of data files. This historical snapshot chain enables time travel and auditability but accumulates indefinitely if not managed.
+[Apache Iceberg](/terms/apache-iceberg)'s ACID semantics are built on an append-only metadata model. Every write operation (INSERT, UPDATE, DELETE, MERGE, OPTIMIZE) creates a new snapshot that references a new set of data files. The old snapshot remains in the metadata, referencing the previous set of data files. This historical snapshot chain enables time travel and auditability but accumulates indefinitely if not managed.
 
-A table receiving daily batch writes accumulates one new snapshot per day, with each snapshot referencing data files that may partially overlap with previous snapshots. A compaction operation adds additional snapshots (the pre-compaction and post-compaction states are separate snapshot versions). After six months of production operation without snapshot management, a table might have 180+ snapshots and thousands of data file references across the snapshot chain.
+A table receiving daily batch writes accumulates one new snapshot per day, with each snapshot referencing data files that may partially overlap with previous snapshots. A [compaction](/terms/compaction) operation adds additional snapshots (the pre-compaction and post-compaction states are separate snapshot versions). After six months of production operation without snapshot management, a table might have 180+ snapshots and thousands of data file references across the snapshot chain.
 
-The storage cost of this historical accumulation has two components. The metadata storage cost is relatively small: snapshot and manifest files are compact Avro files. The data file storage cost is the dominant concern. When a MERGE INTO or DELETE operation updates rows in Iceberg's Copy-on-Write mode, the original data files containing the old versions of those rows are no longer referenced in the current snapshot but remain on disk, referenced only by historical snapshots. These orphaned-in-practice data files continue to consume object storage until they are explicitly removed through snapshot expiration.
+The storage cost of this historical accumulation has two components. The metadata storage cost is relatively small: snapshot and manifest files are compact Avro files. The data file storage cost is the dominant concern. When a MERGE INTO or DELETE operation updates rows in Iceberg's Copy-on-Write mode, the original data files containing the old versions of those rows are no longer referenced in the current snapshot but remain on disk, referenced only by historical snapshots. These orphaned-in-practice data files continue to consume [object storage](/terms/object-storage) until they are explicitly removed through snapshot expiration.
 
 ## The expire_snapshots Procedure
 
@@ -31,7 +31,7 @@ Iceberg's `remove_orphan_files` procedure scans the metadata layer to identify a
 
 The grace period is important: very recent data files may be in the process of being committed to a snapshot by an in-progress write operation. Deleting these files before the write completes would corrupt the in-progress transaction. The 3-day grace period provides sufficient time for any reasonable write operation to complete.
 
-Dremio's `OPTIMIZE TABLE` command in Dremio Cloud performs compaction, statistics refresh, and snapshot expiration in a single coordinated operation, simplifying the maintenance workflow for Dremio-managed Iceberg tables.
+[Dremio](/terms/dremio)'s `OPTIMIZE TABLE` command in Dremio Cloud performs compaction, statistics refresh, and snapshot expiration in a single coordinated operation, simplifying the maintenance workflow for Dremio-managed Iceberg tables.
 
 ## Learn More
 

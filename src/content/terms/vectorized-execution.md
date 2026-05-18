@@ -19,7 +19,7 @@ The performance difference between row-at-a-time and vectorized execution is dra
 
 The performance advantage comes from multiple sources: SIMD parallelism (multiple values per CPU instruction), better CPU branch prediction (tight inner loops with predictable branching are easier for CPU branch predictors), better CPU cache utilization (processing a batch of values for one column keeps relevant data in L1/L2 cache rather than thrashing between columns), and reduced function call overhead (fewer `next()` calls per unit of data processed).
 
-Apache Arrow's columnar in-memory format is designed specifically for vectorized execution. Arrow stores each column as a contiguous buffer of typed values (int32 values in a contiguous int32 array), aligned for SIMD access. Query engines that operate on Arrow memory (Dremio, DataFusion, Polars, DuckDB) can apply vectorized SIMD operations directly to Arrow buffers without data copying or format conversion.
+[Apache Arrow](/terms/apache-arrow)'s columnar in-memory format is designed specifically for vectorized execution. Arrow stores each column as a contiguous buffer of typed values (int32 values in a contiguous int32 array), aligned for SIMD access. Query engines that operate on Arrow memory ([Dremio](/terms/dremio), DataFusion, [Polars](/terms/polars), [DuckDB](/terms/duckdb)) can apply vectorized SIMD operations directly to Arrow buffers without data copying or format conversion.
 
 ![Vectorized Execution Architecture](/images/terms/vectorized_execution.png)
 
