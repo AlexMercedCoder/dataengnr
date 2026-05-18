@@ -1,37 +1,39 @@
 ---
 title: "Event Sourcing"
-description: "A guide to event sourcing, the architectural pattern that stores all state changes as an immutable sequence of events rather than overwriting the current state, providing a complete audit trail and enabling powerful temporal queries."
+description: "A guide to event sourcing, the architectural pattern where the state of an application is not stored as a single snapshot, but rather as an immutable sequence of historical events that can be replayed to derive the current state."
 date: 2026-05-17
-tags: ["Event Sourcing", "Data Architecture", "Streaming", "Apache Iceberg", "Data Engineering"]
+tags: ["Event Sourcing", "Data Architecture", "Software Engineering", "Microservices", "Data Engineering"]
 ---
 
-# State as a History of Changes
+# Storing the History, Not Just the Present
 
-In a traditional CRUD (Create, Read, Update, Delete) data model, the current state of an entity is stored as a single record. When a bank account balance changes from $1,000 to $800, the account record is updated in place: the old balance of $1,000 is overwritten with the new balance of $800. The history of how the balance reached $800 (which transactions produced which changes) exists only in a separate transaction log, if it is maintained at all.
+In a traditional relational database application (like a banking app), when a user deposits $50 into their account, the application runs an `UPDATE accounts SET balance = 150 WHERE user_id = 1` query. The database overwrites the old balance ($100) with the new balance ($150). The old state is permanently destroyed.
 
-Event sourcing inverts this model. Rather than storing the current state as a mutable record, event sourcing stores every state change as an immutable event appended to an event log. The current state is not stored directly; it is computed on demand by replaying the sequence of events from the beginning (or from a snapshot checkpoint) to the present.
+While simple, this "snapshot" approach loses critical context. If you look at the database tomorrow, you know the balance is $150, but you have no idea *how* it got there. Was it a $50 deposit? Or a $200 deposit followed by a $50 withdrawal?
 
-For the bank account, event sourcing stores: `AccountCreated {account_id: 123, initial_balance: 0}`, `DepositMade {account_id: 123, amount: 1000, timestamp: ...}`, `WithdrawalMade {account_id: 123, amount: 200, timestamp: ...}`. The current balance of $800 is computed by replaying these events. The complete history is an inherent property of the data model, not an afterthought.
+Event Sourcing flips this paradigm. Instead of storing the current state of an entity, the database stores every single action (event) that ever happened to that entity in an immutable, append-only log.
 
-## Benefits of Event Sourcing
+## How Event Sourcing Works
 
-**Complete audit trail**: Every state change is recorded as a durable, immutable event with its causation context. Regulatory audits, debugging, and forensic analysis are dramatically simplified.
+In an Event Sourced system, the banking database does not have a "Balance" column. Instead, it has an `Events` table containing rows like:
+1. `AccountCreated: Initial Balance $0`
+2. `Deposited: $100`
+3. `Withdrawn: $20`
+4. `Deposited: $70`
 
-**Temporal queries**: Because the full event history is preserved, any historical state can be reconstructed by replaying events up to a given point in time, without time travel hacks or separate audit tables.
+To find the user's current balance, the application fetches all events for that user and mathematically "replays" them from the beginning (`0 + 100 - 20 + 70 = 150`).
 
-**Event-driven integration**: The event log serves as the integration backbone: downstream systems subscribe to events and maintain their own projections (read models) optimized for their query patterns.
-
-**Business logic replayability**: Bug fixes can be applied retroactively by replaying the corrected business logic against the historical event stream, correcting derived state without manual data patching.
+Because replaying 10,000 events every time a user logs in is too slow, systems use **Snapshots** (calculating the balance once a night and saving it) so they only have to replay the events from today.
 
 ![Event Sourcing Architecture](/images/terms/event_sourcing.png)
 
-## Event Sourcing in the Iceberg Lakehouse
+## Benefits of Event Sourcing
 
-Apache Iceberg's immutable snapshot model naturally aligns with event sourcing principles. An Iceberg table's snapshot timeline is itself an event log: each snapshot records a state transition (append, overwrite, delete) that can be replayed to reconstruct any historical table state.
+**Perfect Auditability**: Event sourcing provides a mathematically perfect, tamper-proof audit log. Because events are immutable (you cannot `UPDATE` an event, you can only append a new `CorrectionEvent`), regulators can perfectly reconstruct the exact state of the system at any specific millisecond in the past.
 
-For systems implementing event sourcing at scale, Apache Kafka serves as the primary event log (providing durable, ordered, partitioned event storage with configurable retention), and Apache Flink pipelines consume the Kafka event stream to materialize read models as Iceberg tables. The Iceberg tables are read models (projections) optimized for analytical query patterns, while Kafka retains the raw event stream as the system of record.
+**Time Travel Debugging**: If a bug in the code corrupted data on Tuesday, the engineering team doesn't have to restore from a massive backup tape. They simply fix the bug, delete the corrupted snapshot, and replay the raw events from Monday night using the fixed code, perfectly reconstructing the correct data.
 
-Dremio queries against these Iceberg projections provide the analytical interface over the event-sourced data, supporting both current-state queries (reading the latest snapshot) and historical state queries (reading snapshots at specific past timestamps using Iceberg's time travel). The combination provides the analytical richness of event sourcing with the query performance of the Iceberg lakehouse.
+Event sourcing is heavily paired with **Apache Kafka**, as Kafka is fundamentally an immutable, append-only event log designed specifically for this exact architectural pattern.
 
 ## Learn More
 
