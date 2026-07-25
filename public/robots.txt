@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dataengr.com/sitemap-index.xml
+Sitemap: https://dataengnr.com/sitemap-index.xml
