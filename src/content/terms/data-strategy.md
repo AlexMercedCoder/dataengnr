@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Strategy", "Data Governance", "Analytics", "Data Architecture", "Leadership"]
 ---
 
-# Aligning Data with Business Value
+## Aligning Data with Business Value
 
 A common trap for modern organizations is treating "becoming data-driven" as purely a technology acquisition problem. An organization will purchase a modern [cloud data warehouse](/terms/cloud-data-warehouse), implement dbt, deploy a BI tool, and wait for the ROI. Months later, despite having state-of-the-art infrastructure, executives complain that they still can't get reliable answers to basic business questions, and data engineers are burned out building pipelines nobody uses.
 

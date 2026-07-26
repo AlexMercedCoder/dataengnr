@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Semantic Search", "Artificial Intelligence", "Vector Databases", "Machine Learning", "Unstructured Data"]
 ---
 
-# Searching for Meaning, Not Words
+## Searching for Meaning, Not Words
 
 For the first thirty years of the commercial internet, search was almost entirely lexical (keyword-based). When a user typed "affordable car insurance" into a search bar, the database engine (like Elasticsearch or a standard SQL `LIKE '%affordable car insurance%'` query) scoured the text corpus looking for the exact presence of those specific three words.
 

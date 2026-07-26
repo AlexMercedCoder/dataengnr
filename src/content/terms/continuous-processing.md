@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Continuous Processing", "Streaming", "Apache Flink", "Real-Time Analytics", "Data Engineering"]
 ---
 
-# Event-by-Event Analytics
+## Event-by-Event Analytics
 
 While [micro-batching](/terms/micro-batching) provides the illusion of real-time by running tiny batch jobs every few seconds, some use cases demand absolute immediacy. High-frequency algorithmic trading, live multiplayer gaming leaderboards, and autonomous vehicle sensor processing cannot wait 2 seconds for a batch window to close.
 

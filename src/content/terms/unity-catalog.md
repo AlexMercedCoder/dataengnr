@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Unity Catalog", "Data Governance", "Databricks", "Data Catalog", "Apache Iceberg"]
 ---
 
-# Databricks Unified Governance
+## Databricks Unified Governance
 
 Unity Catalog is Databricks' centralized metadata and governance layer for the Databricks Lakehouse Platform. Before Unity Catalog (introduced in 2022), each Databricks workspace maintained its own isolated Hive Metastore, creating fragmented governance where access policies, data definitions, and audit logs were siloed per workspace. A user with access to three Databricks workspaces in the same organization faced three different catalogs, three different permission models, and three separate audit trails with no unified cross-workspace view.
 

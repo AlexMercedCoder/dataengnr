@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Integration", "CDC", "Streaming", "Real-Time Data"]
 ---
 
-# The Problem of Stale Analytical Data
+## The Problem of Stale Analytical Data
 
 Enterprise organizations operate under a fundamental tension between their operational systems and their analytical systems. Operational databases, such as PostgreSQL, MySQL, and Oracle, are tuned for transactional workloads: they process thousands of individual row insertions, updates, and deletions per second to support real-time applications. Analytical systems, such as data warehouses and data lakehouses, are tuned for aggregate query workloads: scanning billions of rows to compute business metrics.
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Prescriptive Analytics", "Analytics", "Optimization", "Machine Learning", "Data Engineering"]
 ---
 
-# Answering 'What Should We Do?'
+## Answering 'What Should We Do?'
 
 The analytics maturity model is a progression of increasing business value and increasing technical complexity. [Descriptive analytics](/terms/descriptive-analytics) tells you *what happened* (sales are down). [Diagnostic analytics](/terms/diagnostic-analytics) tells you *why* (inventory shortages). [Predictive analytics](/terms/predictive-analytics) tells you *what will happen* (you have a 90% chance of stocking out of winter coats next week).
 

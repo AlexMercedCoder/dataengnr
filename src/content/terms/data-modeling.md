@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Modeling", "Star Schema", "Data Architecture", "Analytics"]
 ---
 
-# The Foundation of Analytical Intelligence
+## The Foundation of Analytical Intelligence
 
 Every reliable analytical system is built on a foundation of intentional data structure. Data modeling is the discipline of deliberately designing how data is organized, related, and stored to accurately represent the real-world business processes it describes and to enable efficient, correct querying by downstream consumers.
 

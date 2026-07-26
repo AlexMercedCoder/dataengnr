@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Micro-batching", "Streaming", "Apache Spark", "Data Engineering", "Data Architecture"]
 ---
 
-# The Illusion of Continuous Streams
+## The Illusion of Continuous Streams
 
 In the world of data processing, there are two fundamental paradigms: Batch and Streaming. 
 

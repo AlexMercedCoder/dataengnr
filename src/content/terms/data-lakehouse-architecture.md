@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Lakehouse", "Apache Iceberg", "Architecture", "Data Engineering", "Dremio"]
 ---
 
-# Converging the Best of Two Worlds
+## Converging the Best of Two Worlds
 
 For two decades, enterprise data infrastructure split into two separate ecosystems: the [data warehouse](/terms/data-warehouse) (fast, governed, expensive, proprietary) and the [data lake](/terms/data-lake) (flexible, cheap, open, ungoverned). Organizations operated both, incurring the costs and complexity of maintaining two systems, writing pipelines to move data between them, and managing the inevitable inconsistencies when data in the warehouse diverged from data in the lake.
 

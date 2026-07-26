@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Master Data Management", "MDM", "Data Governance", "Data Quality", "Data Engineering"]
 ---
 
-# Creating the Golden Record
+## Creating the Golden Record
 
 In a mature enterprise, the same business entity exists in dozens of different systems. A customer ("Jane Doe") might exist in the Salesforce CRM (with her business email), the Zendesk support system (with her personal email), the Shopify e-commerce platform (with her home address), and the billing system (with a different billing address). When the marketing team asks "How many active customers do we have?", the answer depends on which system is queried. When the data engineering team joins these systems in the lakehouse, "Jane Doe" appears as four distinct people because her identifiers and attributes don't match perfectly across systems.
 

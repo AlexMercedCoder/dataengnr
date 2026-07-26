@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Predicate Pushdown", "Query Optimization", "Apache Parquet", "Apache Iceberg", "Data Engineering"]
 ---
 
-# Moving Filters Closer to the Data
+## Moving Filters Closer to the Data
 
 A SQL query is a declarative specification: it describes what data should be returned, not how to retrieve it. A query engine translates this specification into an execution plan that fetches data from storage and processes it through a pipeline of operators (scans, filters, joins, aggregations). The order and placement of these operators has profound performance implications.
 

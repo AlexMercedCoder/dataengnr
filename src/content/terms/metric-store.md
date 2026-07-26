@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Metric Store", "Headless BI", "Semantic Layer", "Analytics", "Data Engineering"]
 ---
 
-# Defining Logic Once, Using It Everywhere
+## Defining Logic Once, Using It Everywhere
 
 A pervasive problem in enterprise analytics is the "dueling dashboards" scenario. The VP of Sales brings a Tableau dashboard to a meeting showing Q3 Revenue was $10M. The VP of Marketing brings a Looker dashboard showing Q3 Revenue was $9.5M. The meeting is derailed as the teams argue over who is right.
 

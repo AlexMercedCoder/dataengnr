@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Multi-Table Transactions", "Apache Iceberg", "ACID", "Data Engineering", "Data Lakehouse"]
 ---
 
-# The Cross-Table Consistency Problem
+## The Cross-Table Consistency Problem
 
 ACID transaction semantics in [Apache Iceberg](/terms/apache-iceberg) operate at the table level: a write to a single Iceberg table either succeeds atomically or fails completely, with no partial state visible to readers. But complex data engineering workflows often need to maintain consistency across multiple related tables simultaneously.
 

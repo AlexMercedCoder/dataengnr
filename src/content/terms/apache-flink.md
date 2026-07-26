@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Apache Flink", "Stream Processing", "Real-Time Analytics", "Data Engineering"]
 ---
 
-# The Primacy of Streaming
+## The Primacy of Streaming
 
 [Apache Kafka](/terms/apache-kafka) established that enterprise data is fundamentally a stream of events. Apache Flink was built on the insight that stream processing should be the primary computing paradigm, not an afterthought bolted onto a batch framework. Where [Apache Spark](/terms/apache-spark) treats streaming as a sequence of micro-batches (batch processing applied to small windows of data), Flink treats every event as a first-class citizen that flows through a processing pipeline continuously, with batch processing being a special case of bounded stream processing.
 

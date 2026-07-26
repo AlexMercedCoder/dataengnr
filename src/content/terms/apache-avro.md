@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Apache Avro", "Serialization", "Kafka", "Schema Registry", "Data Engineering"]
 ---
 
-# Row-Oriented Streaming Serialization
+## Row-Oriented Streaming Serialization
 
 Apache Avro is a [data serialization](/terms/data-serialization) format developed within the Apache Hadoop project that took a fundamentally different design direction from the columnar formats (ORC, Parquet). While ORC and Parquet optimize for analytical read performance by storing data column-by-column, Avro stores data row-by-row in a compact binary format optimized for efficient serialization, deserialization, and [schema evolution](/terms/schema-evolution) in event streaming contexts.
 

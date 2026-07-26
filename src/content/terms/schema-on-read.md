@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Schema-on-Read", "Data Lake", "Data Architecture", "Big Data", "Data Engineering"]
 ---
 
-# Storing First, Structuring Later
+## Storing First, Structuring Later
 
 For the first forty years of the data industry, **Schema-on-Write** was the absolute law. In a relational database (like PostgreSQL or an Oracle [Data Warehouse](/terms/data-warehouse)), you must explicitly define the structure of a table (e.g., Column 1 is an Integer, Column 2 is a String of max 50 characters) *before* you can insert a single byte of data.
 

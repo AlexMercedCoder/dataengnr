@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Classification", "Data Governance", "Security", "Compliance", "Data Engineering"]
 ---
 
-# Knowing What You Have
+## Knowing What You Have
 
 You cannot protect what you do not understand. In a modern [data lakehouse](/terms/data-lakehouse) containing petabytes of data, applying military-grade encryption and strict access controls to every single file is computationally expensive and paralyzes the business's ability to perform agile analytics. Conversely, leaving all data completely open exposes the organization to catastrophic regulatory fines and public relations disasters.
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Headless BI", "Metric Store", "Semantic Layer", "Business Intelligence", "Data Architecture"]
 ---
 
-# Decoupling the Brain from the Face
+## Decoupling the Brain from the Face
 
 In a traditional Business Intelligence (BI) tool like Tableau or Power BI, the "brain" and the "face" are tightly coupled. The tool acts as the "brain" by storing the semantic definitions of metrics (e.g., calculating "Net Revenue" by subtracting returns and taxes from gross sales), and it acts as the "face" by rendering the charts and dashboards.
 

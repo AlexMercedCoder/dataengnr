@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Sharing", "Open Data Sharing", "Apache Iceberg", "Data Lakehouse", "Data Engineering"]
 ---
 
-# Sharing Data Without Moving It
+## Sharing Data Without Moving It
 
 Enterprise data collaboration historically required physically copying data to share it. A financial institution sharing transaction data with a risk analytics partner would extract a dataset, encrypt it, and transfer it via SFTP. The partner would ingest it into their own warehouse, creating a stale copy that diverged from the source the moment it was transferred. Updates required another full extraction and transfer cycle. [Data governance](/terms/data-governance) was impossible to maintain across the copy boundary.
 

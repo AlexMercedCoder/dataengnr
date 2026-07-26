@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Serverless Architecture", "Cloud Computing", "Data Engineering", "Data Architecture", "SaaS"]
 ---
 
-# Focusing on the Code, Not the Metal
+## Focusing on the Code, Not the Metal
 
 In the early days of data engineering, building a pipeline required profound infrastructure knowledge. A team had to order physical servers, install the operating system, configure the network switches, tune the Java Virtual Machine (JVM) garbage collection, and manage the Apache Hadoop installation. This "infrastructure undifferentiated heavy lifting" consumed 80% of the team's time, leaving only 20% for actually building data pipelines.
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Analytics Engineering", "dbt", "Data Transformation", "Data Modeling", "Data Engineering"]
 ---
 
-# The Layer Between Raw and Ready
+## The Layer Between Raw and Ready
 
 Data engineers build pipelines: they ingest raw data from source systems into the lakehouse, handle [schema evolution](/terms/schema-evolution), manage partitioning and [compaction](/terms/compaction), and ensure data arrives reliably and on schedule. Data analysts consume analytical data: they query tables, build dashboards, and generate insights for business stakeholders.
 

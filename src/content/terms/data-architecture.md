@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Architecture", "Data Lakehouse", "Data Engineering", "Data Modeling", "ETL"]
 ---
 
-# The Blueprint of the Data Ecosystem
+## The Blueprint of the Data Ecosystem
 
 If a [data strategy](/terms/data-strategy) is the business plan for how data will drive revenue and reduce risk, the data architecture is the engineering blueprint that makes the strategy physically possible. 
 

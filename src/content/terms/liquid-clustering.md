@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Liquid Clustering", "Delta Lake", "Databricks", "Data Lakehouse", "Query Optimization"]
 ---
 
-# Beyond Static Partitioning
+## Beyond Static Partitioning
 
 Traditional Hive-style partitioning divides a table's data files into directory hierarchies based on partition column values defined at table creation time. A table partitioned by `year/month/region` stores all rows with year=2024, month=01, region=US_WEST in the same directory. Partition pruning eliminates entire directories for queries that filter on those exact partition columns, dramatically reducing data scanned.
 

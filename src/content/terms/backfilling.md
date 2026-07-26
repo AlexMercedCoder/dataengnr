@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Backfilling", "Data Engineering", "Data Pipeline", "Orchestration", "ETL"]
 ---
 
-# Rewriting History
+## Rewriting History
 
 In software engineering, when you push a bug fix to production, the fix applies to all future user interactions. In data engineering, fixing a bug is only half the battle. If a bug in a dbt model caused the "revenue" column to be calculated incorrectly for the last six months, pushing the fix only corrects the data moving forward starting tomorrow. The last six months of historical data remain corrupted.
 

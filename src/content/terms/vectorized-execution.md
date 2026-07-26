@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Vectorized Execution", "Query Performance", "Apache Arrow", "Dremio", "Data Engineering"]
 ---
 
-# Row-at-a-Time Is Slow
+## Row-at-a-Time Is Slow
 
 Traditional database query execution processes data row by row through an iterator model (the Volcano/iterator model): each query operator calls `next()` on its input to retrieve one row, applies its operation (filter, project, aggregate), and passes the result row to the parent operator. This approach is elegant and composable but CPU-inefficient.
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Trino", "SQL Query Engine", "Distributed SQL", "Apache Iceberg", "Data Engineering"]
 ---
 
-# Distributed SQL Without a [Data Warehouse](/terms/data-warehouse)
+## Distributed SQL Without a [Data Warehouse](/terms/data-warehouse)
 
 Trino (formerly known as PrestoSQL, then PrestoSQL, renamed Trino in 2021) is an open-source distributed SQL query engine developed at Facebook in 2012 and now maintained by the Trino Software Foundation. Trino was designed for one specific purpose: execute SQL queries fast across data stored in external systems, without moving the data into a centralized warehouse.
 

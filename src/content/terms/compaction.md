@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Compaction", "Table Maintenance", "Apache Iceberg", "Small File Problem", "Data Engineering"]
 ---
 
-# The Small File Problem
+## The Small File Problem
 
 Cloud [object storage](/terms/object-storage) imposes a per-request overhead on every read operation regardless of the object's size. Reading 1,000 small 1MB Parquet files requires 1,000 separate object storage API calls, each with its own authentication, DNS lookup, TCP connection, and TLS handshake overhead. Reading 10 files of 100MB each for the equivalent 1GB total data requires only 10 API calls. The 1,000-file scenario is dramatically slower than the 10-file scenario even when the total data volume is identical.
 

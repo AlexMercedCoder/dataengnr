@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Architecture", "Streaming", "Batch Processing", "Lambda Architecture"]
 ---
 
-# The Speed vs. Accuracy Dilemma
+## The Speed vs. Accuracy Dilemma
 
 The history of enterprise [data architecture](/terms/data-architecture) is marked by a persistent, seemingly intractable tension between two competing analytical requirements: the need for complete historical accuracy and the need for real-time query responsiveness. For decades, engineers were forced to choose one at the expense of the other.
 

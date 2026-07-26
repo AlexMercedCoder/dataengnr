@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Apache Pinot", "Real-Time Analytics", "OLAP", "Data Architecture", "Data Engineering"]
 ---
 
-# Analytics at the Speed of Now
+## Analytics at the Speed of Now
 
 When a company wants to build an internal dashboard for their executives to review yesterday's sales figures, a traditional [cloud data warehouse](/terms/cloud-data-warehouse) (like Snowflake) or a Lakehouse (like [Dremio](/terms/dremio)) is the perfect architectural choice. These systems are designed to process massive, complex `JOIN` queries across terabytes of historical data, and waiting 5 seconds for the dashboard to load is perfectly acceptable.
 

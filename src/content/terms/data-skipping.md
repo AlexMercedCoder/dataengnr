@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Skipping", "Apache Iceberg", "Query Optimization", "Parquet", "Data Engineering"]
 ---
 
-# Reading Less Is Always Faster
+## Reading Less Is Always Faster
 
 The single most effective [query optimization](/terms/query-optimization) technique is reducing the amount of data read. A query that needs to read 1GB of data to produce its result is inherently faster than a query that reads 100GB, regardless of how fast the processing engine is. Data skipping - the collection of techniques that allow query engines to safely skip data files, row groups, or individual rows that cannot contribute to the query result - is the foundational optimization that makes analytical queries on petabyte-scale lakehouses practical.
 

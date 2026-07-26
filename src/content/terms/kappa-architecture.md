@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Architecture", "Streaming", "Kappa Architecture", "Apache Kafka"]
 ---
 
-# The Operational Burden of Two Code Paths
+## The Operational Burden of Two Code Paths
 
 Jay Kreps, one of the original creators of [Apache Kafka](/terms/apache-kafka) and a co-founder of Confluent, formalized the Kappa Architecture in 2014 in a blog post that responded directly to the operational complexity of the [Lambda Architecture](/terms/lambda-architecture). His argument was precise and compelling: the fundamental problem with Lambda Architecture was not the presence of both a batch layer and a speed layer, but rather the requirement to maintain two completely separate implementations of the same business logic. This dual-code-path requirement was the source of most of the operational pain experienced by teams running Lambda systems in production.
 

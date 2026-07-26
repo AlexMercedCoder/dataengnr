@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Apache Polaris", "Iceberg Catalog", "Data Governance", "Data Lakehouse"]
 ---
 
-# The Catalog Problem in the Open Lakehouse
+## The Catalog Problem in the Open Lakehouse
 
 [Apache Iceberg](/terms/apache-iceberg)'s table format specification defines how metadata and data files are organized in [object storage](/terms/object-storage). But a table format alone is not enough to build a production data platform. You also need a catalog: a service that tracks which tables exist, where their metadata files are located, and controls access to them.
 

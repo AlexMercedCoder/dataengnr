@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Arrow Flight", "Apache Arrow", "Data Transport", "Performance", "Dremio"]
 ---
 
-# Beyond JDBC: The Transport Bottleneck
+## Beyond JDBC: The Transport Bottleneck
 
 For decades, analytical systems communicated query results through JDBC and ODBC protocols, standards designed in the early 1990s for row-oriented relational database communication. These protocols serialize query result rows into a row-oriented wire format, transmit them across the network, and deserialize them on the client side into whatever in-memory representation the receiving application uses.
 

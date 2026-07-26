@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Write-Audit-Publish", "WAP", "Apache Iceberg", "Data Quality", "Data Engineering"]
 ---
 
-# The Risk of Directly Writing to Production
+## The Risk of Directly Writing to Production
 
 Traditional data pipeline architectures write new data directly to production tables. When a [data quality](/terms/data-quality) issue exists in the incoming data (a schema mismatch, a source system bug that corrupted a column, a transformation error), that bad data lands directly in the production table where analysts and dashboards immediately see it. The remediation path requires identifying the bad data, running corrective pipelines to fix or remove the affected rows, and communicating to all consumers that the data was temporarily incorrect.
 

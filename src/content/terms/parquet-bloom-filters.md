@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Bloom Filters", "Apache Parquet", "Query Optimization", "Data Skipping", "Data Engineering"]
 ---
 
-# The Limits of Min/Max Statistics
+## The Limits of Min/Max Statistics
 
 Parquet's row group-level min/max statistics are powerful for range queries. A query filtering `WHERE event_date BETWEEN '2024-01-01' AND '2024-01-31'` can use min/max statistics to eliminate row groups whose entire date range falls outside the query window. But min/max statistics are ineffective for point lookup queries on high-cardinality columns. A query filtering `WHERE order_id = 'ORD-847291'` cannot use min/max filtering effectively because the min/max range for any row group containing many orders spans most of the order ID value space, so almost every row group has a min/max range that includes the target value.
 

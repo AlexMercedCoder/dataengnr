@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Schema Registry", "Streaming", "Apache Kafka", "Data Governance", "Data Engineering"]
 ---
 
-# Enforcing Contracts in Motion
+## Enforcing Contracts in Motion
 
 In a monolithic application, if a developer changes the structure of a database table (e.g., changing an `order_id` from an Integer to a String), the application code can be updated simultaneously. However, in modern distributed data architectures and event-driven [microservices](/terms/microservices), systems are highly decoupled. 
 

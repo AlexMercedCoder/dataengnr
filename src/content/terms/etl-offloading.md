@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["ETL Offloading", "Data Architecture", "Data Lakehouse", "Data Warehouse", "Data Engineering"]
 ---
 
-# Escaping the Warehouse Compute Tax
+## Escaping the Warehouse Compute Tax
 
 In traditional analytical architectures, the [data warehouse](/terms/data-warehouse) (e.g., Teradata, Oracle Exadata, or even modern cloud warehouses like Snowflake) serves as both the storage layer and the compute layer for all data operations. Raw data is loaded into the warehouse (ELT pattern), and complex, resource-intensive SQL transformations are executed using the warehouse's compute engine to clean, join, and aggregate the data into reporting models.
 

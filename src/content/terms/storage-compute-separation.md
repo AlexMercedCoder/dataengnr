@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Storage-Compute Separation", "Cloud Computing", "Data Architecture", "Data Lakehouse", "Data Engineering"]
 ---
 
-# Breaking the Monolith
+## Breaking the Monolith
 
 In traditional, on-premises [data warehouse](/terms/data-warehouse) architectures (like Teradata or early Hadoop clusters), storage and compute were tightly coupled. A server node contained a specific amount of CPU power (compute) and a specific amount of hard drive space (storage). 
 

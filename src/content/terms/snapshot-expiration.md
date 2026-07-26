@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Snapshot Expiration", "Table Maintenance", "Apache Iceberg", "Data Retention", "Data Engineering"]
 ---
 
-# The Hidden Cost of ACID History
+## The Hidden Cost of ACID History
 
 [Apache Iceberg](/terms/apache-iceberg)'s ACID semantics are built on an append-only metadata model. Every write operation (INSERT, UPDATE, DELETE, MERGE, OPTIMIZE) creates a new snapshot that references a new set of data files. The old snapshot remains in the metadata, referencing the previous set of data files. This historical snapshot chain enables time travel and auditability but accumulates indefinitely if not managed.
 

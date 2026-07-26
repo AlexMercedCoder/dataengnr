@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["CQRS", "Data Architecture", "Microservices", "Event Sourcing", "Software Engineering"]
 ---
 
-# Splitting the Reads and Writes
+## Splitting the Reads and Writes
 
 In a traditional application architecture, the exact same database and the exact same data model are used to insert data (writes) and retrieve data (reads). 
 

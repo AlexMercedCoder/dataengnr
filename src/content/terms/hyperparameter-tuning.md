@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Hyperparameter Tuning", "Machine Learning", "Data Science", "Artificial Intelligence", "Analytics"]
 ---
 
-# Tuning the Engine
+## Tuning the Engine
 
 When training a machine learning model, there are two distinct types of variables: Parameters and Hyperparameters.
 

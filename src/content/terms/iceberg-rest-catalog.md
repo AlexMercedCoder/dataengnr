@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Iceberg REST Catalog", "Apache Iceberg", "Catalog", "Open Standards", "Data Lakehouse"]
 ---
 
-# The Universal Catalog Interface
+## The Universal Catalog Interface
 
 One of the most significant architectural challenges in building multi-engine data lakehouses is catalog fragmentation. Every compute engine that reads and writes [Apache Iceberg](/terms/apache-iceberg) tables needs to know which metadata files are current for each table. Historically, each engine implemented its own catalog integration: a Spark-native Hive catalog connector, a Presto/[Trino](/terms/trino) catalog module, a Flink Iceberg catalog plugin. Each of these integrations required engine-specific configuration and maintained engine-specific catalog state management code, multiplying the integration surface area.
 

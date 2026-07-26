@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Governance", "Security", "Compliance", "Data Engineering", "Data Architecture"]
 ---
 
-# From Policies in Binders to Code in Pipelines
+## From Policies in Binders to Code in Pipelines
 
 Traditional [data governance](/terms/data-governance) is passive. A governance committee meets, defines policies (e.g., "PII data must be masked for external contractors"), and writes these policies into a Wiki or a Word document. It is then up to individual data engineers and analysts to remember to read the document and manually implement the masking rules in their SQL queries or pipeline scripts. When an auditor asks for proof of compliance, the organization scrambles to manually review thousands of scripts. Passive governance inevitably fails because it relies on human memory and manual enforcement at scale.
 

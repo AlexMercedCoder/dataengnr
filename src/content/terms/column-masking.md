@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Column Masking", "Data Security", "Data Governance", "Dremio", "Data Engineering"]
 ---
 
-# Protecting Sensitive Data in Shared Tables
+## Protecting Sensitive Data in Shared Tables
 
 Enterprise analytical tables frequently contain a mixture of non-sensitive business metrics and highly sensitive personal or financial data. A customer transaction table might contain columns like `transaction_date`, `product_category`, and `revenue_amount` that are freely shareable with the analytics team, alongside columns like `customer_email`, `credit_card_last_four`, `ssn_hash`, and `home_address` that require strict access controls to comply with GDPR, PCI-DSS, and HIPAA regulations.
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Bloom Filters", "Apache Iceberg", "Query Optimization", "Data Engineering", "Apache Parquet"]
 ---
 
-# Answering 'Definitely Not' in Microseconds
+## Answering 'Definitely Not' in Microseconds
 
 A Bloom filter is a probabilistic data structure that answers membership queries: "Is this value definitely NOT in this set?" with 100% accuracy, and "Is this value possibly in this set?" with a configurable false positive rate. A Bloom filter can definitively rule out values that are not in the set, but it cannot guarantee that a value it reports as "possibly present" is actually present (it may be a false positive).
 

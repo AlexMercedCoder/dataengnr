@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Relational Databases", "SQL", "Data Architecture", "Data Modeling", "Data Engineering"]
 ---
 
-# The Bedrock of the Data World
+## The Bedrock of the Data World
 
 Invented by Edgar F. Codd at IBM in 1970, the relational database management system (RDBMS) is arguably the most successful software architecture in history. Over fifty years later, relational databases (like PostgreSQL, MySQL, Oracle, and SQL Server) remain the undisputed backbone of global commerce, powering everything from banking applications to e-commerce shopping carts.
 

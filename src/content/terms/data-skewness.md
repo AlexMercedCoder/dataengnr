@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Skewness", "Performance", "Apache Spark", "Distributed Computing", "Data Engineering"]
 ---
 
-# When Parallelism Breaks Down
+## When Parallelism Breaks Down
 
 Distributed query engines and processing frameworks achieve their performance advantage through parallelism: dividing large datasets into partitions that are processed simultaneously by many worker nodes. When this parallelism works correctly, doubling the number of workers roughly halves the job execution time. When data skewness is present, parallelism breaks down: some workers process a small partition and finish in seconds, while one unlucky worker receives a massive partition and becomes the bottleneck that determines the entire job's duration.
 

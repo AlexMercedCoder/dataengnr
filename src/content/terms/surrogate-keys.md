@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Surrogate Keys", "Dimensional Modeling", "Data Warehouse", "Data Engineering", "Star Schema"]
 ---
 
-# The Problem with Natural Keys
+## The Problem with Natural Keys
 
 A natural key is a business identifier that exists in the source system: a customer's email address, an order number from the order management system, a product SKU from the product catalog. Natural keys are meaningful to business users and identify entities in their source operational context.
 

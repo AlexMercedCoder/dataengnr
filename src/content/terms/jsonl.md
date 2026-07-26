@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["JSONL", "JSON Lines", "Data Formats", "Streaming", "Data Engineering"]
 ---
 
-# JSON for Streaming and Batch Pipelines
+## JSON for Streaming and Batch Pipelines
 
 Standard JSON represents a document as a single nested object or array. For a file containing many records, standard JSON wraps them in a top-level array: `[{"id": 1, "name": "Alice"}, {"id": 2, "name": "Bob"}, ...]`. This structure works well for small files but creates problems for large streaming datasets: parsing a 10GB JSON array requires reading the entire file before any records can be processed, the file cannot be split and processed in parallel, and appending a new record requires reading and rewriting the entire file.
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Serialization", "Apache Avro", "Data Engineering", "Streaming", "Architecture"]
 ---
 
-# Translating Memory to Wire
+## Translating Memory to Wire
 
 When a software application holds a customer record in memory, that data exists as a complex, language-specific object (like a Java Class or a Python Dictionary). However, you cannot send a Java Object directly over a network cable, nor can you save it raw to a hard drive so that a Rust application can read it later.
 

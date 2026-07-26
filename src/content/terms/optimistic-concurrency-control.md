@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Optimistic Concurrency Control", "Apache Iceberg", "ACID", "Concurrency", "Data Engineering"]
 ---
 
-# Locks Are Expensive
+## Locks Are Expensive
 
 Pessimistic concurrency control - the approach used by most [relational databases](/terms/relational-databases) - acquires locks before modifying data. A writer acquires a write lock on the table (or rows), performs its modifications, then releases the lock. While the write lock is held, no other writer can modify the table. This prevents conflicts but serializes all writes, making it impossible to scale write throughput by adding more concurrent writers.
 

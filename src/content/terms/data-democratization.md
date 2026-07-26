@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Democratization", "Self-Service Analytics", "Semantic Layer", "Dremio", "Data Governance"]
 ---
 
-# Data for Everyone, Not Just Data Teams
+## Data for Everyone, Not Just Data Teams
 
 The business value of data is realized when insights reach the people who make decisions, not when data is stored in a warehouse. A sales manager who wants to understand why churn increased last quarter should not need to file a ticket with the data engineering team and wait two weeks for an analyst to build a report. A product manager who wants to understand feature adoption should not need to learn SQL to query an Iceberg table.
 

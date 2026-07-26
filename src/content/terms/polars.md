@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Polars", "Python", "DataFrame", "Performance", "Data Engineering"]
 ---
 
-# The pandas Performance Problem
+## The pandas Performance Problem
 
 Pandas is the bedrock of Python data science, but its performance characteristics have always been a limitation. Pandas operates single-threaded on a single CPU core, stores data in NumPy arrays that are often memory-inefficient for mixed-type DataFrames, and copies data extensively during transformation operations. A pandas pipeline processing a 5GB CSV file on a 16-core machine with 64GB of RAM uses one core and may require 15-20GB of memory due to intermediate copies.
 

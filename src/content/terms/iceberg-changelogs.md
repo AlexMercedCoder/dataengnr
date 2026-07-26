@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Iceberg Changelogs", "Apache Iceberg", "Change Data Capture", "Data Engineering", "Incremental Processing"]
 ---
 
-# Reading Only What Changed
+## Reading Only What Changed
 
 A core challenge in data pipeline architecture is efficiency: when a source table changes, how do downstream tables derived from it get updated? The naive approach is a full recalculation: read the entire source table, recompute the aggregations, and overwrite the entire destination table. This is simple but computationally wasteful, scaling poorly as tables grow to terabytes or petabytes.
 

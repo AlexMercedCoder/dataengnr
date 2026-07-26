@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Observability", "Data Quality", "Data Monitoring", "Data Engineering", "Pipeline Reliability"]
 ---
 
-# Beyond Testing: Continuous Data Health Monitoring
+## Beyond Testing: Continuous Data Health Monitoring
 
 [Data quality](/terms/data-quality) testing (dbt tests, Great Expectations checks) validates that specific, known rules hold at pipeline execution time. If an engineer knows that the `customer_id` column should be non-null and unique, they can write a test for it. But data systems fail in ways that no test anticipated. The third-party data vendor that gradually started delivering 20% fewer records per day. The upstream database that changed a column's data type in a breaking way without notification. The pipeline that runs successfully but produces statistically different distributions from the historical baseline due to a subtle logic bug.
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["FinOps", "Cloud Computing", "Data Strategy", "Data Engineering", "Architecture"]
 ---
 
-# Engineering for the Bottom Line
+## Engineering for the Bottom Line
 
 In the era of on-premises data centers, financial management was simple. The CIO approved a $5 million capital expenditure (CapEx) to buy a massive server rack. The servers were installed, and the cost was fixed. It didn't matter if the data engineering team ran one query a day or ten thousand queries a day; the company had already paid for the hardware.
 

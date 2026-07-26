@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Result Set Caching", "Performance Optimization", "Analytics", "Data Architecture", "Data Engineering"]
 ---
 
-# The Ultimate Shortcut
+## The Ultimate Shortcut
 
 When discussing performance optimization in data engineering, "caching" is a heavily overloaded term. It can refer to caching metadata, caching raw data blocks on local disk, or caching intermediate query fragments. 
 

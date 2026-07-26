@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Incremental Processing", "Data Pipelines", "Apache Iceberg", "dbt", "Data Engineering"]
 ---
 
-# The Full-Scan Problem
+## The Full-Scan Problem
 
 A pipeline that reprocesses an entire billion-row table to identify and update the 50,000 rows that changed since the last run is extraordinarily wasteful. Yet this full-scan-and-rebuild pattern is common in data engineering organizations that lack the infrastructure for incremental processing. The pipeline reads 1TB of data, computes transformations, and writes a new version of the output table, 95% of which is identical to the previous version.
 

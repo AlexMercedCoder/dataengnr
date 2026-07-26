@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Privacy", "Security", "Data Governance", "Compliance", "Data Engineering"]
 ---
 
-# Protecting the Individual
+## Protecting the Individual
 
 Data privacy and data security are related but distinct concepts. Data security focuses on protecting data from malicious external breaches (hackers, ransomware). Data privacy focuses on protecting the identities and sensitive attributes of individuals from internal overexposure and ensuring data is collected and used ethically and legally.
 

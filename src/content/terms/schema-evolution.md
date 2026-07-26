@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Schema Evolution", "Data Architecture", "Apache Iceberg", "Data Engineering", "Data Modeling"]
 ---
 
-# Adapting to Change
+## Adapting to Change
 
 Data is not static; it constantly evolves to reflect the changing reality of a business. When a company launches a new product, they might start collecting a new metric (like `shipping_weight`). If a privacy law passes, they might suddenly need to delete a column containing user phone numbers.
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Archiving", "Cloud Computing", "Data Architecture", "Storage", "Data Engineering"]
 ---
 
-# Deep Storage for Cold Data
+## Deep Storage for Cold Data
 
 Not all data is created equal. A customer's purchase from yesterday is "hot" data; the marketing team will query it a dozen times today to adjust their ad spend. A customer's purchase from seven years ago is "cold" data; no one will look at it today, but the finance department is legally required by tax authorities to keep the record just in case of an audit.
 

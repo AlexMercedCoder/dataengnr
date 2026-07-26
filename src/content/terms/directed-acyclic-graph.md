@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Directed Acyclic Graph", "DAG", "Orchestration", "Apache Airflow", "Data Engineering"]
 ---
 
-# The Blueprint of the Data Pipeline
+## The Blueprint of the Data Pipeline
 
 In modern data engineering, a pipeline rarely consists of a single script running from start to finish. A typical pipeline might involve hundreds of interconnected tasks: extracting data from three different APIs, waiting for a file to land in S3, joining the results together, running a machine learning model, and finally updating a dashboard.
 

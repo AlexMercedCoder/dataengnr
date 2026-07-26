@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Dremio", "Data Lakehouse", "Semantic Layer", "Query Engine", "Apache Iceberg"]
 ---
 
-# The Lakehouse Platform Built for the Open Ecosystem
+## The Lakehouse Platform Built for the Open Ecosystem
 
 Dremio is an enterprise [data lakehouse](/terms/data-lakehouse) platform built natively around open standards: [Apache Iceberg](/terms/apache-iceberg) for table format, [Apache Arrow](/terms/apache-arrow) for [in-memory processing](/terms/in-memory-processing), [Apache Parquet](/terms/apache-parquet) for storage, and the [Iceberg REST Catalog](/terms/iceberg-rest-catalog) API for catalog integration. Unlike traditional [data warehouse](/terms/data-warehouse) platforms that couple storage and compute into proprietary systems, Dremio operates as a pure compute and [semantic layer](/terms/semantic-layer) above open [object storage](/terms/object-storage), enabling organizations to query, govern, and optimize their data without vendor lock-in to a proprietary storage format.
 

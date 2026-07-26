@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Architecture", "Data Warehouse", "Business Intelligence", "Analytics"]
 ---
 
-# The Origins and Purpose of the Data Warehouse
+## The Origins and Purpose of the Data Warehouse
 
 The data warehouse represents one of the most critical structural paradigms in the history of data engineering. To understand its fundamental architecture and enduring legacy, one must first examine the specific business problems it was engineered to solve. In the early days of enterprise computing, organizations relied heavily on transactional databases. These systems, known as Online Transaction Processing (OLTP) databases, are optimized for rapid, high-volume insertions, updates, and deletions. A classic example of an OLTP system is the database powering an e-commerce checkout flow or an airline reservation system. OLTP systems prioritize row-level locking, referential integrity, and immediate consistency. 
 

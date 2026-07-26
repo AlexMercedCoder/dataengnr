@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Operational Analytics", "Real-Time Analytics", "Reverse ETL", "Data Engineering", "Streaming"]
 ---
 
-# From Dashboards to Actions
+## From Dashboards to Actions
 
 For decades, the primary output of a data platform was a dashboard. A [data warehouse](/terms/data-warehouse) would crunch numbers overnight, and the next morning, executives would look at a BI report to see how the business performed yesterday. This is historical analytics: using data to understand the past.
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Trust", "Data Quality", "Data Governance", "Data Culture", "Analytics"]
 ---
 
-# The Currency of Analytics
+## The Currency of Analytics
 
 A data engineering team can build the most advanced, scalable, real-time Iceberg lakehouse in the world, processing petabytes of data with sub-second latency. But if the Chief Marketing Officer looks at the "Campaign ROI" dashboard and says, "That number doesn't match what I see in Salesforce; I don't trust this," the entire data platform has failed its primary business objective.
 

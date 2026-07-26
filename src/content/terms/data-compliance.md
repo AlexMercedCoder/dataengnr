@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Compliance", "Data Governance", "GDPR", "Data Privacy", "Data Engineering"]
 ---
 
-# Engineering for the Law
+## Engineering for the Law
 
 The era of "store everything forever" is over. Global regulatory frameworks like the General Data Protection Regulation (GDPR) in Europe, the California Consumer Privacy Act (CCPA), and industry-specific regulations like HIPAA (healthcare) and PCI-DSS (finance) have fundamentally changed how data platforms must be architected.
 

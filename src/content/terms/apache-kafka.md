@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Apache Kafka", "Event Streaming", "Real-Time Data", "Data Engineering"]
 ---
 
-# The Event Streaming Revolution
+## The Event Streaming Revolution
 
 Before Apache Kafka, enterprise systems communicated through point-to-point integrations. System A sent data directly to System B, System C, and System D through custom interfaces. When a new System E needed access to System A's data, a new integration was built. The resulting architecture was a sprawling web of point-to-point connections that was expensive to maintain, brittle to failures, and nearly impossible to scale.
 

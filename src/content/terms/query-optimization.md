@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Query Optimization", "Dremio", "Apache Iceberg", "Performance", "Data Engineering"]
 ---
 
-# The Art of Computing Less
+## The Art of Computing Less
 
 A query's execution time is fundamentally determined by how much data must be processed. A query that reads 1TB of data to answer a question that could have been answered by reading 10GB is wasting 99% of its compute. Query optimization is the discipline of transforming a logical query (what the user asked for) into an efficient physical execution plan (how the engine will answer it) that processes the minimum necessary data.
 

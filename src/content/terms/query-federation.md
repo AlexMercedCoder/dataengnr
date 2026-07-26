@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Query Federation", "Federated Query", "Dremio", "Data Integration", "SQL"]
 ---
 
-# Query Without Moving Data
+## Query Without Moving Data
 
 The traditional approach to integrating data from multiple source systems into a unified analytical view is to move all the data into a central [data warehouse](/terms/data-warehouse). Extract data from the operational database into the warehouse. Extract data from the SaaS platform into the warehouse. Extract data from the partner data feed into the warehouse. Once all the data is in the warehouse, analysts can join and aggregate it freely.
 

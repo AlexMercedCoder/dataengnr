@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Diagnostic Analytics", "Analytics", "Business Intelligence", "Data Exploration", "Data Engineering"]
 ---
 
-# Answering 'Why Did It Happen?'
+## Answering 'Why Did It Happen?'
 
 If [descriptive analytics](/terms/descriptive-analytics) provides the business scoreboard, diagnostic analytics provides the instant replay. When a descriptive dashboard shows a sudden 15% drop in monthly recurring revenue (MRR), the immediate next question from the executive team is "Why?"
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Columnar Storage", "Row-Oriented Storage", "Storage Architecture", "Analytics", "Data Engineering"]
 ---
 
-# Two Fundamentally Different Storage Philosophies
+## Two Fundamentally Different Storage Philosophies
 
 Every data storage system must answer a deceptively simple question: in what order should the data be physically written to disk? For a table with one billion rows and one hundred columns, two radically different orderings are possible. Row-oriented storage writes all one hundred columns of row 1, then all one hundred columns of row 2, then row 3, continuing until all one billion rows are written. Columnar storage writes all one billion values of column 1, then all one billion values of column 2, then column 3, writing every value for each column before moving to the next.
 

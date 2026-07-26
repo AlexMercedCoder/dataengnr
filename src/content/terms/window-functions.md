@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Window Functions", "SQL", "Analytics", "Data Engineering", "Data Modeling"]
 ---
 
-# Seeing the Forest and the Trees
+## Seeing the Forest and the Trees
 
 In standard SQL, the `GROUP BY` clause is powerful but destructive. If you have a table of 1,000 individual sales transactions and you write `SELECT department, sum(sales) GROUP BY department`, the output will condense those 1,000 rows into perhaps 5 rows (one for each department). You lose the visibility of the individual transactions.
 

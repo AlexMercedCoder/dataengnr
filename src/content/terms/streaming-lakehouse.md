@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Streaming Lakehouse", "Apache Flink", "Apache Iceberg", "Real-Time Analytics", "Data Engineering"]
 ---
 
-# Unifying Streaming and Batch in the Lakehouse
+## Unifying Streaming and Batch in the Lakehouse
 
 The traditional [data architecture](/terms/data-architecture) dichotomy between streaming (real-time, low-latency) and batch (high-throughput, high-latency) processing gave rise to [Lambda Architecture](/terms/lambda-architecture): running separate streaming and batch pipelines in parallel and merging their results. This approach doubles engineering complexity and introduces the ongoing operational burden of keeping two pipeline systems synchronized.
 

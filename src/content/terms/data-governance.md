@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Governance", "Data Quality", "Security", "Compliance", "Data Lakehouse"]
 ---
 
-# Why Governance Matters More Than Ever
+## Why Governance Matters More Than Ever
 
 Enterprise data platforms have grown dramatically in scope, scale, and accessibility. Where data warehouses of the 1990s served a controlled population of trained analysts, modern lakehouses serve thousands of users ranging from executive dashboards to AI agents generating queries autonomously. Data from dozens of source systems flows through automated pipelines into open storage formats accessible by any engine. This democratization is powerful but introduces serious risks if left ungoverned.
 

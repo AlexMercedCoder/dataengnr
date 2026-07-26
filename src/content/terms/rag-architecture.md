@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["RAG", "Generative AI", "Artificial Intelligence", "Large Language Models", "Data Architecture"]
 ---
 
-# Giving the AI a Library Card
+## Giving the AI a Library Card
 
 When a user asks a Large Language Model (like ChatGPT) a question, the model generates an answer based purely on the static weights in its neural network, which were locked in during its initial training months or years ago. 
 

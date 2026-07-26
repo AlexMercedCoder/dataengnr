@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Zero-Copy Cloning", "Data Architecture", "Apache Iceberg", "Data Engineering", "Storage"]
 ---
 
-# Duplicating the Pointers, Not the Bytes
+## Duplicating the Pointers, Not the Bytes
 
 In traditional software engineering, creating a safe "testing" environment is incredibly difficult when dealing with massive data. If a data science team wants to test a destructive new machine learning algorithm on the production `transactions` table, they cannot run it on live production data. 
 

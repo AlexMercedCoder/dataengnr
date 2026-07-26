@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Integration", "ELT", "Data Pipelines", "dbt", "Cloud Data Warehouse"]
 ---
 
-# Why ETL Broke Under Cloud-Scale Pressure
+## Why ETL Broke Under Cloud-Scale Pressure
 
 The traditional ETL (Extract, Transform, Load) paradigm served enterprise data engineering for decades. It worked because the destination [data warehouse](/terms/data-warehouse) was an expensive, specialized database with limited storage capacity and relatively modest compute power. Every megabyte of storage space in an on-premises Oracle or Teradata appliance was costly, so engineers applied rigorous transformations to shrink data footprints before loading. The transformation server was a separate, dedicated machine that sat between the source systems and the warehouse, bearing the computational burden of cleansing, joining, and aggregating the data.
 

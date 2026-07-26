@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Control Plane", "Data Plane", "Data Architecture", "Cloud Computing", "Data Engineering"]
 ---
 
-# Managing the Machinery
+## Managing the Machinery
 
 Modern distributed data platforms-whether they are cloud data warehouses, [orchestration](/terms/orchestration) tools, or streaming engines-are incredibly complex systems managing thousands of moving parts. To maintain stability, security, and scalability, these systems fundamentally divide their architecture into two distinct layers: the Control Plane and the Data Plane.
 

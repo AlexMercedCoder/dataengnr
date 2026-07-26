@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Open Table Formats", "Delta Lake", "Databricks", "Data Lakehouse"]
 ---
 
-# The Databricks Origin: Bringing Reliability to Spark
+## The Databricks Origin: Bringing Reliability to Spark
 
 Delta Lake emerged from the practical challenges Databricks engineers encountered deploying [Apache Spark](/terms/apache-spark) at enterprise scale. While Spark's distributed processing capabilities were transformative, the underlying storage layer presented serious reliability problems for production data pipelines. Spark reads and writes data as plain Parquet or CSV files on [object storage](/terms/object-storage), with no inherent transactional protection between the compute layer and the file system.
 

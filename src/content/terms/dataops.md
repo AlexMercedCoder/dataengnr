@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["DataOps", "DevOps", "Data Engineering", "CI/CD", "Data Quality"]
 ---
 
-# Applying DevOps to Data
+## Applying DevOps to Data
 
 Software engineering transformed dramatically when DevOps emerged as the methodology for building and operating software at scale: version-controlled code, automated testing (CI), automated deployment (CD), infrastructure as code, monitoring and alerting in production. Code changes that would have required weeks of manual testing and coordination could be deployed to production multiple times per day with confidence.
 

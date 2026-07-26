@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Pull-Based Ingestion", "ETL", "Batch Processing", "Data Architecture", "Data Engineering"]
 ---
 
-# Extracting the Data
+## Extracting the Data
 
 Unlike [push-based ingestion](/terms/push-based-ingestion) where source systems actively send data, pull-based ingestion is a proactive strategy initiated by the data platform. In this architecture, the central data engineering pipeline (using tools like Airbyte, Fivetran, or custom Airflow Python scripts) reaches into the source system on a scheduled basis to extract (pull) the data it needs.
 

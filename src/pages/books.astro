@@ -14,7 +14,7 @@ const allBooks = [...(siteData.freeBooks || []), ...(siteData.otherBooks || [])]
     
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
       {allBooks.map((book: any) => (
-        <a href={book.url} target="_blank" class="group block h-full">
+        <a href={book.url} target="_blank" rel="noopener noreferrer" class="group block h-full">
           <Card hoverEffect={true} class="flex flex-col h-full !p-0 overflow-hidden bg-charcoal-canvas">
             {book.localImg ? (
               <div class="aspect-[2/3] w-full overflow-hidden bg-midnight-ink relative">

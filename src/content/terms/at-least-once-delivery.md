@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["At-Least-Once Delivery", "Streaming", "Apache Kafka", "Data Engineering", "Architecture"]
 ---
 
-# Guaranteeing Delivery, Embracing Duplicates
+## Guaranteeing Delivery, Embracing Duplicates
 
 In distributed message queues (like [Apache Kafka](/terms/apache-kafka) or RabbitMQ) and streaming pipelines, ensuring that a message travels successfully from a producer to a consumer across an unreliable network is a complex challenge. Systems offer different "delivery semantics" to handle failures.
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Rust", "Data Engineering", "DataFusion", "Performance", "Data Tools"]
 ---
 
-# Memory Safety Meets Analytical Performance
+## Memory Safety Meets Analytical Performance
 
 The data engineering ecosystem has historically been dominated by JVM-based tools ([Apache Spark](/terms/apache-spark), [Apache Flink](/terms/apache-flink), [Apache Kafka](/terms/apache-kafka), [Apache Iceberg](/terms/apache-iceberg) Java library) and Python tools (pandas, [PyIceberg](/terms/pyiceberg), dbt). JVM tools provide the strong ecosystem and the garbage collector manages memory, but garbage collection pauses, JVM startup overhead, and JVM memory overhead create operational challenges. Python tools are accessible and expressive but limited by the GIL (Global Interpreter Lock) for true CPU parallelism and Python's interpreted execution speed.
 

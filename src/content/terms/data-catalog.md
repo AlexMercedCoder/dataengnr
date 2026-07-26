@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Catalog", "Metadata Management", "Data Governance", "Data Discovery", "Data Engineering"]
 ---
 
-# The Discovery Problem at Scale
+## The Discovery Problem at Scale
 
 A medium-sized enterprise data platform contains thousands of tables, hundreds of dashboards, dozens of pipelines, and petabytes of data. A new data scientist joining the team faces an immediately paralyzing question: what data is available, what does it mean, how was it produced, how current is it, and who owns it?
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Event Sourcing", "Data Architecture", "Software Engineering", "Microservices", "Data Engineering"]
 ---
 
-# Storing the History, Not Just the Present
+## Storing the History, Not Just the Present
 
 In a traditional relational database application (like a banking app), when a user deposits $50 into their account, the application runs an `UPDATE accounts SET balance = 150 WHERE user_id = 1` query. The database overwrites the old balance ($100) with the new balance ($150). The old state is permanently destroyed.
 

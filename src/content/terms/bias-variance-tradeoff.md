@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Bias Variance Tradeoff", "Machine Learning", "Data Science", "Artificial Intelligence", "Analytics"]
 ---
 
-# The Goldilocks Problem of Machine Learning
+## The Goldilocks Problem of Machine Learning
 
 When a data scientist trains a machine learning model, their ultimate goal is not to perfectly predict the historical data they already have (the training set). Their goal is to build a model that generalizes well-meaning it can accurately predict the future on unseen data it has never encountered before.
 

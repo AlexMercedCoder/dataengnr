@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["In-Memory Processing", "Performance Optimization", "Data Architecture", "Data Engineering", "Apache Spark"]
 ---
 
-# Eliminating the Disk Bottleneck
+## Eliminating the Disk Bottleneck
 
 For decades, the biggest bottleneck in database performance was the physical hard drive. When a query executed, the CPU had to wait for the spinning magnetic disk to mechanically find the data and load it into RAM. Even with the advent of solid-state drives (SSDs), disk I/O remains orders of magnitude slower than the speed at which a modern CPU can process data.
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Pipeline Testing", "Data Quality", "dbt", "Great Expectations", "Data Engineering"]
 ---
 
-# Testing Is Not Optional
+## Testing Is Not Optional
 
 Software engineers test code. Unit tests verify that individual functions behave correctly in isolation. Integration tests verify that components interact correctly. End-to-end tests verify that the complete system behavior matches requirements. When code changes break existing tests, the CI/CD pipeline fails and the change is blocked from reaching production.
 

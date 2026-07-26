@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["NoSQL Databases", "Data Architecture", "Document Databases", "Data Engineering", "Semi-Structured Data"]
 ---
 
-# Breaking the Tabular Mold
+## Breaking the Tabular Mold
 
 In the late 2000s, the explosive growth of web applications, social media, and mobile devices created a data crisis. Applications were generating massive volumes of data at unprecedented velocities, and the data rarely fit neatly into the rigid, pre-defined rows and columns of a traditional Relational Database (RDBMS).
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Prompt Engineering", "Large Language Models", "Generative AI", "Artificial Intelligence", "Analytics"]
 ---
 
-# Programming with Prose
+## Programming with Prose
 
 Traditional software engineering is deterministic. If you write `print(2 + 2)` in Python, the compiler executes exact, rigid instructions and will always output `4`. If you forget a parenthesis, the code crashes immediately.
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["API Gateway", "Data Architecture", "Microservices", "Cloud Computing", "Security"]
 ---
 
-# The Front Door to the Backend
+## The Front Door to the Backend
 
 In a modern, decentralized architecture, a single web application or data platform might rely on dozens or even hundreds of independent [microservices](/terms/microservices). 
 

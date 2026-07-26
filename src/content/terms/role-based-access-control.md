@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["RBAC", "Data Governance", "Security", "Access Control", "Data Lakehouse"]
 ---
 
-# Managing Access at Enterprise Scale
+## Managing Access at Enterprise Scale
 
 In a small organization with a handful of data analysts, managing data access by assigning permissions directly to individual users is workable. Each user gets the specific tables and columns they need, and when their role changes, their permissions are updated accordingly.
 

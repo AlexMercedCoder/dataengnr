@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Partition Evolution", "Apache Iceberg", "Data Partitioning", "Data Engineering", "Data Lakehouse"]
 ---
 
-# Partitioning Locked at Table Creation
+## Partitioning Locked at Table Creation
 
 In Hive-style partitioned tables, the partition columns are defined once at table creation and cannot be changed without rebuilding the entire table. A table created with `PARTITIONED BY (year INT, month INT)` retains that partition scheme forever. If query patterns change (daily partitioning would now be more efficient, or the partition column's data type needs to change), the only option is to create a new table with the new partition scheme and rewrite all existing data into the new partitions. For a petabyte-scale table, this is a multi-day migration that must be carefully coordinated with all readers and writers.
 

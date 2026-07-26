@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Annotation", "Machine Learning", "Data Engineering", "Data Preparation", "Artificial Intelligence"]
 ---
 
-# Teaching by Example
+## Teaching by Example
 
 Machine learning models, particularly deep neural networks, are incredibly powerful pattern-recognition engines, but they are not inherently intelligent. If you show a brand-new computer vision model a photograph of a cat, it only sees a meaningless grid of RGB pixel values. It has no concept of what a "cat" is.
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Query Caching", "Performance Optimization", "Data Architecture", "Data Engineering", "Databases"]
 ---
 
-# Remembering the Answer
+## Remembering the Answer
 
 In a modern enterprise data platform, computing the answer to a complex analytical question is incredibly expensive. If a CEO opens a dashboard that executes a `SELECT sum(revenue) FROM fact_sales JOIN dim_date...` query spanning 5 years of history and billions of rows, the underlying compute engine (like [Dremio](/terms/dremio) or Snowflake) might spin up dozens of server nodes, read terabytes of data from disk, shuffle it across the network, and take 15 seconds to return the final aggregated number.
 

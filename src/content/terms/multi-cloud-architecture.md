@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Multi-Cloud Architecture", "Data Architecture", "Cloud Computing", "Data Engineering", "Dremio"]
 ---
 
-# Breaking the Single-Vendor Dependency
+## Breaking the Single-Vendor Dependency
 
 In the early days of cloud computing, organizations typically committed to a single cloud provider (AWS, Azure, or Google Cloud). This simplified procurement and architectural design, but it created significant vendor lock-in. If an organization built its entire analytical stack around AWS Redshift, migrating to Google BigQuery or Azure Synapse later would require years of engineering effort to rewrite proprietary SQL and data pipelines.
 

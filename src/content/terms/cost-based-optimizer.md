@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Cost-Based Optimizer", "Database Internals", "Performance Optimization", "Data Engineering", "Data Architecture"]
 ---
 
-# Guessing the Price of Execution
+## Guessing the Price of Execution
 
 When a database [query planner](/terms/query-planner) receives a complex SQL query involving multiple joins and aggregations, there are often hundreds of different valid physical paths (Execution Plans) it could take to generate the final result.
 

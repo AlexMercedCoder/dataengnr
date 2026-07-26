@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["File Formats", "Apache Parquet", "Columnar Storage", "Data Lake"]
 ---
 
-# The Row-Oriented Storage Problem
+## The Row-Oriented Storage Problem
 
 To understand why Apache Parquet became the dominant storage format for analytical computing, one must start with the fundamental limitations of row-oriented storage for analytical workloads. Traditional [relational databases](/terms/relational-databases), and the flat file formats that grew alongside them (CSV, JSON Lines), store data in a row-oriented layout. In a row-oriented format, all the column values for a single record (row) are stored sequentially together on disk. The first row's values are written, then the second row's values, then the third, and so on.
 

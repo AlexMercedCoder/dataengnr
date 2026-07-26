@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Time-to-Live (TTL)", "Data Governance", "Compliance", "Data Engineering", "Data Architecture"]
 ---
 
-# The Automated Expiration Date
+## The Automated Expiration Date
 
 In the era of cheap cloud storage, the default engineering instinct is to save every piece of data forever. However, keeping data forever is a massive liability. 
 

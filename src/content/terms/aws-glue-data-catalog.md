@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["AWS Glue", "Data Catalog", "AWS", "Apache Iceberg", "Metadata Management"]
 ---
 
-# Managed Metadata on AWS
+## Managed Metadata on AWS
 
 AWS Glue [Data Catalog](/terms/data-catalog) is Amazon Web Services' fully managed, serverless metadata repository. Unlike the Hive Metastore (HMS), which requires deploying and operating a relational database and HiveServer2 process, the Glue Data Catalog is a cloud-native service that requires zero infrastructure management. Databases, tables, and partitions are stored in Glue and accessed through the Glue API or through the HMS-compatible Thrift API that Glue exposes for backward compatibility with tools built against HMS.
 

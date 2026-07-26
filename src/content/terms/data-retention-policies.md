@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Retention", "Data Governance", "Apache Iceberg", "Compliance", "Data Engineering"]
 ---
 
-# Keeping Data Costs and Compliance in Balance
+## Keeping Data Costs and Compliance in Balance
 
 Data that is no longer needed has a cost: storage costs accumulate, metadata management overhead grows, and compliance exposure increases when regulated data is retained longer than required. A GDPR-regulated organization that retains EU citizen personal data indefinitely cannot comply with the regulation's data minimization principle (Article 5(1)(e)), which requires that personal data be "kept in a form which permits identification of data subjects for no longer than is necessary for the purposes for which the personal data are processed."
 

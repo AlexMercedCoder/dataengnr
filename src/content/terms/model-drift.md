@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Model Drift", "Machine Learning", "MLOps", "Data Science", "Artificial Intelligence"]
 ---
 
-# When the World Changes
+## When the World Changes
 
 In traditional software engineering, if you write a Python function that adds two numbers together, that function will work perfectly forever. Two plus two will always equal four, whether you execute the code today or ten years from now. 
 

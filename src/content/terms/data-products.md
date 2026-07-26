@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Products", "Data Mesh", "Data Governance", "Data Engineering", "Analytics"]
 ---
 
-# From Pipeline Outputs to Data Products
+## From Pipeline Outputs to Data Products
 
 In traditional centralized data architectures, data is a byproduct of pipelines. The data engineering team builds ETL jobs that extract data from source systems, transform it, and load it into tables in the [data warehouse](/terms/data-warehouse). These tables are consumed by analysts and BI tools. When the tables have quality issues, are late, or have confusing semantics, analysts must trace the problem back through the pipeline to the source, often involving the data engineering team in debugging sessions. The data's quality, freshness, and semantic clarity are not governed by a defined owner; they are emergent properties of a pipeline that no one is fully accountable for.
 

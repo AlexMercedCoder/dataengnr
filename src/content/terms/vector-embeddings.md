@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Vector Embeddings", "Artificial Intelligence", "Machine Learning", "Semantic Search", "Unstructured Data"]
 ---
 
-# Translating Concepts into Math
+## Translating Concepts into Math
 
 Computers are incredibly fast at comparing numbers, but they natively understand nothing about language, images, or human concepts. If you ask a standard SQL database if the word "King" is related to the word "Queen", it can only tell you that the ASCII character strings are completely different.
 

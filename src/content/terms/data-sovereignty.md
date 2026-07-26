@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Sovereignty", "Data Governance", "GDPR", "Compliance", "Data Engineering"]
 ---
 
-# When Geography Governs Data
+## When Geography Governs Data
 
 Data sovereignty is the principle that data is subject to the laws and governance frameworks of the jurisdiction where it was collected, processed, or stored. For global organizations operating across multiple countries and regulatory regimes, data sovereignty creates complex architectural constraints: European Union citizens' personal data must comply with GDPR (and may be prohibited from leaving the EU without adequate protection mechanisms), healthcare data in the United States is governed by HIPAA, financial transaction data in China is subject to China's Data Security Law, and India's Digital Personal Data Protection Act governs data about Indian residents.
 

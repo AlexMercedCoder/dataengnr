@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Apache Iceberg", "Merge-on-Read", "Storage Strategy", "Streaming Ingestion"]
 ---
 
-# Designing for Write Throughput
+## Designing for Write Throughput
 
 Merge-on-Read (MoR) is the storage strategy that prioritizes write throughput over read-time simplicity. Rather than rewriting entire data files when records are updated or deleted, MoR writes only the changed records as small delta files alongside the original base files. The base Parquet files are left untouched. The merge operation that produces the current view of the data is deferred to read time (or to a separate [compaction](/terms/compaction) job), allowing writes to complete with minimal I/O overhead.
 

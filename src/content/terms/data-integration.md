@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Integration", "ETL", "Data Engineering", "Data Architecture", "Analytics"]
 ---
 
-# Bringing the Pieces Together
+## Bringing the Pieces Together
 
 Modern businesses run on dozens of specialized applications: Stripe for payments, Salesforce for CRM, Shopify for e-commerce, Zendesk for support, and Google Analytics for web traffic. Each application contains a crucial piece of the business puzzle, but analyzing the data in isolation limits its value. To understand the true Customer Acquisition Cost (CAC), an organization must combine marketing spend data (from Google Ads) with sales revenue (from Stripe). To predict churn, support ticket history (from Zendesk) must be combined with product usage behavior (from Mixpanel).
 

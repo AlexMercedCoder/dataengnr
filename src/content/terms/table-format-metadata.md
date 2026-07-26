@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Apache Iceberg", "Table Formats", "Metadata", "Data Lakehouse"]
 ---
 
-# Why [Object Storage](/terms/object-storage) Needs a Metadata Layer
+## Why [Object Storage](/terms/object-storage) Needs a Metadata Layer
 
 Cloud object storage services such as Amazon S3, Google Cloud Storage, and Azure [Data Lake](/terms/data-lake) Storage Gen2 provide extraordinarily scalable, durable, and cost-effective infrastructure for storing data files. However, they expose a key-value API that knows nothing about tables, rows, schemas, or data types. An S3 bucket is simply a flat namespace of objects identified by string keys. There is no concept of a transaction, no notion of schema enforcement, and no facility for coordinating concurrent writers.
 

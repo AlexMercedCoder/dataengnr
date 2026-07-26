@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["ABAC", "Access Control", "Security", "Data Governance", "Data Engineering"]
 ---
 
-# Beyond Roles: Attribute-Driven Authorization
+## Beyond Roles: Attribute-Driven Authorization
 
 [Role-Based Access Control (RBAC)](/terms/role-based-access-control) assigns users to predefined roles and grants those roles access to specific resources. For many governance requirements, RBAC is sufficient. A Finance Analyst role can read the revenue tables; a Data Engineer role can write to Bronze layer tables; a Data Scientist role can access model training datasets. These static role-resource mappings cover the majority of enterprise access control scenarios.
 

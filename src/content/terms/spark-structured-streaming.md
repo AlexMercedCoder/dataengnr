@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Spark Structured Streaming", "Apache Spark", "Streaming", "Apache Iceberg", "Data Engineering"]
 ---
 
-# Unified Batch and Streaming in Spark
+## Unified Batch and Streaming in Spark
 
 [Apache Spark](/terms/apache-spark) originally provided separate APIs for batch processing (Spark Core RDDs, Spark SQL DataFrames) and streaming (Spark Streaming's DStream API). The DStream API processed data in micro-batches (processing all events received in a fixed time interval as a mini-batch), but it used a different programming model from Spark SQL, making it difficult to reuse transformation logic between batch and streaming contexts.
 

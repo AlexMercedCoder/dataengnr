@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Hardware Acceleration", "Performance Optimization", "Machine Learning", "Data Engineering", "Data Architecture"]
 ---
 
-# Beyond the CPU
+## Beyond the CPU
 
 Since the invention of the database, data processing has relied almost exclusively on the Central Processing Unit (CPU). While modern CPUs are incredibly fast and versatile, they are designed as general-purpose processors-they are equally good at running an operating system, handling a web request, and summing a column of numbers. 
 

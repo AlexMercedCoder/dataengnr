@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Push-Based Ingestion", "Streaming", "Data Architecture", "Data Engineering", "Apache Kafka"]
 ---
 
-# Data on Demand
+## Data on Demand
 
 In the world of data engineering, moving data from a source system (like a web application, a CRM, or an IoT sensor) into a central [data lakehouse](/terms/data-lakehouse) requires an ingestion strategy. The two primary strategies are "Push" and "Pull."
 

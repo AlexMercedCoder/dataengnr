@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Iceberg Branching", "Apache Iceberg", "Data Engineering", "WAP", "Data Lakehouse"]
 ---
 
-# Git Semantics for Data Tables
+## Git Semantics for Data Tables
 
 Software engineers have used Git's branching model for decades to work on features in isolation, merge changes collaboratively, and roll back bad code without affecting the main production codebase. Until [Apache Iceberg](/terms/apache-iceberg) introduced table branching, data engineers had no equivalent isolation mechanism for data tables: every write went directly to the production table, and coordinating multi-team data development required complex workarounds involving separate tables, separate schemas, or careful scheduling.
 

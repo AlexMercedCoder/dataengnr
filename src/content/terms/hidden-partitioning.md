@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Apache Iceberg", "Partitioning", "Data Lakehouse", "Query Optimization"]
 ---
 
-# The Partitioning Literacy Problem
+## The Partitioning Literacy Problem
 
 Data partitioning is one of the most powerful performance optimization tools available to data engineers. By organizing data files into directories based on column values (partitioning by date, region, or category), the query engine can skip entire directories when a query's WHERE clause does not match the partition values. A query filtering `WHERE order_date = '2024-03-15'` against a table partitioned by `order_date` reads only the files in the `2024-03-15` partition directory, skipping potentially billions of rows in other partitions.
 

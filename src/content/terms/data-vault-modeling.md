@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Modeling", "Data Vault", "Enterprise Data Warehouse", "Data Engineering"]
 ---
 
-# When Dimensional Modeling Reaches Its Limits
+## When Dimensional Modeling Reaches Its Limits
 
 Ralph Kimball's dimensional modeling ([Star Schema](/terms/star-schema)) dominates enterprise analytics for good reason: it is intuitive, fast, and well-suited to the reporting patterns of most business units. But dimensional modeling makes an assumption that breaks down in large, complex organizations: that the analytical team can reach upfront consensus on the schema. Building a Star Schema requires defining the grain of every Fact table, the attributes of every Dimension, and the relationships between them before data begins flowing.
 

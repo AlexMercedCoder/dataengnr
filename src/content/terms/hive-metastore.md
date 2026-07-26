@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Hive Metastore", "Data Catalog", "Metadata Management", "Apache Hive", "Data Lakehouse"]
 ---
 
-# The Original Enterprise [Data Catalog](/terms/data-catalog)
+## The Original Enterprise [Data Catalog](/terms/data-catalog)
 
 The Hive Metastore (HMS) is one of the most widely deployed metadata systems in enterprise data engineering, not because organizations consciously chose it as their metadata strategy, but because it was bundled with Apache Hive and became the de facto metadata layer for the entire Hadoop ecosystem. Every major Hadoop distribution (Cloudera CDH, Hortonworks HDP) deployed HMS as part of its standard stack, and the ecosystem of tools (Spark, Presto, Impala) built HMS integration as a first-class concern because it was the only catalog game in town.
 

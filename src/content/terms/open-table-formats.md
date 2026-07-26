@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Open Table Formats", "Apache Iceberg", "Delta Lake", "Apache Hudi", "Data Lakehouse"]
 ---
 
-# Three Formats, One Goal
+## Three Formats, One Goal
 
 [Object storage](/terms/object-storage) (S3, ADLS, GCS) provides cheap, scalable storage for data files but lacks the transactional semantics, schema management, and [query optimization](/terms/query-optimization) features needed for reliable analytics. Open table formats solve this by adding a metadata layer over raw object storage files, providing ACID transactions, [schema evolution](/terms/schema-evolution), partition management, and query optimization statistics while remaining engine-agnostic and vendor-neutral.
 

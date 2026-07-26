@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Embedded Analytics", "Business Intelligence", "Analytics", "Data Architecture", "Product Development"]
 ---
 
-# Data Where the Work Happens
+## Data Where the Work Happens
 
 Historically, analytics required context-switching. If a sales representative using a CRM application wanted to see the historical purchasing trends of a client, they had to leave the CRM, open a separate Business Intelligence (BI) tool like Tableau or Power BI in a different browser tab, search for the client's dashboard, analyze the data, and then switch back to the CRM to make a decision. This friction reduces data adoption; when users are forced to leave their workflow to find data, they often choose to make decisions without it.
 

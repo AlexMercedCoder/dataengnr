@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Property Graphs", "Graph Databases", "Data Modeling", "Data Engineering", "Data Architecture"]
 ---
 
-# Modeling the Connections
+## Modeling the Connections
 
 [Relational databases](/terms/relational-databases) (like PostgreSQL) are exceptional at storing highly structured, tabular data. However, they struggle immensely when tasked with querying deep, complex relationships. 
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Apache Kafka Connect", "Data Ingestion", "Streaming", "Change Data Capture", "Data Engineering"]
 ---
 
-# Standardizing the Ingestion Pipeline
+## Standardizing the Ingestion Pipeline
 
 [Apache Kafka](/terms/apache-kafka) is the nervous system of the modern [data architecture](/terms/data-architecture), reliably buffering and distributing high-throughput event streams. However, getting data *into* Kafka from source databases, and getting data *out* of Kafka into target data warehouses or lakehouses, historically required writing custom producer and consumer applications.
 

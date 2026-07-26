@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Orchestration", "Apache Airflow", "Prefect", "Dagster", "Data Engineering"]
 ---
 
-# Coordinating Complex Workflows
+## Coordinating Complex Workflows
 
 A single pipeline step (reading from S3, transforming with Spark, writing to Iceberg) is straightforward to execute. But production data engineering involves many interdependent steps: raw data lands in S3, a validation job checks it, a Spark transformation ingests it to the Bronze Iceberg table, a dbt run transforms it to Silver and Gold, a quality check validates the Gold layer, a [Reverse ETL](/terms/reverse-etl) job syncs the results to Salesforce, and a notification is sent when the pipeline completes successfully or fails.
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Multi-Tenant Architecture", "Cloud Computing", "SaaS", "Data Architecture", "Data Engineering"]
 ---
 
-# Sharing the Infrastructure
+## Sharing the Infrastructure
 
 When building a software application or a data platform that will serve multiple distinct customers or independent internal departments, engineers must choose how to deploy the infrastructure.
 

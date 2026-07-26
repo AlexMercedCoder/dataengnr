@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Cloud Data Warehouse", "Data Warehouse", "Snowflake", "BigQuery", "Data Architecture"]
 ---
 
-# Analytics as a Managed Service
+## Analytics as a Managed Service
 
 Before the cloud era, data warehouses were massive on-premises appliances (like Teradata or Oracle Exadata). They were expensive capital investments, required specialized teams to maintain the hardware, and suffered from a fatal architectural flaw: storage and compute were tightly coupled. If you needed more storage capacity, you had to buy a new server appliance that also included compute capacity you didn't need. If you needed more compute for complex queries, you had to buy an appliance that included storage you didn't need.
 

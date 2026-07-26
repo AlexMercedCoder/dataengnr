@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Integration", "ETL", "Data Pipelines", "Data Engineering"]
 ---
 
-# The Origins of [Data Integration](/terms/data-integration)
+## The Origins of [Data Integration](/terms/data-integration)
 
 Long before the era of cloud computing and distributed data platforms, enterprises faced a persistent and fundamental challenge: their operational data was scattered across dozens of isolated departmental databases. The accounting department ran its own proprietary financial system, the sales department operated a separate customer management database, and the manufacturing division maintained its own production tracking system. Each of these systems spoke a different query language, used a different data format, and enforced a different schema.
 

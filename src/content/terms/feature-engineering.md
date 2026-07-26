@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Feature Engineering", "Machine Learning", "Data Engineering", "Data Science", "Analytics"]
 ---
 
-# Crafting the Signal
+## Crafting the Signal
 
 A machine learning model is essentially a complex mathematical equation. It cannot understand raw text, vague dates, or unstructured concepts; it only understands numbers. If you feed a machine learning model raw, unrefined data directly from a production database, the model will fail to learn anything useful.
 

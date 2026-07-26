@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Generative AI", "Artificial Intelligence", "Machine Learning", "Large Language Models", "Data Science"]
 ---
 
-# Creating from the Void
+## Creating from the Void
 
 For the first several decades of artificial intelligence, the vast majority of commercial applications were "Discriminative." A discriminative AI model takes in data and makes a judgment about it. It looks at a bank transaction and classifies it as `Fraud` or `Not Fraud`. It looks at an MRI scan and classifies it as `Tumor` or `Benign`. It looks at a user's history and predicts their `Lifetime Value`.
 

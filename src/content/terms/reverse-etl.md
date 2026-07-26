@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Reverse ETL", "Data Pipelines", "Data Engineering", "Analytics", "Operational Analytics"]
 ---
 
-# Closing the Loop Between Analytics and Action
+## Closing the Loop Between Analytics and Action
 
 Traditional ETL pipelines flow in one direction: source systems (operational databases, SaaS applications) push data into the [data warehouse](/terms/data-warehouse) or lakehouse for analysis. Analysts and business users consume the resulting dashboards and reports, then manually act on the insights by updating records in their operational tools. A data analyst discovers that a customer segment has high churn risk from an Iceberg-based churn model and exports a CSV, which a sales operations manager manually imports into Salesforce to update account risk scores.
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Write Amplification", "Apache Iceberg", "Performance Optimization", "Data Storage", "Data Engineering"]
 ---
 
-# The Hidden Cost of Updates
+## The Hidden Cost of Updates
 
 Data lakehouses are built on cloud [object storage](/terms/object-storage) (like Amazon S3 or Azure [Data Lake](/terms/data-lake)) using columnar file formats like [Apache Parquet](/terms/apache-parquet). A fundamental characteristic of object storage is that files are immutable; once written, they cannot be modified. You cannot simply open a 1GB Parquet file, change the value of a single cell from "A" to "B", and save it. 
 

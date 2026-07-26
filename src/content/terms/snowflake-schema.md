@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Snowflake Schema", "Dimensional Modeling", "Data Warehouse", "Data Engineering", "Star Schema"]
 ---
 
-# Normalization in the [Data Warehouse](/terms/data-warehouse)
+## Normalization in the [Data Warehouse](/terms/data-warehouse)
 
 In data warehousing and dimensional modeling, the [Star Schema](/terms/star-schema) is the gold standard for analytical performance and simplicity. In a star schema, [dimension tables](/terms/dimension-tables) are highly denormalized: all attributes related to a product (brand, category, department) are stored in a single, wide `dim_product` table, even if it results in redundant data (the word "Electronics" repeated a million times for a million different products).
 

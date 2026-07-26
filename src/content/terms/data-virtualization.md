@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Virtualization", "Query Federation", "Dremio", "Data Architecture", "Data Engineering"]
 ---
 
-# Connecting Instead of Collecting
+## Connecting Instead of Collecting
 
 The traditional approach to [data integration](/terms/data-integration) is physical centralization: the ETL (Extract, Transform, Load) model. If a business needs to analyze sales data (in an Oracle database) alongside web behavior data (in an S3 [data lake](/terms/data-lake)), the standard solution is to build a pipeline that extracts the Oracle data, copies it into the data lake or warehouse, and joins it there. This physical movement of data creates complexity, latency (the joined view is only as fresh as the last pipeline run), and cost (storing multiple copies of the same data).
 

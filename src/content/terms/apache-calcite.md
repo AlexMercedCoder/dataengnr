@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Apache Calcite", "Query Planning", "SQL", "Data Engineering", "Open Source"]
 ---
 
-# The [Query Planner](/terms/query-planner) Behind the Query Planners
+## The [Query Planner](/terms/query-planner) Behind the Query Planners
 
 When a SQL query is submitted to an analytical engine, a complex series of transformations converts the human-readable SQL text into an efficient physical execution plan. The query must be parsed (SQL text to an abstract syntax tree), validated (verify table and column names exist, check type compatibility), converted to a relational algebra expression (logical plan), optimized (apply algebraic transformations to simplify and reorder operations), and finally converted to a physical execution plan (choosing specific algorithms for each operator: nested loop join vs. hash join vs. sort-merge join).
 

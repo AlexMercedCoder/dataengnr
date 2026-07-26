@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Quality", "Data Engineering", "Data Governance", "dbt", "Great Expectations"]
 ---
 
-# The Cost of Bad Data
+## The Cost of Bad Data
 
 Every organization running an analytics platform eventually confronts data quality failures, and the consequences range from embarrassing to catastrophic. An executive presents the wrong revenue figures to the board of directors because a pipeline bug double-counted transactions. A machine learning model produces systematically biased recommendations because its training data had systematic null values in a critical demographic column. A regulatory filing contains inaccurate figures because a currency conversion applied the wrong exchange rate to six months of transactions.
 

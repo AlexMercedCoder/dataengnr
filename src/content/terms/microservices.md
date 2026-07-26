@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Microservices", "Data Architecture", "Cloud Computing", "Software Engineering", "APIs"]
 ---
 
-# Breaking the Monolith
+## Breaking the Monolith
 
 For decades, software applications were built as "Monoliths." The user interface, the business logic, the database connections, and the background processing were all written in a single, massive codebase and deployed as a single massive executable file running on a single server.
 

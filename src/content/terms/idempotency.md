@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Idempotency", "Data Pipeline", "Data Engineering", "Orchestration", "Reliability"]
 ---
 
-# Safe to Retry
+## Safe to Retry
 
 In distributed systems, failures are inevitable. Network connections drop, database locks timeout, and APIs return 503 errors. Because data pipelines interact with numerous external systems, a pipeline will eventually fail midway through its execution.
 

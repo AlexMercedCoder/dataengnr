@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Graph Data", "Data Modeling", "Data Architecture", "Analytics", "Data Engineering"]
 ---
 
-# When the Relationships Are the Data
+## When the Relationships Are the Data
 
 [Relational databases](/terms/relational-databases) are excellent at storing entities and linking them via foreign keys. If you want to know all the orders placed by a specific customer, a simple SQL `JOIN` between the `customers` table and the `orders` table answers the question instantly. 
 

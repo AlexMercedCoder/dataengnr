@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Architecture", "Data Mesh", "Data Governance", "Organizational Design"]
 ---
 
-# The Monolithic Bottleneck
+## The Monolithic Bottleneck
 
 For decades, the data engineering industry operated under a singular, unquestioned assumption: all enterprise data must be centralized. The prevailing architecture-whether it was an on-premises enterprise [data warehouse](/terms/data-warehouse) or a cloud-based [data lake](/terms/data-lake)-dictated that data from every corner of the organization must be extracted, transformed, and loaded into a massive, monolithic repository managed by a single, highly specialized data engineering team.
 

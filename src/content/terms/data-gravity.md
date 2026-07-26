@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Gravity", "Cloud Computing", "Data Architecture", "Data Migration", "Data Engineering"]
 ---
 
-# The Mass that Attracts Compute
+## The Mass that Attracts Compute
 
 In physics, gravity is the force by which a planet or other body draws objects toward its center; the more massive the object, the stronger its gravitational pull. In 2010, software engineer Dave McCrory coined the term "Data Gravity" to describe how this exact phenomenon applies to enterprise data architectures.
 

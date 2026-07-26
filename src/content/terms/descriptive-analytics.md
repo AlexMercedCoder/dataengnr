@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Descriptive Analytics", "Business Intelligence", "Analytics", "Data Visualization", "Data Engineering"]
 ---
 
-# Answering 'What Happened?'
+## Answering 'What Happened?'
 
 When an organization begins its data journey, it almost always starts with descriptive analytics. Before a company can predict the future or optimize its supply chain, it must first have a clear, accurate, and agreed-upon view of the past. 
 

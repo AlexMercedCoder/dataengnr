@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Vector Databases", "Artificial Intelligence", "RAG", "Embeddings", "Data Architecture"]
 ---
 
-# Searching by Meaning, Not Keywords
+## Searching by Meaning, Not Keywords
 
 Traditional [relational databases](/terms/relational-databases) are designed for exact matches (`WHERE customer_id = 123`) or keyword searches (`WHERE description LIKE '%laptop%'`). If a user searches an e-commerce database for "comfortable running shoes," a keyword search will completely miss a product described as "cushioned jogging sneakers" because there is no exact text match, despite the products being semantically identical.
 

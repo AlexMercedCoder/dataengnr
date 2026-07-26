@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Apache Iceberg", "Copy-on-Write", "Storage Strategy", "Data Lakehouse"]
 ---
 
-# Designing for Read Performance
+## Designing for Read Performance
 
 When an open table format processes a write operation that updates existing records, it faces a fundamental choice: update the data in place (modifying the existing file), write a separate delta record alongside the original file, or rewrite the original file entirely with the updates incorporated. Each strategy represents a different trade-off between write throughput and read performance.
 

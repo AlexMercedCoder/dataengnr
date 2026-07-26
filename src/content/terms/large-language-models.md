@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Large Language Models", "Generative AI", "Artificial Intelligence", "Machine Learning", "Transformers"]
 ---
 
-# The Engine of the AI Revolution
+## The Engine of the AI Revolution
 
 For decades, getting computers to understand human language was a brittle, frustrating process. Early Natural Language Processing (NLP) relied on hard-coded grammar rules and dictionaries. If a human used slang, sarcasm, or complex sentence structures, the computer failed to understand the intent.
 

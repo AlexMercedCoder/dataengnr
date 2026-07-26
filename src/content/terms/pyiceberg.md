@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["PyIceberg", "Python", "Apache Iceberg", "Data Engineering", "Data Science"]
 ---
 
-# Iceberg Without the JVM
+## Iceberg Without the JVM
 
 [Apache Iceberg](/terms/apache-iceberg) was originally designed and implemented for JVM-based compute engines: [Apache Spark](/terms/apache-spark), [Apache Flink](/terms/apache-flink), [Trino](/terms/trino), and [Dremio](/terms/dremio). For years, working with Iceberg tables from Python required launching a Spark session, which meant JVM startup overhead, cluster configuration, and the full weight of Spark's distributed execution framework even for simple catalog operations or small data reads.
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Topology", "Data Architecture", "Networking", "Compliance", "Data Engineering"]
 ---
 
-# The Physical Map of Data
+## The Physical Map of Data
 
 While a data pipeline describes the logical transformations applied to data (e.g., "join table A to table B"), Data Topology describes the physical and geographical map of where that data resides, how it traverses the network, and the architectural nodes it passes through.
 

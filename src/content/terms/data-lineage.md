@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Lineage", "Data Governance", "Data Engineering", "Data Quality", "Analytics"]
 ---
 
-# Following the Data Trail
+## Following the Data Trail
 
 When a CEO points to a dashboard and asks, "Why is the Q3 revenue number lower than what Finance reported?", the data team must be able to answer the question quickly and definitively. If the team cannot explain exactly how that specific number was calculated and where the underlying data came from, the executive's trust in the data platform evaporates.
 

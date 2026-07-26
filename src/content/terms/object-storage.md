@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Object Storage", "Cloud Storage", "S3", "Data Lakehouse", "Data Engineering"]
 ---
 
-# The Storage Foundation of the Lakehouse
+## The Storage Foundation of the Lakehouse
 
 Object storage is the storage architecture that makes the [data lakehouse](/terms/data-lakehouse) economically viable. Amazon S3, Azure [Data Lake](/terms/data-lake) Storage (ADLS), and Google Cloud Storage (GCS) are object storage systems that store data as immutable, versioned objects identified by unique keys (paths) rather than as blocks in a block storage device or files in a hierarchical file system.
 

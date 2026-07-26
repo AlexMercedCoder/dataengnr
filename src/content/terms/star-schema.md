@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Star Schema", "Dimensional Modeling", "Data Warehouse", "Data Modeling", "Analytics"]
 ---
 
-# The Foundation of Dimensional Modeling
+## The Foundation of Dimensional Modeling
 
 Star schema is the most widely used [data modeling](/terms/data-modeling) pattern in analytical data warehouses and lakehouses. Developed and popularized by Ralph Kimball in the 1990s, the star schema organizes analytical data around two types of tables: [fact tables](/terms/fact-tables) that record measurable business events and [dimension tables](/terms/dimension-tables) that provide the context describing those events.
 

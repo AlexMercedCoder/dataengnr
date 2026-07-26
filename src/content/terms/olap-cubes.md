@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["OLAP Cubes", "OLAP", "Business Intelligence", "Analytics", "Data Engineering"]
 ---
 
-# The Original Query Accelerator
+## The Original Query Accelerator
 
 Before cloud-scale distributed query engines and columnar file formats, analytical databases faced a fundamental performance challenge: complex multi-dimensional queries (revenue by product category by region by month) required scanning and aggregating large [fact tables](/terms/fact-tables), which took minutes or hours on the hardware available in the 1990s and 2000s. Business intelligence users needed sub-second query response for interactive dashboard exploration, which the raw OLTP or [data warehouse](/terms/data-warehouse) tables could not provide.
 

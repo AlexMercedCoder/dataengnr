@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Open Table Formats", "Apache Hudi", "Streaming", "Data Lakehouse"]
 ---
 
-# The Uber Origin: Born From Streaming Necessity
+## The Uber Origin: Born From Streaming Necessity
 
 Apache Hudi (Hadoop Upserts Deletes and Incrementals) was created at Uber in 2016 to solve a specific, pressing production problem that the existing Hadoop ecosystem could not address. Uber's data infrastructure processed hundreds of billions of events daily, ranging from trip records and driver location pings to payment transactions and customer support tickets. These events needed to flow from operational databases and real-time event streams into Hadoop-based data warehouses for analytical processing by the data science and operations teams.
 

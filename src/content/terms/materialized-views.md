@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Materialized Views", "Query Acceleration", "Dremio", "Data Lakehouse", "Analytics"]
 ---
 
-# Paying the Query Cost Once
+## Paying the Query Cost Once
 
 A complex analytical query joining a billion-row fact table with five [dimension tables](/terms/dimension-tables), applying date range filters, computing revenue aggregations by product category and geography, and ordering results may take 30-60 seconds on a well-optimized lakehouse. When this query is executed by 50 dashboard users simultaneously every morning, the lakehouse is performing the same 30-60 seconds of compute work 50 times, each time reading the same data from the same Iceberg files and producing the same results.
 

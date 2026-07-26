@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Architecture", "Data Lakehouse", "Data Pipelines", "Best Practices"]
 ---
 
-# The Chaos of Unstructured Pipelines
+## The Chaos of Unstructured Pipelines
 
 To appreciate the elegance and necessity of the Medallion Architecture, one must first understand the state of data engineering prior to its widespread adoption. During the early era of the Hadoop [data lake](/terms/data-lake), organizations adopted a "store everything now, figure it out later" mentality. Data was ingested from hundreds of source systems, ranging from relational transaction databases to semi-structured JSON application logs, and dumped unceremoniously into massive, flat [object storage](/terms/object-storage) buckets.
 

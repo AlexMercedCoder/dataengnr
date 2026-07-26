@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Feature Store", "Machine Learning", "MLOps", "Data Engineering", "Analytics"]
 ---
 
-# The Training-Serving Skew Problem
+## The Training-Serving Skew Problem
 
 A machine learning model's performance in production depends critically on the features it was trained on matching the features it receives at inference time. If the feature computation logic differs between the training pipeline and the serving pipeline even slightly, the model receives inputs it was never trained to handle, silently degrading performance.
 

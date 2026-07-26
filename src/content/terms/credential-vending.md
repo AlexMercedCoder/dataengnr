@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Credential Vending", "Security", "Apache Polaris", "Apache Iceberg", "Data Governance"]
 ---
 
-# The Credential Distribution Problem
+## The Credential Distribution Problem
 
 In a multi-engine lakehouse environment, every compute engine ([Apache Spark](/terms/apache-spark), [Apache Flink](/terms/apache-flink), [Dremio](/terms/dremio), [Trino](/terms/trino), [DuckDB](/terms/duckdb), Python scripts) needs credentials to read and write data files in [object storage](/terms/object-storage). The traditional approach to providing these credentials is to distribute permanent, broad-scoped storage credentials to all compute engines. AWS IAM access keys, Azure service principal credentials, or GCP service account keys are configured in each engine's settings, granting that engine access to the relevant storage buckets.
 

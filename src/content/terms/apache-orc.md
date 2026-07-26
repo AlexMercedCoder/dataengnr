@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Apache ORC", "File Formats", "Columnar Storage", "Hadoop", "Data Engineering"]
 ---
 
-# The Columnar Pioneer of the Hadoop Era
+## The Columnar Pioneer of the Hadoop Era
 
 Before columnar storage formats transformed analytical data processing, the Hadoop ecosystem stored data in row-oriented formats: plain text CSV files, SequenceFiles (key-value binary format), and Avro (row-oriented binary format with schema). These formats were efficient for write operations (appending rows sequentially) but poorly suited for analytical reads (scanning a few columns from billions of rows required reading and parsing all columns).
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Time-Series Data", "Data Modeling", "IoT", "Data Architecture", "Data Engineering"]
 ---
 
-# Analyzing the Flow of Time
+## Analyzing the Flow of Time
 
 While a relational database excels at storing the current state of an entity (e.g., a customer's current address or account balance), many analytical use cases require understanding how an entity changes continuously over time. 
 

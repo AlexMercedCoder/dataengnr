@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Lakehouse", "Data Warehouse", "Architecture", "Apache Iceberg", "Data Engineering"]
 ---
 
-# Two Architectures for Analytical Data
+## Two Architectures for Analytical Data
 
 The [data warehouse](/terms/data-warehouse) and the [data lakehouse](/terms/data-lakehouse) are both architectures for enabling analytical queries on large volumes of business data. Both provide SQL query interfaces, [data governance](/terms/data-governance), and support for BI tools and dashboards. But their underlying designs reflect fundamentally different philosophies about how analytical data infrastructure should be built.
 

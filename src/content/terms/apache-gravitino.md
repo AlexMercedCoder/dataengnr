@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Apache Gravitino", "Metadata", "Data Catalog", "Open Source", "Data Lakehouse"]
 ---
 
-# The Multi-Source Metadata Unification Problem
+## The Multi-Source Metadata Unification Problem
 
 Modern enterprise data platforms rarely consist of a single storage system. An organization might store operational data in PostgreSQL, analytical data in Iceberg tables on S3, machine learning features in a [feature store](/terms/feature-store), messaging data in Kafka topics, and legacy reports in Hive. Each of these systems has its own metadata model, its own catalog interface, and its own access control model. Engineers must learn and manage five different catalog systems to understand what data exists across the platform.
 

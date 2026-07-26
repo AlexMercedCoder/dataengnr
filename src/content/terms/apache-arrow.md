@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Apache Arrow", "Columnar Memory", "Data Engineering", "Query Performance"]
 ---
 
-# In-Memory Analytics Before Arrow
+## In-Memory Analytics Before Arrow
 
 Before Apache Arrow, moving data between analytical systems required expensive serialization and deserialization cycles. A query result produced by a database as rows of data had to be serialized into a wire format (CSV, JSON, or a binary protocol), transmitted across a network, deserialized into another in-memory representation on the receiving end, and then processed. Each serialization and deserialization step consumed CPU cycles, produced memory copies, and introduced latency.
 

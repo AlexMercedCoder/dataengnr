@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Query Planner", "Database Internals", "Apache Calcite", "Data Engineering", "Performance Optimization"]
 ---
 
-# The Brains of the Database
+## The Brains of the Database
 
 When a data analyst writes a SQL query, they are writing declarative code. They are telling the database *what* data they want (e.g., "Give me the sum of sales for customers in New York"). They are explicitly *not* telling the database *how* to get that data.
 

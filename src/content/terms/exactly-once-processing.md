@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Exactly-Once Processing", "Streaming", "Apache Flink", "Apache Kafka", "Data Engineering"]
 ---
 
-# The Holy Grail of Streaming
+## The Holy Grail of Streaming
 
 When building streaming data pipelines, engineers must contend with the realities of distributed systems: network partitions, node crashes, and process restarts. If a stream processing engine (like [Apache Flink](/terms/apache-flink)) crashes while processing a batch of financial transactions, what happens when the engine restarts?
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Modeling", "Star Schema", "Snowflake Schema", "Data Warehouse", "Kimball"]
 ---
 
-# Why Operational Schemas Break Analytics
+## Why Operational Schemas Break Analytics
 
 Every operational database is designed with a single priority: transactional write performance. Systems powering e-commerce checkouts, bank transactions, and hospital records use heavily normalized schemas, meaning each piece of information is stored in exactly one place. A customer's name, address, and email exist in the `customers` table. Their orders exist in the `orders` table. Each order's line items exist in `order_items`. Products are in a `products` table, and categories in a separate `categories` table. This normalization prevents data anomalies when records are updated; change a customer's email once in the `customers` table and it is correct everywhere.
 

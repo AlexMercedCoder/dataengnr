@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data as a Service", "DaaS", "Data Products", "Data Mesh", "Data Engineering"]
 ---
 
-# From [Data Lake](/terms/data-lake) to Data Service
+## From [Data Lake](/terms/data-lake) to Data Service
 
 A data lake or lakehouse that stores petabytes of data is only valuable when the data is discoverable, accessible, and trustworthy for the consumers who need it. The challenge most data organizations face is not insufficient data but insufficient data accessibility: finding the right dataset requires knowledge of arcane table names, understanding join conditions between tables that were never documented, and trusting that the data's quality and freshness meet the requirements of the use case.
 

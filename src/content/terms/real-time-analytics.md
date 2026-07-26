@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Real-Time Analytics", "Streaming", "Data Architecture", "Data Engineering", "Analytics"]
 ---
 
-# The Death of the Daily Batch
+## The Death of the Daily Batch
 
 For decades, the standard cadence of business intelligence was the "overnight batch." Data from the day's operations would sit in operational databases until midnight, at which point an ETL job would slowly pull the data into the [data warehouse](/terms/data-warehouse). When the CEO arrived at 9:00 AM the next day, they looked at a dashboard that was already 9 hours out of date. 
 

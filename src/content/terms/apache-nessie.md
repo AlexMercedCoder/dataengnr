@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Apache Nessie", "Catalog", "Apache Iceberg", "Data Versioning", "Data Engineering"]
 ---
 
-# Git for the Entire Catalog
+## Git for the Entire Catalog
 
 [Apache Iceberg](/terms/apache-iceberg)'s snapshot model provides table-level version history: each table has its own independent timeline of snapshots. A catalog using standard Iceberg table semantics tracks each table's current metadata pointer independently. There is no built-in mechanism for atomically updating multiple tables' current pointers simultaneously, and there is no catalog-level branch that isolates writes across all tables from reads against the main catalog view.
 

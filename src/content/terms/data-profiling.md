@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Profiling", "Data Quality", "Data Engineering", "Analytics", "Metadata"]
 ---
 
-# Understanding Data Before You Transform It
+## Understanding Data Before You Transform It
 
 Data pipelines fail or produce incorrect results when engineers make incorrect assumptions about the data they are processing. A pipeline that assumes a customer email column is never null fails when the source system introduces null emails. A join that assumes order IDs are unique fails when the source system contains duplicates. A revenue calculation that assumes amounts are always positive fails when refunds introduce negative values.
 

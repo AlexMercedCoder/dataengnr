@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Late-Arriving Data", "Streaming", "Data Engineering", "Apache Flink", "Architecture"]
 ---
 
-# Reconciling the Past
+## Reconciling the Past
 
 In a perfect data engineering world, events arrive at the data platform in the exact chronological order they occurred. In reality, distributed networks are messy. Mobile devices lose cell service, APIs go offline, and servers crash. 
 

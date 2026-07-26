@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Apache Superset", "Business Intelligence", "Data Visualization", "Open Source", "Data Engineering"]
 ---
 
-# Open Source Enterprise BI
+## Open Source Enterprise BI
 
 The Business Intelligence (BI) software market is dominated by expensive, proprietary desktop-origin platforms like Tableau and Power BI, or legacy enterprise suites like Looker. These tools often come with steep licensing costs that scale linearly with the number of users, creating a financial barrier to true [data democratization](/terms/data-democratization) across an organization.
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Slowly Changing Dimensions", "SCD", "Dimensional Modeling", "Data Warehouse", "Data Engineering"]
 ---
 
-# When Dimension Data Changes
+## When Dimension Data Changes
 
 [Dimension tables](/terms/dimension-tables) in a [star schema](/terms/star-schema) describe the context of business events: who, what, where. These descriptions change over time. A customer moves to a different city. A product is reclassified into a new category. A salesperson transfers to a different region. A store is renamed or rebranded.
 

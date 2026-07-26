@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Dimension Tables", "Dimensional Modeling", "Data Warehouse", "Data Engineering", "Star Schema"]
 ---
 
-# The Context of the Business
+## The Context of the Business
 
 If a fact table holds the numeric measurements of a business event (the "how much"), dimension tables hold the descriptive context surrounding that event (the "who, what, where, when, and why"). In a [star schema](/terms/star-schema), dimension tables surround the central fact table, providing the textual attributes used by analysts to slice, dice, filter, and group the data.
 

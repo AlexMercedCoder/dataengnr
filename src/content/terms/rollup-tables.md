@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Rollup Tables", "Performance Optimization", "Data Modeling", "Data Engineering", "Data Architecture"]
 ---
 
-# Pre-Computing the Answers
+## Pre-Computing the Answers
 
 If a retail CEO opens a dashboard to view "Total Sales by Region for 2025," the underlying query is logically simple: `SELECT region, SUM(sales) FROM transactions WHERE year = 2025 GROUP BY region`. 
 

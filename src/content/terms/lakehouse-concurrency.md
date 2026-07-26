@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Lakehouse Concurrency", "Apache Iceberg", "Data Engineering", "ACID", "Data Architecture"]
 ---
 
-# Managing the Chaos of Simultaneous Access
+## Managing the Chaos of Simultaneous Access
 
 In a modern enterprise, the data platform is a hyper-active intersection. At any given second, an automated streaming pipeline might be `INSERT`ing new web clicks, a dbt batch job might be `UPDATE`ing customer records, a [data privacy](/terms/data-privacy) script might be `DELETE`ing a user's data for GDPR compliance, and 500 business analysts might be running `SELECT` queries to render their morning dashboards.
 

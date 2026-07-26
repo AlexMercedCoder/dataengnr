@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["dbt", "Data Transformation", "Analytics Engineering", "SQL", "Data Engineering"]
 ---
 
-# SQL Transformation with Engineering Discipline
+## SQL Transformation with Engineering Discipline
 
 For most of the history of data warehousing, SQL transformations were maintained as ad-hoc scripts stored in shared drives, email attachments, or undocumented database stored procedures. The "[data warehouse](/terms/data-warehouse)" was often a black box where data entered through ETL jobs and emerged as reports, with the intermediate transformation logic documented only in the memory of the engineer who wrote it. Testing was manual or nonexistent. Version control was unknown. Deployment was copy-pasting SQL into a production database console.
 

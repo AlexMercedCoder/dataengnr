@@ -56,7 +56,7 @@ const articles = allItems.map(item => {
 
     <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {articles.map((article: any) => (
-        <a href={article.url} target="_blank" class="blog-card block h-full group" data-title={article.title.toLowerCase()} data-excerpt={article.excerpt.toLowerCase()}>
+        <a href={article.url} target="_blank" rel="noopener noreferrer" class="blog-card block h-full group" data-title={article.title.toLowerCase()} data-excerpt={article.excerpt.toLowerCase()}>
           <Card hoverEffect={true} class="flex flex-col h-full bg-charcoal-canvas">
             <span class="text-xs font-semibold tracking-wider text-ash-text uppercase mb-2 block">{article.date}</span>
             <h3 class="text-subheading font-semibold text-pure-white mb-3 group-hover:text-golden-gradient transition-colors line-clamp-3">{article.title}</h3>

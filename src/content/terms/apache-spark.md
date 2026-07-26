@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Apache Spark", "Distributed Computing", "Data Engineering", "Big Data"]
 ---
 
-# Why Spark Displaced MapReduce
+## Why Spark Displaced MapReduce
 
 Apache Hadoop's MapReduce was the first practical framework for distributed large-scale batch processing on commodity hardware. But MapReduce had a fundamental performance limitation: every intermediate result between processing stages was written to disk. A multi-stage data processing job that required chaining ten MapReduce steps would read from disk and write to disk ten times. For iterative algorithms like machine learning model training (which might require hundreds of iterations over the same dataset), this disk I/O overhead made MapReduce impractically slow.
 

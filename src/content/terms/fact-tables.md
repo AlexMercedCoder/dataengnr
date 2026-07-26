@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Fact Tables", "Dimensional Modeling", "Data Warehouse", "Data Engineering", "Star Schema"]
 ---
 
-# The Measurements of the Business
+## The Measurements of the Business
 
 In dimensional modeling (the design methodology created by Ralph Kimball), data is categorized into two fundamental types: facts and dimensions. A fact table is the central table in a [star schema](/terms/star-schema), and it records the measurements, metrics, or facts of a specific business process.
 

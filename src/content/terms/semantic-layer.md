@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Semantic Layer", "Dremio", "Data Governance", "Business Intelligence", "Data Engineering"]
 ---
 
-# The Glossary Made Real
+## The Glossary Made Real
 
 Every organization has business concepts that are poorly defined or inconsistently calculated: What is a "customer"? Does it include trial users? Churned users? Is "revenue" gross revenue before discounts, net revenue after discounts, or recognized revenue after GAAP adjustments? What constitutes an "active user"? Someone who logged in this month? This quarter? Who performed at least one meaningful action?
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Bitemporal Data", "Data Modeling", "Time Travel", "Data Architecture", "Data Engineering"]
 ---
 
-# Tracking Two Dimensions of Time
+## Tracking Two Dimensions of Time
 
 In standard data warehousing, tracking historical changes is typically handled via Slowly Changing Dimensions (SCD Type 2). When a customer's address changes, a new row is inserted with `effective_date` and `expiration_date` columns. This answers the question: "Where did the customer live on January 15th?" 
 

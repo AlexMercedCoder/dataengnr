@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Architecture", "Data Lakehouse", "Apache Iceberg", "Dremio"]
 ---
 
-# The Evolution of [Data Architecture](/terms/data-architecture)
+## The Evolution of [Data Architecture](/terms/data-architecture)
 
 The journey toward modern data engineering is defined by the tension between structured reliability and unstructured scale. Understanding the data lakehouse requires tracing the architectural shifts that preceded it. Historically, organizations relied entirely on data warehouses for analytics. A [data warehouse](/terms/data-warehouse) mandates that all ingested data conforms to a rigid, predefined schema before it is written to disk. This paradigm, known as schema-on-write, ensures high [data quality](/terms/data-quality) and provides the foundation for reliable, performant business intelligence dashboards. The primary drawback of the data warehouse is rigidity. When a business needs to analyze novel data formats, nested JSON structures, or machine learning telemetry, the warehouse pipeline struggles to adapt without expensive and time-consuming engineering intervention. Furthermore, the storage and compute components of traditional on-premises data warehouses are tightly coupled. Scaling up to meet storage demands inevitably forces organizations to pay for unnecessary compute power.
 

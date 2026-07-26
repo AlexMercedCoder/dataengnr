@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Silos", "Data Architecture", "Data Integration", "Data Lakehouse", "Data Engineering"]
 ---
 
-# The Enemy of Holistic Insights
+## The Enemy of Holistic Insights
 
 A company's marketing team uses Marketo for campaigns and stores campaign performance data there. The sales team uses Salesforce to track leads and opportunities. The support team uses Zendesk for customer tickets. The product team uses Mixpanel for user behavior analytics. Each of these systems contains valuable data, but the data is isolated, structurally incompatible, and accessible only to the team that owns the specific application.
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Apache Iceberg", "Time Travel", "Data Versioning", "Data Lakehouse"]
 ---
 
-# The Need for Historical Data Access
+## The Need for Historical Data Access
 
 Every data engineering team eventually faces a class of problem that traditional data systems handle poorly: the need to understand what data looked like at a specific moment in the past. These needs arise constantly in production environments.
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Apache Airflow", "Workflow Orchestration", "Data Pipelines", "Data Engineering"]
 ---
 
-# The Pipeline [Orchestration](/terms/orchestration) Problem
+## The Pipeline [Orchestration](/terms/orchestration) Problem
 
 Data pipelines in production environments are rarely simple, linear chains of steps that always succeed. A production data pipeline for a financial analytics platform might involve 40 interdependent tasks: extracting data from three source systems, validating schema compatibility, running parallel transformation jobs, executing [data quality](/terms/data-quality) checks, building Silver and Gold layer tables, refreshing BI dashboards, and sending success notifications. These tasks have complex dependency relationships (Task C cannot start until both Task A and Task B have completed successfully), must run on a schedule (daily at 3 AM), and must handle failures gracefully (retry failed tasks three times, alert on persistent failure, skip downstream dependents when an upstream task fails).
 

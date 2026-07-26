@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Row-Level Security", "RLS", "Data Governance", "Dremio", "Data Engineering"]
 ---
 
-# Invisible Filters for Sensitive Data
+## Invisible Filters for Sensitive Data
 
 [Column masking](/terms/column-masking) protects sensitive column values by replacing them with masked representations. But some access control requirements go further: certain users should not be able to see certain rows at all, not even in masked form. A regional sales manager should see only the sales records for their own region. A clinical researcher should see only patient records for the clinical trial they are enrolled in. A franchise owner should see only transactions from their own store locations.
 

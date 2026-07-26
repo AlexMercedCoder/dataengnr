@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["DuckDB", "Analytics", "SQL", "Data Engineering", "Columnar Storage"]
 ---
 
-# A Database That Lives Inside Your Process
+## A Database That Lives Inside Your Process
 
 DuckDB occupies a unique position in the data engineering landscape: it is a full-featured analytical SQL engine that runs embedded within the same process as the application using it, with no separate server, no network connection, and no configuration required. A Python script can import DuckDB, load a 100GB Parquet file, run complex analytical SQL queries against it, and receive results, all in-process, without any external infrastructure.
 

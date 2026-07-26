@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Project Nessie", "Iceberg Catalog", "Data Versioning", "Data Lakehouse"]
 ---
 
-# Git Semantics for Data Lakehouses
+## Git Semantics for Data Lakehouses
 
 Project Nessie is an open-source catalog developed by [Dremio](/terms/dremio) that applies the branching and merging concepts of Git version control to the management of [Apache Iceberg](/terms/apache-iceberg) tables. The core insight behind Nessie is that data engineers working on complex transformations, schema migrations, and [data quality](/terms/data-quality) validations face problems analogous to those software engineers face when modifying code: they need to work in isolation without affecting production users, test changes against real data before committing, and merge their changes back into the main data branch when ready.
 

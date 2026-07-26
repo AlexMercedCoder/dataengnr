@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Table Format", "Apache Iceberg", "Data Lakehouse", "Open Standards"]
 ---
 
-# The Hive Bottleneck and the Birth of Iceberg
+## The Hive Bottleneck and the Birth of Iceberg
 
 Before the advent of modern open table formats, the data engineering industry relied heavily on the Apache Hive table layout to impose structure onto data lakes. Hive was revolutionary when it was introduced, as it provided a SQL-like interface over Hadoop Distributed File System (HDFS) and later cloud [object storage](/terms/object-storage). It established a standard for organizing massive volumes of raw data files into logical tables. However, the architectural design of Hive was fundamentally incompatible with the extreme scale and performance requirements of the modern cloud era.
 

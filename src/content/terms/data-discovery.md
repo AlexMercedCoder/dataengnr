@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Discovery", "Data Catalog", "Metadata", "Data Governance", "Data Engineering"]
 ---
 
-# Finding the Right Needle in the Data Haystack
+## Finding the Right Needle in the Data Haystack
 
 A [data lakehouse](/terms/data-lakehouse) storing thousands of tables and petabytes of data is useless if analysts cannot find the specific data they need. When a data scientist needs historical pricing data to build a churn model, they face a series of discovery challenges: Does this data exist? What database is it in? What is the table named (`prices`, `historical_pricing`, `fct_price_changes`)? If they find a table, what do the columns mean? Is the data updated daily or monthly? Who owns the table if they have questions?
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["AI", "Agentic Analytics", "Data Lakehouse", "Machine Learning"]
 ---
 
-# The Evolution Beyond Predictive AI
+## The Evolution Beyond Predictive AI
 
 The trajectory of enterprise analytics is defined by a continuous drive toward automation and higher-order intelligence. For decades, the industry operated primarily within the realm of [descriptive analytics](/terms/descriptive-analytics), focusing on historical reporting to answer the question of what happened. This eventually matured into [diagnostic analytics](/terms/diagnostic-analytics), providing deeper drill-downs to determine why specific events occurred. As computational power increased and big data architectures stabilized, organizations transitioned toward [predictive analytics](/terms/predictive-analytics), utilizing statistical machine learning models to forecast what will happen next. Finally, [prescriptive analytics](/terms/prescriptive-analytics) emerged, attempting to recommend specific actions based on those predictions. 
 

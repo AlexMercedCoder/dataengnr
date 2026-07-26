@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Deduplication", "Data Quality", "ETL", "Apache Iceberg", "Data Engineering"]
 ---
 
-# Managing the Reality of 'At-Least-Once' Delivery
+## Managing the Reality of 'At-Least-Once' Delivery
 
 In distributed systems, ensuring that a message is delivered exactly once is notoriously difficult. Network partitions, consumer crashes, and producer timeouts mean that the safest delivery guarantee most messaging systems (like [Apache Kafka](/terms/apache-kafka)) provide by default is "at-least-once" delivery: the system guarantees the message will be delivered, but it might be delivered multiple times.
 

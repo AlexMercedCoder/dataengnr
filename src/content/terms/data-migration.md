@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Migration", "Data Architecture", "Cloud Computing", "Data Engineering", "ETL"]
 ---
 
-# Moving the Mountain
+## Moving the Mountain
 
 The transition from legacy on-premises data warehouses (like Teradata or Oracle) or first-generation Hadoop clusters to modern cloud data lakehouses (using [Apache Iceberg](/terms/apache-iceberg)) is rarely a simple "copy-paste" operation. 
 

@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Z-Ordering", "Data Skipping", "Query Optimization", "Apache Iceberg", "Data Lakehouse"]
 ---
 
-# The Multi-Dimensional Data Locality Problem
+## The Multi-Dimensional Data Locality Problem
 
 Partitioning organizes data files by the values of partition columns, enabling partition pruning to eliminate entire files based on a single column's filter value. This works excellently for queries that filter on the partition column. But analytical queries frequently filter on non-partition columns or combinations of multiple columns. A query filtering `WHERE region = 'US-WEST' AND product_category = 'Electronics' AND price > 500` benefits from partition pruning if the table is partitioned by region, but the product_category and price filters still require scanning all data files within the US-WEST partition to find matching rows.
 

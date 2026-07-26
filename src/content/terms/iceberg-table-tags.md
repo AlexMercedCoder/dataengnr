@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Iceberg Tags", "Apache Iceberg", "Data Versioning", "Data Governance", "Data Engineering"]
 ---
 
-# Named Checkpoints in the Snapshot Timeline
+## Named Checkpoints in the Snapshot Timeline
 
 [Apache Iceberg](/terms/apache-iceberg)'s snapshot timeline records every commit to a table as a new snapshot with a unique snapshot ID and timestamp. [Time travel queries](/terms/time-travel-queries) can access any snapshot by ID or timestamp: `SELECT * FROM table FOR VERSION AS OF 1234567890` or `SELECT * FROM table FOR TIMESTAMP AS OF '2024-01-01'`. But snapshot IDs are opaque integers and timestamps are imprecise references to a point in time that may correspond to multiple snapshots within the same second.
 

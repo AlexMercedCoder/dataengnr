@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Predictive Analytics", "Machine Learning", "Artificial Intelligence", "Analytics", "Data Engineering"]
 ---
 
-# Answering 'What Will Happen?'
+## Answering 'What Will Happen?'
 
 Once an organization masters understanding the past ([Descriptive Analytics](/terms/descriptive-analytics)) and the reasons behind it ([Diagnostic Analytics](/terms/diagnostic-analytics)), the next strategic imperative is anticipating the future. 
 

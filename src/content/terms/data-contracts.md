@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Contracts", "Data Quality", "Data Engineering", "Data Governance", "Data Mesh"]
 ---
 
-# The Silent Breaking Change Problem
+## The Silent Breaking Change Problem
 
 A data engineer modifies a column name in an upstream table to better reflect its business meaning. They update the documentation, notify their team lead, and deploy the change to production. Three days later, the analytics team discovers that twelve dashboards are showing blank charts, a machine learning model is failing with schema validation errors, and a customer-facing reporting API is returning null values. The engineer's well-intentioned change broke downstream consumers who were never informed and had no mechanism to enforce their schema expectations.
 

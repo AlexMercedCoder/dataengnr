@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Reliability", "Data Quality", "Data Engineering", "Data Observability", "DataOps"]
 ---
 
-# Treating Data Downtime Like Application Downtime
+## Treating Data Downtime Like Application Downtime
 
 When a company's e-commerce website goes down, alerts fire immediately, engineers are paged, and the incident is resolved with maximum urgency because the business impact is visible and immediate. When a silent failure in a data pipeline causes the executive revenue dashboard to underreport sales by 15%, the issue often goes unnoticed for weeks until a business user questions the numbers. By then, decisions have been made based on flawed data, and trust in the data team is broken.
 

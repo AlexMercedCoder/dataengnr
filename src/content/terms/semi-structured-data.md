@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Semi-Structured Data", "JSON", "Data Architecture", "Data Lakehouse", "Data Engineering"]
 ---
 
-# Flexibility with Structure
+## Flexibility with Structure
 
 In the spectrum of data types, semi-structured data occupies the massive middle ground between the rigid rows-and-columns of structured data and the completely schema-less chaos of [unstructured data](/terms/unstructured-data) (like raw text or images).
 

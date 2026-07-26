@@ -5,7 +5,7 @@ date: 2026-05-17
 tags: ["Data Mesh", "Data Architecture", "Data Products", "Data Governance", "Data Engineering"]
 ---
 
-# The Centralized Team Bottleneck
+## The Centralized Team Bottleneck
 
 As organizations scale their data initiatives, a recurring failure pattern emerges: a centralized data engineering team becomes a bottleneck for all analytical data needs. Every new dataset request, schema change, or pipeline modification must go through the central team's backlog. Domain teams with deep business context wait weeks for data engineering support. The central team, trying to serve all domains simultaneously, lacks the business context to model data correctly and maintains pipelines for systems they don't understand.
 
