@@ -1,0 +1,195 @@
+[
+  {
+    "slug": "what-is-data-engineering",
+    "index": 1,
+    "title": "What Is Data Engineering",
+    "description": "Data engineering builds and runs the systems that move, store, model and serve data, plus the reliability work that keeps the results trustworthy.",
+    "keywords": [
+      "data engineering",
+      "data pipeline",
+      "ingestion",
+      "data platform",
+      "data reliability"
+    ],
+    "beats": [
+      "Move data from where it is created to where it gets used",
+      "Four responsibilities show up in every data platform",
+      "Correct once is not the job. Correct every run is."
+    ],
+    "seconds": 35,
+    "iso8601": "PT35S",
+    "src": "/assets/videos/what-is-data-engineering.mp4",
+    "poster": "/assets/videos/what-is-data-engineering.jpg",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "slug": "etl-vs-elt",
+    "index": 2,
+    "title": "ETL vs ELT",
+    "description": "ETL reshapes data on a separate tier before loading it. ELT lands raw data in the platform first and transforms it in place. What changes is where compute runs and whether you keep the raw copy.",
+    "keywords": [
+      "ETL",
+      "ELT",
+      "dbt",
+      "data integration",
+      "data pipeline"
+    ],
+    "beats": [
+      "Transform before you load",
+      "Load first, transform in place",
+      "What you gain, and what you take on"
+    ],
+    "seconds": 35,
+    "iso8601": "PT35S",
+    "src": "/assets/videos/etl-vs-elt.mp4",
+    "poster": "/assets/videos/etl-vs-elt.jpg",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "slug": "batch-vs-streaming",
+    "index": 3,
+    "title": "Batch vs Streaming",
+    "description": "Batch jobs run on a schedule over everything that arrived since the last run. Streaming processes each record as it lands. Micro-batching sits between them, and most platforms end up running more than one.",
+    "keywords": [
+      "batch processing",
+      "stream processing",
+      "Apache Kafka",
+      "Apache Flink",
+      "micro-batching"
+    ],
+    "beats": [
+      "Work piles up, then runs on a schedule",
+      "Each record is processed as it arrives",
+      "Micro-batching sits between them, and most platforms run both"
+    ],
+    "seconds": 35,
+    "iso8601": "PT35S",
+    "src": "/assets/videos/batch-vs-streaming.mp4",
+    "poster": "/assets/videos/batch-vs-streaming.jpg",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "slug": "warehouse-lake-lakehouse",
+    "index": 4,
+    "title": "Warehouse, Lake, Lakehouse",
+    "description": "The warehouse gave analytics governed tables in a closed format. The lake gave open files with none of the guarantees. The lakehouse puts a table format over open storage so the guarantees come back.",
+    "keywords": [
+      "data warehouse",
+      "data lake",
+      "data lakehouse",
+      "Apache Iceberg",
+      "object storage"
+    ],
+    "beats": [
+      "Governed tables, in someone else's format",
+      "Open files, and none of the guarantees",
+      "A table format puts the guarantees back",
+      "One copy of the data, many engines on top of it"
+    ],
+    "seconds": 44,
+    "iso8601": "PT44S",
+    "src": "/assets/videos/warehouse-lake-lakehouse.mp4",
+    "poster": "/assets/videos/warehouse-lake-lakehouse.jpg",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "slug": "data-modeling-for-analytics",
+    "index": 5,
+    "title": "Data Modeling for Analytics",
+    "description": "Operational schemas normalize to make writes safe. Analytical models denormalize to make scans fast and questions readable. Dimensional modeling is how that second shape is built, and slowly changing dimensions are how it survives change.",
+    "keywords": [
+      "data modeling",
+      "dimensional modeling",
+      "star schema",
+      "fact table",
+      "slowly changing dimensions"
+    ],
+    "beats": [
+      "Two schemas, optimized for opposite things",
+      "Facts in the middle, dimensions around them",
+      "Dimensions change, and history has to survive it"
+    ],
+    "seconds": 35,
+    "iso8601": "PT35S",
+    "src": "/assets/videos/data-modeling-for-analytics.mp4",
+    "poster": "/assets/videos/data-modeling-for-analytics.jpg",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "slug": "orchestration-and-dags",
+    "index": 6,
+    "title": "Orchestration and DAGs",
+    "description": "Pipeline steps have dependencies, and a directed acyclic graph is how you state them. An orchestrator turns that graph into scheduling, retries, backfills and run history you can actually see.",
+    "keywords": [
+      "orchestration",
+      "DAG",
+      "Apache Airflow",
+      "Dagster",
+      "Prefect"
+    ],
+    "beats": [
+      "Steps have dependencies, so they need a graph",
+      "Schedule, execute, observe, recover",
+      "A graph of tasks, or a graph of assets"
+    ],
+    "seconds": 35,
+    "iso8601": "PT35S",
+    "src": "/assets/videos/orchestration-and-dags.mp4",
+    "poster": "/assets/videos/orchestration-and-dags.jpg",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "slug": "data-quality-and-observability",
+    "index": 7,
+    "title": "Data Quality and Observability",
+    "description": "Quality is a set of measured dimensions with thresholds. Write-audit-publish keeps a failed check from ever becoming a visible table. Observability watches freshness, volume, schema, distribution and lineage for the rest.",
+    "keywords": [
+      "data quality",
+      "data observability",
+      "write-audit-publish",
+      "data lineage",
+      "dbt tests"
+    ],
+    "beats": [
+      "Quality is measured, not asserted",
+      "Run the checks before anyone can read the table",
+      "Five signals for the failures nobody wrote a test for"
+    ],
+    "seconds": 35,
+    "iso8601": "PT35S",
+    "src": "/assets/videos/data-quality-and-observability.mp4",
+    "poster": "/assets/videos/data-quality-and-observability.jpg",
+    "width": 1920,
+    "height": 1080
+  },
+  {
+    "slug": "the-modern-data-stack",
+    "index": 8,
+    "title": "The Modern Data Stack",
+    "description": "The stack unbundled into ingestion, storage, transformation and serving, each purchasable on its own. Open table formats moved the lock-in question from storage to the catalog, and the semantic layer is where shared definitions now live.",
+    "keywords": [
+      "modern data stack",
+      "Apache Iceberg",
+      "semantic layer",
+      "dbt",
+      "data catalog"
+    ],
+    "beats": [
+      "Ingestion, storage, transformation, serving",
+      "The lock-in question moved from storage to the catalog",
+      "Definitions belong above the tables, not inside each tool"
+    ],
+    "seconds": 35,
+    "iso8601": "PT35S",
+    "src": "/assets/videos/the-modern-data-stack.mp4",
+    "poster": "/assets/videos/the-modern-data-stack.jpg",
+    "width": 1920,
+    "height": 1080
+  }
+]
