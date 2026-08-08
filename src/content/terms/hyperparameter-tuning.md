@@ -1,6 +1,6 @@
 ---
 title: "Hyperparameter Tuning"
-description: "A guide to hyperparameter tuning, the experimental process of adjusting the external configuration settings of a machine learning model to optimize its learning efficiency and final predictive accuracy."
+description: "Hyperparameter tuning is the experimental process of adjusting the external configuration settings of a machine learning model to optimize its learning efficiency and final predictive accuracy."
 date: 2026-05-17
 tags: ["Hyperparameter Tuning", "Machine Learning", "Data Science", "Artificial Intelligence", "Analytics"]
 ---
@@ -39,4 +39,4 @@ Because training a massive model on a lakehouse can take hours or days, data sci
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

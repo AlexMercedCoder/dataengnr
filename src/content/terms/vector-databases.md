@@ -1,6 +1,6 @@
 ---
 title: "Vector Databases"
-description: "A guide to vector databases, the specialized storage systems designed to store, index, and query high-dimensional vector embeddings, forming the retrieval backbone for generative AI and semantic search applications."
+description: "Vector databases are the specialized storage systems designed to store, index, and query high-dimensional vector embeddings, forming the retrieval backbone for generative AI and semantic search applications."
 date: 2026-05-17
 tags: ["Vector Databases", "Artificial Intelligence", "RAG", "Embeddings", "Data Architecture"]
 ---
@@ -35,4 +35,4 @@ While dedicated vector databases were the early pioneers, traditional databases 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

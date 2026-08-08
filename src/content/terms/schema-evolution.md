@@ -1,6 +1,6 @@
 ---
 title: "Schema Evolution"
-description: "A guide to schema evolution, the critical capability of modern data platforms to safely alter the structure of a database table (adding, dropping, or renaming columns) without breaking existing data or pipelines."
+description: "Schema evolution is the critical capability of modern data platforms to safely alter the structure of a database table (adding, dropping, or renaming columns) without breaking existing data or pipelines."
 date: 2026-05-17
 tags: ["Schema Evolution", "Data Architecture", "Apache Iceberg", "Data Engineering", "Data Modeling"]
 ---
@@ -11,7 +11,7 @@ Data is not static; it constantly evolves to reflect the changing reality of a b
 
 In traditional [relational databases](/terms/relational-databases), changing the structure of a massive table (a process known as an `ALTER TABLE` statement) was historically a terrifying, blocking operation. To add a single column to a 10-terabyte table, the database often had to lock the entire table, physically rewrite every single row on the hard drive to include the new empty column, and keep the application offline for hours.
 
-Schema evolution is the modern architectural solution to this problem. It allows data engineers to seamlessly and safely alter the structure (the schema) of massive datasets instantaneously, without rewriting historical files and without taking the system offline.
+Schema evolution is the modern architectural solution to this problem. It allows data engineers to safely alter the structure (the schema) of massive datasets instantaneously, without rewriting historical files and without taking the system offline.
 
 ## Safe vs. Unsafe Evolution
 
@@ -37,4 +37,4 @@ When a query engine like [Dremio](/terms/dremio) reads the old Parquet files, it
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

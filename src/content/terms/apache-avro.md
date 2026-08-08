@@ -1,6 +1,6 @@
 ---
 title: "Apache Avro"
-description: "A guide to Apache Avro, the row-oriented serialization format with schema evolution support that serves as the standard format for Kafka event streaming and data pipeline message exchange."
+description: "Apache Avro is the row-oriented serialization format with schema evolution support that serves as the standard format for Kafka event streaming and data pipeline message exchange."
 date: 2026-05-17
 tags: ["Apache Avro", "Serialization", "Kafka", "Schema Registry", "Data Engineering"]
 ---
@@ -35,10 +35,10 @@ This centralized schema management provides schema governance for the entire Kaf
 
 Within [Apache Iceberg](/terms/apache-iceberg)'s architecture, Avro appears not as a data file format but as the format for Iceberg's manifest files. Iceberg manifest files (which list data files and their statistics) are stored as Avro files. This choice reflects Avro's strengths: manifest files contain records (each record describes one data file), schema evolution matters (Iceberg metadata schema has evolved across specification versions), and compact binary encoding is preferable over verbose JSON for what can be large manifest files.
 
-For streaming pipelines, the typical pattern is to use Avro for Kafka event serialization (leveraging Schema Registry for governance) and Parquet for Iceberg data file storage (leveraging Iceberg's native metadata layer). Flink or Spark streaming jobs read Avro-encoded Kafka events, decode them using the Schema Registry, apply transformations, and write the results as Parquet files committed to Iceberg tables.
+For streaming pipelines, the typical pattern is to use Avro for Kafka event serialization (using Schema Registry for governance) and Parquet for Iceberg data file storage (using Iceberg's native metadata layer). Flink or Spark streaming jobs read Avro-encoded Kafka events, decode them using the Schema Registry, apply transformations, and write the results as Parquet files committed to Iceberg tables.
 
 [Dremio](/terms/dremio) reads Avro data files directly for compatibility with legacy pipelines that write Avro to the [data lake](/terms/data-lake), while recommending Parquet as the primary format for new Iceberg table deployments.
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

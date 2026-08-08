@@ -1,6 +1,6 @@
 ---
 title: "Attribute-Based Access Control (ABAC)"
-description: "A guide to Attribute-Based Access Control, the fine-grained authorization model that makes access decisions based on attributes of the user, resource, environment, and action rather than static role assignments."
+description: "Attribute-Based Access Control is the fine-grained authorization model that makes access decisions based on attributes of the user, resource, environment, and action rather than static role assignments."
 date: 2026-05-17
 tags: ["ABAC", "Access Control", "Security", "Data Governance", "Data Engineering"]
 ---
@@ -39,4 +39,4 @@ Column-level ABAC policies can apply masking transformations based on attribute 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

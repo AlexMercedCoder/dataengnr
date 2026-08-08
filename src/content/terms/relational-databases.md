@@ -1,6 +1,6 @@
 ---
 title: "Relational Databases"
-description: "A guide to relational databases (RDBMS), the foundational technology of the data industry that stores information in highly structured tables linked by primary and foreign keys, enforcing strict data integrity."
+description: "Relational databases (RDBMS) are the foundational technology of the data industry that stores information in highly structured tables linked by primary and foreign keys, enforcing strict data integrity."
 date: 2026-05-17
 tags: ["Relational Databases", "SQL", "Data Architecture", "Data Modeling", "Data Engineering"]
 ---
@@ -37,4 +37,4 @@ While phenomenal for transactional workloads (OLTP), traditional relational data
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

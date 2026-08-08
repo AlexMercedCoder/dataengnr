@@ -1,6 +1,6 @@
 ---
 title: "Bloom Filters"
-description: "A guide to Bloom filters in data engineering, the probabilistic data structure used in Iceberg, Parquet, and query engines to dramatically accelerate point lookups by skipping data files that definitely cannot contain matching values."
+description: "Bloom filters are a probabilistic data structure used in Iceberg, Parquet, and query engines to dramatically accelerate point lookups by skipping data files that definitely cannot contain matching values."
 date: 2026-05-17
 tags: ["Bloom Filters", "Apache Iceberg", "Query Optimization", "Data Engineering", "Apache Parquet"]
 ---
@@ -41,4 +41,4 @@ For tables that are frequently queried by specific high-cardinality identifiers 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

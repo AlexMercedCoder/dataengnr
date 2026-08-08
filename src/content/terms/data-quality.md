@@ -1,6 +1,6 @@
 ---
 title: "Data Quality"
-description: "A comprehensive guide to data quality in the modern data lakehouse, the principles, dimensions, patterns, and tools that ensure analytical data is accurate, complete, consistent, and trustworthy."
+description: "Data quality in the modern data lakehouse covers the principles, dimensions, patterns, and tools that ensure analytical data is accurate, complete, consistent, and trustworthy."
 date: 2026-05-17
 tags: ["Data Quality", "Data Engineering", "Data Governance", "dbt", "Great Expectations"]
 ---
@@ -35,4 +35,4 @@ Declarative data quality tests catch known quality rules at pipeline run time. B
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

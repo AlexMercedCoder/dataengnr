@@ -1,6 +1,6 @@
 ---
 title: "Data Topology"
-description: "A guide to data topology, the structural mapping of how data physically and logically flows through an organization's systems, networks, and geographic regions to optimize performance and compliance."
+description: "Data topology is the structural mapping of how data physically and logically flows through an organization's systems, networks, and geographic regions to optimize performance and compliance."
 date: 2026-05-17
 tags: ["Data Topology", "Data Architecture", "Networking", "Compliance", "Data Engineering"]
 ---
@@ -19,7 +19,7 @@ If an IoT device in a factory in Berlin generates a sensor reading, the topology
 
 **Edge Computing Topology**: Pushing processing power to the absolute edge of the network, as close to the data source as possible. Used heavily in IoT and autonomous vehicles. The data is processed locally (e.g., a smart camera detecting a defect on an assembly line) to achieve millisecond reaction times, and only the metadata (e.g., "Defect found at 10:05 AM") is sent to the central cloud.
 
-**Multi-Region Active-Active**: The most complex and robust topology. Data is ingested, processed, and stored simultaneously across multiple geographic regions (e.g., US, Europe, Asia). If the US data center suffers a catastrophic failure, the European data center takes over seamlessly. This requires complex cross-region replication strategies.
+**Multi-Region Active-Active**: The most complex and robust topology. Data is ingested, processed, and stored simultaneously across multiple geographic regions (e.g., US, Europe, Asia). If the US data center suffers a catastrophic failure, the European data center takes over. This requires complex cross-region replication strategies.
 
 ![Data Topology Architecture](/images/terms/data_topology.png)
 
@@ -31,4 +31,4 @@ A global [data architecture](/terms/data-architecture) can no longer rely on a s
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

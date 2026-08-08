@@ -1,6 +1,6 @@
 ---
 title: "Vectorized Execution"
-description: "A guide to vectorized execution in analytical query engines, the CPU optimization technique that processes batches of column values using SIMD instructions, delivering orders-of-magnitude query performance improvements over row-at-a-time processing."
+description: "Vectorized execution in analytical query engines is the CPU optimization technique that processes batches of column values using SIMD instructions, delivering orders-of-magnitude query performance improvements over row-at-a-time processing."
 date: 2026-05-17
 tags: ["Vectorized Execution", "Query Performance", "Apache Arrow", "Dremio", "Data Engineering"]
 ---
@@ -33,4 +33,4 @@ The combination of Apache Arrow memory format, vectorized batch processing, and 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

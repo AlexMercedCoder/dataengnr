@@ -1,6 +1,6 @@
 ---
 title: "Incremental Processing"
-description: "A guide to incremental processing patterns in data engineering, the techniques for processing only new or changed data rather than reprocessing entire datasets on every pipeline run."
+description: "Incremental processing patterns in data engineering are the techniques for processing only new or changed data rather than reprocessing entire datasets on every pipeline run."
 date: 2026-05-17
 tags: ["Incremental Processing", "Data Pipelines", "Apache Iceberg", "dbt", "Data Engineering"]
 ---
@@ -33,4 +33,4 @@ The incremental processing pattern's correctness depends critically on [idempote
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

@@ -1,6 +1,6 @@
 ---
 title: "Surrogate Keys"
-description: "A guide to surrogate keys in dimensional data modeling, the system-generated artificial identifiers used in data warehouse fact and dimension tables to replace natural business keys and enable efficient joins and slowly changing dimension management."
+description: "Surrogate keys in dimensional data modeling are the system-generated artificial identifiers used in data warehouse fact and dimension tables to replace natural business keys and enable efficient joins and slowly changing dimension management."
 date: 2026-05-17
 tags: ["Surrogate Keys", "Dimensional Modeling", "Data Warehouse", "Data Engineering", "Star Schema"]
 ---
@@ -37,4 +37,4 @@ Fact tables join dimension tables on surrogate keys: `SELECT f.revenue, c.segmen
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

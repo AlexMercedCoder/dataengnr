@@ -1,6 +1,6 @@
 ---
 title: "Micro-batching"
-description: "A guide to micro-batching, the hybrid data processing architectural pattern that achieves near-real-time streaming performance by rapidly executing tiny, high-frequency batch jobs, forming the foundation of systems like Spark Streaming."
+description: "Micro-batching is the hybrid data processing architectural pattern that achieves near-real-time streaming performance by rapidly executing tiny, high-frequency batch jobs, forming the foundation of systems like Spark Streaming."
 date: 2026-05-17
 tags: ["Micro-batching", "Streaming", "Apache Spark", "Data Engineering", "Data Architecture"]
 ---
@@ -38,4 +38,4 @@ However, for 95% of enterprise use cases - updating a live inventory dashboard, 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

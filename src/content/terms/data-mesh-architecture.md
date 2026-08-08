@@ -1,6 +1,6 @@
 ---
 title: "Data Mesh"
-description: "A guide to Data Mesh, the decentralized sociotechnical approach to analytical data architecture that distributes data ownership to domain teams, treating data as a product with federated governance and shared platform infrastructure."
+description: "Data Mesh is the decentralized sociotechnical approach to analytical data architecture that distributes data ownership to domain teams, treating data as a product with federated governance and shared platform infrastructure."
 date: 2026-05-17
 tags: ["Data Mesh", "Data Architecture", "Data Products", "Data Governance", "Data Engineering"]
 ---
@@ -35,4 +35,4 @@ Dremio's [Semantic Layer](/terms/semantic-layer) sits above the Polaris catalog,
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

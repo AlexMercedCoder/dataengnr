@@ -1,6 +1,6 @@
 ---
 title: "Apache Gravitino"
-description: "A guide to Apache Gravitino, the open-source unified metadata layer that provides a single catalog API over multiple heterogeneous data sources, enabling governed multi-engine data discovery and access."
+description: "Apache Gravitino is the open-source unified metadata layer that provides a single catalog API over multiple heterogeneous data sources, enabling governed multi-engine data discovery and access."
 date: 2026-05-17
 tags: ["Apache Gravitino", "Metadata", "Data Catalog", "Open Source", "Data Lakehouse"]
 ---
@@ -37,4 +37,4 @@ Gravitino's broader ambition is unified metadata across heterogeneous systems, i
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

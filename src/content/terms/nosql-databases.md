@@ -1,13 +1,13 @@
 ---
 title: "NoSQL Databases"
-description: "A guide to NoSQL databases, the flexible, non-relational storage systems designed to handle massive volumes of unstructured or semi-structured data by sacrificing strict ACID guarantees for infinite horizontal scalability."
+description: "NoSQL databases are the flexible, non-relational storage systems designed to handle massive volumes of unstructured or semi-structured data by sacrificing strict ACID guarantees for infinite horizontal scalability."
 date: 2026-05-17
 tags: ["NoSQL Databases", "Data Architecture", "Document Databases", "Data Engineering", "Semi-Structured Data"]
 ---
 
 ## Breaking the Tabular Mold
 
-In the late 2000s, the explosive growth of web applications, social media, and mobile devices created a data crisis. Applications were generating massive volumes of data at unprecedented velocities, and the data rarely fit neatly into the rigid, pre-defined rows and columns of a traditional Relational Database (RDBMS).
+In the late 2000s, the explosive growth of web applications, social media, and mobile devices created a data crisis. Applications were generating massive volumes of data at very high velocities, and the data rarely fit neatly into the rigid, pre-defined rows and columns of a traditional Relational Database (RDBMS).
 
 If a software developer wanted to add a new "Twitter Handle" field to a user profile, adding a new column to a massive relational table required a blocking database migration that could take the application offline for hours. Furthermore, [relational databases](/terms/relational-databases) scaled vertically (requiring bigger, more expensive servers), hitting physical limits.
 
@@ -39,4 +39,4 @@ While traditional relational databases prioritize strict Consistency (guaranteei
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

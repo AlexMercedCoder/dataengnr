@@ -1,6 +1,6 @@
 ---
 title: "Data Governance"
-description: "A comprehensive guide to data governance in the modern lakehouse, the framework of policies, processes, and technologies that ensures data is trustworthy, secure, and used appropriately across the enterprise."
+description: "Data governance in the modern lakehouse is the framework of policies, processes, and technologies that ensures data is trustworthy, secure, and used appropriately across the enterprise."
 date: 2026-05-17
 tags: ["Data Governance", "Data Quality", "Security", "Compliance", "Data Lakehouse"]
 ---
@@ -49,4 +49,4 @@ Dremio's [Semantic Layer](/terms/semantic-layer) serves as the governance contro
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

@@ -76,7 +76,7 @@ The data lake preserves this fidelity. By storing the raw, unaltered payloads in
 
 The ability of data scientists to extract value from the raw data lake has improved exponentially due to the evolution of distributed compute engines. In the early Hadoop era, processing data on HDFS required writing complex, low-level Java MapReduce jobs. This was a highly specialized engineering task that severely bottlenecked analytical productivity. 
 
-The introduction of Apache Spark revolutionized data science on the data lake. Spark replaced the slow, disk-bound architecture of MapReduce with a highly optimized, [in-memory processing](/terms/in-memory-processing) framework. Data scientists could now interact with massive datasets on object storage using intuitive DataFrame APIs in Python, Scala, or R. Spark enabled the rapid prototyping of machine learning pipelines, complex [feature engineering](/terms/feature-engineering), and massive-scale data transformations without requiring analysts to understand the underlying complexities of distributed systems. 
+The introduction of Apache Spark reshaped data science on the data lake. Spark replaced the slow, disk-bound architecture of MapReduce with a highly optimized, [in-memory processing](/terms/in-memory-processing) framework. Data scientists could now interact with massive datasets on object storage using intuitive DataFrame APIs in Python, Scala, or R. Spark enabled the rapid prototyping of machine learning pipelines, complex [feature engineering](/terms/feature-engineering), and massive-scale data transformations without requiring analysts to understand the underlying complexities of distributed systems. 
 
 As machine learning has evolved toward [generative AI](/terms/generative-ai) and [Large Language Models](/terms/large-language-models) (LLMs), the data lake has become the primary source for proprietary training and tuning data. Vast repositories of internal documentation, codebases, and unstructured text stored in the lake are tokenized and processed by these distributed compute engines to build custom organizational intelligence. The raw data lake remains the undisputed engine room for advanced analytical innovation.
 
@@ -89,7 +89,7 @@ For years, organizations were trapped in a paradigm where they had to choose bet
 
 Dremio acts as a distributed, high-performance SQL execution engine that sits directly on top of the data lake. It utilizes a Zero-ETL approach. Rather than forcing data engineers to build fragile pipelines to extract data from Amazon S3, transform it on a separate server, and load it into a proprietary data warehouse cube, Dremio simply queries the Parquet or JSON files directly where they reside in the object storage bucket. 
 
-By querying the data in place, Dremio dramatically reduces data engineering overhead and infrastructure costs. Analysts gain immediate access to the freshest possible data without waiting for overnight batch jobs to complete. The Dremio engine achieves interactive query speeds on object storage by heavily leveraging [Apache Arrow](/terms/apache-arrow), an open-source columnar memory format that allows the execution engine to perform massive vectorized aggregations in RAM without the overhead of serialization.
+By querying the data in place, Dremio dramatically reduces data engineering overhead and infrastructure costs. Analysts gain immediate access to the freshest possible data without waiting for overnight batch jobs to complete. The Dremio engine achieves interactive query speeds on object storage by heavily using [Apache Arrow](/terms/apache-arrow), an open-source columnar memory format that allows the execution engine to perform massive vectorized aggregations in RAM without the overhead of serialization.
 
 ### Implementing the Universal [Semantic Layer](/terms/semantic-layer)
 
@@ -101,7 +101,7 @@ The semantic layer acts as a logical translation engine between the raw physical
 
 To guarantee that massive aggregations against object storage return in milliseconds, Dremio employs a proprietary acceleration technology called Data Reflections. Data Reflections are intelligent, invisible materializations of the data. When an engineer identifies a slow-running query or a heavily utilized virtual dataset, they can enable a Reflection. Dremio automatically pre-computes the aggregation, sorts the data, and stores the highly optimized Parquet files back in the data lake. 
 
-When a subsequent query is issued against the semantic layer, the Dremio optimizer algebraically matches the query to the available Data Reflections. If a Reflection can satisfy the query more efficiently than scanning the raw files, the optimizer transparently rewrites the execution plan to use the Reflection. The end user remains completely unaware of the underlying mechanics; they simply experience blazing-fast dashboard performance on data that technically still resides in the data lake.
+When a subsequent query is issued against the semantic layer, the Dremio optimizer algebraically matches the query to the available Data Reflections. If a Reflection can satisfy the query more efficiently than scanning the raw files, the optimizer transparently rewrites the execution plan to use the Reflection. The end user remains completely unaware of the underlying mechanics; they simply get sub-second dashboard performance on data that technically still resides in the data lake.
 
 
 ## The Transition to the Lakehouse
@@ -116,11 +116,11 @@ Instead of relying on the slow and inconsistent directory listing operations of 
 
 ### Best Practices for Modernization
 
-Modernizing a legacy data lake into a high-performance data lakehouse requires a deliberate engineering strategy. The most critical step is standardizing on open formats. Organizations must actively migrate their raw, [unstructured data](/terms/unstructured-data) into optimized, columnar Parquet files and register those files as Apache Iceberg tables. This migration immediately unlocks ACID transactions, [schema evolution](/terms/schema-evolution), and time travel capabilities.
+Modernizing a legacy data lake into a high-performance data lakehouse requires a deliberate engineering strategy. The most critical step is standardizing on open formats. Organizations must actively migrate their raw, [unstructured data](/terms/unstructured-data) into optimized, columnar Parquet files and register those files as Apache Iceberg tables. This migration immediately brings ACID transactions, [schema evolution](/terms/schema-evolution), and time travel capabilities.
 
-Furthermore, organizations must deploy a centralized, open catalog, such as [Apache Polaris](/terms/apache-polaris), to track these Iceberg tables and enforce Role-Based Access Control globally. By combining the cost-effective scalability of cloud object storage, the transactional reliability of Apache Iceberg, the open interoperability of Apache Polaris, and the high-performance semantic abstraction of Dremio, organizations successfully transform their stagnant data lakes into dynamic, governed, and lightning-fast data lakehouses. This unified architecture is the definitive foundation for the future of enterprise data engineering and Agentic AI.
+Furthermore, organizations must deploy a centralized, open catalog, such as [Apache Polaris](/terms/apache-polaris), to track these Iceberg tables and enforce Role-Based Access Control globally. By combining the cost-effective scalability of cloud object storage, the transactional reliability of Apache Iceberg, the open interoperability of Apache Polaris, and the high-performance semantic abstraction of Dremio, organizations successfully transform their stagnant data lakes into dynamic, governed, and lightning-fast data lakehouses. This unified architecture is a durable foundation for enterprise data engineering and Agentic AI.
 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

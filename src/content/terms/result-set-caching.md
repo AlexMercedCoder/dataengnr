@@ -1,6 +1,6 @@
 ---
 title: "Result Set Caching"
-description: "A guide to result set caching, the specific optimization layer that intercepts exact-match SQL queries and returns pre-computed final outputs instantly, bypassing all underlying compute and network traversal."
+description: "Result set caching is the specific optimization layer that intercepts exact-match SQL queries and returns pre-computed final outputs instantly, bypassing all underlying compute and network traversal."
 date: 2026-05-17
 tags: ["Result Set Caching", "Performance Optimization", "Analytics", "Data Architecture", "Data Engineering"]
 ---
@@ -35,4 +35,4 @@ A Materialized View or Data Reflection is proactive and flexible. It is a physic
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

@@ -1,6 +1,6 @@
 ---
 title: "Schema-on-Read"
-description: "A guide to schema-on-read, the foundational big data paradigm where raw data is stored exactly as it arrives without enforcement, and the structure is only applied later when a query is actually executed."
+description: "Schema-on-read is the foundational big data paradigm where raw data is stored exactly as it arrives without enforcement, and the structure is only applied later when a query is actually executed."
 date: 2026-05-17
 tags: ["Schema-on-Read", "Data Lake", "Data Architecture", "Big Data", "Data Engineering"]
 ---
@@ -27,10 +27,10 @@ When an analyst writes a Spark or Presto query against the raw JSON files, they 
 
 ## The Chaos and the Cure
 
-Schema-on-read provided ultimate flexibility, but it quickly turned Data Lakes into "Data Swamps." Because nothing was enforced on write, the S3 buckets filled up with corrupted data, missing fields, and broken JSON files. When analysts tried to run a query (applying the schema on read), the query would crash because the underlying raw data was a chaotic mess.
+Schema-on-read provided total flexibility, but it quickly turned Data Lakes into "Data Swamps." Because nothing was enforced on write, the S3 buckets filled up with corrupted data, missing fields, and broken JSON files. When analysts tried to run a query (applying the schema on read), the query would crash because the underlying raw data was a chaotic mess.
 
 The modern [Data Lakehouse](/terms/data-lakehouse) (using [Apache Iceberg](/terms/apache-iceberg)) is the cure. It brings the best of both worlds. It uses the cheap, scalable [object storage](/terms/object-storage) of a Data Lake, but it re-introduces the strict ACID guarantees and **Schema-on-Write** enforcement of a traditional data warehouse. Today, raw data lands in a Bronze zone (schema-on-read), but it is quickly validated, cleaned, and written into strict Iceberg tables (schema-on-write) for reliable, high-performance analytics.
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

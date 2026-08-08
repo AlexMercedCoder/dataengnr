@@ -1,6 +1,6 @@
 ---
 title: "Query Planner"
-description: "A guide to the query planner, the intelligent software component within a database engine that translates a user's SQL string into the most efficient physical execution strategy."
+description: "The query planner is the intelligent software component within a database engine that translates a user's SQL string into the most efficient physical execution strategy."
 date: 2026-05-17
 tags: ["Query Planner", "Database Internals", "Apache Calcite", "Data Engineering", "Performance Optimization"]
 ---
@@ -35,4 +35,4 @@ Calcite provides the SQL parser and the complex mathematical rule engine for opt
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

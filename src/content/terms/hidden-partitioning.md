@@ -1,6 +1,6 @@
 ---
 title: "Hidden Partitioning"
-description: "A comprehensive guide to Apache Iceberg's hidden partitioning, the feature that decouples physical data organization from analytical query semantics, eliminating partition-aware query requirements."
+description: "Apache Iceberg's hidden partitioning is the feature that decouples physical data organization from analytical query semantics, eliminating partition-aware query requirements."
 date: 2026-05-17
 tags: ["Apache Iceberg", "Partitioning", "Data Lakehouse", "Query Optimization"]
 ---
@@ -49,4 +49,4 @@ Dremio's query planner natively understands Iceberg's hidden partitioning metada
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

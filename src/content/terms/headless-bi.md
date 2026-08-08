@@ -1,6 +1,6 @@
 ---
 title: "Headless BI"
-description: "A guide to Headless BI, the architectural pattern that decouples the semantic metric definition layer from the presentation layer, allowing consistent business logic to be consumed via API by any downstream application or tool."
+description: "Headless BI is the architectural pattern that decouples the semantic metric definition layer from the presentation layer, allowing consistent business logic to be consumed via API by any downstream application or tool."
 date: 2026-05-17
 tags: ["Headless BI", "Metric Store", "Semantic Layer", "Business Intelligence", "Data Architecture"]
 ---
@@ -33,4 +33,4 @@ If the CFO changes the definition of "Net Revenue" to exclude a specific new tax
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

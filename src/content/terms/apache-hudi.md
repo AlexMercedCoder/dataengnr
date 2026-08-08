@@ -1,6 +1,6 @@
 ---
 title: "Apache Hudi"
-description: "A comprehensive guide to Apache Hudi, the open-source data lakehouse storage format from Uber that pioneered incremental data processing and upsert capabilities for streaming workloads on object storage."
+description: "Apache Hudi is the open-source data lakehouse storage format from Uber that pioneered incremental data processing and upsert capabilities for streaming workloads on object storage."
 date: 2026-05-17
 tags: ["Open Table Formats", "Apache Hudi", "Streaming", "Data Lakehouse"]
 ---
@@ -61,7 +61,7 @@ The industry has broadly converged on Apache Iceberg as the default open table f
 
 ## Hudi with [Dremio](/terms/dremio) and the Modern Stack
 
-Dremio supports reading Apache Hudi tables directly, allowing organizations with existing Hudi-based lakehouses to leverage Dremio's [Semantic Layer](/terms/semantic-layer) and query acceleration capabilities without migrating their data to a different format. Dremio reads Hudi Copy-on-Write tables natively through their Parquet data files and supports the Hudi metadata table for efficient file listing.
+Dremio supports reading Apache Hudi tables directly, allowing organizations with existing Hudi-based lakehouses to use Dremio's [Semantic Layer](/terms/semantic-layer) and query acceleration capabilities without migrating their data to a different format. Dremio reads Hudi Copy-on-Write tables natively through their Parquet data files and supports the Hudi metadata table for efficient file listing.
 
 For new lakehouse implementations, Dremio recommends Apache Iceberg as the primary table format due to its broader ecosystem interoperability and the superior ACID semantics of its catalog-based snapshot management. Organizations migrating from Hudi to Iceberg can use Apache Spark to read existing Hudi tables and write the output as Iceberg tables, completing the migration without reprocessing the underlying raw data.
 
@@ -69,4 +69,4 @@ The broader lesson of Hudi's evolution is that the open table format space has m
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

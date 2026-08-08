@@ -1,6 +1,6 @@
 ---
 title: "Snowflake Schema"
-description: "A guide to the snowflake schema, a dimensional modeling technique where dimension tables are normalized into multiple related tables, trading query simplicity for storage efficiency and data integrity."
+description: "The snowflake schema is a dimensional modeling technique where dimension tables are normalized into multiple related tables, trading query simplicity for storage efficiency and data integrity."
 date: 2026-05-17
 tags: ["Snowflake Schema", "Dimensional Modeling", "Data Warehouse", "Data Engineering", "Star Schema"]
 ---
@@ -33,4 +33,4 @@ In a modern Iceberg lakehouse accessed via [Dremio](/terms/dremio), data enginee
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

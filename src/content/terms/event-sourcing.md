@@ -1,6 +1,6 @@
 ---
 title: "Event Sourcing"
-description: "A guide to event sourcing, the architectural pattern where the state of an application is not stored as a single snapshot, but rather as an immutable sequence of historical events that can be replayed to derive the current state."
+description: "Event sourcing is the architectural pattern where the state of an application is not stored as a single snapshot, but rather as an immutable sequence of historical events that can be replayed to derive the current state."
 date: 2026-05-17
 tags: ["Event Sourcing", "Data Architecture", "Software Engineering", "Microservices", "Data Engineering"]
 ---
@@ -37,4 +37,4 @@ Event sourcing is heavily paired with **[Apache Kafka](/terms/apache-kafka)**, a
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

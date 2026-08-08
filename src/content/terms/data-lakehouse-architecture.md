@@ -1,6 +1,6 @@
 ---
 title: "Data Lakehouse Architecture"
-description: "A comprehensive guide to data lakehouse architecture, the modern analytical platform that combines open file formats on object storage with table format governance and SQL query engines to deliver warehouse performance with data lake flexibility."
+description: "Data lakehouse architecture is the modern analytical platform that combines open file formats on object storage with table format governance and SQL query engines to deliver warehouse performance with data lake flexibility."
 date: 2026-05-17
 tags: ["Data Lakehouse", "Apache Iceberg", "Architecture", "Data Engineering", "Dremio"]
 ---
@@ -33,4 +33,4 @@ Dremio occupies the intersection: providing the governed, managed query experien
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

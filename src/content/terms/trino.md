@@ -1,6 +1,6 @@
 ---
 title: "Trino"
-description: "A guide to Trino (formerly PrestoSQL), the open-source distributed SQL query engine designed for fast interactive analytics across multiple data sources including Iceberg lakehouses, relational databases, and object storage."
+description: "Trino (formerly PrestoSQL) is the open-source distributed SQL query engine designed for fast interactive analytics across multiple data sources including Iceberg lakehouses, relational databases, and object storage."
 date: 2026-05-17
 tags: ["Trino", "SQL Query Engine", "Distributed SQL", "Apache Iceberg", "Data Engineering"]
 ---
@@ -35,4 +35,4 @@ For organizations that want a self-managed, open-source SQL engine for Iceberg q
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

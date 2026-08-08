@@ -1,6 +1,6 @@
 ---
 title: "Embedded Analytics"
-description: "A guide to embedded analytics, the integration of analytical capabilities, dashboards, and data visualizations directly into user-facing operational applications, bridging the gap between data exploration and operational workflows."
+description: "Embedded analytics is the integration of analytical capabilities, dashboards, and data visualizations directly into user-facing operational applications, bridging the gap between data exploration and operational workflows."
 date: 2026-05-17
 tags: ["Embedded Analytics", "Business Intelligence", "Analytics", "Data Architecture", "Product Development"]
 ---
@@ -9,7 +9,7 @@ tags: ["Embedded Analytics", "Business Intelligence", "Analytics", "Data Archite
 
 Historically, analytics required context-switching. If a sales representative using a CRM application wanted to see the historical purchasing trends of a client, they had to leave the CRM, open a separate Business Intelligence (BI) tool like Tableau or Power BI in a different browser tab, search for the client's dashboard, analyze the data, and then switch back to the CRM to make a decision. This friction reduces data adoption; when users are forced to leave their workflow to find data, they often choose to make decisions without it.
 
-Embedded analytics eliminates this context-switching by integrating analytical charts, dashboards, and interactive data explorations directly into the operational applications where users already spend their time. The data is embedded seamlessly into the application's UI, appearing as a native feature of the software.
+Embedded analytics eliminates this context-switching by integrating analytical charts, dashboards, and interactive data explorations directly into the operational applications where users already spend their time. The data is embedded into the application's UI, appearing as a native feature of the software.
 
 When a doctor opens a patient's electronic health record, embedded analytics displays an interactive timeline of the patient's vitals natively within the record view. When a vendor logs into an e-commerce platform's seller portal, they see an embedded dashboard showing their daily sales velocity and inventory forecasts.
 
@@ -33,4 +33,4 @@ When embedding analytics in a customer-facing product, the underlying data platf
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

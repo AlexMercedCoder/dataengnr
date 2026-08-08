@@ -1,6 +1,6 @@
 ---
 title: "Data Enrichment"
-description: "A guide to data enrichment in analytical pipelines, the process of augmenting internal datasets with external context, third-party data, or derived classifications to increase the analytical value and predictive power of the data."
+description: "Data enrichment in analytical pipelines is the process of augmenting internal datasets with external context, third-party data, or derived classifications to increase the analytical value and predictive power of the data."
 date: 2026-05-17
 tags: ["Data Enrichment", "Data Engineering", "ETL", "Analytics", "Data Integration"]
 ---
@@ -35,4 +35,4 @@ Enrichment pipelines must handle the inevitable failures of external enrichment 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

@@ -1,6 +1,6 @@
 ---
 title: "Multi-Cloud Architecture"
-description: "A guide to multi-cloud data architecture, the strategy of distributing data storage and compute across multiple cloud providers (AWS, Azure, GCP) to avoid vendor lock-in, leverage best-of-breed services, and increase resilience."
+description: "Multi-cloud data architecture is the strategy of distributing data storage and compute across multiple cloud providers (AWS, Azure, GCP) to avoid vendor lock-in, use best-of-breed services, and increase resilience."
 date: 2026-05-17
 tags: ["Multi-Cloud Architecture", "Data Architecture", "Cloud Computing", "Data Engineering", "Dremio"]
 ---
@@ -11,7 +11,7 @@ In the early days of cloud computing, organizations typically committed to a sin
 
 A multi-cloud architecture intentionally distributes data assets and compute workloads across two or more public cloud providers. An organization might store its primary [data lake](/terms/data-lake) in Amazon S3, use Google Cloud for its machine learning and Vertex AI capabilities, and run Microsoft Power BI on Azure for enterprise reporting.
 
-This architectural pattern is driven by three primary motivations: avoiding vendor lock-in (maintaining negotiating leverage by ensuring workloads can be moved), leveraging best-of-breed services (using Google for ML, AWS for storage), and risk mitigation (ensuring business continuity if an entire cloud provider experiences an outage).
+This architectural pattern is driven by three primary motivations: avoiding vendor lock-in (maintaining negotiating use by ensuring workloads can be moved), using best-of-breed services (using Google for ML, AWS for storage), and risk mitigation (ensuring business continuity if an entire cloud provider experiences an outage).
 
 ## Challenges of Multi-Cloud Data
 
@@ -37,4 +37,4 @@ This architecture provides the true promise of multi-cloud: a unified logical vi
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

@@ -1,6 +1,6 @@
 ---
 title: "Semantic Layer"
-description: "A guide to the semantic layer in data engineering, the governed translation layer between raw data and business consumers that defines metrics, business logic, and access control centrally, ensuring consistent data definitions across all BI tools and AI agents."
+description: "The semantic layer in data engineering is the governed translation layer between raw data and business consumers that defines metrics, business logic, and access control centrally, ensuring consistent data definitions across all BI tools and AI agents."
 date: 2026-05-17
 tags: ["Semantic Layer", "Dremio", "Data Governance", "Business Intelligence", "Data Engineering"]
 ---
@@ -35,4 +35,4 @@ Dremio's semantic layer, with its REST API and [Arrow Flight](/terms/arrow-fligh
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

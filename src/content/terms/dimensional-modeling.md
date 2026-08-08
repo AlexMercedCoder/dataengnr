@@ -1,6 +1,6 @@
 ---
 title: "Dimensional Modeling (Star Schema & Snowflake Schema)"
-description: "A comprehensive guide to dimensional modeling, the technique developed by Ralph Kimball for structuring analytical databases into Fact tables and Dimension tables for fast, intuitive business intelligence queries."
+description: "Dimensional modeling is the technique developed by Ralph Kimball for structuring analytical databases into Fact tables and Dimension tables for fast, intuitive business intelligence queries."
 date: 2026-05-17
 tags: ["Data Modeling", "Star Schema", "Snowflake Schema", "Data Warehouse", "Kimball"]
 ---
@@ -63,4 +63,4 @@ Dremio's [Semantic Layer](/terms/semantic-layer) sits on top of the physical Ice
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

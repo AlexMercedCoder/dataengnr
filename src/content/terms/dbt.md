@@ -1,6 +1,6 @@
 ---
 title: "dbt (Data Build Tool)"
-description: "A comprehensive guide to dbt, the SQL-first transformation framework that brings software engineering best practices (version control, testing, documentation, modularity) to the data transformation layer."
+description: "dbt is the SQL-first transformation framework that brings software engineering best practices (version control, testing, documentation, modularity) to the data transformation layer."
 date: 2026-05-17
 tags: ["dbt", "Data Transformation", "Analytics Engineering", "SQL", "Data Engineering"]
 ---
@@ -39,4 +39,4 @@ dbt incremental models with Iceberg support use Iceberg's MERGE INTO semantics t
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

@@ -1,6 +1,6 @@
 ---
 title: "Change Data Capture (CDC)"
-description: "A comprehensive guide to Change Data Capture (CDC), the data integration technique that identifies and delivers row-level database changes in real time to downstream analytical systems."
+description: "Change Data Capture (CDC) is the data integration technique that identifies and delivers row-level database changes in real time to downstream analytical systems."
 date: 2026-05-17
 tags: ["Data Integration", "CDC", "Streaming", "Real-Time Data"]
 ---
@@ -41,7 +41,7 @@ This rich event structure enables downstream systems to perform several critical
 
 ### The Initial Snapshot
 
-When a CDC pipeline is first established for a table, the downstream consumer needs to synchronize with the current state of the table before it can begin processing incremental changes. CDC systems handle this through an initial snapshot phase. Debezium takes a consistent snapshot of the entire source table at a specific database transaction boundary, publishing each existing row as an `r` (read) event. Once the snapshot is complete, Debezium seamlessly transitions to streaming mode, capturing and publishing live change events from the transaction log. The downstream consumer processes the snapshot events to populate its initial state, then continues updating that state with the live change events, achieving complete synchronization.
+When a CDC pipeline is first established for a table, the downstream consumer needs to synchronize with the current state of the table before it can begin processing incremental changes. CDC systems handle this through an initial snapshot phase. Debezium takes a consistent snapshot of the entire source table at a specific database transaction boundary, publishing each existing row as an `r` (read) event. Once the snapshot is complete, Debezium transitions to streaming mode, capturing and publishing live change events from the transaction log. The downstream consumer processes the snapshot events to populate its initial state, then continues updating that state with the live change events, achieving complete synchronization.
 
 ## CDC to the Lakehouse: Iceberg MERGE INTO
 
@@ -65,4 +65,4 @@ This combination, Debezium for CDC capture, Apache Kafka for event streaming, Ap
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

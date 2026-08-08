@@ -1,6 +1,6 @@
 ---
 title: "Data Lineage"
-description: "A guide to data lineage, the map of a data asset's lifecycle that traces its origins, transformations, and downstream consumption to ensure trust, simplify debugging, and enable impact analysis."
+description: "Data lineage is the map of a data asset's lifecycle that traces its origins, transformations, and downstream consumption to ensure trust, simplify debugging, and enable impact analysis."
 date: 2026-05-17
 tags: ["Data Lineage", "Data Governance", "Data Engineering", "Data Quality", "Analytics"]
 ---
@@ -39,4 +39,4 @@ In the modern data stack, lineage is generated automatically by parsing the code
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

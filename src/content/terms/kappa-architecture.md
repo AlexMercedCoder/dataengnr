@@ -1,6 +1,6 @@
 ---
 title: "Kappa Architecture"
-description: "A comprehensive guide to Kappa Architecture, the stream-first data processing paradigm that eliminates the complexity of Lambda by using a single, replayable event log as the sole source of truth."
+description: "Kappa Architecture is the stream-first data processing paradigm that eliminates the complexity of Lambda by using a single, replayable event log as the sole source of truth."
 date: 2026-05-17
 tags: ["Architecture", "Streaming", "Kappa Architecture", "Apache Kafka"]
 ---
@@ -11,7 +11,7 @@ Jay Kreps, one of the original creators of [Apache Kafka](/terms/apache-kafka) a
 
 Kreps identified that the core capability provided by the Lambda Batch Layer, the ability to reprocess the complete history of data, was already theoretically achievable in a streaming system if the underlying data log was designed with sufficient retention. Apache Kafka was specifically architected with this reprocessing capability in mind. A Kafka topic configured with a long enough retention period is not merely a message queue that deletes old events; it is a permanent, ordered, replayable log of every event the system has ever produced.
 
-If historical reprocessing is achievable through a streaming framework applied to a replayable log, then the Batch Layer becomes logically redundant. The entire historical dataset is already stored in the event log, and a streaming framework can process it from the beginning at high speed, effectively simulating a batch run. If a bug is discovered in the stream processing logic, an engineer simply deploys the corrected consumer group, points it at offset zero of the Kafka topic, and allows it to reprocess the entire event history at maximum throughput. Once the consumer catches up to the live stream, it seamlessly transitions into real-time processing mode.
+If historical reprocessing is achievable through a streaming framework applied to a replayable log, then the Batch Layer becomes logically redundant. The entire historical dataset is already stored in the event log, and a streaming framework can process it from the beginning at high speed, effectively simulating a batch run. If a bug is discovered in the stream processing logic, an engineer simply deploys the corrected consumer group, points it at offset zero of the Kafka topic, and allows it to reprocess the entire event history at maximum throughput. Once the consumer catches up to the live stream, it transitions into real-time processing mode.
 
 This insight led to the core proposition of Kappa Architecture: a single streaming system, backed by a replayable event log, can replace both the Batch Layer and the Speed Layer of Lambda Architecture while providing a single unified code path for all analytical computation.
 
@@ -79,4 +79,4 @@ This architecture provides the best properties of both storage systems: Kafka's 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

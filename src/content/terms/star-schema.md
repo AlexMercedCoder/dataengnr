@@ -1,6 +1,6 @@
 ---
 title: "Star Schema"
-description: "A guide to the star schema dimensional model, the foundational data warehouse design pattern that organizes analytical data into fact tables surrounded by denormalized dimension tables for optimized query performance."
+description: "The star schema dimensional model is the foundational data warehouse design pattern that organizes analytical data into fact tables surrounded by denormalized dimension tables for optimized query performance."
 date: 2026-05-17
 tags: ["Star Schema", "Dimensional Modeling", "Data Warehouse", "Data Modeling", "Analytics"]
 ---
@@ -41,4 +41,4 @@ Dremio's [query planner](/terms/query-planner) is particularly effective at opti
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

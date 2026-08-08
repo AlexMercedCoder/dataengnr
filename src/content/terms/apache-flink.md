@@ -1,6 +1,6 @@
 ---
 title: "Apache Flink"
-description: "A guide to Apache Flink, the open-source distributed stream processing engine that provides low-latency, stateful event processing for real-time analytical and operational pipelines."
+description: "Apache Flink is the open-source distributed stream processing engine that provides low-latency, stateful event processing for real-time analytical and operational pipelines."
 date: 2026-05-17
 tags: ["Apache Flink", "Stream Processing", "Real-Time Analytics", "Data Engineering"]
 ---
@@ -37,4 +37,4 @@ This SQL-first approach dramatically lowers the barrier to stream processing. En
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

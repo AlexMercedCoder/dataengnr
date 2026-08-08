@@ -1,6 +1,6 @@
 ---
 title: "Apache Arrow"
-description: "A guide to Apache Arrow, the open-source cross-language columnar memory format that enables high-performance in-memory analytics and zero-copy data exchange between data systems."
+description: "Apache Arrow is the open-source cross-language columnar memory format that enables high-performance in-memory analytics and zero-copy data exchange between data systems."
 date: 2026-05-17
 tags: ["Apache Arrow", "Columnar Memory", "Data Engineering", "Query Performance"]
 ---
@@ -39,4 +39,4 @@ When Dremio reads a Parquet file from an Iceberg table, it decodes the Parquet c
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

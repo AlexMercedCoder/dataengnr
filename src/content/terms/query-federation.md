@@ -1,6 +1,6 @@
 ---
 title: "Query Federation"
-description: "A guide to query federation in data engineering, the architecture pattern that enables a single SQL query to join and aggregate data from multiple heterogeneous data sources without moving the data into a central system first."
+description: "Query federation in data engineering is the architecture pattern that enables a single SQL query to join and aggregate data from multiple heterogeneous data sources without moving the data into a central system first."
 date: 2026-05-17
 tags: ["Query Federation", "Federated Query", "Dremio", "Data Integration", "SQL"]
 ---
@@ -33,4 +33,4 @@ Dremio's [Semantic Layer](/terms/semantic-layer) adds governance to federation: 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

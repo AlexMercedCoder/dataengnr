@@ -1,6 +1,6 @@
 ---
 title: "Large Language Models"
-description: "A guide to Large Language Models (LLMs), the massive neural networks built on the Transformer architecture that power modern AI by understanding, generating, and translating human language at an unprecedented scale."
+description: "Large Language Models (LLMs) are the massive neural networks built on the Transformer architecture that power modern AI by understanding, generating, and translating human language at very large scale."
 date: 2026-05-17
 tags: ["Large Language Models", "Generative AI", "Artificial Intelligence", "Machine Learning", "Transformers"]
 ---
@@ -9,7 +9,7 @@ tags: ["Large Language Models", "Generative AI", "Artificial Intelligence", "Mac
 
 For decades, getting computers to understand human language was a brittle, frustrating process. Early Natural Language Processing (NLP) relied on hard-coded grammar rules and dictionaries. If a human used slang, sarcasm, or complex sentence structures, the computer failed to understand the intent.
 
-Large Language Models (LLMs) completely revolutionized this field. An LLM (like GPT-4, Claude, or LLaMA) is a specific type of [Generative AI](/terms/generative-ai) model designed exclusively to understand and generate text. They do not rely on grammar rules; they rely on pure statistical probability derived from reading billions of pages of human text.
+Large Language Models (LLMs) completely reshaped this field. An LLM (like GPT-4, Claude, or LLaMA) is a specific type of [Generative AI](/terms/generative-ai) model designed exclusively to understand and generate text. They do not rely on grammar rules; they rely on pure statistical probability derived from reading billions of pages of human text.
 
 ## The Transformer Architecture
 
@@ -33,4 +33,4 @@ The astonishing discovery of LLMs is that as you increase the parameter count an
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

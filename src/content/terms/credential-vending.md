@@ -1,6 +1,6 @@
 ---
 title: "Credential Vending"
-description: "A guide to credential vending in the Apache Iceberg ecosystem, the security pattern where a catalog service issues scoped, time-limited storage credentials to compute engines rather than distributing permanent broad-access credentials."
+description: "Credential vending in the Apache Iceberg ecosystem is the security pattern where a catalog service issues scoped, time-limited storage credentials to compute engines rather than distributing permanent broad-access credentials."
 date: 2026-05-17
 tags: ["Credential Vending", "Security", "Apache Polaris", "Apache Iceberg", "Data Governance"]
 ---
@@ -41,4 +41,4 @@ When Dremio is configured to use Polaris as its catalog, Dremio's storage access
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

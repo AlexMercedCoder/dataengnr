@@ -1,6 +1,6 @@
 ---
 title: "Data Retention Policies"
-description: "A guide to data retention policies in lakehouses, the governance rules that define how long different categories of data are stored, when data is deleted or archived, and how Apache Iceberg's snapshot expiration supports automated retention enforcement."
+description: "Data retention policies in lakehouses are the governance rules that define how long different categories of data are stored, when data is deleted or archived, and how Apache Iceberg's snapshot expiration supports automated retention enforcement."
 date: 2026-05-17
 tags: ["Data Retention", "Data Governance", "Apache Iceberg", "Compliance", "Data Engineering"]
 ---
@@ -43,4 +43,4 @@ For GDPR right-to-erasure compliance, row-level deletion via Iceberg's delete me
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

@@ -1,6 +1,6 @@
 ---
 title: "Data Deduplication"
-description: "A guide to data deduplication in data pipelines, the techniques used to identify and remove duplicate records that occur due to at-least-once delivery semantics, retry logic, or source system anomalies."
+description: "Data deduplication covers the techniques used to identify and remove duplicate records that occur due to at-least-once delivery semantics, retry logic, or source system anomalies."
 date: 2026-05-17
 tags: ["Data Deduplication", "Data Quality", "ETL", "Apache Iceberg", "Data Engineering"]
 ---
@@ -47,4 +47,4 @@ The **Gold layer** relies on the Silver layer's cleanliness, focusing on busines
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

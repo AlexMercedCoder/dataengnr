@@ -1,6 +1,6 @@
 ---
 title: "Data Annotation"
-description: "A guide to data annotation, the labor-intensive process of manually labeling raw unstructured data (images, text, audio) so that supervised machine learning models can learn to identify patterns."
+description: "Data annotation is the labor-intensive process of manually labeling raw unstructured data (images, text, audio) so that supervised machine learning models can learn to identify patterns."
 date: 2026-05-17
 tags: ["Data Annotation", "Machine Learning", "Data Engineering", "Data Preparation", "Artificial Intelligence"]
 ---
@@ -38,4 +38,4 @@ To reduce costs, teams are increasingly using "Active Learning," where a partial
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

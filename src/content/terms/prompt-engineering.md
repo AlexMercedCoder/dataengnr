@@ -1,6 +1,6 @@
 ---
 title: "Prompt Engineering"
-description: "A guide to prompt engineering, the practice of designing, refining, and structuring the text inputs given to Large Language Models to extract the most accurate, useful, and formatted outputs."
+description: "Prompt engineering is the practice of designing, refining, and structuring the text inputs given to Large Language Models to extract the most accurate, useful, and formatted outputs."
 date: 2026-05-17
 tags: ["Prompt Engineering", "Large Language Models", "Generative AI", "Artificial Intelligence", "Analytics"]
 ---
@@ -37,4 +37,4 @@ This form of prompt engineering acts as a behavioral guardrail, restricting the 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

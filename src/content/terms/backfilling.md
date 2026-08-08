@@ -1,6 +1,6 @@
 ---
 title: "Backfilling"
-description: "A guide to backfilling in data engineering, the essential process of reprocessing historical data using new pipeline logic to ensure consistency across the entire dataset after a bug fix or feature addition."
+description: "Backfilling in data engineering is the essential process of reprocessing historical data using new pipeline logic to ensure consistency across the entire dataset after a bug fix or feature addition."
 date: 2026-05-17
 tags: ["Backfilling", "Data Engineering", "Data Pipeline", "Orchestration", "ETL"]
 ---
@@ -22,7 +22,7 @@ Backfilling is notoriously difficult and is a major source of data engineering p
 
 **[Idempotency](/terms/idempotency) is Mandatory**: If a pipeline is not strictly idempotent (safe to run multiple times), a backfill will create massive duplication. The pipeline must be designed to explicitly overwrite or `MERGE` the specific historical partitions it is recalculating without affecting adjacent data.
 
-**[Orchestration](/terms/orchestration) Complexity**: In tools like [Apache Airflow](/terms/apache-airflow), data engineers often write specific "Catchup" DAGs or leverage Airflow's built-in backfill CLI commands to sequentially run the daily pipeline for every day in the past year. This requires the pipeline to be parameterized by execution date so that the logic knows which specific historical day it is currently processing.
+**[Orchestration](/terms/orchestration) Complexity**: In tools like [Apache Airflow](/terms/apache-airflow), data engineers often write specific "Catchup" DAGs or use Airflow's built-in backfill CLI commands to sequentially run the daily pipeline for every day in the past year. This requires the pipeline to be parameterized by execution date so that the logic knows which specific historical day it is currently processing.
 
 ![Backfilling Architecture](/images/terms/backfilling.png)
 
@@ -36,4 +36,4 @@ This means the live production dashboards never experience downtime, locking, or
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

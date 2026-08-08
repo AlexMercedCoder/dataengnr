@@ -1,6 +1,6 @@
 ---
 title: "Data Democratization"
-description: "A guide to data democratization, the strategic initiative to make data accessible to all roles in an organization without requiring SQL or engineering expertise, using self-service BI tools, governed semantic layers, and AI-powered natural language query interfaces."
+description: "Data democratization is the strategic initiative to make data accessible to all roles in an organization without requiring SQL or engineering expertise, using self-service BI tools, governed semantic layers, and AI-powered natural language query interfaces."
 date: 2026-05-17
 tags: ["Data Democratization", "Self-Service Analytics", "Semantic Layer", "Dremio", "Data Governance"]
 ---
@@ -37,4 +37,4 @@ Data democratization is not a technology project; it is a combination of technol
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

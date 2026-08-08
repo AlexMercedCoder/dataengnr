@@ -1,6 +1,6 @@
 ---
 title: "DuckDB"
-description: "A guide to DuckDB, the embeddable in-process analytical database engine that brings high-performance columnar SQL analytics to local workloads, notebooks, and serverless environments."
+description: "DuckDB is the embeddable in-process analytical database engine that brings high-performance columnar SQL analytics to local workloads, notebooks, and serverless environments."
 date: 2026-05-17
 tags: ["DuckDB", "Analytics", "SQL", "Data Engineering", "Columnar Storage"]
 ---
@@ -43,4 +43,4 @@ As the Iceberg ecosystem matures, DuckDB's role as a lightweight query layer for
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

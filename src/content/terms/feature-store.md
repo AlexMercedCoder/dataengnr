@@ -1,6 +1,6 @@
 ---
 title: "Feature Store"
-description: "A guide to feature stores, the centralized ML infrastructure component that computes, stores, and serves machine learning features consistently across model training and real-time inference to eliminate training-serving skew."
+description: "A feature store is the centralized ML infrastructure component that computes, stores, and serves machine learning features consistently across model training and real-time inference to eliminate training-serving skew."
 date: 2026-05-17
 tags: ["Feature Store", "Machine Learning", "MLOps", "Data Engineering", "Analytics"]
 ---
@@ -29,10 +29,10 @@ The feature store's materialization pipeline computes feature values from raw da
 
 Feature stores integrate naturally with Iceberg-based lakehouses. The lakehouse's Silver and Gold layer Iceberg tables are the primary raw data source for feature computation. Spark or Flink feature computation pipelines read from Iceberg tables, compute feature transformations, and write feature values to the feature store's offline Iceberg tables.
 
-Point-in-time correct feature retrieval from the offline store leverages Iceberg's time travel: the training pipeline specifies the timestamp at which each training example's label was observed, and the feature store retrieves the feature values that were current at that timestamp using Iceberg's AS OF TIMESTAMP query syntax. This ensures that training examples contain only features that would have been available at prediction time, preventing label leakage.
+Point-in-time correct feature retrieval from the offline store uses Iceberg's time travel: the training pipeline specifies the timestamp at which each training example's label was observed, and the feature store retrieves the feature values that were current at that timestamp using Iceberg's AS OF TIMESTAMP query syntax. This ensures that training examples contain only features that would have been available at prediction time, preventing label leakage.
 
 [Dremio](/terms/dremio)'s integration with Iceberg enables direct analytical queries against feature store offline tables, supporting [feature engineering](/terms/feature-engineering) exploration, feature drift monitoring, and feature quality dashboards through SQL without requiring a Spark session.
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

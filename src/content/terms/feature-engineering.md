@@ -1,6 +1,6 @@
 ---
 title: "Feature Engineering"
-description: "A guide to feature engineering, the critical data science and engineering process of transforming raw data into meaningful variables (features) that machine learning algorithms can actually understand and learn from."
+description: "Feature engineering is the critical data science and engineering process of transforming raw data into meaningful variables (features) that machine learning algorithms can actually understand and learn from."
 date: 2026-05-17
 tags: ["Feature Engineering", "Machine Learning", "Data Engineering", "Data Science", "Analytics"]
 ---
@@ -35,4 +35,4 @@ When the Data Science team wants to train a model, they pull the historical valu
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

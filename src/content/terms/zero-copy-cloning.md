@@ -1,6 +1,6 @@
 ---
 title: "Zero-Copy Cloning"
-description: "A guide to zero-copy cloning, the powerful data lakehouse feature that allows engineers to create instant, functional copies of massive datasets without physically duplicating any of the underlying storage."
+description: "Zero-copy cloning is the powerful data lakehouse feature that allows engineers to create instant, functional copies of massive datasets without physically duplicating any of the underlying storage."
 date: 2026-05-17
 tags: ["Zero-Copy Cloning", "Data Architecture", "Apache Iceberg", "Data Engineering", "Storage"]
 ---
@@ -33,4 +33,4 @@ The engine writes the new, modified data as brand new Parquet files on S3. It th
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

@@ -1,6 +1,6 @@
 ---
 title: "Model Drift"
-description: "A guide to model drift, the phenomenon where a perfectly trained machine learning model slowly loses predictive accuracy in production because the real-world environment and underlying data have changed over time."
+description: "Model drift is the phenomenon where a perfectly trained machine learning model slowly loses predictive accuracy in production because the real-world environment and underlying data have changed over time."
 date: 2026-05-17
 tags: ["Model Drift", "Machine Learning", "MLOps", "Data Science", "Artificial Intelligence"]
 ---
@@ -37,4 +37,4 @@ When the MLOps monitoring system detects that the live data has drifted beyond a
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

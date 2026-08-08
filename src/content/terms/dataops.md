@@ -1,6 +1,6 @@
 ---
 title: "DataOps"
-description: "A guide to DataOps, the agile methodology for data engineering that applies DevOps principles of automation, CI/CD, version control, and monitoring to data pipelines, enabling faster, more reliable data delivery with improved quality and observability."
+description: "DataOps is the agile methodology for data engineering that applies DevOps principles of automation, CI/CD, version control, and monitoring to data pipelines, enabling faster, more reliable data delivery with improved quality and observability."
 date: 2026-05-17
 tags: ["DataOps", "DevOps", "Data Engineering", "CI/CD", "Data Quality"]
 ---
@@ -43,4 +43,4 @@ In an Iceberg lakehouse, snapshot freshness monitoring is a key DataOps indicato
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

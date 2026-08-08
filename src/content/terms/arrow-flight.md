@@ -1,6 +1,6 @@
 ---
 title: "Arrow Flight"
-description: "A guide to Apache Arrow Flight, the high-performance data transport protocol built on gRPC and the Arrow columnar format that enables ultra-fast, network-saturating data transfer between analytical systems."
+description: "Apache Arrow Flight is the high-performance data transport protocol built on gRPC and the Arrow columnar format that enables ultra-fast, network-saturating data transfer between analytical systems."
 date: 2026-05-17
 tags: ["Arrow Flight", "Apache Arrow", "Data Transport", "Performance", "Dremio"]
 ---
@@ -39,4 +39,4 @@ Dremio supports Flight SQL, allowing any Flight SQL-compatible client library to
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

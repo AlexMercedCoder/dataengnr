@@ -1,6 +1,6 @@
 ---
 title: "Unstructured Data"
-description: "A guide to unstructured data, the massive category of data (text, images, audio, video) that lacks a pre-defined schema, and how modern lakehouses and AI transform it into analyzable business value."
+description: "Unstructured data is the massive category of data (text, images, audio, video) that lacks a pre-defined schema, and how modern lakehouses and AI transform it into analyzable business value."
 date: 2026-05-17
 tags: ["Unstructured Data", "Artificial Intelligence", "Data Lakehouse", "Object Storage", "Data Engineering"]
 ---
@@ -42,4 +42,4 @@ This architecture bridges the gap: the massive unstructured files live securely 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

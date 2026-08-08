@@ -1,6 +1,6 @@
 ---
 title: "Window Functions"
-description: "A guide to SQL window functions, the advanced analytical feature that allows users to perform calculations across a defined set of rows related to the current row, enabling complex calculations like running totals and moving averages."
+description: "SQL window functions are an analytical feature that lets users to perform calculations across a defined set of rows related to the current row, enabling complex calculations like running totals and moving averages."
 date: 2026-05-17
 tags: ["Window Functions", "SQL", "Analytics", "Data Engineering", "Data Modeling"]
 ---
@@ -45,4 +45,4 @@ By using `ROW_NUMBER() OVER (PARTITION BY transaction_id ORDER BY timestamp DESC
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

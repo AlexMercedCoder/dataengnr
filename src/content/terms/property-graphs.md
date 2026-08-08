@@ -1,6 +1,6 @@
 ---
 title: "Property Graphs"
-description: "A guide to property graphs, the specialized data model used by graph databases that represents complex, highly connected networks of nodes and relationships, where both can contain rich metadata properties."
+description: "The property graph is the data model used by graph databases to represent complex, highly connected networks of nodes and relationships, where both can contain rich metadata properties."
 date: 2026-05-17
 tags: ["Property Graphs", "Graph Databases", "Data Modeling", "Data Engineering", "Data Architecture"]
 ---
@@ -37,4 +37,4 @@ In a native graph database, every node physically stores physical memory pointer
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

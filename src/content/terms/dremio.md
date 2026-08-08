@@ -1,6 +1,6 @@
 ---
 title: "Dremio"
-description: "A comprehensive guide to Dremio, the Intelligent Lakehouse Platform that provides a unified semantic layer, high-performance SQL query engine, and governed access layer for Apache Iceberg-based data lakehouses."
+description: "Dremio is the Intelligent Lakehouse Platform that provides a unified semantic layer, high-performance SQL query engine, and governed access layer for Apache Iceberg-based data lakehouses."
 date: 2026-05-17
 tags: ["Dremio", "Data Lakehouse", "Semantic Layer", "Query Engine", "Apache Iceberg"]
 ---
@@ -47,4 +47,4 @@ Dremio Cloud, the managed SaaS version of Dremio, provides additional operationa
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

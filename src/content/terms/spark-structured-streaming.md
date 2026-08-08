@@ -1,6 +1,6 @@
 ---
 title: "Spark Structured Streaming"
-description: "A guide to Apache Spark Structured Streaming, the micro-batch and continuous streaming engine built on Spark SQL that enables fault-tolerant, stateful stream processing with exactly-once semantics and native Apache Iceberg sink support."
+description: "Apache Spark Structured Streaming is the micro-batch and continuous streaming engine built on Spark SQL that enables fault-tolerant, stateful stream processing with exactly-once semantics and native Apache Iceberg sink support."
 date: 2026-05-17
 tags: ["Spark Structured Streaming", "Apache Spark", "Streaming", "Apache Iceberg", "Data Engineering"]
 ---
@@ -39,4 +39,4 @@ The streaming Iceberg sink supports append mode (appending each micro-batch's re
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

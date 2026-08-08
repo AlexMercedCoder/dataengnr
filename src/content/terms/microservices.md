@@ -1,6 +1,6 @@
 ---
 title: "Microservices"
-description: "A guide to Microservices, the architectural design pattern that breaks massive, monolithic applications down into small, independent, loosely-coupled services that communicate over standard network protocols."
+description: "Microservices are an architectural design pattern that breaks massive, monolithic applications down into small, independent, loosely-coupled services that communicate over standard network protocols."
 date: 2026-05-17
 tags: ["Microservices", "Data Architecture", "Cloud Computing", "Software Engineering", "APIs"]
 ---
@@ -25,7 +25,7 @@ Microservices architecture solves these scaling and operational bottlenecks by s
 
 ## The Trade-offs of Microservices
 
-While microservices provide ultimate organizational scalability, they introduce massive operational complexity:
+While microservices provide the strongest organizational scalability, they introduce massive operational complexity:
 
 **Network Latency**: In a monolith, calling a function takes nanoseconds. In a microservices architecture, fetching a user's profile and their billing history requires sending data across the physical cloud network, introducing milliseconds of latency and the potential for network failures.
 
@@ -33,4 +33,4 @@ While microservices provide ultimate organizational scalability, they introduce 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

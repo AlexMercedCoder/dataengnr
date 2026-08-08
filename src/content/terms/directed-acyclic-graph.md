@@ -1,6 +1,6 @@
 ---
 title: "Directed Acyclic Graph (DAG)"
-description: "A guide to Directed Acyclic Graphs (DAGs), the mathematical structure used by orchestration tools like Apache Airflow and dbt to define, execute, and monitor complex data pipelines."
+description: "A directed acyclic graph (DAG) is the mathematical structure used by orchestration tools like Apache Airflow and dbt to define, execute, and monitor complex data pipelines."
 date: 2026-05-17
 tags: ["Directed Acyclic Graph", "DAG", "Orchestration", "Apache Airflow", "Data Engineering"]
 ---
@@ -33,4 +33,4 @@ Data transformation tools like dbt also rely entirely on DAGs. When you run `dbt
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

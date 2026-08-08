@@ -1,6 +1,6 @@
 ---
 title: "Vector Embeddings"
-description: "A guide to vector embeddings, the mathematical representations of unstructured data (text, images, audio) that allow machine learning models to understand and compute the conceptual similarities between complex objects."
+description: "Vector embeddings are the mathematical representations of unstructured data (text, images, audio) that allow machine learning models to understand and compute the conceptual similarities between complex objects."
 date: 2026-05-17
 tags: ["Vector Embeddings", "Artificial Intelligence", "Machine Learning", "Semantic Search", "Unstructured Data"]
 ---
@@ -37,4 +37,4 @@ Real-world embedding models (like OpenAI's models or BERT) don't use 3 dimension
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

@@ -1,6 +1,6 @@
 ---
 title: "Write-Audit-Publish (WAP)"
-description: "A guide to the Write-Audit-Publish pattern in Apache Iceberg, the branch-based data quality workflow that writes new data to an isolated branch, validates it, and atomically publishes it to the main branch only when quality checks pass."
+description: "The Write-Audit-Publish pattern in Apache Iceberg is the branch-based data quality workflow that writes new data to an isolated branch, validates it, and atomically publishes it to the main branch only when quality checks pass."
 date: 2026-05-17
 tags: ["Write-Audit-Publish", "WAP", "Apache Iceberg", "Data Quality", "Data Engineering"]
 ---
@@ -33,4 +33,4 @@ The WAP pattern integrates naturally with Airflow [orchestration](/terms/orchest
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

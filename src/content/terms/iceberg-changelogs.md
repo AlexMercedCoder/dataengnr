@@ -1,6 +1,6 @@
 ---
 title: "Iceberg Changelogs"
-description: "A guide to Iceberg changelogs, the feature that exposes the precise row-level inserts, updates, and deletes between two snapshots, enabling incremental processing pipelines and downstream system synchronization."
+description: "The Iceberg changelog is the feature that exposes the precise row-level inserts, updates, and deletes between two snapshots, enabling incremental processing pipelines and downstream system synchronization."
 date: 2026-05-17
 tags: ["Iceberg Changelogs", "Apache Iceberg", "Change Data Capture", "Data Engineering", "Incremental Processing"]
 ---
@@ -37,4 +37,4 @@ This stream of changes looks conceptually identical to a database CDC (Change Da
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

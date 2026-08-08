@@ -1,6 +1,6 @@
 ---
 title: "Descriptive Analytics"
-description: "A guide to descriptive analytics, the foundational tier of data analysis that focuses on summarizing historical data to answer the question 'What happened?' using dashboards, standard reporting, and core KPIs."
+description: "Descriptive analytics is the foundational tier of data analysis that focuses on summarizing historical data to answer the question 'What happened?' using dashboards, standard reporting, and core KPIs."
 date: 2026-05-17
 tags: ["Descriptive Analytics", "Business Intelligence", "Analytics", "Data Visualization", "Data Engineering"]
 ---
@@ -39,4 +39,4 @@ Despite these limitations, an organization cannot skip descriptive analytics. Tr
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

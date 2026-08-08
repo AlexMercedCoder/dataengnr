@@ -19,7 +19,7 @@ If the data team runs a rigid batch job at 10:15 AM to calculate "Total Sales Be
 
 In traditional batch pipelines (like daily dbt runs), handling late-arriving data is computationally expensive. If a late event from Tuesday arrives on Friday, the naive approach is to simply rerun Tuesday's entire batch job. 
 
-A more modern approach leverages the MERGE capabilities of table formats like [Apache Iceberg](/terms/apache-iceberg). The pipeline processes the late event on Friday, realizes it belongs to Tuesday's partition based on its Event Time timestamp, and performs an Upsert directly into Tuesday's historical Parquet files, correcting the record without requiring a full daily rerun.
+A more modern approach uses the MERGE capabilities of table formats like [Apache Iceberg](/terms/apache-iceberg). The pipeline processes the late event on Friday, realizes it belongs to Tuesday's partition based on its Event Time timestamp, and performs an Upsert directly into Tuesday's historical Parquet files, correcting the record without requiring a full daily rerun.
 
 ![Late-Arriving Data Architecture](/images/terms/late_arriving_data.png)
 
@@ -37,4 +37,4 @@ But what if data arrives 30 minutes late, completely blowing past the watermark?
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

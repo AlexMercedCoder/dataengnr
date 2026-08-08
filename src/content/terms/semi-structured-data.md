@@ -1,6 +1,6 @@
 ---
 title: "Semi-Structured Data"
-description: "A guide to semi-structured data, the flexible data formats like JSON and XML that don't adhere to a rigid relational schema, and how modern lakehouses enable scalable analytical querying over nested hierarchies."
+description: "Semi-structured data covers the flexible formats like JSON and XML that don't adhere to a rigid relational schema, and how modern lakehouses enable scalable analytical querying over nested hierarchies."
 date: 2026-05-17
 tags: ["Semi-Structured Data", "JSON", "Data Architecture", "Data Lakehouse", "Data Engineering"]
 ---
@@ -27,7 +27,7 @@ Furthermore, querying deeply nested JSON arrays using standard SQL was notorious
 
 The modern [data lakehouse](/terms/data-lakehouse), powered by [Apache Iceberg](/terms/apache-iceberg), handles semi-structured data fundamentally differently, treating it as a first-class citizen rather than an annoying string to be parsed.
 
-**[Schema Evolution](/terms/schema-evolution)**: When semi-structured JSON data lands in the Bronze layer, engines like [Apache Spark](/terms/apache-spark) or [Dremio](/terms/dremio) can automatically infer the schema ([schema-on-read](/terms/schema-on-read)). If the JSON structure changes (e.g., a new field appears), Iceberg's schema evolution capabilities seamlessly update the table metadata without breaking the pipeline or rewriting existing data.
+**[Schema Evolution](/terms/schema-evolution)**: When semi-structured JSON data lands in the Bronze layer, engines like [Apache Spark](/terms/apache-spark) or [Dremio](/terms/dremio) can automatically infer the schema ([schema-on-read](/terms/schema-on-read)). If the JSON structure changes (e.g., a new field appears), Iceberg's schema evolution capabilities update the table metadata without breaking the pipeline or rewriting existing data.
 
 **Flattening and Shredding**: When pipelines move semi-structured data from the Bronze layer to the Silver layer, they "flatten" it. Complex nested arrays of objects (like the items in an order) are unnested (using functions like Spark's `explode()`) into distinct rows, and nested objects are flattened into distinct columns. 
 
@@ -35,4 +35,4 @@ The modern [data lakehouse](/terms/data-lakehouse), powered by [Apache Iceberg](
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

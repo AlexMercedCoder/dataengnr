@@ -1,6 +1,6 @@
 ---
 title: "At-Least-Once Delivery"
-description: "A guide to at-least-once delivery, the pragmatic streaming semantics pattern that guarantees no data loss at the risk of generating duplicates, requiring downstream idempotency to maintain data integrity."
+description: "At-least-once delivery is the pragmatic streaming semantics pattern that guarantees no data loss at the risk of generating duplicates, requiring downstream idempotency to maintain data integrity."
 date: 2026-05-17
 tags: ["At-Least-Once Delivery", "Streaming", "Apache Kafka", "Data Engineering", "Architecture"]
 ---
@@ -40,4 +40,4 @@ By combining high-throughput at-least-once delivery in the streaming layer with 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

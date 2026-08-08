@@ -1,6 +1,6 @@
 ---
 title: "Apache Kafka"
-description: "A comprehensive guide to Apache Kafka, the distributed event streaming platform that serves as the central nervous system for real-time data pipelines, enabling high-throughput, durable, and scalable event streaming."
+description: "Apache Kafka is the distributed event streaming platform that serves as the central nervous system for real-time data pipelines, enabling high-throughput, durable, and scalable event streaming."
 date: 2026-05-17
 tags: ["Apache Kafka", "Event Streaming", "Real-Time Data", "Data Engineering"]
 ---
@@ -41,4 +41,4 @@ The Iceberg Kafka Connect sink connector writes Kafka topic events directly to [
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

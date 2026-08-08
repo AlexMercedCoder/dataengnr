@@ -1,6 +1,6 @@
 ---
 title: "Lakehouse Concurrency"
-description: "A guide to lakehouse concurrency, the mechanisms that allow thousands of users and pipelines to read and write data simultaneously to object storage without locking, corruption, or reading partial data."
+description: "Lakehouse concurrency covers the mechanisms that allow thousands of users and pipelines to read and write data simultaneously to object storage without locking, corruption, or reading partial data."
 date: 2026-05-17
 tags: ["Lakehouse Concurrency", "Apache Iceberg", "Data Engineering", "ACID", "Data Architecture"]
 ---
@@ -41,4 +41,4 @@ This isolation ensures that read queries are never blocked by writers, writers a
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

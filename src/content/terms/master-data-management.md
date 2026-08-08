@@ -1,6 +1,6 @@
 ---
 title: "Master Data Management (MDM)"
-description: "A guide to Master Data Management, the discipline of creating a single, reliable source of truth for an organization's critical data entities (customers, products, employees) across fragmented source systems."
+description: "Master Data Management is the discipline of creating a single, reliable source of truth for an organization's critical data entities (customers, products, employees) across fragmented source systems."
 date: 2026-05-17
 tags: ["Master Data Management", "MDM", "Data Governance", "Data Quality", "Data Engineering"]
 ---
@@ -33,4 +33,4 @@ These Gold Master Data tables become the dimensions in the [star schema](/terms/
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

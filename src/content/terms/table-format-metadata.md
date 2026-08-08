@@ -1,6 +1,6 @@
 ---
 title: "Table Format Metadata"
-description: "A comprehensive guide to table format metadata, the structured layers of snapshots, manifests, and statistics that open table formats like Apache Iceberg use to enable ACID transactions, time travel, and efficient query planning."
+description: "Table format metadata is the structured layer of snapshots, manifests, and statistics that open table formats like Apache Iceberg use to enable ACID transactions, time travel, and efficient query planning."
 date: 2026-05-17
 tags: ["Apache Iceberg", "Table Formats", "Metadata", "Data Lakehouse"]
 ---
@@ -57,4 +57,4 @@ Dremio reads Apache Iceberg metadata as the foundation of its query planning pro
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

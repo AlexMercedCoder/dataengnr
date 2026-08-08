@@ -1,6 +1,6 @@
 ---
 title: "Cost-Based Optimizer"
-description: "A guide to the Cost-Based Optimizer (CBO), the algorithmic engine within a query planner that uses statistical metadata to mathematically estimate and select the fastest, cheapest execution path for a SQL query."
+description: "The Cost-Based Optimizer (CBO) is the algorithmic engine within a query planner that uses statistical metadata to mathematically estimate and select the fastest, cheapest execution path for a SQL query."
 date: 2026-05-17
 tags: ["Cost-Based Optimizer", "Database Internals", "Performance Optimization", "Data Engineering", "Data Architecture"]
 ---
@@ -35,4 +35,4 @@ In a modern [data lakehouse](/terms/data-lakehouse), the storage layer consists 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

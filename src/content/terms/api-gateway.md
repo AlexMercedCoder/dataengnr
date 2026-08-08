@@ -1,6 +1,6 @@
 ---
 title: "API Gateway"
-description: "A guide to API Gateways, the critical architectural component that acts as the single entry point and traffic cop for thousands of microservices, handling routing, security, rate limiting, and analytics."
+description: "An API gateway is the architectural component that acts as the single entry point and traffic cop for thousands of microservices, handling routing, security, rate limiting, and analytics."
 date: 2026-05-17
 tags: ["API Gateway", "Data Architecture", "Microservices", "Cloud Computing", "Security"]
 ---
@@ -34,4 +34,4 @@ When a data team builds a highly valuable machine learning model or a [real-time
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

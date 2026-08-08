@@ -1,6 +1,6 @@
 ---
 title: "Apache Calcite"
-description: "A guide to Apache Calcite, the open-source query planning framework that provides SQL parsing, validation, relational algebra, and cost-based optimization capabilities used by Hive, Flink, Druid, Trino, and Dremio as the foundation for their query planners."
+description: "Apache Calcite is the open-source query planning framework that provides SQL parsing, validation, relational algebra, and cost-based optimization capabilities used by Hive, Flink, Druid, Trino, and Dremio as the foundation for their query planners."
 date: 2026-05-17
 tags: ["Apache Calcite", "Query Planning", "SQL", "Data Engineering", "Open Source"]
 ---
@@ -37,4 +37,4 @@ Understanding Calcite's architecture helps data engineers understand why SQL que
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

@@ -1,6 +1,6 @@
 ---
 title: "Partition Evolution"
-description: "A guide to Apache Iceberg partition evolution, the capability that allows table partitioning to be changed without rewriting data, enabling partition strategies to adapt to changing query patterns and data volumes without downtime or costly migrations."
+description: "Apache Iceberg partition evolution is the capability that allows table partitioning to be changed without rewriting data, enabling partition strategies to adapt to changing query patterns and data volumes without downtime or costly migrations."
 date: 2026-05-17
 tags: ["Partition Evolution", "Apache Iceberg", "Data Partitioning", "Data Engineering", "Data Lakehouse"]
 ---
@@ -43,4 +43,4 @@ Because partition transforms are applied by the table format rather than by the 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

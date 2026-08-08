@@ -1,6 +1,6 @@
 ---
 title: "Data Observability"
-description: "A guide to data observability, the practice of continuously monitoring data pipelines and data assets for reliability, freshness, quality, and anomalies to ensure the trustworthiness of analytical outputs."
+description: "Data observability is the practice of continuously monitoring data pipelines and data assets for reliability, freshness, quality, and anomalies to ensure the trustworthiness of analytical outputs."
 date: 2026-05-17
 tags: ["Data Observability", "Data Quality", "Data Monitoring", "Data Engineering", "Pipeline Reliability"]
 ---
@@ -43,4 +43,4 @@ The open-source OpenTelemetry and OpenLineage standards are being adopted as the
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

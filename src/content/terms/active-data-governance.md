@@ -1,6 +1,6 @@
 ---
 title: "Active Data Governance"
-description: "A guide to active data governance, the modern approach that shifts governance from passive documentation to automated, programmatic enforcement of security, privacy, and quality rules directly within the data pipeline and serving layers."
+description: "Active data governance is the modern approach that shifts governance from passive documentation to automated, programmatic enforcement of security, privacy, and quality rules directly within the data pipeline and serving layers."
 date: 2026-05-17
 tags: ["Data Governance", "Security", "Compliance", "Data Engineering", "Data Architecture"]
 ---
@@ -33,4 +33,4 @@ By moving governance from documentation to infrastructure, organizations can ach
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

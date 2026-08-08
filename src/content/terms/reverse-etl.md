@@ -1,6 +1,6 @@
 ---
 title: "Reverse ETL"
-description: "A guide to Reverse ETL, the data pipeline pattern that syncs curated analytical data from the data warehouse or lakehouse back into operational business tools like CRMs, marketing platforms, and customer success systems."
+description: "Reverse ETL is the data pipeline pattern that syncs curated analytical data from the data warehouse or lakehouse back into operational business tools like CRMs, marketing platforms, and customer success systems."
 date: 2026-05-17
 tags: ["Reverse ETL", "Data Pipelines", "Data Engineering", "Analytics", "Operational Analytics"]
 ---
@@ -37,4 +37,4 @@ Dremio's Virtual Datasets in the [Semantic Layer](/terms/semantic-layer) serve a
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

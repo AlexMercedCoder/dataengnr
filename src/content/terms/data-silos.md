@@ -1,6 +1,6 @@
 ---
 title: "Data Silos"
-description: "A guide to data silos, the isolated pockets of data controlled by individual departments or applications that prevent organizations from achieving a unified view of their business, and how modern lakehouse architectures break them down."
+description: "Data silos are the isolated pockets of data controlled by individual departments or applications that prevent organizations from achieving a unified view of their business, and how modern lakehouse architectures break them down."
 date: 2026-05-17
 tags: ["Data Silos", "Data Architecture", "Data Integration", "Data Lakehouse", "Data Engineering"]
 ---
@@ -15,7 +15,7 @@ Data silos prevent organizations from answering holistic business questions. To 
 
 ## Why Data Silos Form
 
-Data silos rarely form maliciously; they are the natural byproduct of organizational growth and SaaS adoption. Departments purchase specific SaaS applications to solve their immediate operational needs. These applications are designed to optimize their specific workflows, not to share data seamlessly with the rest of the enterprise. Furthermore, departmental structures, budget isolation, and differing technical capabilities naturally lead to teams managing their data independently.
+Data silos rarely form maliciously; they are the natural byproduct of organizational growth and SaaS adoption. Departments purchase specific SaaS applications to solve their immediate operational needs. These applications are designed to optimize their specific workflows, not to share data with the rest of the enterprise. Furthermore, departmental structures, budget isolation, and differing technical capabilities naturally lead to teams managing their data independently.
 
 Over time, this results in conflicting truths across the organization: the marketing silo reports 500 new leads, the sales silo reports 300 new opportunities, and the finance silo reports 100 new paying customers, with no clear linkage between the numbers.
 
@@ -35,4 +35,4 @@ The [data lakehouse](/terms/data-lakehouse) provides a more agile approach to br
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

@@ -40,8 +40,8 @@ In a modern "Bring Your Own Cloud" (BYOC) deployment, a vendor (like [Dremio](/t
 
 However, the Data Plane (the actual compute clusters and the S3 storage buckets containing the highly sensitive corporate data) lives entirely within the customer's private Virtual Private Cloud (VPC). 
 
-When a user runs a query, the vendor's Control Plane generates the execution plan and sends those instructions into the customer's VPC. The customer's Data Plane executes the query locally against the customer's S3 buckets. The raw, sensitive data never leaves the customer's network, and the vendor never has access to the underlying data, satisfying the strictest enterprise security requirements while still providing a seamless, fully-managed SaaS experience.
+When a user runs a query, the vendor's Control Plane generates the execution plan and sends those instructions into the customer's VPC. The customer's Data Plane executes the query locally against the customer's S3 buckets. The raw, sensitive data never leaves the customer's network, and the vendor never has access to the underlying data, satisfying the strictest enterprise security requirements while still providing a fully managed SaaS experience.
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

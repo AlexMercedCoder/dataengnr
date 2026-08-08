@@ -1,6 +1,6 @@
 ---
 title: "Z-Ordering and Data Skipping"
-description: "A guide to Z-ordering and data skipping in data lakehouses, the file-level data organization techniques that cluster related records together in Parquet files to enable dramatic I/O reduction for multi-column filter queries."
+description: "Z-ordering and data skipping are the file-level data organization techniques that cluster related records together in Parquet files to enable dramatic I/O reduction for multi-column filter queries."
 date: 2026-05-17
 tags: ["Z-Ordering", "Data Skipping", "Query Optimization", "Apache Iceberg", "Data Lakehouse"]
 ---
@@ -27,8 +27,8 @@ When [Dremio](/terms/dremio) or any query engine reads file-level statistics (st
 
 Liquid Clustering also adapts automatically to query patterns. If the access patterns for a table change over time (analysts begin filtering on a new set of columns), the clustering columns can be updated and future clustering operations will cluster new data according to the new columns while existing data retains its old clustering.
 
-Dremio leverages file-level statistics from Iceberg manifests to implement data skipping automatically. When Z-ordered or Liquid Clustered Iceberg tables are queried through Dremio, the [query planner](/terms/query-planner) reads the per-file statistics from the manifest and eliminates files that cannot contain matching rows before any data is read, combining Dremio's performance optimizations with Iceberg's structural data organization.
+Dremio uses file-level statistics from Iceberg manifests to implement data skipping automatically. When Z-ordered or Liquid Clustered Iceberg tables are queried through Dremio, the [query planner](/terms/query-planner) reads the per-file statistics from the manifest and eliminates files that cannot contain matching rows before any data is read, combining Dremio's performance optimizations with Iceberg's structural data organization.
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

@@ -1,6 +1,6 @@
 ---
 title: "FinOps"
-description: "A guide to FinOps (Cloud Financial Management), the evolving cultural practice and engineering discipline that brings financial accountability to the highly variable, consumption-based spend of cloud computing and data architecture."
+description: "FinOps (Cloud Financial Management) is the evolving cultural practice and engineering discipline that brings financial accountability to the highly variable, consumption-based spend of cloud computing and data architecture."
 date: 2026-05-17
 tags: ["FinOps", "Cloud Computing", "Data Strategy", "Data Engineering", "Architecture"]
 ---
@@ -21,7 +21,7 @@ FinOps is not about simply cutting costs; it is about maximizing business value.
 The foundation of FinOps is tagging. Every cloud resource (every S3 bucket, every [Dremio](/terms/dremio) engine, every Airflow DAG) must be tagged with metadata indicating which specific team or project owns it. When the monthly AWS bill arrives, the FinOps team can clearly attribute costs: "Marketing spent $15k, HR spent $2k."
 
 **2. Optimization**: 
-This is where data engineering intersects directly with finance. Engineers must actively optimize their architectures for cost. This includes writing more efficient SQL, leveraging cheaper hardware (like Graviton processors), aggressively utilizing [Time-to-Live (TTL)](/terms/time-to-live) to delete useless data, and moving cold data to Glacier archiving tiers.
+This is where data engineering intersects directly with finance. Engineers must actively optimize their architectures for cost. This includes writing more efficient SQL, using cheaper hardware (like Graviton processors), aggressively utilizing [Time-to-Live (TTL)](/terms/time-to-live) to delete useless data, and moving cold data to Glacier archiving tiers.
 
 **3. Purchasing Strategy**: 
 While engineers optimize the code, the FinOps team optimizes the buying strategy, negotiating massive "Committed Use Discounts" (Reserved Instances) with the cloud providers, committing to a baseline level of spend in exchange for 40-60% discounts on the compute rate.
@@ -36,4 +36,4 @@ Because compute engines can be spun up and down instantly, engineers can impleme
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

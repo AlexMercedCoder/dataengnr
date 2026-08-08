@@ -1,6 +1,6 @@
 ---
 title: "Schema Registry"
-description: "A guide to the schema registry, the centralized governance component in streaming architectures that enforces data structure contracts and manages schema evolution across decoupled producers and consumers."
+description: "The schema registry is the centralized governance component in streaming architectures that enforces data structure contracts and manages schema evolution across decoupled producers and consumers."
 date: 2026-05-17
 tags: ["Schema Registry", "Streaming", "Apache Kafka", "Data Governance", "Data Engineering"]
 ---
@@ -40,4 +40,4 @@ By enforcing these [data contracts](/terms/data-contracts) at the architectural 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

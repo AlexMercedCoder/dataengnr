@@ -1,6 +1,6 @@
 ---
 title: "Row-Level Security"
-description: "A guide to row-level security (RLS) in data lakehouses, the access control mechanism that automatically filters query results to return only the rows a querying user is authorized to see based on their identity attributes."
+description: "Row-level security (RLS) in data lakehouses is the access control mechanism that automatically filters query results to return only the rows a querying user is authorized to see based on their identity attributes."
 date: 2026-05-17
 tags: ["Row-Level Security", "RLS", "Data Governance", "Dremio", "Data Engineering"]
 ---
@@ -37,4 +37,4 @@ Dremio's Data Reflections (pre-computed materializations) can be configured to a
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

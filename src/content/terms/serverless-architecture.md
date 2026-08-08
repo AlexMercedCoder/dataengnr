@@ -1,6 +1,6 @@
 ---
 title: "Serverless Architecture"
-description: "A guide to serverless architecture, the cloud computing model where the cloud provider dynamically manages the allocation of machine resources, allowing data engineers to focus entirely on code and data rather than infrastructure."
+description: "Serverless architecture is the cloud computing model where the cloud provider dynamically manages the allocation of machine resources, allowing data engineers to focus entirely on code and data rather than infrastructure."
 date: 2026-05-17
 tags: ["Serverless Architecture", "Cloud Computing", "Data Engineering", "Data Architecture", "SaaS"]
 ---
@@ -33,4 +33,4 @@ This abstraction allows data engineering teams to transition from being "system 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

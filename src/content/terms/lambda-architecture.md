@@ -1,6 +1,6 @@
 ---
 title: "Lambda Architecture"
-description: "A deep dive into Lambda Architecture, the dual-stream data processing pattern that separates batch and real-time processing into distinct layers to deliver both comprehensive historical accuracy and low-latency query results."
+description: "Lambda Architecture is the dual-stream data processing pattern that separates batch and real-time processing into distinct layers to deliver both comprehensive historical accuracy and low-latency query results."
 date: 2026-05-17
 tags: ["Architecture", "Streaming", "Batch Processing", "Lambda Architecture"]
 ---
@@ -74,4 +74,4 @@ This approach eliminates the custom database selection and merge code that origi
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

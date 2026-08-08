@@ -1,6 +1,6 @@
 ---
 title: "Data Fabric"
-description: "A comprehensive guide to Data Fabric, the unified architecture that combines data integration, governance, and intelligent automation to connect distributed enterprise data sources into a coherent analytical fabric."
+description: "Data Fabric is the unified architecture that combines data integration, governance, and intelligent automation to connect distributed enterprise data sources into a coherent analytical fabric."
 date: 2026-05-17
 tags: ["Architecture", "Data Fabric", "Data Integration", "AI-Driven Data Management"]
 ---
@@ -13,7 +13,7 @@ The consequence of this fragmentation is that data, the organization's most valu
 
 This integration complexity creates a second-order failure: inconsistent metadata. When the Marketing team refers to "Customer ID," they might mean the Salesforce contact identifier. When the Finance team refers to "Customer ID," they might mean the ERP account number. When these identifiers are never reconciled into a consistent enterprise definition, analytical models produce conflicting outputs. Leadership loses trust in the data platform, and data scientists spend the majority of their time on manual data wrangling rather than building models.
 
-The Data Fabric paradigm was developed to resolve this fundamental tension between the operational necessity of heterogeneous data stores and the analytical necessity of unified, coherent data access. Unlike the [Data Mesh](/terms/data-mesh-architecture), which is primarily an organizational paradigm, the Data Fabric is fundamentally a technology-driven architecture. It leverages automated metadata management, active knowledge graphs, and intelligent integration pipelines to weave disparate data sources into a single, cohesive analytical fabric without requiring every system to be physically migrated into a central repository.
+The Data Fabric paradigm was developed to resolve this fundamental tension between the operational necessity of heterogeneous data stores and the analytical necessity of unified, coherent data access. Unlike the [Data Mesh](/terms/data-mesh-architecture), which is primarily an organizational paradigm, the Data Fabric is fundamentally a technology-driven architecture. It uses automated metadata management, active knowledge graphs, and intelligent integration pipelines to weave disparate data sources into a single, cohesive analytical fabric without requiring every system to be physically migrated into a central repository.
 
 ## What is a Data Fabric?
 
@@ -56,7 +56,7 @@ Policy enforcement is computational and continuous rather than manual and period
 
 While a Data Fabric can span any heterogeneous data environment, the open [Data Lakehouse](/terms/data-lakehouse) powered by [Apache Iceberg](/terms/apache-iceberg) serves as its most powerful anchor. The Iceberg Lakehouse provides the Data Fabric with a high-performance, governed, and open central hub where the most critical enterprise datasets are stored and managed with full ACID compliance.
 
-When data from legacy on-premises databases and SaaS platforms is integrated into the fabric, the highest-value, most frequently queried datasets can be selectively ingested into the Iceberg Lakehouse. Storing these datasets as Iceberg tables unlocks Time Travel (enabling auditors to query the historical state of the data), [schema evolution](/terms/schema-evolution) (allowing the physical table structure to change without breaking downstream consumers), and interoperability (allowing any compute engine to read the data without vendor lock-in).
+When data from legacy on-premises databases and SaaS platforms is integrated into the fabric, the highest-value, most frequently queried datasets can be selectively ingested into the Iceberg Lakehouse. Storing these datasets as Iceberg tables enables time travel (enabling auditors to query the historical state of the data), [schema evolution](/terms/schema-evolution) (allowing the physical table structure to change without breaking downstream consumers), and interoperability (allowing any compute engine to read the data without vendor lock-in).
 
 ## [Dremio](/terms/dremio) as the Data Fabric Intelligence Layer
 
@@ -66,4 +66,4 @@ The Dremio Semantic Layer acts as the human-facing expression of the knowledge g
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

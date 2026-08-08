@@ -1,6 +1,6 @@
 ---
 title: "Multi-Tenant Architecture"
-description: "A guide to multi-tenant architecture, the software design pattern where a single instance of an application or database serves multiple distinct customers (tenants), heavily used in SaaS products and centralized data platforms."
+description: "Multi-tenant architecture is the software design pattern where a single instance of an application or database serves multiple distinct customers (tenants), heavily used in SaaS products and centralized data platforms."
 date: 2026-05-17
 tags: ["Multi-Tenant Architecture", "Cloud Computing", "SaaS", "Data Architecture", "Data Engineering"]
 ---
@@ -9,7 +9,7 @@ tags: ["Multi-Tenant Architecture", "Cloud Computing", "SaaS", "Data Architectur
 
 When building a software application or a data platform that will serve multiple distinct customers or independent internal departments, engineers must choose how to deploy the infrastructure.
 
-In a **Single-Tenant Architecture**, every customer gets their own dedicated, isolated environment. If a SaaS company has 100 clients, they spin up 100 separate database servers and 100 separate web servers. This provides ultimate security and isolation (if Customer A's server crashes, Customer B is unaffected), but it is incredibly expensive and a nightmare to maintain. When a new software update is released, the engineering team must deploy it 100 separate times.
+In a **Single-Tenant Architecture**, every customer gets their own dedicated, isolated environment. If a SaaS company has 100 clients, they spin up 100 separate database servers and 100 separate web servers. This provides the strongest isolation (if Customer A's server crashes, Customer B is unaffected), but it is incredibly expensive and a nightmare to maintain. When a new software update is released, the engineering team must deploy it 100 separate times.
 
 In a **Multi-Tenant Architecture**, a single instance of the software application and a single database cluster serve all 100 customers simultaneously. The infrastructure is shared, dramatically reducing cloud compute costs and allowing the engineering team to update the software for everyone with a single deployment. This is the architecture that powers modern cloud giants like Salesforce, Snowflake, and AWS.
 
@@ -33,4 +33,4 @@ Modern lakehouses solve this by decoupling storage and compute. The data lives i
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

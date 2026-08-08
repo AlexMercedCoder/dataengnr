@@ -1,6 +1,6 @@
 ---
 title: "Column Masking"
-description: "A guide to column masking in data lakehouses, the data governance technique that dynamically replaces sensitive column values with masked representations based on the querying user's authorization level."
+description: "Column masking in data lakehouses is the data governance technique that dynamically replaces sensitive column values with masked representations based on the querying user's authorization level."
 date: 2026-05-17
 tags: ["Column Masking", "Data Security", "Data Governance", "Dremio", "Data Engineering"]
 ---
@@ -39,4 +39,4 @@ Dremio's column masking integrates with its [Arrow Flight](/terms/arrow-flight) 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

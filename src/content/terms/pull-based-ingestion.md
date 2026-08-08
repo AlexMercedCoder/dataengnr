@@ -1,6 +1,6 @@
 ---
 title: "Pull-Based Ingestion"
-description: "A guide to pull-based ingestion, the traditional batch data integration pattern where the central data platform proactively extracts data from source databases at scheduled intervals, favored for its simplicity and reliability."
+description: "Pull-based ingestion is the traditional batch data integration pattern where the central data platform proactively extracts data from source databases at scheduled intervals, favored for its simplicity and reliability."
 date: 2026-05-17
 tags: ["Pull-Based Ingestion", "ETL", "Batch Processing", "Data Architecture", "Data Engineering"]
 ---
@@ -29,4 +29,4 @@ To mitigate this, pull-based pipelines almost always pull data from a "Read Repl
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

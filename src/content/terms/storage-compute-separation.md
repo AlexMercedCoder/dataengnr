@@ -1,6 +1,6 @@
 ---
 title: "Storage-Compute Separation"
-description: "A guide to the separation of storage and compute, the foundational architectural principle of modern cloud data platforms that allows scaling processing power independently of data volume to minimize costs."
+description: "The separation of storage and compute is the foundational architectural principle of modern cloud data platforms that allows scaling processing power independently of data volume to minimize costs."
 date: 2026-05-17
 tags: ["Storage-Compute Separation", "Cloud Computing", "Data Architecture", "Data Lakehouse", "Data Engineering"]
 ---
@@ -29,4 +29,4 @@ The separation of storage and compute is the architectural paradigm shift that s
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

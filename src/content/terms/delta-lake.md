@@ -1,6 +1,6 @@
 ---
 title: "Delta Lake"
-description: "A comprehensive guide to Delta Lake, the open-source storage layer from Databricks that brings ACID transactions, scalable metadata handling, and data versioning to Apache Spark and the data lakehouse."
+description: "Delta Lake is the open-source storage layer from Databricks that brings ACID transactions, scalable metadata handling, and data versioning to Apache Spark and the data lakehouse."
 date: 2026-05-17
 tags: ["Open Table Formats", "Delta Lake", "Databricks", "Data Lakehouse"]
 ---
@@ -73,4 +73,4 @@ For organizations considering migrations from Delta Lake to Apache Iceberg, Drem
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

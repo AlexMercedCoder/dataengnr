@@ -1,6 +1,6 @@
 ---
 title: "Push-Based Ingestion"
-description: "A guide to push-based ingestion, the data integration pattern where source systems actively send data to a central platform via API or streaming, enabling true real-time event-driven architectures."
+description: "Push-based ingestion is the data integration pattern where source systems actively send data to a central platform via API or streaming, enabling true real-time event-driven architectures."
 date: 2026-05-17
 tags: ["Push-Based Ingestion", "Streaming", "Data Architecture", "Data Engineering", "Apache Kafka"]
 ---
@@ -31,4 +31,4 @@ If a user clicks a button on an e-commerce website, the frontend application imm
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

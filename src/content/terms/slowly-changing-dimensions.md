@@ -1,6 +1,6 @@
 ---
 title: "Slowly Changing Dimensions (SCD)"
-description: "A guide to Slowly Changing Dimensions (SCD), the data warehouse design patterns for tracking how dimension attribute values change over time, from simple overwrites to full historical preservation for accurate point-in-time analysis."
+description: "Slowly Changing Dimensions (SCD) are the data warehouse design patterns for tracking how dimension attribute values change over time, from simple overwrites to full historical preservation for accurate point-in-time analysis."
 date: 2026-05-17
 tags: ["Slowly Changing Dimensions", "SCD", "Dimensional Modeling", "Data Warehouse", "Data Engineering"]
 ---
@@ -47,4 +47,4 @@ Iceberg's ACID MERGE INTO semantics ensure that the multi-row Type 2 update (upd
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

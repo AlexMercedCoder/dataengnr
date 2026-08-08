@@ -1,6 +1,6 @@
 ---
 title: "Orchestration"
-description: "A guide to data pipeline orchestration, the practice of scheduling, sequencing, and monitoring complex multi-step data workflows using tools like Apache Airflow, Prefect, and Dagster to ensure reliable, observable pipeline execution."
+description: "Data pipeline orchestration is the practice of scheduling, sequencing, and monitoring complex multi-step data workflows using tools like Apache Airflow, Prefect, and Dagster to ensure reliable, observable pipeline execution."
 date: 2026-05-17
 tags: ["Orchestration", "Apache Airflow", "Prefect", "Dagster", "Data Engineering"]
 ---
@@ -31,4 +31,4 @@ For Iceberg lakehouse pipelines, orchestration tools trigger Spark jobs (through
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

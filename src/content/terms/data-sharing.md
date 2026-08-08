@@ -1,6 +1,6 @@
 ---
 title: "Data Sharing"
-description: "A guide to open data sharing in the lakehouse ecosystem, the patterns and protocols that enable organizations to share Iceberg tables with external partners without data movement, duplication, or proprietary format lock-in."
+description: "Open data sharing in the lakehouse ecosystem covers the patterns and protocols that enable organizations to share Iceberg tables with external partners without data movement, duplication, or proprietary format lock-in."
 date: 2026-05-17
 tags: ["Data Sharing", "Open Data Sharing", "Apache Iceberg", "Data Lakehouse", "Data Engineering"]
 ---
@@ -9,7 +9,7 @@ tags: ["Data Sharing", "Open Data Sharing", "Apache Iceberg", "Data Lakehouse", 
 
 Enterprise data collaboration historically required physically copying data to share it. A financial institution sharing transaction data with a risk analytics partner would extract a dataset, encrypt it, and transfer it via SFTP. The partner would ingest it into their own warehouse, creating a stale copy that diverged from the source the moment it was transferred. Updates required another full extraction and transfer cycle. [Data governance](/terms/data-governance) was impossible to maintain across the copy boundary.
 
-The modern data sharing paradigm leverages the separation of storage and compute in the lakehouse architecture to enable direct data access without physical data movement. If both the data provider and the data consumer use cloud [object storage](/terms/object-storage) (S3, ADLS, GCS) and the Iceberg table format, the provider can grant the consumer scoped read access to the Iceberg metadata and data files in the provider's object storage. The consumer queries the data directly from the provider's storage using their own compute engine, accessing the live current version of the data without any copy or transfer.
+The modern data sharing paradigm uses the separation of storage and compute in the lakehouse architecture to enable direct data access without physical data movement. If both the data provider and the data consumer use cloud [object storage](/terms/object-storage) (S3, ADLS, GCS) and the Iceberg table format, the provider can grant the consumer scoped read access to the Iceberg metadata and data files in the provider's object storage. The consumer queries the data directly from the provider's storage using their own compute engine, accessing the live current version of the data without any copy or transfer.
 
 This direct-access sharing model, sometimes called zero-copy data sharing, provides several advantages over copy-based sharing. Data is always current: the consumer sees the same version of the data as the provider's internal users, updated in real time as new snapshots are committed. No storage duplication costs are incurred. Data governance policies (access control, usage auditing) remain under the provider's control. When sharing is revoked, the consumer immediately loses access to all data, including historical copies.
 
@@ -31,4 +31,4 @@ For organizations building on Dremio and the Iceberg ecosystem, Iceberg REST Cat
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

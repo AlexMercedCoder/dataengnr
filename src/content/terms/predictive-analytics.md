@@ -1,6 +1,6 @@
 ---
 title: "Predictive Analytics"
-description: "A guide to predictive analytics, the advanced tier of data analysis that uses historical data, statistical algorithms, and machine learning techniques to identify the likelihood of future outcomes to answer 'What will happen?'"
+description: "Predictive analytics is the advanced tier of data analysis that uses historical data, statistical algorithms, and machine learning techniques to identify the likelihood of future outcomes to answer 'What will happen?'"
 date: 2026-05-17
 tags: ["Predictive Analytics", "Machine Learning", "Artificial Intelligence", "Analytics", "Data Engineering"]
 ---
@@ -41,4 +41,4 @@ In the open lakehouse:
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

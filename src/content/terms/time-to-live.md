@@ -1,6 +1,6 @@
 ---
 title: "Time-to-Live (TTL)"
-description: "A guide to Time-to-Live (TTL), the automated data lifecycle mechanism that permanently deletes or archives records after a specified duration to enforce privacy compliance and manage storage costs."
+description: "Time-to-Live (TTL) is the automated data lifecycle mechanism that permanently deletes or archives records after a specified duration to enforce privacy compliance and manage storage costs."
 date: 2026-05-17
 tags: ["Time-to-Live (TTL)", "Data Governance", "Compliance", "Data Engineering", "Data Architecture"]
 ---
@@ -35,4 +35,4 @@ To satisfy both requirements, organizations implement a bifurcated pipeline. The
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

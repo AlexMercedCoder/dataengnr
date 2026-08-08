@@ -1,15 +1,15 @@
 ---
 title: "Bias-Variance Tradeoff"
-description: "A guide to the bias-variance tradeoff, the fundamental tension in machine learning between a model being too simple to capture patterns (high bias) and being so complex it memorizes noise (high variance)."
+description: "The bias-variance tradeoff is the fundamental tension in machine learning between a model being too simple to capture patterns (high bias) and being so complex it memorizes noise (high variance)."
 date: 2026-05-17
 tags: ["Bias Variance Tradeoff", "Machine Learning", "Data Science", "Artificial Intelligence", "Analytics"]
 ---
 
 ## The Goldilocks Problem of Machine Learning
 
-When a data scientist trains a machine learning model, their ultimate goal is not to perfectly predict the historical data they already have (the training set). Their goal is to build a model that generalizes well-meaning it can accurately predict the future on unseen data it has never encountered before.
+When a data scientist trains a machine learning model, their goal is not to perfectly predict the historical data they already have (the training set). Their goal is to build a model that generalizes well-meaning it can accurately predict the future on unseen data it has never encountered before.
 
-Achieving this generalization requires navigating the most fundamental tension in all of data science: The Bias-Variance Tradeoff. It is the quest to find the "Goldilocks zone"-a model that is not too simple, not too complex, but just right.
+Achieving this generalization means working with the most fundamental tension in all of data science: The Bias-Variance Tradeoff. It is the quest to find the "Goldilocks zone"-a model that is not too simple, not too complex, but just right.
 
 ## Understanding Bias (Underfitting)
 
@@ -41,4 +41,4 @@ Data scientists use techniques like Cross-Validation to evaluate the model on hi
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

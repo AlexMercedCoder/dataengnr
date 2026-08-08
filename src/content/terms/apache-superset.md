@@ -1,6 +1,6 @@
 ---
 title: "Apache Superset"
-description: "A guide to Apache Superset, the open-source data exploration and visualization platform originally created at Airbnb, designed for fast dashboarding and SQL-based ad-hoc analytics at enterprise scale."
+description: "Apache Superset is the open-source data exploration and visualization platform originally created at Airbnb, designed for fast dashboarding and SQL-based ad-hoc analytics at enterprise scale."
 date: 2026-05-17
 tags: ["Apache Superset", "Business Intelligence", "Data Visualization", "Open Source", "Data Engineering"]
 ---
@@ -35,4 +35,4 @@ This combination provides Tableau-level interactive dashboard performance direct
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

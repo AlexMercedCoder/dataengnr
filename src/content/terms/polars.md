@@ -1,6 +1,6 @@
 ---
 title: "Polars"
-description: "A guide to Polars, the Rust-native DataFrame library that delivers blazing-fast in-process analytical query performance in Python and Rust, becoming a high-performance alternative to pandas for data engineering workflows."
+description: "Polars is the Rust-native DataFrame library that delivers very fast in-process analytical query performance in Python and Rust, becoming a high-performance alternative to pandas for data engineering workflows."
 date: 2026-05-17
 tags: ["Polars", "Python", "DataFrame", "Performance", "Data Engineering"]
 ---
@@ -31,4 +31,4 @@ For production pipelines processing terabytes, Dremio or Spark remain the approp
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

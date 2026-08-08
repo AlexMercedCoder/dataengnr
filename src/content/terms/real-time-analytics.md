@@ -1,6 +1,6 @@
 ---
 title: "Real-Time Analytics"
-description: "A guide to real-time analytics, the capability to ingest, process, and query streaming data instantly, allowing businesses to react to events as they happen rather than waiting for overnight batch processing."
+description: "Real-time analytics is the capability to ingest, process, and query streaming data instantly, allowing businesses to react to events as they happen rather than waiting for overnight batch processing."
 date: 2026-05-17
 tags: ["Real-Time Analytics", "Streaming", "Data Architecture", "Data Engineering", "Analytics"]
 ---
@@ -36,4 +36,4 @@ However, modern Data Lakehouses (utilizing formats like [Apache Iceberg](/terms/
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

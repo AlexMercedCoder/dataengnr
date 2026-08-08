@@ -1,6 +1,6 @@
 ---
 title: "Fact Tables"
-description: "A guide to fact tables in dimensional modeling, the central tables in a star schema that store quantitative measurements and metrics for business processes, forming the foundation of analytical reporting."
+description: "Fact tables in dimensional modeling are the central tables in a star schema that store quantitative measurements and metrics for business processes, forming the foundation of analytical reporting."
 date: 2026-05-17
 tags: ["Fact Tables", "Dimensional Modeling", "Data Warehouse", "Data Engineering", "Star Schema"]
 ---
@@ -40,4 +40,4 @@ In an Iceberg lakehouse, fact tables are stored in the Gold layer of the [Medall
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

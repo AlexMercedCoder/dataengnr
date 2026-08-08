@@ -1,6 +1,6 @@
 ---
 title: "Data Skewness"
-description: "A guide to data skewness in distributed data engineering, the performance-killing imbalance where some partitions or tasks process dramatically more data than others, and how to detect and address it."
+description: "Data skewness in distributed data engineering is the performance-killing imbalance where some partitions or tasks process dramatically more data than others, and how to detect and address it."
 date: 2026-05-17
 tags: ["Data Skewness", "Performance", "Apache Spark", "Distributed Computing", "Data Engineering"]
 ---
@@ -35,4 +35,4 @@ In [Apache Iceberg](/terms/apache-iceberg) tables, skewness at the file level is
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

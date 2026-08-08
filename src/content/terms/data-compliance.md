@@ -1,6 +1,6 @@
 ---
 title: "Data Compliance"
-description: "A guide to data compliance, the legal and regulatory frameworks governing data storage, retention, and deletion, and how data engineering architectures must adapt to meet GDPR, CCPA, and HIPAA requirements."
+description: "Data compliance covers the legal and regulatory frameworks governing data storage, retention, and deletion, and how data engineering architectures must adapt to meet GDPR, CCPA, and HIPAA requirements."
 date: 2026-05-17
 tags: ["Data Compliance", "Data Governance", "GDPR", "Data Privacy", "Data Engineering"]
 ---
@@ -36,4 +36,4 @@ Furthermore, Iceberg's `expire_snapshots` procedure ensures that historical vers
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

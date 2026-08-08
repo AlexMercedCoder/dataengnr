@@ -1,6 +1,6 @@
 ---
 title: "Predicate Pushdown"
-description: "A guide to predicate pushdown, the query optimization technique that evaluates filter conditions as close to the data source as possible to minimize the volume of data read and transferred through the query pipeline."
+description: "Predicate pushdown is the query optimization technique that evaluates filter conditions as close to the data source as possible to minimize the volume of data read and transferred through the query pipeline."
 date: 2026-05-17
 tags: ["Predicate Pushdown", "Query Optimization", "Apache Parquet", "Apache Iceberg", "Data Engineering"]
 ---
@@ -33,4 +33,4 @@ Predicate pushdown effectiveness depends critically on the data organization qua
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

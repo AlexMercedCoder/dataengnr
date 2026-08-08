@@ -1,6 +1,6 @@
 ---
 title: "Iceberg Table Tags"
-description: "A guide to Apache Iceberg table tags, the immutable named references to specific snapshots that enable point-in-time data access, release marking, audit checkpoints, and regulatory compliance snapshots in the lakehouse."
+description: "Apache Iceberg table tags are the immutable named references to specific snapshots that enable point-in-time data access, release marking, audit checkpoints, and regulatory compliance snapshots in the lakehouse."
 date: 2026-05-17
 tags: ["Iceberg Tags", "Apache Iceberg", "Data Versioning", "Data Governance", "Data Engineering"]
 ---
@@ -48,4 +48,4 @@ Tags can be configured with a retention policy independent of the table's defaul
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

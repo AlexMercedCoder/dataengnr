@@ -1,6 +1,6 @@
 ---
 title: "Query Caching"
-description: "A guide to query caching, the performance optimization technique that stores the results of complex database operations in fast memory to drastically reduce response times for subsequent, identical queries."
+description: "Query caching is the performance optimization technique that stores the results of complex database operations in fast memory to drastically reduce response times for subsequent, identical queries."
 date: 2026-05-17
 tags: ["Query Caching", "Performance Optimization", "Data Architecture", "Data Engineering", "Databases"]
 ---
@@ -37,4 +37,4 @@ While caching is powerful, it is not a silver bullet. If every user is asking sl
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

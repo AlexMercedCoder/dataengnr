@@ -1,6 +1,6 @@
 ---
 title: "Liquid Clustering"
-description: "A guide to Liquid Clustering in Delta Lake and Databricks, the adaptive file organization technique that replaces static partitioning with flexible, incremental clustering that automatically optimizes file layout for the most common query patterns."
+description: "Liquid Clustering in Delta Lake and Databricks is the adaptive file organization technique that replaces static partitioning with flexible, incremental clustering that automatically optimizes file layout for the most common query patterns."
 date: 2026-05-17
 tags: ["Liquid Clustering", "Delta Lake", "Databricks", "Data Lakehouse", "Query Optimization"]
 ---
@@ -33,4 +33,4 @@ Liquid Clustering is specific to the Delta Lake format on Databricks. Organizati
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

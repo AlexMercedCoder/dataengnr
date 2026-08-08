@@ -1,6 +1,6 @@
 ---
 title: "Hive Metastore (HMS)"
-description: "A guide to the Hive Metastore, the foundational metadata catalog of the Hadoop ecosystem that tracks table schemas, partitions, and storage locations, and its evolving role in modern Iceberg lakehouses."
+description: "The Hive Metastore is the foundational metadata catalog of the Hadoop ecosystem that tracks table schemas, partitions, and storage locations, and its evolving role in modern Iceberg lakehouses."
 date: 2026-05-17
 tags: ["Hive Metastore", "Data Catalog", "Metadata Management", "Apache Hive", "Data Lakehouse"]
 ---
@@ -33,4 +33,4 @@ For organizations building new lakehouse implementations, Apache Polaris or Proj
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

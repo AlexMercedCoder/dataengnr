@@ -1,6 +1,6 @@
 ---
 title: "Data Architecture"
-description: "A guide to data architecture, the structural design of the data systems, pipelines, and storage layers that dictates how data is acquired, processed, stored, and distributed across an organization to support its data strategy."
+description: "Data architecture is the structural design of the data systems, pipelines, and storage layers that dictates how data is acquired, processed, stored, and distributed across an organization to support its data strategy."
 date: 2026-05-17
 tags: ["Data Architecture", "Data Lakehouse", "Data Engineering", "Data Modeling", "ETL"]
 ---
@@ -41,4 +41,4 @@ A modern lakehouse architecture consists of several distinct architectural layer
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

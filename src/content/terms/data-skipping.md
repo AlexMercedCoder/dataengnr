@@ -1,6 +1,6 @@
 ---
 title: "Data Skipping"
-description: "A guide to data skipping in Apache Iceberg and modern query engines, the collection of techniques including partition pruning, file-level statistics, row group statistics, and Bloom filters that minimize the data scanned to answer analytical queries."
+description: "Data skipping in Apache Iceberg and modern query engines is the collection of techniques including partition pruning, file-level statistics, row group statistics, and Bloom filters that minimize the data scanned to answer analytical queries."
 date: 2026-05-17
 tags: ["Data Skipping", "Apache Iceberg", "Query Optimization", "Parquet", "Data Engineering"]
 ---
@@ -43,4 +43,4 @@ The effectiveness of data skipping depends heavily on how data is organized with
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

@@ -1,6 +1,6 @@
 ---
 title: "Prescriptive Analytics"
-description: "A guide to prescriptive analytics, the pinnacle of data analysis maturity that uses optimization algorithms and simulation to not only predict the future but to recommend specific actions to answer 'What should we do?'"
+description: "Prescriptive analytics is the pinnacle of data analysis maturity that uses optimization algorithms and simulation to not only predict the future but to recommend specific actions to answer 'What should we do?'"
 date: 2026-05-17
 tags: ["Prescriptive Analytics", "Analytics", "Optimization", "Machine Learning", "Data Engineering"]
 ---
@@ -27,7 +27,7 @@ Prescriptive analytics relies heavily on Operations Research (OR) techniques, ad
 
 ## Automating the Decision Loop
 
-The ultimate goal of prescriptive analytics is often full automation: removing the human from the operational decision loop entirely.
+The goal of prescriptive analytics is often full automation: removing the human from the operational decision loop entirely.
 
 In a fully mature data platform, the pipeline looks like this:
 1. Real-time event streams arrive in the Iceberg lakehouse.
@@ -39,4 +39,4 @@ This level of automation requires immense trust in the underlying data platform.
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

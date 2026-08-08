@@ -1,6 +1,6 @@
 ---
 title: "Data Serialization"
-description: "A guide to data serialization, the process of converting complex data structures into byte streams for efficient transmission across networks and storage, comparing formats like JSON, Avro, and Protobuf."
+description: "Data serialization is the process of converting complex data structures into byte streams for efficient transmission across networks and storage, comparing formats like JSON, Avro, and Protobuf."
 date: 2026-05-17
 tags: ["Data Serialization", "Apache Avro", "Data Engineering", "Streaming", "Architecture"]
 ---
@@ -35,4 +35,4 @@ Furthermore, binary serialization formats enforce strict data types. If a produc
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

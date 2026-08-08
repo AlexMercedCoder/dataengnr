@@ -1,6 +1,6 @@
 ---
 title: "CQRS (Command Query Responsibility Segregation)"
-description: "A guide to CQRS, the architectural pattern that completely separates the code and databases used for reading data (Queries) from the code and databases used for writing data (Commands) to maximize performance and scalability."
+description: "CQRS is the architectural pattern that completely separates the code and databases used for reading data (Queries) from the code and databases used for writing data (Commands) to maximize performance and scalability."
 date: 2026-05-17
 tags: ["CQRS", "Data Architecture", "Microservices", "Event Sourcing", "Software Engineering"]
 ---
@@ -33,4 +33,4 @@ This synchronization introduces **Eventual Consistency**. There is a tiny window
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

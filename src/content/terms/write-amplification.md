@@ -1,6 +1,6 @@
 ---
 title: "Write Amplification"
-description: "A guide to write amplification, the hidden performance penalty in analytical databases and lakehouses where a small logical update results in massive physical data being rewritten on disk."
+description: "Write amplification is the hidden performance penalty in analytical databases and lakehouses where a small logical update results in massive physical data being rewritten on disk."
 date: 2026-05-17
 tags: ["Write Amplification", "Apache Iceberg", "Performance Optimization", "Data Storage", "Data Engineering"]
 ---
@@ -33,4 +33,4 @@ To prevent read performance from degrading over time, data engineers schedule ba
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

@@ -1,6 +1,6 @@
 ---
 title: "Diagnostic Analytics"
-description: "A guide to diagnostic analytics, the second tier of data analysis that goes beyond summarizing what happened to investigate the root causes and correlations to answer the question 'Why did it happen?'"
+description: "Diagnostic analytics is the second tier of data analysis that goes beyond summarizing what happened to investigate the root causes and correlations to answer the question 'Why did it happen?'"
 date: 2026-05-17
 tags: ["Diagnostic Analytics", "Analytics", "Business Intelligence", "Data Exploration", "Data Engineering"]
 ---
@@ -29,7 +29,7 @@ Diagnostic analytics requires immense flexibility from the underlying [data arch
 
 The [data lakehouse](/terms/data-lakehouse) provides the ideal environment for diagnostic analytics:
 
-**1. Access to Raw Granularity**: When an analyst needs to drill down from a high-level KPI to the individual transactional records to diagnose an anomaly, the lakehouse allows seamless querying from the Gold aggregated tables down to the Silver or Bronze event-level data without switching systems.
+**1. Access to Raw Granularity**: When an analyst needs to drill down from a high-level KPI to the individual transactional records to diagnose an anomaly, the lakehouse allows querying from the Gold aggregated tables down to the Silver or Bronze event-level data without switching systems.
 
 **2. Engine Flexibility**: While SQL is the primary tool for diagnostics, an analyst diagnosing a complex behavioral anomaly might need the expressive power of Python (Pandas/[Polars](/terms/polars)) or [Apache Spark](/terms/apache-spark). The open architecture of the Iceberg lakehouse allows analysts to spin up a Jupyter notebook and query the exact same data using Python libraries without waiting for data engineers to export it.
 
@@ -37,4 +37,4 @@ The [data lakehouse](/terms/data-lakehouse) provides the ideal environment for d
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

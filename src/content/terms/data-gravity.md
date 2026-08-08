@@ -1,6 +1,6 @@
 ---
 title: "Data Gravity"
-description: "A guide to Data Gravity, the concept that as datasets grow massive, they become increasingly difficult to move, forcing applications, compute, and services to be built physically close to the data itself."
+description: "Data Gravity is the concept that as datasets grow massive, they become increasingly difficult to move, forcing applications, compute, and services to be built physically close to the data itself."
 date: 2026-05-17
 tags: ["Data Gravity", "Cloud Computing", "Data Architecture", "Data Migration", "Data Engineering"]
 ---
@@ -34,4 +34,4 @@ Data gravity cannot be eliminated, but modern data engineering architectures att
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

@@ -1,6 +1,6 @@
 ---
 title: "Hardware Acceleration"
-description: "A guide to hardware acceleration in data engineering, the use of specialized silicon like GPUs, FPGAs, and ASICs to execute massive data processing workloads exponentially faster than traditional CPUs."
+description: "Hardware acceleration in data engineering is the use of specialized silicon like GPUs, FPGAs, and ASICs to execute massive data processing workloads exponentially faster than traditional CPUs."
 date: 2026-05-17
 tags: ["Hardware Acceleration", "Performance Optimization", "Machine Learning", "Data Engineering", "Data Architecture"]
 ---
@@ -34,4 +34,4 @@ This is rapidly changing. Modern analytical engines are beginning to incorporate
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

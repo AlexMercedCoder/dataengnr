@@ -1,6 +1,6 @@
 ---
 title: "Apache Nessie"
-description: "A guide to Project Nessie, the open-source transactional catalog for Apache Iceberg that provides Git-like branching and versioning semantics at the catalog level, enabling multi-table atomic transactions and full catalog history."
+description: "Project Nessie is the open-source transactional catalog for Apache Iceberg that provides Git-like branching and versioning semantics at the catalog level, enabling multi-table atomic transactions and full catalog history."
 date: 2026-05-17
 tags: ["Apache Nessie", "Catalog", "Apache Iceberg", "Data Versioning", "Data Engineering"]
 ---
@@ -35,4 +35,4 @@ Dremio integrates natively with Project Nessie through its Arctic catalog (a man
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

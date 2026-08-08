@@ -1,6 +1,6 @@
 ---
 title: "Project Nessie"
-description: "A guide to Project Nessie, the open-source transactional catalog for data lakes that brings Git-like branching, tagging, and merging semantics to Apache Iceberg table management."
+description: "Project Nessie is the open-source transactional catalog for data lakes that brings Git-like branching, tagging, and merging semantics to Apache Iceberg table management."
 date: 2026-05-17
 tags: ["Project Nessie", "Iceberg Catalog", "Data Versioning", "Data Lakehouse"]
 ---
@@ -39,4 +39,4 @@ The combination of Nessie's branching semantics and Dremio's [Semantic Layer](/t
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

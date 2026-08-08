@@ -1,6 +1,6 @@
 ---
 title: "Multi-Table Transactions"
-description: "A guide to multi-table transactions in Apache Iceberg, the ability to atomically commit changes across multiple Iceberg tables in a single transaction, ensuring cross-table consistency without distributed locking overhead."
+description: "Multi-table transactions in Apache Iceberg atomically commit changes across multiple Iceberg tables in a single transaction, ensuring cross-table consistency without distributed locking overhead."
 date: 2026-05-17
 tags: ["Multi-Table Transactions", "Apache Iceberg", "ACID", "Data Engineering", "Data Lakehouse"]
 ---
@@ -48,4 +48,4 @@ For complex data engineering pipelines requiring cross-table consistency guarant
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

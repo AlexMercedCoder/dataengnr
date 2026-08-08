@@ -1,6 +1,6 @@
 ---
 title: "In-Memory Processing"
-description: "A guide to in-memory processing, the performance architecture that loads massive datasets entirely into RAM to execute analytical queries at lightning speed, eliminating the bottleneck of reading from physical disks."
+description: "In-memory processing is the performance architecture that loads massive datasets entirely into RAM to execute analytical queries at lightning speed, eliminating the bottleneck of reading from physical disks."
 date: 2026-05-17
 tags: ["In-Memory Processing", "Performance Optimization", "Data Architecture", "Data Engineering", "Apache Spark"]
 ---
@@ -15,7 +15,7 @@ When the CPU executes the query, it reads the data directly from RAM at nanoseco
 
 ## The Architecture of In-Memory Engines
 
-[Apache Spark](/terms/apache-spark) popularized distributed in-memory processing for big data. Before Spark, Hadoop MapReduce wrote the intermediate results of every step to the physical hard drive, causing massive I/O delays. Spark's revolutionary architecture kept these intermediate results entirely in distributed RAM across the cluster, leading to a 100x performance increase.
+[Apache Spark](/terms/apache-spark) popularized distributed in-memory processing for big data. Before Spark, Hadoop MapReduce wrote the intermediate results of every step to the physical hard drive, causing massive I/O delays. Spark's transformative architecture kept these intermediate results entirely in distributed RAM across the cluster, leading to a 100x performance increase.
 
 Modern in-memory engines often rely on **[Apache Arrow](/terms/apache-arrow)**, a standardized columnar memory format. When data is loaded into RAM, it is arranged in tight columns rather than scattered rows. This columnar layout in memory allows the CPU to use [Vectorized Execution](/terms/vectorized-execution) (SIMD instructions) to process millions of values simultaneously without skipping around the RAM chips.
 
@@ -30,8 +30,8 @@ It is financially impossible for most enterprises to load a 10 Petabyte historic
 - **Warm Data**: 100 Terabytes of recent data is cached on the local NVMe SSDs of the compute nodes.
 - **Hot Data**: 1 Terabyte of today's highly-active sales data is pinned directly in RAM for instant, in-memory dashboard querying.
 
-This tiered architecture balances the blazing speed of in-memory processing with the practical economic reality of enterprise data volumes.
+This tiered architecture balances the speed of in-memory processing with the practical economic reality of enterprise data volumes.
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

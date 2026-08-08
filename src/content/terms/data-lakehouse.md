@@ -69,7 +69,7 @@ Apache Arrow eliminates this serialization overhead by defining a language-indep
 
 The final pillar of the open lakehouse is the catalog layer. As Iceberg adoption accelerated, organizations encountered a fragmentation problem. Different query engines relied on different, often proprietary, catalog implementations to track Iceberg tables. This fragmentation threatened the promise of true interoperability.
 
-Apache Polaris was introduced to solve this by providing a unified, open-source catalog specifically engineered for Apache Iceberg. Polaris implements the official Iceberg REST API specification, ensuring that any compliant compute engine can seamlessly discover and access tables. Crucially, Polaris provides a centralized enforcement mechanism for Role-Based Access Control. By managing security credentials at the catalog level, organizations ensure that data access policies remain consistent regardless of whether a data scientist queries the lakehouse via [Apache Spark](/terms/apache-spark) or a financial analyst runs a report via [Dremio](/terms/dremio). Polaris ensures that the catalog itself does not become a new vector for vendor lock-in.
+Apache Polaris was introduced to solve this by providing a unified, open-source catalog specifically engineered for Apache Iceberg. Polaris implements the official Iceberg REST API specification, ensuring that any compliant compute engine can discover and access tables. Crucially, Polaris provides a centralized enforcement mechanism for Role-Based Access Control. By managing security credentials at the catalog level, organizations ensure that data access policies remain consistent regardless of whether a data scientist queries the lakehouse via [Apache Spark](/terms/apache-spark) or a financial analyst runs a report via [Dremio](/terms/dremio). Polaris ensures that the catalog itself does not become a new vector for vendor lock-in.
 
 
 ## The Dremio Implementation
@@ -96,7 +96,7 @@ Querying massive datasets directly on object storage requires substantial comput
 
 Data Reflections operate similarly to traditional [materialized views](/terms/materialized-views) or database indexes, but with significantly more intelligence and automation. When a data engineer enables a Data Reflection on a specific virtual dataset, Dremio physically pre-computes and stores an optimized representation of that data, typically in Apache Parquet format. The crucial innovation of Data Reflections is that they are entirely invisible to the end user. 
 
-When an analyst submits a query against a virtual dataset, the Dremio query optimizer automatically evaluates the available Data Reflections. If a Reflection can satisfy the query faster than scanning the raw source files, Dremio seamlessly rewrites the query execution plan to read from the Reflection instead. The user never needs to know the Reflection exists or explicitly reference it in their SQL statement. This algebraic matching allows a single Data Reflection to accelerate hundreds of different, related queries. By combining the Zero-ETL direct query model with the intelligent acceleration of Data Reflections, Dremio provides the performance of a premium data warehouse at the cost and scale of a data lake.
+When an analyst submits a query against a virtual dataset, the Dremio query optimizer automatically evaluates the available Data Reflections. If a Reflection can satisfy the query faster than scanning the raw source files, Dremio rewrites the query execution plan to read from the Reflection instead. The user never needs to know the Reflection exists or explicitly reference it in their SQL statement. This algebraic matching allows a single Data Reflection to accelerate hundreds of different, related queries. By combining the Zero-ETL direct query model with the intelligent acceleration of Data Reflections, Dremio provides the performance of a premium data warehouse at the cost and scale of a data lake.
 
 ![Dremio Query Execution and Semantic Layer Architecture](/images/terms/dremio_execution_architecture.png)
 
@@ -128,7 +128,7 @@ To mitigate this, data engineers must implement routine compaction strategies. C
 
 ### Avoiding Vendor Lock-in
 
-The primary value proposition of the data lakehouse is optionality. However, true optionality requires strict adherence to open standards at every layer of the stack. If an organization adopts a proprietary table format or relies on a closed, vendor-specific catalog, they reintroduce the very lock-in the lakehouse was designed to eliminate. Data engineers must carefully evaluate their tooling, ensuring that their chosen compute engines fully support open formats like Iceberg and open catalogs like Polaris. By controlling the storage, the format, and the catalog, the organization retains the power to swap compute engines at will, leveraging the most cost-effective or performant engine for any given workload.
+The primary value proposition of the data lakehouse is optionality. However, true optionality requires strict adherence to open standards at every layer of the stack. If an organization adopts a proprietary table format or relies on a closed, vendor-specific catalog, they reintroduce the very lock-in the lakehouse was designed to eliminate. Data engineers must carefully evaluate their tooling, ensuring that their chosen compute engines fully support open formats like Iceberg and open catalogs like Polaris. By controlling the storage, the format, and the catalog, the organization retains the power to swap compute engines at will, using the most cost-effective or performant engine for any given workload.
 
 ### Conclusion
 
@@ -137,4 +137,4 @@ The data lakehouse represents the convergence of storage economics and analytica
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

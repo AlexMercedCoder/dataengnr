@@ -1,6 +1,6 @@
 ---
 title: "Operational Analytics"
-description: "A guide to operational analytics, the practice of analyzing data in real-time or near-real-time to drive immediate, automated actions in front-line business systems rather than waiting for historical reporting."
+description: "Operational analytics is the practice of analyzing data in real-time or near-real-time to drive immediate, automated actions in front-line business systems rather than waiting for historical reporting."
 date: 2026-05-17
 tags: ["Operational Analytics", "Real-Time Analytics", "Reverse ETL", "Data Engineering", "Streaming"]
 ---
@@ -35,4 +35,4 @@ When a support agent opens Zendesk to answer a ticket, they see the "high-risk c
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

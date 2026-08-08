@@ -1,6 +1,6 @@
 ---
 title: "Retrieval-Augmented Generation (RAG)"
-description: "A guide to Retrieval-Augmented Generation (RAG), the AI architecture that grounds Large Language Models in private enterprise data, preventing hallucinations and enabling domain-specific conversational analytics without model fine-tuning."
+description: "Retrieval-Augmented Generation (RAG) is the AI architecture that grounds Large Language Models in private enterprise data, preventing hallucinations and enabling domain-specific conversational analytics without model fine-tuning."
 date: 2026-05-17
 tags: ["Retrieval-Augmented Generation", "RAG", "Artificial Intelligence", "Vector Databases", "Data Architecture"]
 ---
@@ -37,4 +37,4 @@ This convergence of GenAI and the data lakehouse is creating a new paradigm of "
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

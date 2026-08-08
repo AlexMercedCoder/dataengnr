@@ -1,6 +1,6 @@
 ---
 title: "Medallion Architecture"
-description: "A definitive guide to the Medallion Architecture, a layered data design pattern used to logically organize data in a lakehouse, progressing from raw ingestion to business-ready aggregates."
+description: "The Medallion Architecture is a layered data design pattern used to logically organize data in a lakehouse, progressing from raw ingestion to business-ready aggregates."
 date: 2026-05-17
 tags: ["Architecture", "Data Lakehouse", "Data Pipelines", "Best Practices"]
 ---
@@ -35,7 +35,7 @@ The Bronze layer is the absolute foundation of the Medallion Architecture. Its p
 
 When streaming data (such as website clickstreams via [Apache Kafka](/terms/apache-kafka)) or batch data (such as nightly database dumps) arrives at the data platform, it is immediately ingested into the Bronze tables. To ensure maximum ingestion speed and fidelity, the data is stored in its native format, which is often unstructured JSON, CSV, or raw Parquet files. 
 
-Data engineers explicitly do not perform schema validation, type casting, or data cleansing during the Bronze ingestion phase. If a source system suddenly starts sending a `timestamp` field as a `string` instead of a `datetime` object, the Bronze layer accepts it anyway. The goal is to ensure that no data is ever dropped or rejected at the front door. The Bronze layer serves as the ultimate historical system of record. If an organization ever needs to rebuild its entire analytical environment from scratch, or if a downstream transformation bug is discovered months later, the unadulterated ground truth is always safely preserved in the Bronze layer.
+Data engineers explicitly do not perform schema validation, type casting, or data cleansing during the Bronze ingestion phase. If a source system suddenly starts sending a `timestamp` field as a `string` instead of a `datetime` object, the Bronze layer accepts it anyway. The goal is to ensure that no data is ever dropped or rejected at the front door. The Bronze layer serves as the complete historical system of record. If an organization ever needs to rebuild its entire analytical environment from scratch, or if a downstream transformation bug is discovered months later, the unadulterated ground truth is always safely preserved in the Bronze layer.
 
 ### Metadata and Provenance
 
@@ -92,7 +92,7 @@ The theoretical benefits of the Medallion Architecture are only achievable if th
 
 [Apache Iceberg](/terms/apache-iceberg) is the definitive enabler of the modern Medallion Architecture. Because Iceberg provides strict ACID (Atomicity, Consistency, Isolation, Durability) guarantees, data engineers can safely execute complex `MERGE INTO` operations to upsert CDC data from Bronze to Silver without fear of corrupting the table. Iceberg's [Optimistic Concurrency Control](/terms/optimistic-concurrency-control) ensures that if two pipelines attempt to update the Silver table simultaneously, they will not overwrite each other's data.
 
-Furthermore, Iceberg's Time Travel capabilities make debugging a Medallion pipeline effortless. If an engineer discovers that a bug in the Silver transformation logic corrupted the Gold tables, they can use Time Travel to query the exact state of the Bronze tables as they existed prior to the pipeline run, and seamlessly replay the fixed logic.
+Furthermore, Iceberg's Time Travel capabilities make debugging a Medallion pipeline effortless. If an engineer discovers that a bug in the Silver transformation logic corrupted the Gold tables, they can use Time Travel to query the exact state of the Bronze tables as they existed prior to the pipeline run, and replay the fixed logic.
 
 ### Zero-ETL Acceleration with Dremio
 
@@ -107,4 +107,4 @@ This hybrid physical/virtual Medallion Architecture minimizes storage costs, dra
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

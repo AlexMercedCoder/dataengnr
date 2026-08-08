@@ -1,6 +1,6 @@
 ---
 title: "Bloom Filters in Parquet"
-description: "A guide to Parquet bloom filters, the probabilistic data structure embedded in Parquet files that enables point lookup queries to skip entire row groups containing no matching values for high-cardinality columns."
+description: "Parquet bloom filters are a probabilistic data structure embedded in Parquet files that enables point lookup queries to skip entire row groups containing no matching values for high-cardinality columns."
 date: 2026-05-17
 tags: ["Bloom Filters", "Apache Parquet", "Query Optimization", "Data Skipping", "Data Engineering"]
 ---
@@ -33,8 +33,8 @@ Bloom filters provide the largest query performance improvement for:
 
 Bloom filters provide less benefit for range queries (where min/max statistics are already effective), low-cardinality columns (where partition pruning already eliminates most files), and queries that must read most of the data regardless of filtering (full table scans for aggregations).
 
-[Dremio](/terms/dremio)'s [query planner](/terms/query-planner) reads Parquet bloom filter metadata when available and uses it to make row group skip decisions. When querying Iceberg tables with Parquet files written with bloom filter support, Dremio automatically leverages the bloom filter metadata for compatible filter predicates, reducing I/O for point lookup queries without any user configuration.
+[Dremio](/terms/dremio)'s [query planner](/terms/query-planner) reads Parquet bloom filter metadata when available and uses it to make row group skip decisions. When querying Iceberg tables with Parquet files written with bloom filter support, Dremio automatically uses the bloom filter metadata for compatible filter predicates, reducing I/O for point lookup queries without any user configuration.
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

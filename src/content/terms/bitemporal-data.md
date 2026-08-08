@@ -1,6 +1,6 @@
 ---
 title: "Bitemporal Data"
-description: "A guide to bitemporal data modeling, the advanced technique of tracking data across two distinct timelines (valid time and transaction time) to accurately recreate historical states and track retroactive corrections."
+description: "Bitemporal data modeling is the advanced technique of tracking data across two distinct timelines (valid time and transaction time) to accurately recreate historical states and track retroactive corrections."
 date: 2026-05-17
 tags: ["Bitemporal Data", "Data Modeling", "Time Travel", "Data Architecture", "Data Engineering"]
 ---
@@ -52,4 +52,4 @@ However, Iceberg Time Travel does not automatically handle *Valid Time* (when th
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

@@ -1,6 +1,6 @@
 ---
 title: "Iceberg Table Branching"
-description: "A guide to Apache Iceberg table branching, the Git-like feature that creates isolated development branches within a single Iceberg table, enabling safe data experimentation, multi-team collaboration, and the Write-Audit-Publish quality workflow."
+description: "Apache Iceberg table branching is the Git-like feature that creates isolated development branches within a single Iceberg table, enabling safe data experimentation, multi-team collaboration, and the Write-Audit-Publish quality workflow."
 date: 2026-05-17
 tags: ["Iceberg Branching", "Apache Iceberg", "Data Engineering", "WAP", "Data Lakehouse"]
 ---
@@ -41,4 +41,4 @@ Nessie ([Project Nessie](/terms/project-nessie)) and [Dremio](/terms/dremio)'s A
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

@@ -1,6 +1,6 @@
 ---
 title: "Compaction"
-description: "A guide to compaction in Apache Iceberg and data lakehouses, the critical table maintenance operation that merges small files into optimally sized Parquet files to restore query performance degraded by high-frequency writes."
+description: "Compaction in Apache Iceberg and data lakehouses is the critical table maintenance operation that merges small files into optimally sized Parquet files to restore query performance degraded by high-frequency writes."
 date: 2026-05-17
 tags: ["Compaction", "Table Maintenance", "Apache Iceberg", "Small File Problem", "Data Engineering"]
 ---
@@ -35,4 +35,4 @@ After compaction, old snapshot files accumulate in the Iceberg metadata layer, t
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

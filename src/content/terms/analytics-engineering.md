@@ -1,6 +1,6 @@
 ---
 title: "Analytics Engineering"
-description: "A guide to analytics engineering, the discipline that sits between data engineering and data analysis, using software engineering best practices and tools like dbt to transform raw data into reliable, well-documented, business-ready analytical models."
+description: "Analytics engineering is the discipline that sits between data engineering and data analysis, using software engineering best practices and tools like dbt to transform raw data into reliable, well-documented, business-ready analytical models."
 date: 2026-05-17
 tags: ["Analytics Engineering", "dbt", "Data Transformation", "Data Modeling", "Data Engineering"]
 ---
@@ -37,4 +37,4 @@ Dremio's [Semantic Layer](/terms/semantic-layer) then serves these dbt-produced 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

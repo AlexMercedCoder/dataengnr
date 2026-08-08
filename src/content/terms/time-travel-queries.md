@@ -1,6 +1,6 @@
 ---
 title: "Time Travel Queries"
-description: "A comprehensive guide to time travel queries in Apache Iceberg, the capability to query historical snapshots of a table at any point in its version history for auditing, debugging, and reproducible analytics."
+description: "Time travel in Apache Iceberg is the capability to query historical snapshots of a table at any point in its version history for auditing, debugging, and reproducible analytics."
 date: 2026-05-17
 tags: ["Apache Iceberg", "Time Travel", "Data Versioning", "Data Lakehouse"]
 ---
@@ -63,4 +63,4 @@ When Dremio queries Iceberg tables through its [Semantic Layer](/terms/semantic-
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

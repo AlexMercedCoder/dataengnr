@@ -1,6 +1,6 @@
 ---
 title: "Cloud Data Warehouse"
-description: "A guide to the Cloud Data Warehouse, the fully managed, scalable analytical database systems like Snowflake, BigQuery, and Redshift that revolutionized analytics by decoupling storage from compute in the cloud era."
+description: "Cloud data warehouses are the fully managed, scalable analytical database systems like Snowflake, BigQuery, and Redshift that reshaped analytics by decoupling storage from compute in the cloud era."
 date: 2026-05-17
 tags: ["Cloud Data Warehouse", "Data Warehouse", "Snowflake", "BigQuery", "Data Architecture"]
 ---
@@ -9,7 +9,7 @@ tags: ["Cloud Data Warehouse", "Data Warehouse", "Snowflake", "BigQuery", "Data 
 
 Before the cloud era, data warehouses were massive on-premises appliances (like Teradata or Oracle Exadata). They were expensive capital investments, required specialized teams to maintain the hardware, and suffered from a fatal architectural flaw: storage and compute were tightly coupled. If you needed more storage capacity, you had to buy a new server appliance that also included compute capacity you didn't need. If you needed more compute for complex queries, you had to buy an appliance that included storage you didn't need.
 
-The Cloud [Data Warehouse](/terms/data-warehouse) (CDW) revolutionized this model by moving analytical databases to the cloud and architecturally decoupling storage from compute. Systems like Snowflake, Google BigQuery, and Amazon Redshift (which evolved to decoupled storage) allow organizations to store petabytes of data cheaply on cloud [object storage](/terms/object-storage) while independently scaling compute resources up or down on demand.
+The Cloud [Data Warehouse](/terms/data-warehouse) (CDW) reshaped this model by moving analytical databases to the cloud and architecturally decoupling storage from compute. Systems like Snowflake, Google BigQuery, and Amazon Redshift (which evolved to decoupled storage) allow organizations to store petabytes of data cheaply on cloud [object storage](/terms/object-storage) while independently scaling compute resources up or down on demand.
 
 ## Key Characteristics of a Cloud Data Warehouse
 
@@ -31,4 +31,4 @@ The modern [Data Lakehouse](/terms/data-lakehouse) (built on [Apache Iceberg](/t
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

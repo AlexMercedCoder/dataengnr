@@ -1,6 +1,6 @@
 ---
 title: "Extract, Load, Transform (ELT)"
-description: "A comprehensive guide to ELT, the modern inversion of traditional ETL that leverages the computational power of cloud data warehouses and lakehouses to perform transformations after loading raw data."
+description: "ELT is the modern inversion of traditional ETL that uses the computational power of cloud data warehouses and lakehouses to perform transformations after loading raw data."
 date: 2026-05-17
 tags: ["Data Integration", "ELT", "Data Pipelines", "dbt", "Cloud Data Warehouse"]
 ---
@@ -41,7 +41,7 @@ In a lakehouse architecture, the raw landing zone corresponds directly to the Br
 
 The Transform phase in ELT is where the data engineering work occurs, and it is fundamentally different from the transformation step in classic ETL. Rather than executing transformations in a separate ETL server, all transformation logic runs as SQL queries directly inside the destination platform.
 
-The destination platform's Massively Parallel Processing engine applies the SQL transformation queries across the full raw dataset in parallel, leveraging the platform's full compute resources. A complex join across three tables containing one billion rows each, which might take hours on a dedicated ETL server, executes in seconds within a [cloud data warehouse](/terms/cloud-data-warehouse) or lakehouse equipped with appropriate compute resources.
+The destination platform's Massively Parallel Processing engine applies the SQL transformation queries across the full raw dataset in parallel, using the platform's full compute resources. A complex join across three tables containing one billion rows each, which might take hours on a dedicated ETL server, executes in seconds within a [cloud data warehouse](/terms/cloud-data-warehouse) or lakehouse equipped with appropriate compute resources.
 
 Transformations progress through multiple layers, typically aligned with the Medallion Architecture. The first transformation layer cleanses the raw data: removing duplicates, standardizing data types, handling null values, and resolving schema inconsistencies. The second layer conforms the cleansed data into enterprise-standard entities. The third layer applies dimensional modeling to produce business-ready Fact and [Dimension tables](/terms/dimension-tables) optimized for BI tool consumption.
 
@@ -92,4 +92,4 @@ This layered architecture cleanly separates responsibilities. The dbt ELT pipeli
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

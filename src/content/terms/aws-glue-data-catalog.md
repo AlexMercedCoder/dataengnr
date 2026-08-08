@@ -1,6 +1,6 @@
 ---
 title: "AWS Glue Data Catalog"
-description: "A guide to AWS Glue Data Catalog, the fully managed, serverless metadata repository that serves as the central catalog for AWS analytics services and provides an HMS-compatible API for Apache Iceberg and Hive-compatible tables."
+description: "AWS Glue Data Catalog is the fully managed, serverless metadata repository that serves as the central catalog for AWS analytics services and provides an HMS-compatible API for Apache Iceberg and Hive-compatible tables."
 date: 2026-05-17
 tags: ["AWS Glue", "Data Catalog", "AWS", "Apache Iceberg", "Metadata Management"]
 ---
@@ -37,4 +37,4 @@ Organizations using Glue as their primary AWS catalog can use Dremio as the unif
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

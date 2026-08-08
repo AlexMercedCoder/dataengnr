@@ -1,6 +1,6 @@
 ---
 title: "Time-Series Data"
-description: "A guide to time-series data, the specialized data structure consisting of sequential measurements over time, requiring specific storage, indexing, and querying techniques for IoT, financial, and observability use cases."
+description: "Time-series data is the specialized data structure consisting of sequential measurements over time, requiring specific storage, indexing, and querying techniques for IoT, financial, and observability use cases."
 date: 2026-05-17
 tags: ["Time-Series Data", "Data Modeling", "IoT", "Data Architecture", "Data Engineering"]
 ---
@@ -39,4 +39,4 @@ To make time-series data performant in [Apache Iceberg](/terms/apache-iceberg), 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

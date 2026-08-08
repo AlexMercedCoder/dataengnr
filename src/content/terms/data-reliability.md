@@ -1,6 +1,6 @@
 ---
 title: "Data Reliability"
-description: "A guide to data reliability, the engineering discipline focused on ensuring data pipelines consistently deliver accurate, fresh, and complete data to consumers, treating data downtime with the same urgency as software application downtime."
+description: "Data reliability is the engineering discipline focused on ensuring data pipelines consistently deliver accurate, fresh, and complete data to consumers, treating data downtime with the same urgency as software application downtime."
 date: 2026-05-17
 tags: ["Data Reliability", "Data Quality", "Data Engineering", "Data Observability", "DataOps"]
 ---
@@ -33,8 +33,8 @@ Data reliability is implemented through a combination of pipeline testing ([Data
 
 **Post-computation Monitoring (Observability)**: Tools like Monte Carlo or Anomalo connect directly to the Iceberg tables in the lakehouse and continuously monitor the data at rest using machine learning models to detect anomalies in volume, freshness, and distribution without requiring manual threshold configuration by engineers.
 
-**Circuit Breakers and the WAP Pattern**: The [Write-Audit-Publish (WAP)](/terms/write-audit-publish) pattern enabled by [Iceberg table branching](/terms/iceberg-branching) is the ultimate reliability mechanism. Data is written to an invisible branch, reliability tests (audits) are executed against the branch, and the branch is only published to the main table if the tests pass. If the data is unreliable, the main table is never updated, protecting consumers from data downtime.
+**Circuit Breakers and the WAP Pattern**: The [Write-Audit-Publish (WAP)](/terms/write-audit-publish) pattern enabled by [Iceberg table branching](/terms/iceberg-branching) is the strongest reliability mechanism. Data is written to an invisible branch, reliability tests (audits) are executed against the branch, and the branch is only published to the main table if the tests pass. If the data is unreliable, the main table is never updated, protecting consumers from data downtime.
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

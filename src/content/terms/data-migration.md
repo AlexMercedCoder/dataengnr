@@ -1,6 +1,6 @@
 ---
 title: "Data Migration"
-description: "A guide to data migration, the complex engineering process of securely and accurately transferring massive datasets from legacy systems (like on-premises data warehouses) to modern cloud architectures like the data lakehouse."
+description: "Data migration is the complex engineering process of securely and accurately transferring massive datasets from legacy systems (like on-premises data warehouses) to modern cloud architectures like the data lakehouse."
 date: 2026-05-17
 tags: ["Data Migration", "Data Architecture", "Cloud Computing", "Data Engineering", "ETL"]
 ---
@@ -39,4 +39,4 @@ Over months, domain by domain, workloads are migrated to the new architecture. T
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

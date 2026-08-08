@@ -1,6 +1,6 @@
 ---
 title: "Apache Kafka Connect"
-description: "A guide to Apache Kafka Connect, the scalable, resilient integration framework within the Kafka ecosystem designed to stream data reliably between Kafka and external databases, key-value stores, and cloud storage systems."
+description: "Apache Kafka Connect is the scalable, resilient integration framework within the Kafka ecosystem designed to stream data reliably between Kafka and external databases, key-value stores, and cloud storage systems."
 date: 2026-05-17
 tags: ["Apache Kafka Connect", "Data Ingestion", "Streaming", "Change Data Capture", "Data Engineering"]
 ---
@@ -33,8 +33,8 @@ In a real-time [streaming lakehouse](/terms/streaming-lakehouse) architecture, K
 
 **The Last Mile (Kafka to Iceberg)**: A Kafka Connect Iceberg Sink Connector (or a Flink sink) reads the `enriched_orders` topic and continuously writes the data into Apache Iceberg tables in [object storage](/terms/object-storage). The sink connector handles the complex mechanics of buffering records, writing Parquet files, and committing Iceberg snapshots at regular intervals.
 
-By leveraging the rich ecosystem of hundreds of open-source Kafka Connectors, data engineering teams can build robust, scalable streaming ingestion pipelines using configuration rather than code.
+By using the rich ecosystem of hundreds of open-source Kafka Connectors, data engineering teams can build robust, scalable streaming ingestion pipelines using configuration rather than code.
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

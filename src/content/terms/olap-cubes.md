@@ -1,6 +1,6 @@
 ---
 title: "OLAP Cubes"
-description: "A guide to OLAP cubes, the pre-aggregated multidimensional data structures that enabled fast analytical queries in 1990s business intelligence systems, and how modern lakehouse materialized views and Data Reflections achieve equivalent performance without the rigidity of cube architectures."
+description: "OLAP cubes are the pre-aggregated multidimensional data structures that enabled fast analytical queries in 1990s business intelligence systems, and how modern lakehouse materialized views and Data Reflections achieve equivalent performance without the rigidity of cube architectures."
 date: 2026-05-17
 tags: ["OLAP Cubes", "OLAP", "Business Intelligence", "Analytics", "Data Engineering"]
 ---
@@ -37,4 +37,4 @@ The combination of modern columnar execution and Dremio Data Reflections makes t
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

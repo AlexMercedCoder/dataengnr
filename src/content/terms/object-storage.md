@@ -1,6 +1,6 @@
 ---
 title: "Object Storage"
-description: "A guide to object storage, the massively scalable, low-cost storage architecture that underlies modern data lakehouses, and how it differs fundamentally from block and file storage systems."
+description: "Object storage is the massively scalable, low-cost storage architecture that underlies modern data lakehouses, and how it differs fundamentally from block and file storage systems."
 date: 2026-05-17
 tags: ["Object Storage", "Cloud Storage", "S3", "Data Lakehouse", "Data Engineering"]
 ---
@@ -39,4 +39,4 @@ This separation enables the multi-engine lakehouse architecture. [Dremio](/terms
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

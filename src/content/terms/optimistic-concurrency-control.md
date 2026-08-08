@@ -1,6 +1,6 @@
 ---
 title: "Optimistic Concurrency Control"
-description: "A guide to Optimistic Concurrency Control (OCC) in Apache Iceberg, the conflict detection strategy that enables high-throughput parallel writes to the same table without distributed locking, detecting and resolving conflicts at commit time."
+description: "Optimistic Concurrency Control (OCC) in Apache Iceberg is the conflict detection strategy that enables high-throughput parallel writes to the same table without distributed locking, detecting and resolving conflicts at commit time."
 date: 2026-05-17
 tags: ["Optimistic Concurrency Control", "Apache Iceberg", "ACID", "Concurrency", "Data Engineering"]
 ---
@@ -41,4 +41,4 @@ The OCC model enables Apache Iceberg to support high-throughput concurrent write
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

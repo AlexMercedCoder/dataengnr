@@ -1,6 +1,6 @@
 ---
 title: "Dimension Tables"
-description: "A guide to dimension tables in dimensional modeling, the contextual tables in a star schema that store the 'who, what, where, and when' attributes used to filter and group analytical metrics."
+description: "Dimension tables in dimensional modeling are the contextual tables in a star schema that store the 'who, what, where, and when' attributes used to filter and group analytical metrics."
 date: 2026-05-17
 tags: ["Dimension Tables", "Dimensional Modeling", "Data Warehouse", "Data Engineering", "Star Schema"]
 ---
@@ -9,7 +9,7 @@ tags: ["Dimension Tables", "Dimensional Modeling", "Data Warehouse", "Data Engin
 
 If a fact table holds the numeric measurements of a business event (the "how much"), dimension tables hold the descriptive context surrounding that event (the "who, what, where, when, and why"). In a [star schema](/terms/star-schema), dimension tables surround the central fact table, providing the textual attributes used by analysts to slice, dice, filter, and group the data.
 
-When a retail executive asks to see "Total Sales (Fact) grouped by Product Category (Dimension) and Region (Dimension) over the last Quarter (Dimension)," they are leveraging dimension tables to give meaning to raw numbers. 
+When a retail executive asks to see "Total Sales (Fact) grouped by Product Category (Dimension) and Region (Dimension) over the last Quarter (Dimension)," they are using dimension tables to give meaning to raw numbers. 
 
 Dimension tables are characteristically wide (containing many descriptive columns) but shallow (containing relatively few rows compared to [fact tables](/terms/fact-tables)). A `dim_customer` table might have millions of rows, but a `fact_sales` table will have billions.
 
@@ -27,7 +27,7 @@ Dimension tables are characteristically wide (containing many descriptive column
 
 **Date/Time Dimension**: The most universal dimension in any data warehouse. Rather than extracting "month" or "day of week" from a timestamp at query time, a `dim_date` table contains one row for every calendar day, with pre-computed columns for `day_of_week`, `is_holiday`, `fiscal_quarter`, and `is_weekend`. This makes complex calendar math trivial in SQL.
 
-**Conformed Dimensions**: A dimension table that is shared across multiple fact tables. If `dim_customer` is joined to `fact_sales` and `fact_support_tickets`, analysts can seamlessly compare a customer's purchasing behavior against their support history. Conformed dimensions are the key to breaking down [data silos](/terms/data-silos) in an enterprise.
+**Conformed Dimensions**: A dimension table that is shared across multiple fact tables. If `dim_customer` is joined to `fact_sales` and `fact_support_tickets`, analysts can compare a customer's purchasing behavior against their support history. Conformed dimensions are the key to breaking down [data silos](/terms/data-silos) in an enterprise.
 
 **Junk Dimensions**: A catch-all dimension table created to hold low-cardinality flags and indicators that don't logically belong in a dedicated dimension table. Instead of adding ten separate boolean flag columns to a massive fact table, the flags are combined into a single `dim_transaction_profile` table, saving space and improving query performance.
 
@@ -37,4 +37,4 @@ In the Iceberg lakehouse, dimension tables sit in the Gold layer and are heavily
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

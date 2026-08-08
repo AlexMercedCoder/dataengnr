@@ -1,6 +1,6 @@
 ---
 title: "Idempotency"
-description: "A guide to idempotency in data engineering, the critical property of a data pipeline ensuring that executing the same code multiple times yields the exact same result, preventing duplicate data during retries."
+description: "Idempotency in data engineering is the critical property of a data pipeline ensuring that executing the same code multiple times yields the exact same result, preventing duplicate data during retries."
 date: 2026-05-17
 tags: ["Idempotency", "Data Pipeline", "Data Engineering", "Orchestration", "Reliability"]
 ---
@@ -31,8 +31,8 @@ Making a pipeline idempotent requires moving away from naive `INSERT` statements
 
 [Apache Iceberg](/terms/apache-iceberg) natively supports highly performant idempotent operations. Iceberg's `MERGE INTO` command handles row-level upserts efficiently, even across petabytes of data, rewriting only the necessary Parquet files. 
 
-More importantly, Iceberg's [Write-Audit-Publish (WAP)](/terms/write-audit-publish) pattern provides ultimate idempotency. If a pipeline runs, it writes data to a hidden branch. If it fails midway, that branch is simply discarded. The main table is never touched until the pipeline successfully completes and the branch is merged. If the pipeline is retried, it simply starts over on a fresh hidden branch, guaranteeing that partial, duplicate data is never exposed to downstream consumers.
+More importantly, Iceberg's [Write-Audit-Publish (WAP)](/terms/write-audit-publish) pattern provides idempotency. If a pipeline runs, it writes data to a hidden branch. If it fails midway, that branch is simply discarded. The main table is never touched until the pipeline successfully completes and the branch is merged. If the pipeline is retried, it simply starts over on a fresh hidden branch, guaranteeing that partial, duplicate data is never exposed to downstream consumers.
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

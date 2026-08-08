@@ -1,6 +1,6 @@
 ---
 title: "Data Archiving"
-description: "A guide to data archiving, the strategic process of moving cold, infrequently accessed historical data off expensive, high-performance storage onto ultra-cheap, durable storage tiers to optimize costs."
+description: "Data archiving is the strategic process of moving cold, infrequently accessed historical data off expensive, high-performance storage onto ultra-cheap, durable storage tiers to optimize costs."
 date: 2026-05-17
 tags: ["Data Archiving", "Cloud Computing", "Data Architecture", "Storage", "Data Engineering"]
 ---
@@ -36,4 +36,4 @@ This creates a massive challenge for query engines. If an analyst accidentally r
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

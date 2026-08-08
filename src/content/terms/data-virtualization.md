@@ -1,6 +1,6 @@
 ---
 title: "Data Virtualization"
-description: "A guide to data virtualization, the architecture that enables querying and combining data across multiple disparate systems (databases, object storage, APIs) without copying or moving the data to a centralized repository."
+description: "Data virtualization is the architecture that enables querying and combining data across multiple disparate systems (databases, object storage, APIs) without copying or moving the data to a centralized repository."
 date: 2026-05-17
 tags: ["Data Virtualization", "Query Federation", "Dremio", "Data Architecture", "Data Engineering"]
 ---
@@ -27,7 +27,7 @@ When a query joins an Iceberg table (`web_clicks`) with a PostgreSQL table (`cus
 
 Data virtualization is complementary to the [data lakehouse architecture](/terms/data-lakehouse-architecture). A pure lakehouse model attempts to land all analytical data in Iceberg on [object storage](/terms/object-storage). However, enterprise realities dictate that some data will always live outside the lakehouse: operational databases (OLTP), third-party SaaS APIs, or legacy data warehouses that are too complex to migrate.
 
-Virtualization bridges the gap. Dremio, acting as both a lakehouse query engine and a data virtualization platform, allows organizations to adopt the lakehouse pattern for the majority of their data (where open formats and cheap storage provide the most benefit) while seamlessly federating queries to operational databases when real-time, zero-latency access is required, without forcing an "everything must move" migration strategy.
+Virtualization bridges the gap. Dremio, acting as both a lakehouse query engine and a data virtualization platform, allows organizations to adopt the lakehouse pattern for the majority of their data (where open formats and cheap storage provide the most benefit) while federating queries to operational databases when real-time, zero-latency access is required, without forcing an "everything must move" migration strategy.
 
 ![Data Virtualization Architecture](/images/terms/data_virtualization.png)
 
@@ -39,4 +39,4 @@ However, virtualization is not a replacement for data lakes or warehouses for al
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

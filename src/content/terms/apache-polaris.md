@@ -1,6 +1,6 @@
 ---
 title: "Apache Polaris"
-description: "A comprehensive guide to Apache Polaris, the open-source, vendor-neutral Iceberg REST catalog that provides unified table governance across multiple compute engines and cloud environments."
+description: "Apache Polaris is the open-source, vendor-neutral Iceberg REST catalog that provides unified table governance across multiple compute engines and cloud environments."
 date: 2026-05-17
 tags: ["Apache Polaris", "Iceberg Catalog", "Data Governance", "Data Lakehouse"]
 ---
@@ -45,4 +45,4 @@ Dremio natively integrates with Apache Polaris as an Iceberg REST catalog source
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

@@ -1,6 +1,6 @@
 ---
 title: "Apache ORC"
-description: "A guide to Apache ORC (Optimized Row Columnar), the columnar file format developed for the Hadoop ecosystem that pioneered many of the columnar storage optimizations later extended by Parquet and modern lakehouse formats."
+description: "Apache ORC (Optimized Row Columnar) is the columnar file format developed for the Hadoop ecosystem that pioneered many of the columnar storage optimizations later extended by Parquet and modern lakehouse formats."
 date: 2026-05-17
 tags: ["Apache ORC", "File Formats", "Columnar Storage", "Hadoop", "Data Engineering"]
 ---
@@ -33,4 +33,4 @@ For teams migrating from Hive with ORC tables to a modern Iceberg lakehouse, the
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

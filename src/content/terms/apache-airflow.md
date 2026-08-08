@@ -1,6 +1,6 @@
 ---
 title: "Apache Airflow"
-description: "A guide to Apache Airflow, the open-source workflow orchestration platform that schedules, monitors, and manages complex data pipeline DAGs in production data engineering environments."
+description: "Apache Airflow is the open-source workflow orchestration platform that schedules, monitors, and manages complex data pipeline DAGs in production data engineering environments."
 date: 2026-05-17
 tags: ["Apache Airflow", "Workflow Orchestration", "Data Pipelines", "Data Engineering"]
 ---
@@ -37,4 +37,4 @@ For Dremio-centric lakehouse architectures, Airflow DAGs can trigger Dremio oper
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

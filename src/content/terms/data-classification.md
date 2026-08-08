@@ -1,6 +1,6 @@
 ---
 title: "Data Classification"
-description: "A guide to data classification, the critical governance process of categorizing data based on its sensitivity, business value, and regulatory risk to apply appropriate security controls and retention policies."
+description: "Data classification is the critical governance process of categorizing data based on its sensitivity, business value, and regulatory risk to apply appropriate security controls and retention policies."
 date: 2026-05-17
 tags: ["Data Classification", "Data Governance", "Security", "Compliance", "Data Engineering"]
 ---
@@ -39,4 +39,4 @@ Once tagged, [Active Data Governance](/terms/active-data-governance) policies ta
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

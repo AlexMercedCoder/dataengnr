@@ -1,6 +1,6 @@
 ---
 title: "Data Mesh"
-description: "A comprehensive guide to Data Mesh, a decentralized socio-technical paradigm that shifts data ownership from centralized engineering bottlenecks to distributed business domains."
+description: "Data Mesh is a decentralized socio-technical paradigm that shifts data ownership from centralized engineering bottlenecks to distributed business domains."
 date: 2026-05-17
 tags: ["Architecture", "Data Mesh", "Data Governance", "Organizational Design"]
 ---
@@ -92,7 +92,7 @@ While Data Mesh is a socio-technical paradigm, it requires a highly specific tec
 
 ### Apache Iceberg as the Open Standard
 
-In a true Data Mesh, interoperability is paramount. If the Logistics domain builds their Data Product using a proprietary, closed database format, the Marketing domain will struggle to query it. Standardizing on Apache Iceberg as the universal table format solves this interoperability challenge. 
+In a true Data Mesh, interoperability is essential. If the Logistics domain builds their Data Product using a proprietary, closed database format, the Marketing domain will struggle to query it. Standardizing on Apache Iceberg as the universal table format solves this interoperability challenge. 
 
 Every domain across the organization stores their Data Products as Iceberg tables on cost-effective cloud [object storage](/terms/object-storage) (like Amazon S3 or Azure Data Lake Storage). Because Iceberg is an open standard, it prevents vendor lock-in and guarantees that any compute engine can read the data. The Logistics domain can use [Apache Flink](/terms/apache-flink) to write streaming updates to their Iceberg tables, while the Data Science domain can use [Apache Spark](/terms/apache-spark) to train models on those exact same tables simultaneously, all governed by the ACID guarantees of the Iceberg metadata.
 
@@ -102,9 +102,9 @@ While Iceberg provides the physical interoperability, organizations require a un
 
 Because the Data Products are physically decentralized across different domain buckets, business analysts need a single pane of glass to write cross-domain queries. Dremio connects directly to the various Iceberg catalogs (such as Apache Polaris or AWS Glue) managed by the different domains. 
 
-An analyst can log into Dremio and write a single SQL query that seamlessly joins a `Campaign_Performance` Data Product (owned by Marketing) with a `Q3_Revenue` Data Product (owned by Finance). The analyst does not need to know where the files are physically stored or how to extract them. Dremio handles the federated execution, pushing the processing down to the respective domain data and returning the unified result. Furthermore, Dremio's Data Reflections can transparently accelerate these cross-domain joins, delivering sub-second BI performance across the entire distributed architecture. By combining the organizational agility of the Data Mesh, the open standards of Apache Iceberg, and the federated semantic power of Dremio, enterprises achieve unparalleled analytical scale and flexibility.
+An analyst can log into Dremio and write a single SQL query that joins a `Campaign_Performance` Data Product (owned by Marketing) with a `Q3_Revenue` Data Product (owned by Finance). The analyst does not need to know where the files are physically stored or how to extract them. Dremio handles the federated execution, pushing the processing down to the respective domain data and returning the unified result. Furthermore, Dremio's Data Reflections can transparently accelerate these cross-domain joins, delivering sub-second BI performance across the entire distributed architecture. By combining the organizational agility of the Data Mesh, the open standards of Apache Iceberg, and the federated semantic power of Dremio, enterprises achieve unparalleled analytical scale and flexibility.
 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

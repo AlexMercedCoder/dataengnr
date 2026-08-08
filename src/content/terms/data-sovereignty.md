@@ -1,6 +1,6 @@
 ---
 title: "Data Sovereignty"
-description: "A guide to data sovereignty in global data engineering, the regulatory and governance requirements that mandate certain data must remain within specific geographic boundaries and be governed by the laws of the jurisdiction where it was collected."
+description: "Data sovereignty in global data engineering is the regulatory and governance requirements that mandate certain data must remain within specific geographic boundaries and be governed by the laws of the jurisdiction where it was collected."
 date: 2026-05-17
 tags: ["Data Sovereignty", "Data Governance", "GDPR", "Compliance", "Data Engineering"]
 ---
@@ -31,4 +31,4 @@ The erasure must also remove the affected rows from all snapshots within the ret
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

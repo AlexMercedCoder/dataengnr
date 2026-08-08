@@ -1,6 +1,6 @@
 ---
 title: "Data Discovery"
-description: "A guide to data discovery, the tooling and processes that enable users to find, understand, and trust data assets across an organization through searchable catalogs, metadata enrichment, and automated lineage tracking."
+description: "Data discovery covers the tooling and processes that enable users to find, understand, and trust data assets across an organization through searchable catalogs, metadata enrichment, and automated lineage tracking."
 date: 2026-05-17
 tags: ["Data Discovery", "Data Catalog", "Metadata", "Data Governance", "Data Engineering"]
 ---
@@ -35,4 +35,4 @@ A centralized discovery platform (like Datahub) ingests metadata from all these 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

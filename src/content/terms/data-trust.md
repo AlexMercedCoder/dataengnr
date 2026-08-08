@@ -1,6 +1,6 @@
 ---
 title: "Data Trust"
-description: "A guide to data trust, the qualitative measure of business confidence in an organization's data assets, built through reliable pipelines, transparent lineage, rigorous data quality metrics, and clear data ownership."
+description: "Data trust is the qualitative measure of business confidence in an organization's data assets, built through reliable pipelines, transparent lineage, rigorous data quality metrics, and clear data ownership."
 date: 2026-05-17
 tags: ["Data Trust", "Data Quality", "Data Governance", "Data Culture", "Analytics"]
 ---
@@ -35,4 +35,4 @@ This architectural pattern guarantees that bad data never enters the production 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).

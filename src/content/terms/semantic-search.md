@@ -1,6 +1,6 @@
 ---
 title: "Semantic Search"
-description: "A guide to semantic search, the AI-driven methodology that retrieves information based on the contextual meaning and intent of a query, rather than relying on exact keyword matching."
+description: "Semantic search is the AI-driven methodology that retrieves information based on the contextual meaning and intent of a query, rather than relying on exact keyword matching."
 date: 2026-05-17
 tags: ["Semantic Search", "Artificial Intelligence", "Vector Databases", "Machine Learning", "Unstructured Data"]
 ---
@@ -31,8 +31,8 @@ Semantic search is the foundational technology powering the modern AI revolution
 
 When an employee asks an internal AI chatbot a complex HR question, the chatbot does not rely on its underlying generic training data. Instead, it executes a semantic search against the company's internal HR policy documents. It retrieves the three most conceptually relevant paragraphs (even if the employee used completely different phrasing than the official policy manual), and feeds those paragraphs into an LLM to generate a perfectly accurate, context-aware answer. 
 
-Semantic search unlocks the value of the massive troves of [unstructured data](/terms/unstructured-data) (PDFs, transcripts, emails) sitting dormant in the [data lake](/terms/data-lake).
+Semantic search makes usable the massive troves of [unstructured data](/terms/unstructured-data) (PDFs, transcripts, emails) sitting dormant in the [data lake](/terms/data-lake).
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

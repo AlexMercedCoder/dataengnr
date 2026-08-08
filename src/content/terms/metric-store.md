@@ -1,6 +1,6 @@
 ---
 title: "Metric Store"
-description: "A guide to the metric store (or headless BI), the architectural layer that centrally defines and computes business metrics, ensuring consistency across all downstream dashboards, AI agents, and applications."
+description: "The metric store (or headless BI) is the architectural layer that centrally defines and computes business metrics, ensuring consistency across all downstream dashboards, AI agents, and applications."
 date: 2026-05-17
 tags: ["Metric Store", "Headless BI", "Semantic Layer", "Analytics", "Data Engineering"]
 ---
@@ -41,4 +41,4 @@ By placing a Metric Store between the LLM and the lakehouse, the LLM only needs 
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

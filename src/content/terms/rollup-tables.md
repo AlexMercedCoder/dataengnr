@@ -1,6 +1,6 @@
 ---
 title: "Rollup Tables"
-description: "A guide to rollup tables, the pre-aggregated summary tables used to accelerate analytical queries by storing high-level metrics instead of forcing the database to scan millions of raw transaction rows."
+description: "Rollup tables are the pre-aggregated summary tables used to accelerate analytical queries by storing high-level metrics instead of forcing the database to scan millions of raw transaction rows."
 date: 2026-05-17
 tags: ["Rollup Tables", "Performance Optimization", "Data Modeling", "Data Engineering", "Data Architecture"]
 ---
@@ -41,4 +41,4 @@ This gives the performance of rollup tables without forcing analysts to understa
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

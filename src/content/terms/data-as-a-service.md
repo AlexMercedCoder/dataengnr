@@ -1,6 +1,6 @@
 ---
 title: "Data as a Service (DaaS)"
-description: "A guide to Data as a Service (DaaS), the architectural pattern that treats curated data products as governed, API-accessible services with defined SLAs, ownership, and discoverability, enabling self-service data consumption across an organization."
+description: "Data as a Service (DaaS) is the architectural pattern that treats curated data products as governed, API-accessible services with defined SLAs, ownership, and discoverability, enabling self-service data consumption across an organization."
 date: 2026-05-17
 tags: ["Data as a Service", "DaaS", "Data Products", "Data Mesh", "Data Engineering"]
 ---
@@ -41,4 +41,4 @@ In a Data Mesh DaaS architecture, the central data platform team provides the in
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

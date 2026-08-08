@@ -1,6 +1,6 @@
 ---
 title: "PyIceberg"
-description: "A guide to PyIceberg, the official Python library for Apache Iceberg that enables Python developers and data scientists to interact with Iceberg tables directly without requiring a JVM-based engine like Spark."
+description: "PyIceberg is the official Python library for Apache Iceberg that enables Python developers and data scientists to interact with Iceberg tables directly without requiring a JVM-based engine like Spark."
 date: 2026-05-17
 tags: ["PyIceberg", "Python", "Apache Iceberg", "Data Engineering", "Data Science"]
 ---
@@ -35,4 +35,4 @@ The combination of PyIceberg for catalog management, DuckDB for local Python ana
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.

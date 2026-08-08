@@ -1,6 +1,6 @@
 ---
 title: "Query Optimization"
-description: "A guide to query optimization in data lakehouses, the techniques that reduce query execution time and resource usage through predicate pushdown, partition pruning, column pruning, join ordering, and pre-computed materialization."
+description: "Query optimization in data lakehouses covers the techniques that reduce query execution time and resource usage through predicate pushdown, partition pruning, column pruning, join ordering, and pre-computed materialization."
 date: 2026-05-17
 tags: ["Query Optimization", "Dremio", "Apache Iceberg", "Performance", "Data Engineering"]
 ---
@@ -37,4 +37,4 @@ For repeated queries against large tables, pre-computed materializations (Dremio
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

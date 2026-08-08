@@ -1,6 +1,6 @@
 ---
 title: "Generative AI"
-description: "A guide to Generative AI, the class of artificial intelligence models designed not to analyze or classify existing data, but to create entirely new, original content-including text, images, and code."
+description: "Generative AI is the class of artificial intelligence models designed not to analyze or classify existing data, but to create entirely new, original content-including text, images, and code."
 date: 2026-05-17
 tags: ["Generative AI", "Artificial Intelligence", "Machine Learning", "Large Language Models", "Data Science"]
 ---
@@ -33,4 +33,4 @@ Because Generative AI thrives on unstructured text, data engineers are now build
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

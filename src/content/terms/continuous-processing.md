@@ -1,6 +1,6 @@
 ---
 title: "Continuous Processing"
-description: "A guide to continuous processing, the true streaming architecture that processes data event-by-event with millisecond latency, as opposed to waiting for scheduled batches or micro-batch intervals."
+description: "Continuous processing is the true streaming architecture that processes data event-by-event with millisecond latency, as opposed to waiting for scheduled batches or micro-batch intervals."
 date: 2026-05-17
 tags: ["Continuous Processing", "Streaming", "Apache Flink", "Real-Time Analytics", "Data Engineering"]
 ---
@@ -37,4 +37,4 @@ A Watermark is a signal the engine generates saying, "I am confident I have rece
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).

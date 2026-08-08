@@ -1,6 +1,6 @@
 ---
 title: "Retrieval-Augmented Generation (RAG)"
-description: "A guide to RAG, the foundational AI architecture that grounds Large Language Models in verifiable, private corporate data, eliminating hallucinations and ensuring accurate, context-aware responses."
+description: "RAG is the foundational AI architecture that grounds Large Language Models in verifiable, private corporate data, eliminating hallucinations and ensuring accurate, context-aware responses."
 date: 2026-05-17
 tags: ["RAG", "Generative AI", "Artificial Intelligence", "Large Language Models", "Data Architecture"]
 ---
@@ -37,4 +37,4 @@ The LLM then *generates* the final answer, acting essentially as a summarization
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

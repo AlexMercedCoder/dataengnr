@@ -1,6 +1,6 @@
 ---
 title: "Extract, Transform, Load (ETL)"
-description: "A comprehensive guide to Extract, Transform, Load (ETL), the foundational data integration pattern that has shaped enterprise data pipelines for decades and continues to evolve in the modern lakehouse era."
+description: "Extract, Transform, Load (ETL) is the foundational data integration pattern that has shaped enterprise data pipelines for decades and continues to evolve in the modern lakehouse era."
 date: 2026-05-17
 tags: ["Data Integration", "ETL", "Data Pipelines", "Data Engineering"]
 ---
@@ -75,4 +75,4 @@ This approach does not render traditional ETL obsolete. For complex historical c
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

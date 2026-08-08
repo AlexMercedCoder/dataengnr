@@ -1,6 +1,6 @@
 ---
 title: "Data Privacy"
-description: "A guide to data privacy in data engineering, the practices and architectural patterns used to protect sensitive personally identifiable information (PII) from unauthorized access while maintaining analytical utility."
+description: "Data privacy in data engineering covers the practices and architectural patterns used to protect sensitive personally identifiable information (PII) from unauthorized access while maintaining analytical utility."
 date: 2026-05-17
 tags: ["Data Privacy", "Security", "Data Governance", "Compliance", "Data Engineering"]
 ---
@@ -35,4 +35,4 @@ Implementing privacy in a lakehouse architecture typically follows a "defense in
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.

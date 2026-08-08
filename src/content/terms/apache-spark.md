@@ -1,6 +1,6 @@
 ---
 title: "Apache Spark"
-description: "A comprehensive guide to Apache Spark, the distributed computing engine that transformed large-scale data processing with its unified API for batch, streaming, SQL, ML, and graph analytics."
+description: "Apache Spark is the distributed computing engine that transformed large-scale data processing with its unified API for batch, streaming, SQL, ML, and graph analytics."
 date: 2026-05-17
 tags: ["Apache Spark", "Distributed Computing", "Data Engineering", "Big Data"]
 ---
@@ -41,4 +41,4 @@ The typical enterprise lakehouse pipeline uses Spark for the bulk processing nee
 
 ## Learn More
 
-To dive deeper into these architectures and master the modern data ecosystem, check out the comprehensive [books by Alex Merced](/books) available in our Books section.
+The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.
