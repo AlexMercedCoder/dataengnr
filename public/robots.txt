@@ -1,26 +1,51 @@
 User-agent: *
 Allow: /
 
-# AI / answer-engine crawlers — explicitly welcomed
-User-agent: GPTBot
+# Search crawlers
+User-agent: Googlebot
 Allow: /
 
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# AI and answer-engine crawlers, explicitly welcomed.
+# Retrieval crawlers (they decide whether this site can be cited in AI answers)
 User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-User
+User-agent: Claude-SearchBot
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Google-CloudVertexBot
+Allow: /
+
+# User-triggered fetchers (a person asked the assistant to read a page here)
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
 User-agent: Perplexity-User
+Allow: /
+
+# Training crawlers and training opt-out tokens
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 User-agent: Google-Extended
@@ -29,10 +54,19 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-User-agent: CCBot
+User-agent: Meta-ExternalAgent
 Allow: /
 
-User-agent: Meta-ExternalAgent
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: MistralAI-User
 Allow: /
 
 Sitemap: https://dataengnr.com/sitemap-index.xml

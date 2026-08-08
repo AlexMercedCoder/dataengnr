@@ -1,45 +1,132 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
   const termsEntries = await getCollection('terms');
-  return termsEntries.map((entry: any) => ({
-    params: { slug: entry.id },
-    props: { entry },
-  }));
+  const sorted = [...termsEntries].sort((a: any, b: any) =>
+    a.data.title.localeCompare(b.data.title)
+  );
+
+  return sorted.map((entry: any, i: number) => {
+    // Terms that share the most tags make the best "related" links, with the
+    // alphabetical neighbours as a deterministic tie-break.
+    const tags = new Set<string>(entry.data.tags ?? []);
+    const related = sorted
+      .filter((other: any) => other.id !== entry.id)
+      .map((other: any) => ({
+        entry: other,
+        shared: (other.data.tags ?? []).filter((t: string) => tags.has(t)).length,
+      }))
+      .filter((r) => r.shared > 0)
+      .sort((a, b) => b.shared - a.shared || a.entry.data.title.localeCompare(b.entry.data.title))
+      .slice(0, 6)
+      .map((r) => ({ id: r.entry.id, title: r.entry.data.title }));
+
+    return {
+      params: { slug: entry.id },
+      props: {
+        entry,
+        related,
+        prev: i > 0 ? { id: sorted[i - 1].id, title: sorted[i - 1].data.title } : null,
+        next:
+          i < sorted.length - 1
+            ? { id: sorted[i + 1].id, title: sorted[i + 1].data.title }
+            : null,
+      },
+    };
+  });
 }
 
-const { entry } = Astro.props;
-// Wait, in Astro v5 content layer with glob loader, the content is rendered differently.
-// Let's check how rendering works. Wait, `entry.render()` is not available for `glob` loader unless we use `render()` from `astro:content`.
-// Oh, actually the easiest way in Astro v5 is to use the `render` function from `astro:content`.
-import { render } from 'astro:content';
+const { entry, related, prev, next } = Astro.props;
 const { Content } = await render(entry);
 
-const termJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "DefinedTerm",
-  "name": entry.data.title,
-  "description": entry.data.description,
-  "url": `https://dataengnr.com/terms/${entry.id}/`,
-  "inDefinedTermSet": {
-    "@type": "DefinedTermSet",
-    "name": "DataEngr.com Data Engineering Knowledge Base",
-    "url": "https://dataengnr.com/terms/"
+const SITE = 'https://dataengnr.com';
+const url = `${SITE}/terms/${entry.id}/`;
+const published = new Date(entry.data.date);
+const isoDate = published.toISOString().slice(0, 10);
+const readableDate = published.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+
+// The definition is the citable passage: DefinedTerm carries it as the entity,
+// and the surrounding Article carries authorship and dates.
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "@id": `${url}#term`,
+    "name": entry.data.title,
+    "description": entry.data.description,
+    "url": url,
+    "inDefinedTermSet": {
+      "@type": "DefinedTermSet",
+      "@id": `${SITE}/terms/#termset`,
+      "name": "DataEngr.com Data Engineering Knowledge Base",
+      "url": `${SITE}/terms/`,
+    },
   },
-  "author": { "@id": "https://dataengnr.com/#person" }
-};
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${url}#article`,
+    "headline": entry.data.title,
+    "description": entry.data.description,
+    "url": url,
+    "mainEntityOfPage": { "@type": "WebPage", "@id": url },
+    "about": { "@id": `${url}#term` },
+    "datePublished": isoDate,
+    "dateModified": isoDate,
+    "inLanguage": "en",
+    "keywords": (entry.data.tags ?? []).join(', '),
+    "author": { "@id": `${SITE}/#person` },
+    "publisher": { "@id": `${SITE}/#person` },
+    "isPartOf": { "@id": `${SITE}/#website` },
+  },
+];
+
+const breadcrumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Knowledge Base', href: '/terms' },
+];
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.description} jsonLd={termJsonLd} ogType="article">
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  jsonLd={jsonLd}
+  ogType="article"
+  breadcrumbs={breadcrumbs}
+>
   <article class="py-12 max-w-[800px] mx-auto w-full">
+    <nav aria-label="Breadcrumb" class="mb-6 text-sm text-ash-text">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-pure-white transition-colors">Home</a></li>
+        <li aria-hidden="true">&rsaquo;</li>
+        <li><a href="/terms" class="hover:text-pure-white transition-colors">Knowledge Base</a></li>
+        <li aria-hidden="true">&rsaquo;</li>
+        <li aria-current="page" class="text-silver-text">{entry.data.title}</li>
+      </ol>
+    </nav>
+
     <div class="mb-12 border-b border-ash-text/20 pb-8">
-      <a href="/terms" class="text-sm font-medium text-ash-text hover:text-pure-white transition-colors mb-6 inline-flex items-center gap-2">
-        <span aria-hidden="true">&larr;</span> Back to Knowledge Base
-      </a>
-      <h1 class="font-ivy text-heading-lg text-pure-white mt-4">{entry.data.title}</h1>
-      <p class="text-subheading text-white-frost mt-4">{entry.data.description}</p>
+      <h1 class="font-ivy text-heading-lg text-pure-white">{entry.data.title}</h1>
+
+      <!-- The definition, kept short and self-contained so it stands on its own
+           when an answer engine quotes it away from the rest of the page. -->
+      <p class="text-subheading text-white-frost mt-6 border-l-2 border-golden-gradient pl-5">
+        {entry.data.description}
+      </p>
+
+      <p class="text-sm text-ash-text mt-6">
+        By <a href="https://whoisalexmerced.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Alex Merced</a>
+        <span aria-hidden="true"> &middot; </span>
+        Last updated <time datetime={isoDate}>{readableDate}</time>
+      </p>
+
       {entry.data.tags && (
         <div class="flex flex-wrap gap-2 mt-6">
           {entry.data.tags.map((tag: string) => (
@@ -50,9 +137,41 @@ const termJsonLd = {
         </div>
       )}
     </div>
-    
+
     <div class="prose prose-invert prose-lg max-w-none prose-headings:font-ivy prose-headings:font-medium prose-a:text-golden-gradient hover:prose-a:text-pure-white prose-p:text-porcelain-text">
       <Content />
     </div>
+
+    {related.length > 0 && (
+      <section aria-labelledby="related-heading" class="mt-16 pt-8 border-t border-ash-text/20">
+        <h2 id="related-heading" class="font-ivy text-heading text-pure-white mb-6">Related terms</h2>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {related.map((r: any) => (
+            <li>
+              <a
+                href={`/terms/${r.id}`}
+                class="block rounded-md border border-ash-text/10 bg-charcoal-canvas px-4 py-3 text-body text-white-frost hover:border-golden-gradient/50 hover:text-pure-white transition-colors"
+              >
+                {r.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <nav aria-label="More terms" class="mt-12 pt-8 border-t border-ash-text/20 flex flex-col sm:flex-row justify-between gap-4 text-sm">
+      {prev ? (
+        <a href={`/terms/${prev.id}`} class="text-ash-text hover:text-pure-white transition-colors">
+          <span aria-hidden="true">&larr;</span> {prev.title}
+        </a>
+      ) : <span />}
+      <a href="/terms" class="text-ash-text hover:text-pure-white transition-colors">All terms</a>
+      {next ? (
+        <a href={`/terms/${next.id}`} class="text-ash-text hover:text-pure-white transition-colors sm:text-right">
+          {next.title} <span aria-hidden="true">&rarr;</span>
+        </a>
+      ) : <span />}
+    </nav>
   </article>
 </BaseLayout>

@@ -3,40 +3,152 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Card from '../components/Card.astro';
 import PillButton from '../components/PillButton.astro';
 import siteData from '../data/siteData.json';
+import { getCollection } from 'astro:content';
+
+const SITE = 'https://dataengnr.com';
+const allTerms = await getCollection('terms');
+const termCount = allTerms.length;
+
+const startHere = [
+  { slug: 'data-modeling', label: 'Data Modeling' },
+  { slug: 'etl', label: 'ETL' },
+  { slug: 'elt', label: 'ELT' },
+  { slug: 'data-lakehouse', label: 'Data Lakehouse' },
+  { slug: 'apache-iceberg', label: 'Apache Iceberg' },
+  { slug: 'orchestration', label: 'Orchestration' },
+  { slug: 'data-quality', label: 'Data Quality' },
+  { slug: 'medallion-architecture', label: 'Medallion Architecture' },
+  { slug: 'semantic-layer', label: 'Semantic Layer' },
+  { slug: 'apache-kafka', label: 'Apache Kafka' },
+  { slug: 'dbt', label: 'dbt' },
+  { slug: 'data-contracts', label: 'Data Contracts' },
+];
 
 const mustReadArticles = [
-  { title: "Semantic Layer: The Definitive Guide", url: "https://www.dremio.com/blog/semantic-layer-the-definitive-guide/", desc: "Understand why the semantic layer is essential for the modern data stack." },
-  { title: "Apache Polaris: The Catalog Standard", url: "https://www.dremio.com/blog/apache-polaris-the-catalog-standard-for-lakehouses-and-ai/", desc: "Discover how Polaris standardizes the lakehouse catalog for AI." },
-  { title: "Table Formats Explained", url: "https://www.dremio.com/blog/what-are-table-formats-and-why-were-they-needed/", desc: "Learn what table formats are and why they are critical for your data architecture." },
-  { title: "What is Dremio?", url: "https://www.dremio.com/blog/what-is-dremio/", desc: "A comprehensive look at the unified lakehouse platform." },
-  { title: "What Apache Iceberg Native Means", url: "https://www.dremio.com/blog/what-apache-iceberg-native-actually-means/", desc: "Exploring the true meaning of native Iceberg support." },
-  { title: "Open Source and The Lakehouse", url: "https://www.dremio.com/blog/open-source-and-the-data-lakehouse/", desc: "How open source standards shape the modern data lakehouse." },
-  { title: "What is Agentic Analytics?", url: "https://www.dremio.com/blog/what-is-agentic-analytics/", desc: "An introduction to AI-driven agentic analytics workflows." },
+  { title: "Semantic Layer: The Definitive Guide", url: "https://www.dremio.com/blog/semantic-layer-the-definitive-guide/", desc: "Why a shared metric layer sits above the tables rather than inside each BI tool." },
+  { title: "Apache Polaris: The Catalog Standard", url: "https://www.dremio.com/blog/apache-polaris-the-catalog-standard-for-lakehouses-and-ai/", desc: "How an open catalog keeps the lakehouse readable by more than one engine." },
+  { title: "Table Formats Explained", url: "https://www.dremio.com/blog/what-are-table-formats-and-why-were-they-needed/", desc: "What a table format does, and the problems it was invented to fix." },
+  { title: "What is Dremio?", url: "https://www.dremio.com/blog/what-is-dremio/", desc: "A look at the unified lakehouse platform and where it fits in a stack." },
+  { title: "What Apache Iceberg Native Actually Means", url: "https://www.dremio.com/blog/what-apache-iceberg-native-actually-means/", desc: "Separating real Iceberg support from a connector with an Iceberg label on it." },
+  { title: "Open Source and The Lakehouse", url: "https://www.dremio.com/blog/open-source-and-the-data-lakehouse/", desc: "How open standards changed who gets to read your data." },
+  { title: "What is Agentic Analytics?", url: "https://www.dremio.com/blog/what-is-agentic-analytics/", desc: "What changes when an agent, not a person, is the one asking the questions." },
 ];
+
+// Answer-first Q&A. Each answer is written to stand alone if it is quoted away
+// from the page, and links to the term page that covers it properly.
+const faqs = [
+  {
+    q: "What does a data engineer actually do?",
+    a: "A data engineer builds and operates the systems that move data from the places it is created into the places it gets analyzed. That covers ingestion, storage, transformation and serving, plus the orchestration, testing and monitoring that keep those pipelines producing correct results on every run, not just the first one.",
+    href: "/terms/data-pipeline-testing",
+  },
+  {
+    q: "What is the difference between ETL and ELT?",
+    a: "ETL transforms data on a separate tier before loading it, so the destination only ever stores modeled tables. ELT loads raw data into the warehouse or lakehouse first and transforms it there using the platform's own compute. ELT keeps a replayable raw copy; ETL discards it at transform time.",
+    href: "/terms/elt",
+  },
+  {
+    q: "What is a data lakehouse?",
+    a: "A data lakehouse is open files on object storage with a table format layered over them. The table format, usually Apache Iceberg, tracks every data file in metadata rather than inferring a table from a directory, which restores ACID transactions, schema evolution and time travel to data that any engine can still read.",
+    href: "/terms/data-lakehouse",
+  },
+  {
+    q: "Do I need streaming, or is batch enough?",
+    a: "Batch is enough whenever the business can act on data that is minutes or hours old, and it is cheaper and simpler to operate. Streaming earns its complexity when a decision has to happen within seconds of the event. Micro-batching sits between the two and covers a large share of real requirements.",
+    href: "/terms/micro-batching",
+  },
+  {
+    q: "Where should I start if I am new to data engineering?",
+    a: "Start with how analytical data is shaped and where it lives: data modeling, the difference between a warehouse, a lake and a lakehouse, and how a pipeline is scheduled. Those three ideas explain most architecture decisions you will meet, and every other term connects back to them.",
+    href: "/terms/data-modeling",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${SITE}/#faq`,
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
 
 const { communities = [], events = [] } = siteData;
 ---
 
-<BaseLayout title="Data Engineering Knowledge Base | Apache Iceberg, Lakehouse & AI" description="The ultimate resource for data engineers building the next generation of lakehouses and AI systems.">
-  
+<BaseLayout
+  title="Data Engineering Knowledge Base | Apache Iceberg, Lakehouse & AI"
+  bareTitle={true}
+  description={`A data engineering knowledge base: ${termCount} plain-language definitions covering pipelines, storage, modeling, orchestration, the lakehouse and AI-era analytics.`}
+  jsonLd={faqJsonLd}
+>
+
   <section class="flex flex-col items-center justify-center text-center py-20">
     <h1 class="font-ivy text-5xl md:text-[88px] leading-none tracking-tight mb-8">
       Data<span class="text-golden-gradient bg-clip-text text-transparent bg-[image:var(--background-image-golden-gradient)]">Engr</span>.com
     </h1>
-    <p class="text-subheading text-white-frost max-w-2xl mb-12">
-      The ultimate resource hub for data engineers building modern lakehouse architectures and agentic analytics systems.
+    <p class="text-subheading text-white-frost max-w-2xl mb-6">
+      A working reference for data engineers. {termCount} terms, each with a definition you can use
+      in a meeting and an explanation you can build from.
+    </p>
+    <p class="text-body text-ash-text max-w-2xl mb-12">
+      Pipelines, storage, modeling, orchestration, governance, and the lakehouse and AI
+      architectures they are all converging on. Written and maintained by
+      <a href="https://whoisalexmerced.com" target="_blank" rel="noopener noreferrer" class="text-golden-gradient hover:text-pure-white transition-colors">Alex Merced</a>,
+      co-author of <em>Apache Iceberg: The Definitive Guide</em>.
     </p>
     <div class="flex flex-wrap gap-4 justify-center">
-      <PillButton href="/terms">Explore Knowledge Base</PillButton>
-      <PillButton href="/blogroll" class="!bg-transparent !text-pure-white border !border-pure-white hover:!bg-pure-white/10">Read the Blogroll</PillButton>
+      <PillButton href="/terms">Explore the Knowledge Base</PillButton>
+      <PillButton href="/videos" class="!bg-transparent !text-pure-white border !border-pure-white hover:!bg-pure-white/10">Watch the Explainers</PillButton>
+    </div>
+  </section>
+
+  <section id="start-here">
+    <div class="flex items-center justify-between mb-8 border-b border-ash-text/20 pb-4">
+      <h2 class="font-ivy text-heading-lg text-pure-white">Start Here</h2>
+    </div>
+    <p class="text-body text-white-frost max-w-2xl mb-8">
+      The terms most people look up first. Each one links out to the concepts around it, so you can
+      follow a thread as far as you need to.
+    </p>
+    <ul role="list" class="flex flex-wrap gap-3">
+      {startHere.map((t) => (
+        <li>
+          <a
+            href={`/terms/${t.slug}`}
+            class="inline-block rounded-full border border-ash-text/20 bg-charcoal-canvas px-5 py-2 text-sm text-white-frost hover:border-golden-gradient/50 hover:text-pure-white transition-colors"
+          >
+            {t.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section id="faq">
+    <div class="flex items-center justify-between mb-8 border-b border-ash-text/20 pb-4">
+      <h2 class="font-ivy text-heading-lg text-pure-white">Common Questions</h2>
+    </div>
+    <div class="flex flex-col gap-8 max-w-3xl">
+      {faqs.map((f) => (
+        <div>
+          <h3 class="text-subheading font-semibold text-pure-white mb-3">{f.q}</h3>
+          <p class="text-body text-white-frost">{f.a}</p>
+          <a href={f.href} class="text-sm font-medium text-golden-gradient hover:text-pure-white transition-colors mt-3 inline-flex items-center gap-2">
+            Read the full entry <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      ))}
     </div>
   </section>
 
   <section id="must-read">
     <div class="flex items-center justify-between mb-12 border-b border-ash-text/20 pb-4">
-      <h2 class="font-ivy text-heading-lg text-pure-white">Must Read Articles</h2>
+      <h2 class="font-ivy text-heading-lg text-pure-white">Worth Reading</h2>
     </div>
-    
+
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {mustReadArticles.map(article => (
         <Card hoverEffect={true} class="flex flex-col h-full">
@@ -54,7 +166,7 @@ const { communities = [], events = [] } = siteData;
     <div class="flex items-center justify-between mb-12 border-b border-ash-text/20 pb-4">
       <h2 class="font-ivy text-heading-lg text-pure-white">Communities & Events</h2>
     </div>
-    
+
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
       <!-- Communities -->
       <div>
@@ -63,7 +175,7 @@ const { communities = [], events = [] } = siteData;
           {communities.map((community: any) => (
             <a href={community.url} target="_blank" rel="noopener noreferrer" class="block bg-charcoal-canvas p-6 rounded-md border border-ash-text/10 hover:border-golden-gradient/50 transition-colors">
               <div class="flex items-start gap-4">
-                <span class="text-2xl">{community.icon}</span>
+                <span class="text-2xl" aria-hidden="true">{community.icon}</span>
                 <div>
                   <h4 class="text-body font-semibold text-pure-white">{community.title}</h4>
                   <p class="text-sm text-ash-text mt-1">{community.desc}</p>
@@ -81,7 +193,7 @@ const { communities = [], events = [] } = siteData;
           {events.map((event: any) => (
             <a href={event.url} target="_blank" rel="noopener noreferrer" class="block bg-charcoal-canvas p-6 rounded-md border border-ash-text/10 hover:border-golden-gradient/50 transition-colors">
               <div class="flex items-start gap-4">
-                <span class="text-2xl">{event.icon}</span>
+                <span class="text-2xl" aria-hidden="true">{event.icon}</span>
                 <div>
                   <h4 class="text-body font-semibold text-pure-white">{event.title}</h4>
                   <p class="text-sm text-ash-text mt-1">{event.desc}</p>

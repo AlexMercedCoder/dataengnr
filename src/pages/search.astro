@@ -1,121 +1,130 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const breadcrumbs = [{ name: 'Home', href: '/' }];
 ---
 
-<BaseLayout 
-  title="Search" 
-  description="Search the DataEngr knowledge base for articles, terms, and resources."
+<BaseLayout
+  title="Search"
+  description="Search the DataEngr.com knowledge base of 200+ data engineering terms, definitions and architecture explanations."
+  breadcrumbs={breadcrumbs}
 >
   <section class="w-full flex flex-col gap-12">
     <div class="text-center space-y-6">
       <h1 class="font-ivy text-5xl md:text-7xl font-semibold tracking-tight text-pure-white">
-        Search Knowledge Base
+        Search the Knowledge Base
       </h1>
-      <p class="font-inter text-lg md:text-xl text-ash-text max-w-2xl mx-auto leading-relaxed">
-        Instantly search across our 200+ data engineering terms, articles, and architectures.
+      <p class="font-inter text-lg md:text-xl text-silver-text max-w-2xl mx-auto leading-relaxed">
+        Full-text search across every term page, definition and architecture write-up on the site.
       </p>
     </div>
 
-    <div class="w-full max-w-4xl mx-auto bg-midnight-ink/50 backdrop-blur-sm border border-ash-text/10 rounded-2xl p-8">
+    <div class="w-full max-w-4xl mx-auto bg-charcoal-canvas/60 backdrop-blur-sm border border-ash-text/10 rounded-2xl p-8">
       <div id="search"></div>
     </div>
+
+    <p class="text-center text-sm text-ash-text">
+      Prefer to browse? The <a href="/terms" class="text-golden-gradient hover:text-pure-white transition-colors">knowledge base index</a> lists every term A to Z.
+    </p>
   </section>
 
   <!-- Pagefind Script & Styles -->
   <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
   <script src="/pagefind/pagefind-ui.js" is:inline></script>
-  
+
   <script is:inline>
-    window.addEventListener('DOMContentLoaded', (event) => {
-      new PagefindUI({ 
+    window.addEventListener('DOMContentLoaded', () => {
+      const ui = new PagefindUI({
         element: "#search",
         showSubResults: true,
         pageSize: 10
       });
+
+      // Honour ?q= so the SearchAction in the site's JSON-LD points somewhere real
+      // and so search result links can be shared.
+      const q = new URLSearchParams(window.location.search).get('q');
+      if (q) ui.triggerSearch(q);
     });
   </script>
 
-  <!-- Custom Pagefind Theme Overrides -->
+  <!-- Pagefind theme overrides, matched to the site palette -->
   <style is:global>
     :root {
       --pagefind-ui-scale: 1.1;
-      --pagefind-ui-primary: #FF6B35;
-      --pagefind-ui-text: #FFFFFF;
+      --pagefind-ui-primary: #cc9166;
+      --pagefind-ui-text: #ffffff;
       --pagefind-ui-background: transparent;
-      --pagefind-ui-border: rgba(168, 178, 209, 0.2);
-      --pagefind-ui-tag: rgba(255, 107, 53, 0.1);
+      --pagefind-ui-border: rgba(94, 97, 110, 0.35);
+      --pagefind-ui-tag: rgba(204, 145, 102, 0.12);
       --pagefind-ui-border-width: 1px;
-      --pagefind-ui-border-radius: 8px;
-      --pagefind-ui-image-border-radius: 8px;
+      --pagefind-ui-border-radius: 10px;
+      --pagefind-ui-image-border-radius: 10px;
       --pagefind-ui-image-box-ratio: 3 / 2;
-      --pagefind-ui-font: 'Inter', sans-serif;
+      --pagefind-ui-font: 'Inter', ui-sans-serif, system-ui, sans-serif;
     }
 
-    /* Additional custom styling to make it look native to our site */
     .pagefind-ui__search-input {
-      background-color: rgba(11, 19, 43, 0.8) !important;
-      color: #FFFFFF !important;
-      border: 1px solid rgba(168, 178, 209, 0.3) !important;
-      border-radius: 12px !important;
-      padding: 1rem 1rem 1rem 3rem !important;
+      background-color: #08080a !important;
+      color: #ffffff !important;
+      border: 1px solid rgba(94, 97, 110, 0.4) !important;
+      border-radius: 9999px !important;
+      padding: 1rem 1.5rem 1rem 3rem !important;
       font-weight: 400 !important;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       transition: border-color 0.2s ease;
     }
     .pagefind-ui__search-input:focus {
       outline: none;
-      border-color: #FF6B35 !important;
+      border-color: #cc9166 !important;
     }
     .pagefind-ui__search-clear {
       background-color: transparent !important;
-      color: #A8B2D1 !important;
+      color: #acafb9 !important;
       border-radius: 8px !important;
       padding: 0 1rem !important;
     }
     .pagefind-ui__search-clear:hover {
-      color: #FF6B35 !important;
+      color: #cc9166 !important;
     }
     .pagefind-ui__message {
-      color: #A8B2D1 !important;
+      color: #acafb9 !important;
       font-weight: 500 !important;
       padding: 1.5rem 0 !important;
     }
     .pagefind-ui__result {
-      border-color: rgba(168, 178, 209, 0.1) !important;
+      border-color: rgba(94, 97, 110, 0.2) !important;
       padding: 2rem 0 !important;
     }
     .pagefind-ui__result-title .pagefind-ui__result-link {
-      color: #FFFFFF !important;
-      font-family: 'IvyPresto Display', serif !important;
+      color: #ffffff !important;
       font-size: 1.5rem !important;
       font-weight: 600 !important;
       text-decoration: none !important;
       transition: color 0.2s ease;
     }
     .pagefind-ui__result-title .pagefind-ui__result-link:hover {
-      color: #FF6B35 !important;
+      color: #cc9166 !important;
     }
     .pagefind-ui__result-excerpt {
-      color: #A8B2D1 !important;
+      color: #acafb9 !important;
       line-height: 1.6 !important;
       margin-top: 0.75rem !important;
     }
     .pagefind-ui__button {
       background-color: transparent !important;
-      color: #FF6B35 !important;
-      border: 1px solid #FF6B35 !important;
+      color: #cc9166 !important;
+      border: 1px solid #cc9166 !important;
       border-radius: 9999px !important;
       padding: 0.5rem 1.5rem !important;
       font-weight: 500 !important;
       transition: all 0.2s ease !important;
     }
     .pagefind-ui__button:hover {
-      background-color: #FF6B35 !important;
-      color: #0B132B !important;
+      background-color: #cc9166 !important;
+      color: #000000 !important;
     }
     mark {
-      background-color: rgba(255, 107, 53, 0.2) !important;
-      color: #FF6B35 !important;
+      background-color: rgba(204, 145, 102, 0.2) !important;
+      color: #cc9166 !important;
       border-radius: 2px;
       padding: 0 2px;
     }

@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PillButton from '../components/PillButton.astro';
+---
+
+<BaseLayout title="Page Not Found" description="That page does not exist on DataEngr.com. Search the knowledge base or browse every data engineering term from the index.">
+  <section class="flex flex-col items-center justify-center text-center py-24">
+    <p class="text-sm font-semibold uppercase tracking-[0.18em] text-golden-gradient mb-4">404</p>
+    <h1 class="font-ivy text-heading-lg text-pure-white mb-6">That page does not exist</h1>
+    <p class="text-body text-white-frost max-w-xl mb-10">
+      The link may be out of date, or the term may live under a different name. Search the site or
+      browse the full A to Z index.
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <PillButton href="/search">Search the site</PillButton>
+      <PillButton href="/terms" class="!bg-transparent !text-pure-white border !border-pure-white hover:!bg-pure-white/10">Browse all terms</PillButton>
+    </div>
+  </section>
+</BaseLayout>

@@ -6,11 +6,21 @@ import siteData from '../data/siteData.json';
 const allBooks = [...(siteData.freeBooks || []), ...(siteData.otherBooks || [])];
 ---
 
-<BaseLayout title="Books" description="Lakehouse and AI books by Alex Merced.">
+<BaseLayout
+  title="Books"
+  description="Books by Alex Merced on Apache Iceberg, lakehouse architecture and AI-era data engineering, including several free titles."
+  breadcrumbs={[{ name: 'Home', href: '/' }]}
+>
   <section class="py-12">
-    <div class="flex items-center justify-between mb-12 border-b border-ash-text/20 pb-4">
+    <div class="mb-8 border-b border-ash-text/20 pb-4">
       <h1 class="font-ivy text-heading-lg text-pure-white">Books by Alex Merced</h1>
     </div>
+
+    <p class="text-body text-white-frost max-w-2xl mb-12">
+      Longer-form treatments of the topics in the <a href="/terms" class="text-golden-gradient hover:text-pure-white transition-colors">knowledge base</a>:
+      Apache Iceberg, lakehouse architecture, catalogs, semantic layers and agentic analytics.
+      Several are free.
+    </p>
     
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
       {allBooks.map((book: any) => (

@@ -2,49 +2,127 @@
 import '../styles/global.css';
 import GhostLink from '../components/GhostLink.astro';
 
+interface Crumb {
+  name: string;
+  href: string;
+}
+
 interface Props {
   title: string;
+  /** Full-length page summary. Shown on-page where relevant and trimmed for <meta name="description">. */
   description?: string;
   canonicalUrl?: string;
-  jsonLd?: object;
+  jsonLd?: object | object[];
   ogType?: string;
+  /** Trail from the home page to this page, excluding this page itself. */
+  breadcrumbs?: Crumb[];
+  /** Set when the page supplies its own full <title> and should not get the site suffix. */
+  bareTitle?: boolean;
 }
+
+const SITE = 'https://dataengnr.com';
 
 const {
   title,
-  description = "Premier resource hub for data engineers. Learn about Apache Iceberg, data lakehouses, and agentic analytics.",
-  canonicalUrl = Astro.url.href,
+  description = "A data engineering knowledge base: 200+ plain-language definitions covering pipelines, lakehouses, Apache Iceberg, modeling, orchestration and AI-era analytics.",
+  canonicalUrl = new URL(Astro.url.pathname, SITE).href,
   jsonLd,
-  ogType = "website"
+  ogType = "website",
+  breadcrumbs = [],
+  bareTitle = false,
 } = Astro.props;
+
+const fullTitle = bareTitle ? title : `${title} | DataEngr.com`;
+
+// Search engines truncate around 160 characters. Term descriptions are written
+// to read as a full definition on the page, so trim a copy for the meta tag
+// rather than shortening the source text.
+function metaDescription(text: string, max = 158) {
+  const clean = text.replace(/\s+/g, ' ').trim();
+  if (clean.length <= max) return clean;
+  const cut = clean.slice(0, max);
+  return cut.slice(0, cut.lastIndexOf(' ')).replace(/[,;:]$/, '') + '...';
+}
+
+const metaDesc = metaDescription(description);
+
+const person = {
+  "@type": "Person",
+  "@id": `${SITE}/#person`,
+  "name": "Alex Merced",
+  "jobTitle": "Open Lakehouse & AI Advocate, Author & Technologist",
+  "description":
+    "Alex Merced writes and speaks about open data lakehouses, Apache Iceberg and agentic analytics. He co-authored 'Apache Iceberg: The Definitive Guide' and leads developer relations at Dremio.",
+  "url": "https://whoisalexmerced.com",
+  "sameAs": [
+    "https://whoisalexmerced.com",
+    "https://alexmerced.com",
+    "https://alexmerceddata.com",
+    "https://alexmercedcoder.dev",
+    "https://books.alexmerced.com",
+    "https://www.linkedin.com/in/alexmerced",
+    "https://twitter.com/alexmercedcoder",
+  ],
+  "knowsAbout": [
+    "Data engineering",
+    "Apache Iceberg",
+    "Data lakehouse architecture",
+    "Apache Polaris",
+    "Semantic layers",
+    "Agentic analytics",
+  ],
+};
 
 const siteJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://dataengnr.com/#website",
-      "url": "https://dataengnr.com/",
+      "@id": `${SITE}/#website`,
+      "url": `${SITE}/`,
       "name": "DataEngr.com",
-      "description": "Premier resource hub for data engineers covering Apache Iceberg, data lakehouses, and agentic analytics.",
-      "publisher": { "@id": "https://dataengnr.com/#person" }
+      "description":
+        "A data engineering knowledge base covering pipelines, lakehouse architecture, Apache Iceberg and AI-era analytics.",
+      "inLanguage": "en",
+      "publisher": { "@id": `${SITE}/#person` },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": `${SITE}/search?q={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
     },
-    {
-      "@type": "Person",
-      "@id": "https://dataengnr.com/#person",
-      "name": "Alex Merced",
-      "jobTitle": "Head of Developer Relations at Dremio",
-      "url": "https://whoisalexmerced.com",
-      "sameAs": [
-        "https://whoisalexmerced.com",
-        "https://alexmerced.com",
-        "https://alexmerceddata.com",
-        "https://www.linkedin.com/in/alexmerced",
-        "https://twitter.com/alexmercedcoder"
-      ]
-    }
-  ]
+    person,
+  ],
 };
+
+const breadcrumbJsonLd =
+  breadcrumbs.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [...breadcrumbs, { name: title, href: Astro.url.pathname }].map(
+          (c, i) => ({
+            "@type": "ListItem",
+            "position": i + 1,
+            "name": c.name,
+            "item": new URL(c.href, SITE).href,
+          })
+        ),
+      }
+    : null;
+
+const extraJsonLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+
+const navLinks = [
+  { href: '/terms', label: 'Knowledge Base' },
+  { href: '/videos', label: 'Videos' },
+  { href: '/blogroll', label: 'Blogroll' },
+  { href: '/books', label: 'Books' },
+  { href: '/search', label: 'Search' },
+];
 ---
 
 <!DOCTYPE html>
@@ -52,65 +130,88 @@ const siteJsonLd = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title} | DataEngr.com</title>
-    <meta name="description" content={description} />
+    <title>{fullTitle}</title>
+    <meta name="description" content={metaDesc} />
+    <meta name="author" content="Alex Merced" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#000000" />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    
+
     <!-- Open Graph -->
-    <meta property="og:title" content={`${title} | DataEngr.com`} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={metaDesc} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content={ogType} />
     <meta property="og:image" content="https://dataengnr.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="DataEngr.com, a data engineering knowledge base" />
     <meta property="og:site_name" content="DataEngr.com" />
-    
+    <meta property="og:locale" content="en_US" />
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@alexmercedcoder" />
-    <meta name="twitter:title" content={`${title} | DataEngr.com`} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:creator" content="@alexmercedcoder" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={metaDesc} />
     <meta name="twitter:image" content="https://dataengnr.com/og-image.png" />
-    
+
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(siteJsonLd)} />
-    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
-    
+    {breadcrumbJsonLd && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />}
+    {extraJsonLd.map((block) => (
+      <script type="application/ld+json" set:html={JSON.stringify(block)} />
+    ))}
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body class="min-h-screen flex flex-col bg-midnight-ink text-pure-white font-inter">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:m-4 focus:rounded-md focus:bg-pure-white focus:px-4 focus:py-2 focus:text-midnight-ink">
+      Skip to content
+    </a>
+
     <!-- Sticky Nav -->
     <header class="sticky top-0 z-50 bg-midnight-ink/80 backdrop-blur-md border-b border-ash-text/20">
-      <div class="max-w-[1216px] mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="max-w-[1216px] mx-auto px-6 py-3 md:h-16 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
         <a href="/" class="font-ivy font-medium text-2xl tracking-wide text-pure-white hover:text-white-frost transition-colors">
           DataEngr.com
         </a>
-        <nav class="hidden md:flex items-center gap-6">
-          <GhostLink href="/search">Search</GhostLink>
-          <GhostLink href="/terms">Knowledge Base</GhostLink>
-          <GhostLink href="/blogroll">Blogroll</GhostLink>
-          <GhostLink href="/books">Books</GhostLink>
+        <nav aria-label="Primary" class="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm md:text-base">
+          {navLinks.map((link) => (
+            <GhostLink href={link.href} class="!py-1 md:!py-5">{link.label}</GhostLink>
+          ))}
         </nav>
       </div>
     </header>
 
-    <main data-pagefind-body class="flex-grow w-full max-w-[1216px] mx-auto px-6 py-12 md:py-20 flex flex-col gap-[160px]">
+    <main id="main" data-pagefind-body class="flex-grow w-full max-w-[1216px] mx-auto px-6 py-12 md:py-20 flex flex-col gap-[160px]">
       <slot />
     </main>
 
     <footer class="border-t border-ash-text/20 py-12 mt-auto">
-      <div class="max-w-[1216px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-ash-text">
-        <p>&copy; {new Date().getFullYear()} Alex Merced. All rights reserved.</p>
-        <div class="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-2">
-          <a href="https://whoisalexmerced.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">About Alex</a>
-          <a href="https://alexmerced.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">AlexMerced.com</a>
-          <a href="https://alexmerceddata.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Data</a>
-          <a href="https://alexmercedmedia.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Media</a>
-          <a href="https://books.alexmerced.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Books</a>
-          <a href="https://alexmercedcoder.dev" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Coder</a>
-          <a href="https://alexmercedlibertarian.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Libertarian</a>
-          <a href="https://agenticlakehouse.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Agentic Lakehouse</a>
-          <a href="https://semanticlakehouse.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Semantic Lakehouse</a>
+      <div class="max-w-[1216px] mx-auto px-6 flex flex-col gap-8">
+        <nav aria-label="Site" class="flex flex-wrap justify-center md:justify-start gap-x-5 gap-y-2 text-sm text-ash-text">
+          <a href="/terms" class="hover:text-pure-white transition-colors">Knowledge Base</a>
+          <a href="/videos" class="hover:text-pure-white transition-colors">Videos</a>
+          <a href="/blogroll" class="hover:text-pure-white transition-colors">Blogroll</a>
+          <a href="/books" class="hover:text-pure-white transition-colors">Books</a>
+          <a href="/search" class="hover:text-pure-white transition-colors">Search</a>
+        </nav>
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-ash-text">
+          <p>&copy; {new Date().getFullYear()} Alex Merced. All rights reserved.</p>
+          <div class="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-2">
+            <a href="https://whoisalexmerced.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">About Alex</a>
+            <a href="https://alexmerced.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">AlexMerced.com</a>
+            <a href="https://alexmerceddata.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Data</a>
+            <a href="https://alexmercedmedia.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Media</a>
+            <a href="https://books.alexmerced.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Books</a>
+            <a href="https://alexmercedcoder.dev" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Coder</a>
+            <a href="https://alexmercedlibertarian.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Libertarian</a>
+            <a href="https://agenticlakehouse.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Agentic Lakehouse</a>
+            <a href="https://semanticlakehouse.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Semantic Lakehouse</a>
+          </div>
         </div>
       </div>
     </footer>

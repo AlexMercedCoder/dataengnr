@@ -3,20 +3,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Card from '../components/Card.astro';
 import { XMLParser } from 'fast-xml-parser';
 
-// Fetch and parse RSS feed at build time
-const response = await fetch('https://datalakehousehub.com/rss.xml');
-const xmlData = await response.text();
-const parser = new XMLParser();
-const jsonObj = parser.parse(xmlData);
-
-let allItems = [];
-if (jsonObj && jsonObj.rss && jsonObj.rss.channel && jsonObj.rss.channel.item) {
-  allItems = Array.isArray(jsonObj.rss.channel.item) ? jsonObj.rss.channel.item : [jsonObj.rss.channel.item];
+// Fetch and parse the RSS feed at build time. A feed outage should degrade this
+// page, not fail the whole build, so the fetch is guarded.
+let allItems: any[] = [];
+try {
+  const response = await fetch('https://datalakehousehub.com/rss.xml');
+  if (!response.ok) throw new Error(`RSS responded ${response.status}`);
+  const xmlData = await response.text();
+  const parser = new XMLParser();
+  const jsonObj = parser.parse(xmlData);
+  const item = jsonObj?.rss?.channel?.item;
+  if (item) allItems = Array.isArray(item) ? item : [item];
+} catch (err) {
+  console.warn('[blogroll] could not load datalakehousehub.com/rss.xml:', (err as Error).message);
 }
 
 // Clean and categorize items
 // Assuming the item structure has title, link, description, pubDate
-const articles = allItems.map(item => {
+const articles = allItems.map((item: any) => {
   let rawDesc = item.description || item['content:encoded'] || '';
   // Strip HTML tags for clean excerpt
   let textDesc = rawDesc.replace(/<[^>]+>/g, '').substring(0, 160).trim();
@@ -31,14 +35,18 @@ const articles = allItems.map(item => {
 }).filter(article => article.title && article.title !== 'Latest Articles');
 ---
 
-<BaseLayout title="Blogroll" description="Aggregated blogs and articles from DataLakehouseHub.com">
+<BaseLayout
+  title="Blogroll"
+  description="Recent data engineering and lakehouse articles, aggregated from DataLakehouseHub.com and searchable in place."
+  breadcrumbs={[{ name: 'Home', href: '/' }]}
+>
   <section class="py-12">
     <div class="flex items-center justify-between mb-8 border-b border-ash-text/20 pb-4">
       <h1 class="font-ivy text-heading-lg text-pure-white">Data Engineering Blogroll</h1>
     </div>
     
     <div class="mb-12 max-w-2xl">
-      <p class="text-white-frost text-body mb-6">Discover the latest articles, tutorials, and insights curated from DataLakehouseHub.com.</p>
+      <p class="text-white-frost text-body mb-6">Recent articles and tutorials pulled from the DataLakehouseHub.com feed. Filter them below, or read the definitions behind them in the <a href="/terms" class="text-golden-gradient hover:text-pure-white transition-colors">knowledge base</a>.</p>
       
       <!-- Client-side search implementation -->
       <div class="relative">
@@ -53,6 +61,10 @@ const articles = allItems.map(item => {
         </svg>
       </div>
     </div>
+
+    {articles.length === 0 && (
+      <p class="py-12 text-center text-ash-text">The feed could not be loaded right now. Try <a href="https://datalakehousehub.com" target="_blank" rel="noopener noreferrer" class="text-golden-gradient hover:text-pure-white transition-colors">DataLakehouseHub.com</a> directly.</p>
+    )}
 
     <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {articles.map((article: any) => (
@@ -70,7 +82,7 @@ const articles = allItems.map(item => {
     </div>
     
     <div id="no-results" class="hidden text-center py-20 text-ash-text">
-      <p class="text-lg">No articles found matching your search.</p>
+      <p class="text-lg">No articles match that search.</p>
     </div>
   </section>
 

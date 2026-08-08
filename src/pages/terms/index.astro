@@ -3,31 +3,118 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Card from '../../components/Card.astro';
 import { getCollection } from 'astro:content';
 
+const SITE = 'https://dataengnr.com';
 const allTerms = await getCollection('terms');
-allTerms.sort((a, b) => a.data.title.localeCompare(b.data.title));
+allTerms.sort((a: any, b: any) => a.data.title.localeCompare(b.data.title));
+
+// Group into A-Z sections so 200 entries are navigable without a search box.
+const groups = new Map<string, any[]>();
+for (const term of allTerms) {
+  const first = term.data.title[0].toUpperCase();
+  const key = /[A-Z]/.test(first) ? first : '#';
+  if (!groups.has(key)) groups.set(key, []);
+  groups.get(key)!.push(term);
+}
+const letters = [...groups.keys()].sort();
+
+const description =
+  "A data engineering glossary of " + allTerms.length + " terms, each with a short definition and a full explanation: pipelines, storage, modeling, orchestration, governance and the lakehouse.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${SITE}/terms/#page`,
+    "name": "Data Engineering Knowledge Base",
+    "description": description,
+    "url": `${SITE}/terms/`,
+    "isPartOf": { "@id": `${SITE}/#website` },
+    "about": { "@id": `${SITE}/terms/#termset` },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    "@id": `${SITE}/terms/#termset`,
+    "name": "DataEngr.com Data Engineering Knowledge Base",
+    "description": description,
+    "url": `${SITE}/terms/`,
+    "inLanguage": "en",
+    "creator": { "@id": `${SITE}/#person` },
+    "hasDefinedTerm": allTerms.map((term: any) => ({
+      "@type": "DefinedTerm",
+      "@id": `${SITE}/terms/${term.id}/#term`,
+      "name": term.data.title,
+      "url": `${SITE}/terms/${term.id}/`,
+    })),
+  },
+];
+
+const breadcrumbs = [{ name: 'Home', href: '/' }];
 ---
 
-<BaseLayout title="Knowledge Base" description="A comprehensive glossary and knowledge base for data engineering terms.">
+<BaseLayout
+  title="Knowledge Base"
+  description={description}
+  jsonLd={jsonLd}
+  breadcrumbs={breadcrumbs}
+>
   <section class="py-12">
+    <nav aria-label="Breadcrumb" class="mb-6 text-sm text-ash-text">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="/" class="hover:text-pure-white transition-colors">Home</a></li>
+        <li aria-hidden="true">&rsaquo;</li>
+        <li aria-current="page" class="text-silver-text">Knowledge Base</li>
+      </ol>
+    </nav>
+
     <div class="flex items-center justify-between mb-8 border-b border-ash-text/20 pb-4">
-      <h1 class="font-ivy text-heading-lg text-pure-white">Knowledge Base</h1>
-    </div>
-    
-    <div class="mb-12 max-w-3xl">
-      <p class="text-white-frost text-body mb-6">Explore our growing database of data engineering terms, concepts, and technologies.</p>
+      <h1 class="font-ivy text-heading-lg text-pure-white">Data Engineering Knowledge Base</h1>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {allTerms.map((term: any) => (
-        <a href={`/terms/${term.id}`} class="block h-full group">
-          <Card hoverEffect={true} class="flex flex-col h-full bg-charcoal-canvas">
-            <h2 class="text-subheading font-semibold text-pure-white mb-3 group-hover:text-golden-gradient transition-colors">{term.data.title}</h2>
-            <p class="text-sm text-ash-text mb-6 line-clamp-3 flex-grow">{term.data.description}</p>
-            <span class="text-sm font-medium text-white-frost mt-auto inline-flex items-center gap-2 group-hover:text-pure-white transition-colors">
-              Read Definition <span aria-hidden="true">&rarr;</span>
-            </span>
-          </Card>
+    <div class="mb-10 max-w-3xl">
+      <p class="text-white-frost text-body">
+        {allTerms.length} data engineering terms, each opening with a one-paragraph definition and
+        then going deeper: how the idea works, where it shows up in a real pipeline, and which
+        neighbouring concepts it connects to. Written for people who have to build the thing, not
+        just name it.
+      </p>
+      <p class="text-ash-text text-sm mt-4">
+        Looking for something specific? <a href="/search" class="text-golden-gradient hover:text-pure-white transition-colors">Search the whole site</a>,
+        or jump to a letter below.
+      </p>
+    </div>
+
+    <nav aria-label="Jump to letter" class="mb-12 flex flex-wrap gap-2">
+      {letters.map((letter) => (
+        <a
+          href={`#letter-${letter === '#' ? 'other' : letter}`}
+          class="inline-flex h-9 min-w-9 items-center justify-center rounded-md border border-ash-text/20 px-2 text-sm text-silver-text hover:border-golden-gradient/50 hover:text-pure-white transition-colors"
+        >
+          {letter}
         </a>
+      ))}
+    </nav>
+
+    <div class="flex flex-col gap-16">
+      {letters.map((letter) => (
+        <section id={`letter-${letter === '#' ? 'other' : letter}`} aria-labelledby={`heading-${letter === '#' ? 'other' : letter}`} class="scroll-mt-24">
+          <h2 id={`heading-${letter === '#' ? 'other' : letter}`} class="font-ivy text-heading text-golden-gradient mb-6 border-b border-ash-text/10 pb-3">
+            {letter}
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {groups.get(letter)!.map((term: any) => (
+              <a href={`/terms/${term.id}`} class="block h-full group">
+                <Card hoverEffect={true} class="flex flex-col h-full bg-charcoal-canvas">
+                  <h3 class="text-subheading font-semibold text-pure-white mb-3 group-hover:text-golden-gradient transition-colors">{term.data.title}</h3>
+                  <p class="text-sm text-ash-text mb-6 line-clamp-3 flex-grow">{term.data.description}</p>
+                  <span class="text-sm font-medium text-white-frost mt-auto inline-flex items-center gap-2 group-hover:text-pure-white transition-colors">
+                    Read Definition <span aria-hidden="true">&rarr;</span>
+                  </span>
+                </Card>
+              </a>
+            ))}
+          </div>
+        </section>
       ))}
     </div>
   </section>
