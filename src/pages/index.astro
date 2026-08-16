@@ -85,7 +85,76 @@ const { communities = [], events = [] } = siteData;
   jsonLd={faqJsonLd}
 >
 
-  <section class="flex flex-col items-center justify-center text-center py-20">
+  <section class="flex flex-col items-center justify-center text-center py-20 relative">
+    <svg class="hero-ledger" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="de-fade" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#fff"/>
+          <stop offset="0.21" stop-color="#fff"/>
+          <stop offset="0.30" stop-color="#000"/>
+          <stop offset="0.70" stop-color="#000"/>
+          <stop offset="0.79" stop-color="#fff"/>
+          <stop offset="1" stop-color="#fff"/>
+        </linearGradient>
+        <mask id="de-mask"><rect width="1440" height="700" fill="url(#de-fade)"/></mask>
+      </defs>
+      <g mask="url(#de-mask)">
+        <g>
+          <line class="ledger-rule" x1="24" y1="110" x2="300" y2="110"/>
+          <line class="ledger-rule" x1="24" y1="156" x2="300" y2="156"/>
+          <line class="ledger-rule" x1="24" y1="202" x2="300" y2="202"/>
+          <line class="ledger-rule" x1="24" y1="248" x2="300" y2="248"/>
+          <line class="ledger-rule" x1="24" y1="294" x2="300" y2="294"/>
+          <line class="ledger-rule" x1="24" y1="340" x2="300" y2="340"/>
+          <line class="ledger-rule" x1="24" y1="386" x2="300" y2="386"/>
+          <line class="ledger-rule" x1="24" y1="432" x2="300" y2="432"/>
+          <line class="ledger-rule" x1="24" y1="478" x2="300" y2="478"/>
+          <line class="ledger-rule" x1="24" y1="524" x2="300" y2="524"/>
+          <line class="ledger-rule" x1="24" y1="570" x2="300" y2="570"/>
+          <line class="ledger-rule" x1="24" y1="616" x2="300" y2="616"/>
+          <line class="ledger-rule" x1="1140" y1="110" x2="1416" y2="110"/>
+          <line class="ledger-rule" x1="1140" y1="156" x2="1416" y2="156"/>
+          <line class="ledger-rule" x1="1140" y1="202" x2="1416" y2="202"/>
+          <line class="ledger-rule" x1="1140" y1="248" x2="1416" y2="248"/>
+          <line class="ledger-rule" x1="1140" y1="294" x2="1416" y2="294"/>
+          <line class="ledger-rule" x1="1140" y1="340" x2="1416" y2="340"/>
+          <line class="ledger-rule" x1="1140" y1="386" x2="1416" y2="386"/>
+          <line class="ledger-rule" x1="1140" y1="432" x2="1416" y2="432"/>
+          <line class="ledger-rule" x1="1140" y1="478" x2="1416" y2="478"/>
+          <line class="ledger-rule" x1="1140" y1="524" x2="1416" y2="524"/>
+          <line class="ledger-rule" x1="1140" y1="570" x2="1416" y2="570"/>
+          <line class="ledger-rule" x1="1140" y1="616" x2="1416" y2="616"/>
+        </g>
+        <line class="ledger-column" x1="300" y1="86" x2="300" y2="640"/>
+        <line class="ledger-column" x1="1140" y1="86" x2="1140" y2="640"/>
+        <g>
+          <line class="ledger-entry" pathLength="100" x1="24" y1="101" x2="112" y2="101" style="animation-delay:-0.00s"/>
+          <line class="ledger-entry" pathLength="100" x1="1342" y1="101" x2="1416" y2="101" style="animation-delay:-0.36s"/>
+          <line class="ledger-entry" pathLength="100" x1="24" y1="147" x2="149" y2="147" style="animation-delay:-0.72s"/>
+          <line class="ledger-entry" pathLength="100" x1="1289" y1="147" x2="1416" y2="147" style="animation-delay:-1.08s"/>
+          <line class="ledger-entry ledger-entry--gold" pathLength="100" x1="24" y1="193" x2="186" y2="193" style="animation-delay:-1.44s"/>
+          <line class="ledger-entry ledger-entry--gold" pathLength="100" x1="1236" y1="193" x2="1416" y2="193" style="animation-delay:-1.80s"/>
+          <line class="ledger-entry" pathLength="100" x1="24" y1="239" x2="223" y2="239" style="animation-delay:-2.16s"/>
+          <line class="ledger-entry" pathLength="100" x1="1333" y1="239" x2="1416" y2="239" style="animation-delay:-2.52s"/>
+          <line class="ledger-entry" pathLength="100" x1="24" y1="285" x2="130" y2="285" style="animation-delay:-2.88s"/>
+          <line class="ledger-entry" pathLength="100" x1="1280" y1="285" x2="1416" y2="285" style="animation-delay:-3.24s"/>
+          <line class="ledger-entry ledger-entry--gold" pathLength="100" x1="24" y1="331" x2="167" y2="331" style="animation-delay:-3.60s"/>
+          <line class="ledger-entry ledger-entry--gold" pathLength="100" x1="1227" y1="331" x2="1416" y2="331" style="animation-delay:-3.96s"/>
+          <line class="ledger-entry" pathLength="100" x1="24" y1="377" x2="204" y2="377" style="animation-delay:-4.32s"/>
+          <line class="ledger-entry" pathLength="100" x1="1324" y1="377" x2="1416" y2="377" style="animation-delay:-4.68s"/>
+          <line class="ledger-entry" pathLength="100" x1="24" y1="423" x2="241" y2="423" style="animation-delay:-5.04s"/>
+          <line class="ledger-entry" pathLength="100" x1="1271" y1="423" x2="1416" y2="423" style="animation-delay:-5.40s"/>
+          <line class="ledger-entry ledger-entry--gold" pathLength="100" x1="24" y1="469" x2="148" y2="469" style="animation-delay:-5.76s"/>
+          <line class="ledger-entry ledger-entry--gold" pathLength="100" x1="1218" y1="469" x2="1416" y2="469" style="animation-delay:-6.12s"/>
+          <line class="ledger-entry" pathLength="100" x1="24" y1="515" x2="185" y2="515" style="animation-delay:-6.48s"/>
+          <line class="ledger-entry" pathLength="100" x1="1315" y1="515" x2="1416" y2="515" style="animation-delay:-6.84s"/>
+          <line class="ledger-entry ledger-entry--gold" pathLength="100" x1="24" y1="561" x2="222" y2="561" style="animation-delay:-7.20s"/>
+          <line class="ledger-entry ledger-entry--gold" pathLength="100" x1="1262" y1="561" x2="1416" y2="561" style="animation-delay:-7.56s"/>
+          <line class="ledger-entry" pathLength="100" x1="24" y1="607" x2="129" y2="607" style="animation-delay:-7.92s"/>
+          <line class="ledger-entry" pathLength="100" x1="1209" y1="607" x2="1416" y2="607" style="animation-delay:-8.28s"/>
+        </g>
+      </g>
+    </svg>
     <h1 class="font-ivy text-5xl md:text-[88px] leading-none tracking-tight mb-8">
       Data<span class="text-golden-gradient bg-clip-text text-transparent bg-[image:var(--background-image-golden-gradient)]">Engr</span>.com
     </h1>
@@ -207,3 +276,68 @@ const { communities = [], events = [] } = siteData;
   </section>
 
 </BaseLayout>
+
+<style>
+  /* Midnight ledger: ruled gutters with entries written in, gold for the ones
+     that matter. Desktop only, where the centred hero leaves clear margins. */
+  .hero-ledger {
+    display: none;
+  }
+
+  @media (min-width: 1200px) {
+    .hero-ledger {
+      display: block;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+  }
+
+  .hero-ledger + * ,
+  section > *:not(.hero-ledger) {
+    position: relative;
+    z-index: 1;
+  }
+
+  .ledger-rule {
+    stroke: var(--color-ash-text);
+    stroke-width: 1;
+    opacity: 0.28;
+  }
+
+  .ledger-column {
+    stroke: var(--color-ash-text);
+    stroke-width: 1;
+    opacity: 0.4;
+  }
+
+  .ledger-entry {
+    stroke: var(--color-stone-text);
+    stroke-width: 4;
+    stroke-linecap: butt;
+    stroke-dasharray: 100;
+    opacity: 0.45;
+    animation: ledgerWrite 14s ease-in-out infinite;
+  }
+
+  .ledger-entry--gold {
+    stroke: rgb(214, 186, 122);
+    opacity: 0.9;
+  }
+
+  @keyframes ledgerWrite {
+    0%        { stroke-dashoffset: 100; }
+    14%, 82%  { stroke-dashoffset: 0; }
+    100%      { stroke-dashoffset: 100; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ledger-entry {
+      animation: none;
+      stroke-dashoffset: 0;
+    }
+  }
+</style>
