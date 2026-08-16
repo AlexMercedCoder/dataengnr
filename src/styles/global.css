@@ -42,3 +42,10 @@ body {
   color: var(--color-pure-white);
   font-family: var(--font-inter);
 }
+
+/* Footer cross-network runs: inline lists with hairline separators. */
+.footer-run-list li + li::before {
+  content: "\00B7";
+  margin-right: 0.75rem;
+  opacity: 0.5;
+}
