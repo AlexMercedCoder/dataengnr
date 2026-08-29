@@ -2,8 +2,12 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Card from '../components/Card.astro';
 import siteData from '../data/siteData.json';
+import bookData from '../data/books.json';
 
-const allBooks = [...(siteData.freeBooks || []), ...(siteData.otherBooks || [])];
+// Free titles and resources stay curated here: several are gated downloads or
+// third-party guides that do not live in the book catalog.
+const freeBooks = siteData.freeBooks || [];
+const { books, count, totalInCatalog, catalog, intro } = bookData;
 ---
 
 <BaseLayout
@@ -16,39 +20,75 @@ const allBooks = [...(siteData.freeBooks || []), ...(siteData.otherBooks || [])]
       <h1 class="font-ivy text-heading-lg text-pure-white">Books by Alex Merced</h1>
     </div>
 
-    <p class="text-body text-white-frost max-w-2xl mb-12">
-      Longer-form treatments of the topics in the <a href="/terms" class="text-golden-gradient hover:text-pure-white transition-colors">knowledge base</a>:
-      Apache Iceberg, lakehouse architecture, catalogs, semantic layers and agentic analytics.
-      Several are free.
+    <p class="text-body text-white-frost max-w-2xl mb-4">
+      {intro} They cover the same ground as the
+      <a href="/terms" class="text-golden-gradient hover:text-pure-white transition-colors">knowledge base</a>, at greater length.
     </p>
-    
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-      {allBooks.map((book: any) => (
-        <a href={book.url} target="_blank" rel="noopener noreferrer" class="group block h-full">
-          <Card hoverEffect={true} class="flex flex-col h-full !p-0 overflow-hidden bg-charcoal-canvas">
-            {book.localImg ? (
-              <div class="aspect-[2/3] w-full overflow-hidden bg-midnight-ink relative">
-                <img src={book.localImg} alt={book.title} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                {book.tag && (
-                  <span class="absolute top-4 right-4 bg-midnight-ink/80 text-white-frost text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm border border-ash-text/20">
-                    {book.tag}
-                  </span>
+    <p class="text-sm text-ash-text mb-12">
+      {count} of {totalInCatalog} titles.
+      <a href={catalog} target="_blank" rel="noopener noreferrer" class="text-golden-gradient hover:text-pure-white transition-colors">See the complete catalog</a>
+    </p>
+
+    {freeBooks.length > 0 && (
+      <div class="mb-16">
+        <h2 class="font-ivy text-heading-md text-pure-white mb-6">Free to read</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {freeBooks.map((book: any) => (
+            <a href={book.url} target="_blank" rel="noopener noreferrer" class="group block h-full">
+              <Card hoverEffect={true} class="flex flex-col h-full !p-0 overflow-hidden bg-charcoal-canvas">
+                {book.localImg ? (
+                  <div class="aspect-[2/3] w-full overflow-hidden bg-midnight-ink relative">
+                    <img src={book.localImg} alt={book.title} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                    {book.tag && (
+                      <span class="absolute top-4 right-4 bg-midnight-ink/80 text-white-frost text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm border border-ash-text/20">
+                        {book.tag}
+                      </span>
+                    )}
+                  </div>
+                ) : (
+                  <div class="aspect-[2/3] w-full bg-slate-gray flex items-center justify-center p-6 text-center border-b border-ash-text/10">
+                    <span class="text-ash-text font-ivy text-xl">{book.title}</span>
+                  </div>
                 )}
-              </div>
-            ) : (
-              <div class="aspect-[2/3] w-full bg-slate-gray flex items-center justify-center p-6 text-center border-b border-ash-text/10">
-                <span class="text-ash-text font-ivy text-xl">{book.title}</span>
-              </div>
-            )}
-            <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-body font-semibold text-pure-white mb-2 line-clamp-2">{book.title}</h3>
-              <p class="text-sm text-ash-text mb-4 line-clamp-3 flex-grow">{book.desc}</p>
-              <span class="text-sm font-medium text-golden-gradient mt-auto inline-flex items-center gap-2 group-hover:text-pure-white transition-colors">
-                Get Book <span aria-hidden="true">&rarr;</span>
-              </span>
+                <div class="p-6 flex flex-col flex-grow">
+                  <h3 class="text-body font-semibold text-pure-white mb-2 line-clamp-2">{book.title}</h3>
+                  <p class="text-sm text-ash-text mb-4 line-clamp-3 flex-grow">{book.desc}</p>
+                  <span class="text-sm font-medium text-golden-gradient mt-auto inline-flex items-center gap-2 group-hover:text-pure-white transition-colors">
+                    Get book <span aria-hidden="true">&rarr;</span>
+                  </span>
+                </div>
+              </Card>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <h2 class="font-ivy text-heading-md text-pure-white mb-6">The full shelf</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      {books.map((book: any) => (
+        <Card hoverEffect={true} class="flex flex-col h-full !p-0 overflow-hidden bg-charcoal-canvas">
+          <a href={book.canonicalPage} target="_blank" rel="noopener noreferrer" class="group block" tabindex="-1" aria-hidden="true">
+            <div class="aspect-[2/3] w-full overflow-hidden bg-midnight-ink relative">
+              <img src={book.cover} alt="" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+              {book.publisher && (
+                <span class="absolute top-4 right-4 bg-midnight-ink/80 text-white-frost text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-sm border border-ash-text/20">
+                  {book.publisher}
+                </span>
+              )}
             </div>
-          </Card>
-        </a>
+          </a>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-body font-semibold text-pure-white mb-2 line-clamp-2">
+              <a href={book.canonicalPage} target="_blank" rel="noopener noreferrer" class="hover:text-golden-gradient transition-colors">{book.title}</a>
+            </h3>
+            <p class="text-sm text-ash-text mb-4 line-clamp-3 flex-grow">{book.description}</p>
+            <p class="mt-auto flex flex-wrap gap-4 text-sm font-medium">
+              <a href={book.canonicalPage} target="_blank" rel="noopener noreferrer" class="text-golden-gradient hover:text-pure-white transition-colors">Details</a>
+              <a href={book.amazon} target="_blank" rel="noopener noreferrer" class="text-golden-gradient hover:text-pure-white transition-colors">Buy on Amazon</a>
+            </p>
+          </div>
+        </Card>
       ))}
     </div>
   </section>
