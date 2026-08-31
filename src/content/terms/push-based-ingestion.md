@@ -21,8 +21,6 @@ If a user clicks a button on an e-commerce website, the frontend application imm
 
 **Handling Unpredictable Spikes**: If a website goes viral, the number of incoming events spikes massively. In a push-based system utilizing a message broker like Kafka, Kafka acts as a shock absorber. It ingests the massive spike of incoming pushed data and holds it in a queue, allowing the downstream lakehouse pipelines to process the data at a safe, steady pace without crashing.
 
-![Push-Based Ingestion Architecture](/images/terms/push_ingestion.png)
-
 ## Challenges of Push-Based Ingestion
 
 **Source System Engineering Burden**: Implementing a push architecture requires the application development team to write custom code to construct the JSON payload and handle API retries if the data platform is temporarily unavailable. This puts the burden of data engineering on the software developers.

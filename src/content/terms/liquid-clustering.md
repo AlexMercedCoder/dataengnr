@@ -21,8 +21,6 @@ Unlike Z-ordering (which is a one-time operation that must be re-run manually or
 
 When the `CLUSTER BY` columns change, the existing data files retain their old clustering, and new data is written with the new clustering. Over time, as [compaction](/terms/compaction) and clustering operations process more of the table, the data progressively adopts the new clustering layout. This gradual transition eliminates the need for a full table rewrite when clustering columns change.
 
-![Liquid Clustering Architecture](/images/terms/liquid_clustering.png)
-
 ## Liquid Clustering vs. [Apache Iceberg](/terms/apache-iceberg) [Hidden Partitioning](/terms/hidden-partitioning)
 
 Apache Iceberg's hidden partitioning and [partition evolution](/terms/partition-evolution) address similar problems to Liquid Clustering but through a different mechanism. Iceberg's partition evolution allows partition transforms to be changed without data rewrites, with new data using the new partition spec and old data using the old spec. Partition pruning applies both old and new specs correctly.

@@ -27,8 +27,6 @@ To reliably answer "What happened?", data engineers build the foundational [Meda
 
 **4. [Semantic Layer](/terms/semantic-layer)**: Metrics are strictly defined (e.g., "Revenue = Gross Sales - Returns - Discounts") in a Semantic Layer like [Dremio](/terms/dremio) so that when different dashboards query the data, they calculate the descriptive metrics identically.
 
-![Descriptive Analytics](/images/terms/descriptive_analytics.png)
-
 ## Limitations of Descriptive Analytics
 
 Descriptive analytics is essential for operational monitoring and basic business intelligence. It provides the scoreboard for the business. However, it is inherently backward-looking.

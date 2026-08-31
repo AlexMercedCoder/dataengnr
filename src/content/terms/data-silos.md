@@ -19,8 +19,6 @@ Data silos rarely form maliciously; they are the natural byproduct of organizati
 
 Over time, this results in conflicting truths across the organization: the marketing silo reports 500 new leads, the sales silo reports 300 new opportunities, and the finance silo reports 100 new paying customers, with no clear linkage between the numbers.
 
-![Data Silos Architecture](/images/terms/data_silos.png)
-
 ## Breaking Down Silos with the Lakehouse
 
 The historical solution to data silos was the enterprise [data warehouse](/terms/data-warehouse): extract all data from all silos and load it into a central relational database. This often failed due to the rigid schema requirements of warehouses and the massive effort required to model every department's data into a single, unified enterprise schema.

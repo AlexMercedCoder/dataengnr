@@ -23,8 +23,6 @@ Prescriptive analytics relies heavily on Operations Research (OR) techniques, ad
 
 **Recommendation Engines**: The most common consumer-facing form of prescriptive analytics. Netflix's algorithm doesn't just predict what you might like; it prescriptively curates a personalized homepage designed to maximize your engagement and retention.
 
-![Prescriptive Analytics](/images/terms/prescriptive_analytics.png)
-
 ## Automating the Decision Loop
 
 The goal of prescriptive analytics is often full automation: removing the human from the operational decision loop entirely.

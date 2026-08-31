@@ -25,8 +25,6 @@ For example, if an Iceberg `MERGE INTO` operation updated a customer's address, 
 
 This stream of changes looks conceptually identical to a database CDC (Change Data Capture) stream from Debezium, but it is generated entirely from Iceberg's metadata and immutable Parquet files on [object storage](/terms/object-storage).
 
-![Iceberg Changelogs Architecture](/images/terms/iceberg_changelogs.png)
-
 ## Use Cases for Changelogs
 
 **Incremental [Materialized Views](/terms/materialized-views)**: [Dremio](/terms/dremio) and other query engines use Iceberg changelogs to incrementally refresh Data Reflections or materialized views. Instead of recomputing an aggregation reflection over a billion rows, the engine reads the changelog for the 10,000 rows modified since the last refresh, subtracts the deleted values from the aggregate, adds the inserted values, and updates the reflection in seconds.

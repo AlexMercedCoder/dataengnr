@@ -25,8 +25,6 @@ Different user types have different data access needs and different technical ca
 
 **AI-powered natural language query**: The emerging frontier of data democratization is natural language query interfaces where users ask business questions in plain English ("What were our top 10 products by revenue last quarter?") and AI agents translate the question to SQL, execute it against the governed semantic layer, and return formatted results. Dremio's integration with AI agent frameworks through the Model Context Protocol (MCP) enables this natural language query pattern over governed Iceberg data.
 
-![Data Democratization Pyramid](/images/terms/data_democratization.png)
-
 ## Governance Is the Enabler of Democratization
 
 Counter-intuitively, strong governance is a prerequisite for data democratization, not an obstacle to it. Without governance, opening data access broadly leads to: inconsistent metrics (different teams calculating revenue differently), data quality issues (unvalidated raw data exposed to business users), and security violations (sensitive data accessible to unauthorized users).

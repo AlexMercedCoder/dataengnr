@@ -23,8 +23,6 @@ Calculating the exact distance between a query vector and 100 million stored vec
 
 **IVF (Inverted File Index)**: Divides the vector space into clusters. When a query vector arrives, the system only calculates distances against the vectors residing in the cluster nearest to the query vector, skipping the rest of the database.
 
-![Vector Database Architecture](/images/terms/vector_databases.png)
-
 ## Vector Databases in the RAG Architecture
 
 Vector databases are the foundational data infrastructure for RAG (Retrieval-Augmented Generation) applications. [Large Language Models](/terms/large-language-models) (LLMs) like ChatGPT have a fixed knowledge cutoff and are prone to hallucinations. RAG solves this by grounding the LLM in enterprise data.

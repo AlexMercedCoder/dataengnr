@@ -29,8 +29,6 @@ However, historical data contains random noise and errors. By passing through ev
 
 This model has **High Variance**. Its predictions vary wildly depending on the exact training data it was given. It performs perfectly on the training data, but fails catastrophically on future data. This is known as **Overfitting**.
 
-![Bias Variance Tradeoff Architecture](/images/terms/bias_variance.png)
-
 ## The Tradeoff
 
 Bias and Variance are inversely related. 

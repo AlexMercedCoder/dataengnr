@@ -21,8 +21,6 @@ While descriptive analytics is typically consumed via static or lightly interact
 
 **Correlation Analysis**: Statistically comparing multiple variables to see if they move together. An analyst might query the lakehouse to see if the drop in MRR correlates with a recent spike in average support ticket resolution time, diagnosing a customer service bottleneck as the root cause of churn.
 
-![Diagnostic Analytics](/images/terms/diagnostic_analytics.png)
-
 ## The Lakehouse Advantage for Diagnostics
 
 Diagnostic analytics requires immense flexibility from the underlying [data architecture](/terms/data-architecture). A traditional [data warehouse](/terms/data-warehouse), heavily optimized for specific pre-aggregated descriptive dashboards, often struggles with diagnostic ad-hoc queries because the analyst frequently needs to query data outside the pre-aggregated cubes.

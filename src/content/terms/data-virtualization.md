@@ -29,8 +29,6 @@ Data virtualization is complementary to the [data lakehouse architecture](/terms
 
 Virtualization bridges the gap. Dremio, acting as both a lakehouse query engine and a data virtualization platform, allows organizations to adopt the lakehouse pattern for the majority of their data (where open formats and cheap storage provide the most benefit) while federating queries to operational databases when real-time, zero-latency access is required, without forcing an "everything must move" migration strategy.
 
-![Data Virtualization Architecture](/images/terms/data_virtualization.png)
-
 ## Trade-offs of Virtualization
 
 Virtualization provides significant benefits: faster time-to-insight (no waiting for ETL pipelines to be built), zero data duplication, and real-time access to operational data.

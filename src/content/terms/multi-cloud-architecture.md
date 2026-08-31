@@ -23,8 +23,6 @@ Operating a multi-cloud [data architecture](/terms/data-architecture) introduces
 
 **Fragmented Governance**: Managing access control across multiple clouds requires maintaining separate IAM (Identity and Access Management) policies. Ensuring that a user has consistent access rights to data regardless of which cloud it resides in is a complex administrative burden.
 
-![Multi-Cloud Architecture](/images/terms/multi_cloud.png)
-
 ## The Lakehouse as the Multi-Cloud Enabler
 
 The [data lakehouse architecture](/terms/data-lakehouse-architecture) - specifically using [Apache Iceberg](/terms/apache-iceberg) - is uniquely suited to solving multi-cloud challenges.

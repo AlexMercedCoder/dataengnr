@@ -26,8 +26,6 @@ The [generative AI](/terms/generative-ai) boom has transformed unstructured data
 
 **[Semantic Search](/terms/semantic-search)**: Unstructured documents are converted into [vector embeddings](/terms/vector-embeddings) and stored in a vector database, powering [Retrieval-Augmented Generation (RAG)](/terms/rag-architecture) applications that allow employees to "chat" with their corporate knowledge base.
 
-![Unstructured Data Architecture](/images/terms/unstructured_data.png)
-
 ## Architecture for Unstructured Data
 
 The modern [data lakehouse](/terms/data-lakehouse) provides the unified architecture necessary to manage both structured and unstructured data.

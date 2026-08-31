@@ -17,7 +17,7 @@ If an organization needs to analyze its daily sales, an Airflow DAG triggers a j
 
 **Reliability and [Backfilling](/terms/backfilling)**: Pull-based systems are inherently robust. If the overnight ETL job fails because the network drops, the orchestrator simply retries it an hour later. If the data team realizes they need an extra column from the source database, they simply update their `SELECT` query to pull it, and they can easily pull the entire historical table (a full refresh) to backfill the data lakehouse.
 
-![Pull-Based Ingestion Architecture](/images/terms/pull_ingestion.png)
+![Pull-Based Ingestion Architecture](/images/terms/pull_based_ingestion.png)
 
 ## Challenges of Pull-Based Ingestion
 

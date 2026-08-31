@@ -21,8 +21,6 @@ Named branches in Nessie are mutable references to commits that advance with eac
 
 [Multi-table transactions](/terms/multi-table-transactions) in Nessie work by accumulating multiple table metadata updates in memory, then committing them all as a single Nessie commit. Either all the updates commit atomically, or none do. This provides cross-table consistency without distributed locking.
 
-![Apache Nessie Architecture](/images/terms/nessie_architecture.png)
-
 ## Nessie Use Cases
 
 **Catalog-level branching for development**: A data engineering team working on a new pipeline creates a Nessie branch from main, creates new tables, modifies existing table schemas, and runs the pipeline against the branch. The entire environment (all tables, all schemas) is isolated from production. After validation, the branch is merged to main, atomically applying all the new table and schema changes.

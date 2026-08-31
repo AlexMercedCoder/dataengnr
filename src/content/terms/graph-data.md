@@ -23,8 +23,6 @@ Graph analytics shines when the connections between entities are the primary sou
 
 **Supply Chain Traceability**: In a complex manufacturing supply chain, tracing a specific contaminated raw material component through multiple sub-assemblies to find all the final products affected requires traversing a deep, multi-level bill-of-materials graph.
 
-![Graph Data Architecture](/images/terms/graph_data.png)
-
 ## Processing Graphs in the Modern Data Stack
 
 Historically, graph analytics required migrating data entirely into specialized, expensive operational graph databases like Neo4j.

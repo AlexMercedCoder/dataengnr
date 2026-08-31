@@ -31,8 +31,6 @@ DataOps CI/CD pipelines automate validation and deployment of data code changes:
 
 **Continuous Deployment (CD)**: When a pull request is merged to the main branch, an automated CD pipeline deploys the changes: running `dbt run` against the staging environment, validating results, then promoting to production. Deployment to production is gated on staging validation, preventing broken changes from reaching production data.
 
-![DataOps Pipeline](/images/terms/dataops_pipeline.png)
-
 ## DataOps Monitoring and Observability
 
 Production data quality monitoring is a core DataOps practice. Automated data quality monitors check production tables on a schedule (hourly, daily), alerting on anomalies: row count drops outside expected ranges, freshness lag beyond SLA thresholds, null rates exceeding baselines, distribution shifts in key columns.

@@ -23,8 +23,6 @@ A mature data discovery platform (often implemented via a [Data Catalog](/terms/
 
 **[Data Lineage](/terms/data-lineage)**: Visualizing the upstream sources and downstream consumers of a dataset. Lineage allows a user to trace a `dim_customer` table back to its raw Bronze source tables to understand how it is derived, or trace it forward to see which executive dashboards will break if the table schema changes.
 
-![Data Discovery Architecture](/images/terms/data_discovery.png)
-
 ## Automated Discovery in the Lakehouse
 
 Manually documenting thousands of tables is impossible to sustain. Modern data discovery relies on automation to keep the catalog synchronized with the reality of the lakehouse.

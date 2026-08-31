@@ -25,8 +25,6 @@ Once the data is refined into high-quality Iceberg tables, the organization has 
 
 **2. The Full Lakehouse Model**: The cloud data warehouse is bypassed entirely. [Dremio](/terms/dremio) connects directly to the refined Iceberg tables, using its Data Reflections and [Semantic Layer](/terms/semantic-layer) to serve the BI dashboards directly from the lakehouse, eliminating the warehouse compute and storage costs entirely.
 
-![ETL Offloading Architecture](/images/terms/etl_offloading.png)
-
 ## Benefits Beyond Cost
 
 While cost reduction is the primary driver for ETL offloading, the architectural shift provides significant secondary benefits. It reduces resource contention: massive batch transformation jobs no longer slow down the CEO's Monday morning dashboard queries. It increases flexibility: Spark and Python provide more expressive programming models for complex data manipulation (like NLP processing or complex JSON parsing) than the SQL limitations of traditional warehouses. And it prevents vendor lock-in: the core transformation logic and the resulting refined data remain in open formats (Parquet) and open code (Spark/Python), owned entirely by the organization.

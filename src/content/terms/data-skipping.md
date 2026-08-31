@@ -31,8 +31,6 @@ Within candidate data files, [Apache Parquet](/terms/apache-parquet) stores colu
 
 For a query `WHERE product_category = 'Electronics'` on an unpartitioned table, row group statistics can skip row groups that contain only rows from other categories (if the data is clustered by category). For a query `WHERE order_date = '2024-01-15'` on data that is Z-ordered by order_date, row group statistics can skip the vast majority of row groups by date range.
 
-![Data Skipping Architecture](/images/terms/data_skipping.png)
-
 ## Level 4: [Bloom Filters](/terms/bloom-filters)
 
 For point lookups on high-cardinality columns (user_id, order_id, session_id) where min/max statistics provide little filtering benefit (the range of IDs in each row group overlaps heavily), Parquet column-level Bloom filters provide probabilistic membership testing at the row group level. A Bloom filter definitively rules out row groups that cannot contain the queried ID value, with a configurable false positive rate (typically 1-5%).

@@ -23,8 +23,6 @@ A mature semantic layer provides more than metric definitions. It is governance 
 
 **Access Control**: The semantic layer enforces [column masking](/terms/column-masking), [row-level security](/terms/row-level-security), and role-based access control, ensuring that all consumers receive data appropriate to their authorization level regardless of which tool they use to query.
 
-![Semantic Layer Architecture](/images/terms/semantic_layer_architecture.png)
-
 ## The Semantic Layer for AI Agents
 
 The semantic layer is a critical enabler for [agentic analytics](/terms/agentic-analytics): AI agents that autonomously query data to answer business questions. An AI agent querying raw Iceberg tables must infer the semantics of columns from their names and documentation, often producing incorrect results when column names are ambiguous or when complex business logic is embedded in SQL that the agent must replicate.

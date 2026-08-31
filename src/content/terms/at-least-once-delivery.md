@@ -24,8 +24,6 @@ At-least-once delivery relies on explicit acknowledgments (ACKs) and retries.
 
 This retry mechanism is what guarantees no data loss. However, it is also what creates duplicates. If the broker actually received and stored the first message, but only the return ACK was lost in the network, the producer's retry will result in the broker storing two identical copies of the "Buy" click.
 
-![At-Least-Once Delivery](/images/terms/at_least_once.png)
-
 ## Handling Duplicates with [Idempotency](/terms/idempotency)
 
 Because at-least-once delivery guarantees duplicates will eventually occur, the downstream systems consuming this data must be designed to handle them safely. 

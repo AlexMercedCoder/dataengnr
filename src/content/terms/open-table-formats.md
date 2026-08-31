@@ -31,8 +31,6 @@ Apache Hudi (Hadoop Upsert Delete and Incremental) was developed by Uber and foc
 
 Hudi's strengths include: strong CDC (Change Data Capture) ingestion support through DeltaStreamer, efficient incremental reads through the `incremental_query_type`, and tight integration with AWS Glue and EMR. Hudi is well-suited for near-real-time CDC pipelines from [relational databases](/terms/relational-databases) but has a smaller multi-engine ecosystem than Iceberg.
 
-![Open Table Formats Comparison](/images/terms/table_formats_comparison.png)
-
 ## When to Choose Each
 
 **Choose Apache Iceberg** when: building a multi-engine lakehouse with Dremio, Spark, Trino, and Flink; when catalog governance and the REST Catalog standard are priorities; when open interoperability and avoiding vendor lock-in are requirements; when Git-like branching and tagging are needed.

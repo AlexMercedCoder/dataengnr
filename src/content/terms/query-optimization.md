@@ -23,8 +23,6 @@ Column pruning ensures that only the columns actually needed by the query are re
 
 For wide tables with many columns, column pruning can reduce data read by 10-20x compared to reading all columns. Parquet's columnar format makes column pruning efficient: each column's data is stored separately and can be read independently, so skipping unneeded columns is simply a matter of not reading those column chunks.
 
-![Query Optimization Architecture](/images/terms/query_optimization.png)
-
 ## Join Ordering and Cost-Based Optimization
 
 For queries joining multiple tables, the order in which joins are performed dramatically affects performance. A join between a billion-row fact table and a 100-row lookup table should filter the fact table first using the lookup values, not join all billion rows before filtering. A [cost-based optimizer](/terms/cost-based-optimizer) (CBO) uses table statistics (row counts, column cardinality, value distributions) to estimate the cost of different join orders and select the most efficient plan.

@@ -19,8 +19,6 @@ Apache Airflow is the most widely deployed open-source data orchestration platfo
 
 Airflow's strengths include its vast ecosystem of provider packages (100+ pre-built operators for AWS, GCP, Azure, Spark, dbt, Snowflake, and more), mature scheduling capabilities, and the Airflow UI for monitoring and managing DAG runs. Airflow's limitations include verbose DAG authoring (complex dependencies can lead to large, hard-to-maintain DAG files), challenging testing (testing DAG logic requires a running Airflow environment), and a learning curve for Python developers new to DAG-based thinking.
 
-![Orchestration Architecture](/images/terms/orchestration.png)
-
 ## Modern Orchestration: Prefect and Dagster
 
 **Prefect** addresses Airflow's complexity with a more Pythonic workflow definition model. Prefect workflows are defined using Python decorators (`@flow`, `@task`), making them feel like normal Python functions. Prefect's hybrid execution model (Prefect Cloud for orchestration, local or cloud-based execution environment) provides managed orchestration without managing the orchestration server.

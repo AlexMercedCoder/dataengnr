@@ -25,8 +25,6 @@ Data quality tests validate that the data's content meets business requirements.
 
 Great Expectations provides a rich library of data quality assertions (called "expectations") that can be embedded in pipelines as validation steps. A `expect_column_values_to_be_between` expectation on a revenue column that fires when any value is negative catches calculation errors before bad data reaches consumers.
 
-![Data Pipeline Testing Architecture](/images/terms/pipeline_testing.png)
-
 ## Business Logic Tests
 
 Business logic tests validate that transformations implement the correct business rules. A revenue calculation test asserts that `unit_price * quantity * (1 - discount_rate)` equals the calculated `net_revenue` column. A customer churn calculation test asserts that customers with `last_purchase_date` more than 90 days ago are correctly classified as churned. These tests catch logic errors in SQL transformations that schema and data quality tests would miss.

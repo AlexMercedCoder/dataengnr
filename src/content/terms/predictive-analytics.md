@@ -26,8 +26,6 @@ Building a predictive capability requires close collaboration between data engin
 
 **3. Model Deployment (Inference)**: The trained model is deployed into production. As new data flows into the lakehouse, the data engineering pipeline calculates the current features for all active customers, passes them to the model, and the model outputs a "churn probability score" for each customer. These scores are written back into an Iceberg table (e.g., `dim_customer_risk_scores`) for consumption.
 
-![Predictive Analytics](/images/terms/predictive_analytics.png)
-
 ## Predictive Analytics in the Modern Data Stack
 
 The [data lakehouse architecture](/terms/data-lakehouse-architecture) fundamentally accelerates predictive analytics. Historically, data scientists had to extract massive CSV extracts from the [data warehouse](/terms/data-warehouse) to train models on their local laptops or isolated compute instances, creating compliance risks and data staleness.

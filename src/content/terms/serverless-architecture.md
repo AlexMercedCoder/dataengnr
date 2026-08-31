@@ -19,8 +19,6 @@ Serverless architecture represents the final stage of this evolution. In a serve
 
 **Consumption-Based Pricing**: Because the scaling is entirely dynamic and managed by the provider, pricing shifts from a fixed capital expense (buying servers) to a pure operational expense. You pay only for the exact milliseconds of compute or the exact bytes of data processed.
 
-![Serverless Architecture](/images/terms/serverless.png)
-
 ## Serverless in Data Engineering
 
 Serverless architectures are fundamentally changing how modern data platforms are built:

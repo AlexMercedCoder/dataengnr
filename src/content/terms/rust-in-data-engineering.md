@@ -23,8 +23,6 @@ For data engineering tooling, Rust's combination of native performance and memor
 
 **[Polars](/terms/polars)**: While Polars exposes a Python API, its execution engine is entirely implemented in Rust. The performance characteristics of Polars (described in the Polars article) derive from Rust's native execution on Arrow memory, parallel execution across all CPU cores, and zero-copy [data sharing](/terms/data-sharing).
 
-![Rust in Data Engineering](/images/terms/rust_data_engineering.png)
-
 ## DataFusion + iceberg-rust: The Python-Free Iceberg Stack
 
 The combination of DataFusion and iceberg-rust enables querying Iceberg tables with full SQL support in a Rust process. A Rust binary registers an Iceberg table as a DataFusion data source and executes SQL queries against it:

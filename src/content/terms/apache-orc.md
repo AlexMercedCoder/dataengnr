@@ -21,8 +21,6 @@ The stripe-level and row-group-level column statistics enable predicate pushdown
 
 ORC supports multiple column encoding strategies: dictionary encoding for low-cardinality string columns (storing each unique value once and encoding rows as indices into the dictionary), delta encoding for monotonically increasing integer columns (storing differences between consecutive values rather than absolute values), and run-length encoding for repetitive values. These encodings are automatically selected based on the column's data distribution, typically achieving 3-10x compression ratios over uncompressed data.
 
-![Apache ORC File Structure](/images/terms/orc_format.png)
-
 ## ORC vs. Parquet in the Modern Lakehouse
 
 For modern lakehouse architectures built on [Apache Iceberg](/terms/apache-iceberg), Apache Parquet is the strongly preferred data file format. Iceberg's design and tooling are optimized for Parquet: Iceberg's column statistics are derived from Parquet's row group statistics, and all major Iceberg-compatible query engines ([Dremio](/terms/dremio), Spark, Flink, [Trino](/terms/trino)) are heavily optimized for Parquet reads.

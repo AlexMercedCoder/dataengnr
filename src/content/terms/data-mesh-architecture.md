@@ -23,8 +23,6 @@ Data Mesh is a sociotechnical approach: it addresses both the organizational str
 
 **4. Federated Computational Governance**: Governance policies ([data quality](/terms/data-quality) standards, security requirements, access control rules, retention policies, interoperability standards) are defined centrally by a governance team and enforced programmatically across all data products through the platform's automated governance capabilities. Domain teams operate autonomously within the governance guardrails; they do not need individual approval for every schema change or pipeline modification.
 
-![Data Mesh Architecture](/images/terms/data_mesh_architecture.png)
-
 ## Data Mesh in the Iceberg Lakehouse
 
 The [Iceberg REST Catalog](/terms/iceberg-rest-catalog) specification and Apache Polaris provide the technical foundation for a Data Mesh implementation. Each domain operates its own namespace in a shared Polaris catalog, with RBAC policies granting the domain team write access to their namespace and read access to other domains' data products through catalog federation.

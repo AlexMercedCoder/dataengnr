@@ -25,8 +25,6 @@ Apache Iceberg implements Optimistic Concurrency Control through its atomic meta
 
 If the catalog pointer has not changed since step 1 (no other writer committed between steps 1 and 3), the commit succeeds atomically. If another writer committed between steps 1 and 3 (the catalog pointer changed), the commit fails with a conflict. The failed writer reads the new current state, evaluates whether its changes are still valid (conflict resolution), rewrites its metadata to apply its changes on top of the new state, and retries the commit.
 
-![Optimistic Concurrency Control](/images/terms/occ_iceberg.png)
-
 ## Conflict Resolution
 
 When an OCC commit conflict is detected, the Iceberg writer applies conflict resolution logic to determine whether the conflict is resolvable or irresolvable.

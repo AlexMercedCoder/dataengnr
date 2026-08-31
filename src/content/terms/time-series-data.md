@@ -23,8 +23,6 @@ Analytical queries against time-series data differ significantly from standard r
 
 **Gap Filling**: Time-series data is often messy; sensors go offline. Queries must artificially insert nulls or interpolate missing values so that graphs render continuously and rolling averages compute correctly.
 
-![Time-Series Data Architecture](/images/terms/time_series.png)
-
 ## Managing Time-Series in the Lakehouse
 
 Historically, time-series data required specialized, expensive databases like InfluxDB or TimescaleDB. Today, the Iceberg lakehouse is increasingly used for massive-scale time-series storage and analysis.

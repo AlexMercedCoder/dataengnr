@@ -21,8 +21,6 @@ A dbt model is a SQL SELECT statement that defines a transformation: `SELECT cus
 
 **SQL-first transformation**: Analytics engineers write business logic in SQL, the language most data professionals understand. This democratizes data transformation beyond data engineers who write Python/Spark jobs, enabling analysts with SQL proficiency to contribute to the transformation layer.
 
-![Analytics Engineering Workflow](/images/terms/analytics_engineering.png)
-
 ## The dbt + Iceberg + Dremio Stack
 
 Analytics engineering on the Iceberg lakehouse uses dbt with the Dremio or Spark adapter to write transformation models that materialize as Iceberg Gold-layer tables:

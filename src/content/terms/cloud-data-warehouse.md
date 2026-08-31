@@ -19,8 +19,6 @@ The Cloud [Data Warehouse](/terms/data-warehouse) (CDW) reshaped this model by m
 
 **Elastic Scalability**: When query concurrency increases (e.g., 500 business users log in on Monday morning), a CDW can automatically provision additional compute clusters to handle the load and spin them down when the load decreases, ensuring consistent performance without provisioning for peak capacity 24/7.
 
-![Cloud Data Warehouse Architecture](/images/terms/cloud_data_warehouse.png)
-
 ## The CDW vs. The Open Lakehouse
 
 Cloud Data Warehouses provide exceptional operational simplicity and query performance. However, they rely on proprietary data formats and closed ecosystems. Once data is ingested into a CDW's internal storage, it can only be queried by that specific vendor's compute engine.

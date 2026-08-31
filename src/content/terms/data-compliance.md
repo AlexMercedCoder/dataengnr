@@ -19,8 +19,6 @@ Data compliance is the discipline of ensuring that an organization's data collec
 
 **Purpose Limitation and Consent**: Data collected for one purpose (e.g., fulfilling an e-commerce order) cannot legally be used for another purpose (e.g., training a targeted ad algorithm) without explicit user consent. Data catalogs and governance tools must track the "consent status" of records and dynamically filter data out of specific analytical pipelines if the consent isn't present.
 
-![Data Compliance Architecture](/images/terms/data_compliance.png)
-
 ## Iceberg's Role in Compliance
 
 [Apache Iceberg](/terms/apache-iceberg) is uniquely positioned to solve the hardest technical challenges of data compliance, specifically the "Right to be Forgotten."

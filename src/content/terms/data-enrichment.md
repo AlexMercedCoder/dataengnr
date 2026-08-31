@@ -21,8 +21,6 @@ Data enrichment is the pipeline process of augmenting this raw, sparse data with
 
 **Derived Metrics**: Calculating historical context at the time of an event. A new order event is enriched by calculating and appending the customer's `lifetime_value_prior_to_order` or `days_since_last_purchase`.
 
-![Data Enrichment Architecture](/images/terms/data_enrichment.png)
-
 ## Enrichment in the Pipeline Architecture
 
 Enrichment typically occurs during the transition from the Bronze (raw) layer to the Silver (conformed) layer in a [Medallion architecture](/terms/medallion-architecture), or occasionally in the Gold (business) layer for highly specific use cases.

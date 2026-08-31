@@ -31,8 +31,6 @@ When a customer moves from New York to Austin, the customer dimension table cont
 
 Point-in-time correct analysis joins fact rows to the dimension version valid at the time of the fact event: `JOIN customer_dim c ON f.customer_key = c.customer_key WHERE f.transaction_date BETWEEN c.start_date AND c.end_date`.
 
-![SCD Types Architecture](/images/terms/scd_types.png)
-
 ## SCD Type 3: Add New Column
 
 SCD Type 3 adds new columns to the dimension row to retain a limited history of attribute changes, typically the previous value and current value. A customer dimension with Type 3 for city has columns: `current_city = 'Austin'`, `previous_city = 'New York'`, `city_change_date = '2024-06-15'`.

@@ -23,8 +23,6 @@ Profiling a new data source before building a pipeline converts implicit assumpt
 
 **Pattern profiling**: For string columns, analyze the distribution of string formats using regular expressions. A phone number column with multiple format patterns (with dashes, without dashes, with country code, without) requires normalization before joining with another table's phone number column.
 
-![Data Profiling Architecture](/images/terms/data_profiling.png)
-
 ## Data Profiling Tools in the Lakehouse
 
 Several tools support automated data profiling against Iceberg tables:

@@ -25,8 +25,6 @@ Achieving true exactly-once processing requires tight coordination across the en
 
 When a crash occurs, Flink restarts, loads the last successful checkpoint from S3, asks Kafka to resume from that saved offset, and discards the uncommitted transaction at the sink. It then re-processes the data. Because the sink uses two-phase commits, the duplicate output generated during the retry is written into a new transaction, and the final state of the Iceberg table perfectly reflects processing every event exactly once.
 
-![Exactly-Once Processing](/images/terms/exactly_once.png)
-
 ## The Cost of Exactly-Once
 
 Exactly-once processing provides peace of mind, but it comes with a performance penalty. The overhead of constantly taking distributed checkpoints and managing two-phase commits across multiple systems introduces latency and reduces overall throughput. 

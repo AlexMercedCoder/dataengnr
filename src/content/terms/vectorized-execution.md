@@ -21,8 +21,6 @@ The performance advantage comes from multiple sources: SIMD parallelism (multipl
 
 [Apache Arrow](/terms/apache-arrow)'s columnar in-memory format is designed specifically for vectorized execution. Arrow stores each column as a contiguous buffer of typed values (int32 values in a contiguous int32 array), aligned for SIMD access. Query engines that operate on Arrow memory ([Dremio](/terms/dremio), DataFusion, [Polars](/terms/polars), [DuckDB](/terms/duckdb)) can apply vectorized SIMD operations directly to Arrow buffers without data copying or format conversion.
 
-![Vectorized Execution Architecture](/images/terms/vectorized_execution.png)
-
 ## Vectorized Execution in Dremio
 
 Dremio's execution engine is built around vectorized execution on Apache Arrow memory. When Dremio executes a query against an Iceberg table, the Parquet reader deserializes column data directly into Arrow buffers (without intermediate row-oriented conversion), and all downstream operators (filters, projections, aggregations, joins) operate on these Arrow buffers using vectorized SIMD operations.

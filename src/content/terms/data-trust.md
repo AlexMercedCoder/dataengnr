@@ -23,8 +23,6 @@ Data trust is not a technology; it is a cultural outcome supported by four techn
 
 **3. Clear Ownership**: Every data product (table, dashboard, metric) must have a designated human owner. If the "Customer Churn" table looks suspicious, the [data catalog](/terms/data-catalog) must clearly list who is responsible for that table so the consumer knows who to contact for clarification or bug reporting. "Orphaned" data inherently lacks trust.
 
-![Data Trust Architecture](/images/terms/data_trust.png)
-
 ## Designing for Trust in the Lakehouse
 
 In the modern lakehouse architecture, trust is engineered into the system through the [Write-Audit-Publish (WAP)](/terms/write-audit-publish) pattern. 

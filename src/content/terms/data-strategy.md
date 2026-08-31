@@ -25,8 +25,6 @@ A mature data strategy encompasses four interconnected pillars:
 
 **4. Data Culture and Literacy (The 'People')**: The hardest pillar to execute. A strategy must outline how the organization will train its employees to actually use the data. This involves shifting from "gut-feel" decision-making to data-backed decisions, encouraging self-service analytics ([Data Democratization](/terms/data-democratization)), and building trust in the platform.
 
-![Data Strategy](/images/terms/data_strategy.png)
-
 ## Defensive vs. Offensive Strategy
 
 Organizations must balance two competing strategic postures:

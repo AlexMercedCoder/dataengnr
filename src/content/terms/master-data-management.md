@@ -21,8 +21,6 @@ Building a Golden Record involves several technical and procedural steps within 
 
 **3. Survivorship (Merging)**: Once multiple records are identified as the same entity, the system must decide which attributes "survive" to populate the Golden Record. Survivorship rules define the precedence of systems: the billing system's address might be trusted over the CRM's address, while the CRM's phone number might be trusted over the billing system's phone number.
 
-![Master Data Management Architecture](/images/terms/master_data_management.png)
-
 ## MDM in the Lakehouse Architecture
 
 Historically, MDM was handled by expensive, monolithic, proprietary MDM software suites. In the modern data stack, MDM logic is increasingly moving into the data pipeline and the lakehouse itself.

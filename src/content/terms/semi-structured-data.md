@@ -21,8 +21,6 @@ Traditional data warehouses require a rigid schema (defined columns with specifi
 
 Furthermore, querying deeply nested JSON arrays using standard SQL was notoriously difficult and computationally expensive, often requiring proprietary, non-standard functions (`JSON_EXTRACT_PATH`) that performed full table scans and parsed the JSON string at query time.
 
-![Semi-Structured Data Architecture](/images/terms/semi_structured.png)
-
 ## Analyzing JSON in the Lakehouse
 
 The modern [data lakehouse](/terms/data-lakehouse), powered by [Apache Iceberg](/terms/apache-iceberg), handles semi-structured data fundamentally differently, treating it as a first-class citizen rather than an annoying string to be parsed.

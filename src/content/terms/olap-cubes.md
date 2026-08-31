@@ -23,8 +23,6 @@ OLAP cubes delivered exceptional performance but imposed significant rigidity:
 
 **High maintenance burden**: Cube refresh (re-computing aggregations from updated fact data) is computationally expensive and must be carefully scheduled. A cube that takes 4 hours to refresh from scratch cannot be refreshed more frequently than every 4 hours, limiting data freshness.
 
-![OLAP Cube Architecture](/images/terms/olap_cubes.png)
-
 ## Modern Equivalents in the Lakehouse
 
 The modern lakehouse achieves OLAP cube performance benefits without cube rigidity through two mechanisms:

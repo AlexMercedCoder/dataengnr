@@ -29,8 +29,6 @@ Structured Streaming's most powerful capability is stateful stream processing: m
 
 **Watermarking**: Late-arriving events (events that arrive after their event timestamp's window has already been processed) are handled through Structured Streaming's watermark mechanism. A watermark specifies the maximum expected late arrival delay; events arriving later than the watermark are dropped, bounding the state store's size.
 
-![Spark Structured Streaming Architecture](/images/terms/spark_structured_streaming.png)
-
 ## Structured Streaming to [Apache Iceberg](/terms/apache-iceberg)
 
 Apache Spark's Iceberg integration provides native Structured Streaming sink support. A Spark Structured Streaming job writing to an Iceberg table creates a new Iceberg snapshot for each micro-batch, providing exactly-once semantics through Iceberg's ACID commit mechanism. If a micro-batch fails and is retried, Iceberg's [optimistic concurrency control](/terms/optimistic-concurrency-control) ensures that the retry's commit succeeds only if the previous attempt's partial commit (if any) is rolled back.

@@ -34,8 +34,6 @@ Reading a snapshot via tag: `SELECT * FROM catalog.db.sales_data FOR VERSION AS 
 
 Tags can be configured with a retention policy independent of the table's default snapshot retention. An audit tag that must be retained for 7 years (for regulatory compliance) can be given a `RETAIN 2555 DAYS` retention policy, ensuring that the tagged snapshot and its data files are not cleaned up by the regular snapshot expiration process even after the default retention window has elapsed.
 
-![Iceberg Tags Architecture](/images/terms/iceberg_tags.png)
-
 ## Use Cases for Iceberg Tags
 
 **Quarterly close snapshots**: At the close of each fiscal quarter, a tag is created on financial [fact tables](/terms/fact-tables): `end_of_q1_2024`, `end_of_q2_2024`. Finance teams can always query the exact data state that was used for quarterly reporting, even after many subsequent data loads have added more records. This supports the auditability requirement that reported numbers can be reproduced exactly.

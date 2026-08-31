@@ -21,8 +21,6 @@ The [data lakehouse](/terms/data-lakehouse) architecture resolves this split by 
 
 **Compute Layer**: Separate compute engines connect to the catalog and storage for different workload types. [Apache Spark](/terms/apache-spark) and [Apache Flink](/terms/apache-flink) handle batch and streaming data ingestion and transformation. [Dremio](/terms/dremio) provides governed SQL analytics for BI tools and AI agents through its [Semantic Layer](/terms/semantic-layer), Data Reflections, and [Arrow Flight](/terms/arrow-flight) interface. [DuckDB](/terms/duckdb) and [Polars](/terms/polars) serve local analytics and data science exploration. The ability to use best-of-breed engines for each workload type, all operating against the same Iceberg tables in shared storage, is the lakehouse's defining architectural advantage.
 
-![Lakehouse Architecture Layers](/images/terms/lakehouse_layers.png)
-
 ## The Lakehouse vs. Traditional Data Warehouse
 
 The data lakehouse outperforms the traditional warehouse model on several dimensions: cost (object storage pricing vs. proprietary warehouse storage), openness (Parquet/Iceberg can be read by any compatible engine without export), ML integration (Spark and Python tools read Iceberg directly for training, no export required), and multi-engine flexibility (each workload uses the most appropriate engine).

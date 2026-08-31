@@ -21,8 +21,6 @@ Apache Superset is the open-source alternative. Created at Airbnb in 2015 and la
 
 **Engine Agnostic**: Superset does not have its own storage or compute engine; it relies entirely on the underlying data platform. It connects to almost any SQL-speaking database through SQLAlchemy.
 
-![Apache Superset Architecture](/images/terms/apache_superset.png)
-
 ## Superset and [Dremio](/terms/dremio): The Open Lakehouse BI Stack
 
 Superset is the natural BI companion for the open [data lakehouse](/terms/data-lakehouse). When paired with Dremio, the architecture provides a completely open-source-aligned, infinitely scalable analytical stack.

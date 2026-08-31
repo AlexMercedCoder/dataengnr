@@ -23,8 +23,6 @@ Data architecture has evolved through distinct generational paradigms to address
 
 **3. The [Data Lakehouse](/terms/data-lakehouse) Era (2020s-Present)**: The converged architecture. Using open table formats like [Apache Iceberg](/terms/apache-iceberg), the lakehouse brings the transactional reliability, schema enforcement, and performance optimizations of the data warehouse directly to the cheap, scalable object storage of the data lake.
 
-![Data Architecture Paradigms](/images/terms/data_architecture.png)
-
 ## Core Components of Modern Architecture
 
 A modern lakehouse architecture consists of several distinct architectural layers:

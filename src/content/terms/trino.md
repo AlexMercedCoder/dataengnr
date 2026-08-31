@@ -19,8 +19,6 @@ Trino's execution is entirely in-memory: data is not written to disk during quer
 
 For Iceberg queries, Trino's Iceberg connector performs aggressive optimization: pushing predicate filters to the manifest scan level (skipping manifests that cannot contain matching rows), applying column statistics from Parquet row group statistics, and parallelizing data file reads across all available worker nodes. A Trino query against a terabyte Iceberg table typically completes in seconds to minutes on a properly sized cluster.
 
-![Trino Architecture](/images/terms/trino_architecture.png)
-
 ## Trino vs. [Dremio](/terms/dremio) and Spark
 
 Trino, Dremio, and Spark occupy different niches in the lakehouse query engine ecosystem.

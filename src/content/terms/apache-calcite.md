@@ -25,8 +25,6 @@ Apache Calcite is used by an impressive list of systems as their query planning 
 
 **Pluggable Rules**: The CBO's rule-based optimization is extensible: data systems add custom rules that match patterns in the relational algebra tree and propose transformations. A custom rule for Iceberg might match a TableScan + Filter pattern and propose a transformed plan that adds an IcebergScan operator with partition pruning applied at the metadata level.
 
-![Apache Calcite Architecture](/images/terms/calcite_architecture.png)
-
 ## Calcite in Flink and [Dremio](/terms/dremio)
 
 Apache Flink's Table API and SQL interface are built on top of Apache Calcite. Flink SQL queries go through Calcite's parser, validator, and optimizer before being translated to Flink's physical execution operators. Calcite's optimizer applies a combination of rule-based optimization (rule sets for filter pushdown, join reordering) and cost-based optimization (cardinality estimation for join ordering decisions).

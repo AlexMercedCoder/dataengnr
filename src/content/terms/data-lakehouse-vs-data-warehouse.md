@@ -27,8 +27,6 @@ The lakehouse model's strengths: storage cost at object storage pricing (typical
 
 The lakehouse model's limitations: higher operational complexity (more components to manage and integrate), requires careful architecture to achieve warehouse-like governance and query performance, and requires investment in the technical expertise to operate the ecosystem.
 
-![Data Lakehouse vs Data Warehouse](/images/terms/lakehouse_vs_warehouse.png)
-
 ## When to Choose Each
 
 **Choose a data warehouse** when: the team has limited data engineering expertise, operational simplicity is the top priority, data volumes are moderate (under ~10TB), all workloads are SQL analytics (no significant ML or streaming requirements), and cost predictability matters more than cost optimization.

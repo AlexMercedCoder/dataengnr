@@ -21,8 +21,6 @@ Kafka Connect operates using two types of connectors:
 
 **Sink Connectors**: Read data from a Kafka topic and push it to an external system. Examples include the Elasticsearch Sink Connector (streaming logs into an ELK stack for search), the JDBC Sink Connector (writing streaming aggregations into a relational database), or the Amazon S3 / [Apache Iceberg](/terms/apache-iceberg) Sink Connectors.
 
-![Apache Kafka Connect Architecture](/images/terms/kafka_connect.png)
-
 ## Kafka Connect in the Lakehouse Architecture
 
 In a real-time [streaming lakehouse](/terms/streaming-lakehouse) architecture, Kafka Connect provides the critical "first mile" and "last mile" of the pipeline without requiring custom stream-processing code.

@@ -21,8 +21,6 @@ Data privacy engineering is the practice of designing pipelines and architecture
 
 **K-Anonymity and Differential Privacy**: Advanced techniques used when releasing datasets. K-Anonymity ensures that any individual in a dataset cannot be distinguished from at least `k-1` other individuals, often achieved by generalizing attributes (e.g., replacing exact age `34` with an age range `30-40`). Differential privacy injects mathematical noise into query results so that the presence or absence of any single individual does not significantly affect the aggregate output.
 
-![Data Privacy Architecture](/images/terms/data_privacy.png)
-
 ## Privacy in the Lakehouse Architecture
 
 Implementing privacy in a lakehouse architecture typically follows a "defense in depth" approach across the Medallion layers:

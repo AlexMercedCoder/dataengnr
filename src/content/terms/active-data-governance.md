@@ -19,8 +19,6 @@ Active data governance shifts governance from human-enforced policies to system-
 
 **Policy-as-Code**: Governance rules are version-controlled in Git, just like software code. Changes to access control policies require pull requests and approvals, providing an immutable audit trail of who granted access to what data, when, and why.
 
-![Active Data Governance Architecture](/images/terms/active_governance.png)
-
 ## Active Governance in the Lakehouse
 
 In a lakehouse architecture, active governance is typically enforced at two levels:

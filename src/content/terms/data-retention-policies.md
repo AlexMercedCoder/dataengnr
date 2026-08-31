@@ -31,8 +31,6 @@ CALL catalog.system.expire_snapshots(
 
 This removes all snapshots older than January 1, 2023, retaining at least the 10 most recent snapshots regardless of age.
 
-![Data Retention Architecture](/images/terms/data_retention.png)
-
 ## Row-Level Retention
 
 Snapshot expiration handles table-level retention (removing entire snapshots of the table after a time threshold). For row-level retention (removing specific rows that are older than a threshold while retaining the rest of the table), a different approach is needed.

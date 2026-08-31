@@ -21,8 +21,6 @@ The false positive rate (the probability that a value is reported as "possibly p
 
 The memory cost of a Bloom filter is much smaller than storing the actual values. A set of 10 million order IDs (each 20 bytes average) requires 200MB to store exactly. A Bloom filter for the same set with a 1% false positive rate requires only 12MB (10 bits per element).
 
-![Bloom Filter Architecture](/images/terms/bloom_filters.png)
-
 ## Bloom Filters in [Apache Iceberg](/terms/apache-iceberg) and Parquet
 
 [Apache Parquet](/terms/apache-parquet) supports Bloom filters at the column level within each row group. Bloom filters are written for specified columns when data files are created, stored in the Parquet file's footer alongside the column statistics. Query engines ([Dremio](/terms/dremio), Spark, [Trino](/terms/trino)) check the Bloom filter for each row group before reading that row group's data, skipping row groups where the filter rules out the query value.

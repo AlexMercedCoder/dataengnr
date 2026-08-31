@@ -31,8 +31,6 @@ The data service interface defines how consumers access the data product. Common
 
 **Streaming interface**: Kafka topics serve as the streaming data product interface, providing event-by-event access to data products for stream processing consumers.
 
-![Data as a Service Architecture](/images/terms/daas_architecture.png)
-
 ## DaaS and [Data Mesh](/terms/data-mesh-architecture)
 
 Data as a Service is a foundational enabler of the [Data Mesh](/terms/data-mesh) architectural pattern. Data Mesh organizes data ownership around business domains (rather than centralized data engineering teams), with each domain owning and serving its own data products. The domain teams apply DaaS principles to their data assets: defining interfaces, SLAs, and governance for data products produced from their domain's operational systems.

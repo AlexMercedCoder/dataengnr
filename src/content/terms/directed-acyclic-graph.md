@@ -19,8 +19,6 @@ This is achieved using a Directed Acyclic Graph (DAG). A DAG is a conceptual rep
 
 **Edges (Dependencies)**: The lines connecting the nodes define the dependencies. If an edge points from Node A to Node B, it means Node B is "downstream" of Node A. Node B cannot start executing until Node A has successfully completed. 
 
-![DAG Architecture](/images/terms/dag_architecture.png)
-
 ## DAGs in Practice: [Orchestration](/terms/orchestration)
 
 The concept of the DAG is the foundational architecture for modern data orchestration tools, most notably [Apache Airflow](/terms/apache-airflow), Prefect, and Dagster.

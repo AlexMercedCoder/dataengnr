@@ -23,8 +23,6 @@ If a query says `SELECT * FROM customers WHERE country = 'Canada' AND loyalty_st
 
 To know this, the database maintains metadata statistics for every table and column: total row counts, minimum/maximum values, null counts, and Data Distribution Histograms (showing that 80% of customers are in the US, and only 5% in Canada).
 
-![Cost-Based Optimizer Architecture](/images/terms/cbo.png)
-
 ## The Lakehouse CBO Challenge
 
 In a traditional, monolithic [data warehouse](/terms/data-warehouse) (like Oracle or SQL Server), the database controls the storage layer, so it constantly updates its internal statistics every time data is inserted. The CBO always has fresh data.

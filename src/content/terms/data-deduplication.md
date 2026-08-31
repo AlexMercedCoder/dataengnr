@@ -33,8 +33,6 @@ SELECT * FROM RankedEvents WHERE rn = 1;
 
 **Streaming State Management**: In streaming pipelines (e.g., [Apache Flink](/terms/apache-flink)), deduplication is handled by maintaining state. As events arrive, Flink checks its state store (RocksDB) to see if the event ID has been processed within the deduplication window. If it has, the event is dropped. If not, the event is processed and its ID is added to the state. This requires memory proportional to the number of unique events in the time window.
 
-![Data Deduplication Architecture](/images/terms/data_deduplication.png)
-
 ## Deduplication in the Bronze/Silver/Gold Architecture
 
 The [Medallion architecture](/terms/medallion-architecture) provides a clear framework for where deduplication should occur. 

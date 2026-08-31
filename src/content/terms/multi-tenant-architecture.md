@@ -21,8 +21,6 @@ Because all the data lives in the exact same database cluster, isolation must be
 
 **[Row-Level Security](/terms/row-level-security) (RLS)** is the primary mechanism for multi-tenant data isolation. Every row in the massive shared database table is tagged with a `tenant_id`. When Customer A's application queries the database, the query engine dynamically injects a hidden `WHERE tenant_id = 'A'` filter into the SQL statement before it executes. This guarantees that Customer A can only ever retrieve rows that belong to them, even though they are querying the same physical table as everyone else.
 
-![Multi-Tenant Architecture](/images/terms/multi_tenant.png)
-
 ## Multi-Tenancy in the Lakehouse
 
 When building a multi-tenant data platform using an Iceberg lakehouse (for example, a centralized data team serving the HR, Finance, and Marketing departments), data engineers must manage compute isolation as well as data isolation.
