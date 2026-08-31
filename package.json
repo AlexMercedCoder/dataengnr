@@ -12,9 +12,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/markdown-remark": "^7.2.4",
+    "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/vite": "^4.3.0",
-    "astro": "^6.3.3",
+    "astro": "^7.2.9",
     "cheerio": "^1.2.0",
     "fast-xml-parser": "^5.8.0",
     "tailwindcss": "^4.3.0"
