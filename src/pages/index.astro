@@ -4,6 +4,7 @@ import Card from '../components/Card.astro';
 import PillButton from '../components/PillButton.astro';
 import siteData from '../data/siteData.json';
 import { getCollection } from 'astro:content';
+import HomeFilmShowcase from '../components/HomeFilmShowcase.astro';
 
 const SITE = 'https://dataengnr.com';
 const allTerms = await getCollection('terms');
@@ -173,6 +174,11 @@ const { communities = [], events = [] } = siteData;
       <PillButton href="/videos" class="!bg-transparent !text-pure-white border !border-pure-white hover:!bg-pure-white/10">Watch the Explainers</PillButton>
     </div>
   </section>
+
+  <HomeFilmShowcase films={[
+    { title: 'The Iceberg Open Lakehouse', description: 'A visual tour of the open data architecture beneath modern analytics and AI.', src: 'https://opendatalakehouse.com/the-iceberg-open-lakehouse.mp4', poster: 'https://opendatalakehouse.com/the-iceberg-open-lakehouse-poster.jpg', runtime: '7:50' },
+    { title: 'Open the Stack', description: 'A manifesto for composable agents, open standards, model choice, and portable execution.', src: 'https://openagenticplatform.com/open-the-stack.mp4', poster: 'https://openagenticplatform.com/open-the-stack-poster.jpg', runtime: '7:37' },
+  ]} />
 
   <section id="start-here">
     <div class="flex items-center justify-between mb-8 border-b border-ash-text/20 pb-4">
