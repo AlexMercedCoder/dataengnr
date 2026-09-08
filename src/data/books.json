@@ -3,7 +3,7 @@
   "source": "https://alexmerced.com/entity/books.json",
   "catalog": "https://books.alexmerced.com/",
   "intro": "Longer-form treatments of the terms in the knowledge base: Apache Iceberg, lakehouse architecture, catalogs, semantic layers, and agentic analytics.",
-  "totalInCatalog": 65,
+  "totalInCatalog": 66,
   "count": 27,
   "books": [
     {

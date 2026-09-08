@@ -20,7 +20,7 @@ const UPLOAD_DATE = '2026-08-08T00:00:00+00:00';
 
 const creator = {
   "@type": "Person",
-  "@id": `${SITE}/#person`,
+  "@id": "https://alexmerced.com/#alexmerced",
   "name": "Alex Merced",
 };
 
@@ -41,7 +41,7 @@ const videoSchemas = videos.map((v: any) => ({
   "isFamilyFriendly": true,
   "keywords": v.keywords.join(', '),
   "creator": creator,
-  "publisher": { "@id": `${SITE}/#person` },
+  "publisher": { "@id": "https://alexmerced.com/#alexmerced" },
 }));
 
 const collectionSchema = {

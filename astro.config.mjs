@@ -22,6 +22,7 @@ export default defineConfig({
           item.priority = 0.6;
           item.changefreq = 'weekly';
         }
+        item.lastmod = new Date();
         return item;
       },
     }),
