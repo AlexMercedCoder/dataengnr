@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
+import { practicalExamples } from '../../data/practical-examples';
 
 export async function getStaticPaths() {
   const termsEntries = await getCollection('terms');
@@ -40,6 +41,7 @@ export async function getStaticPaths() {
 
 const { entry, related, prev, next } = Astro.props;
 const { Content } = await render(entry);
+const practical = practicalExamples[entry.id];
 
 const SITE = 'https://dataengnr.com';
 const url = `${SITE}/terms/${entry.id}/`;
@@ -137,6 +139,13 @@ const breadcrumbs = [
         </div>
       )}
     </div>
+
+    {practical && <aside class="mb-10 rounded-md border border-ash-text/20 bg-charcoal-canvas p-6" aria-label="Practical summary">
+      <h2 class="font-ivy text-heading text-pure-white mb-3">When to use this</h2>
+      <p class="text-white-frost">{practical.useCase}</p>
+      <h3 class="font-semibold text-pure-white mt-5 mb-2">Example</h3>
+      <p class="text-white-frost">{practical.example}</p>
+    </aside>}
 
     <div class="prose prose-invert prose-lg max-w-none prose-headings:font-ivy prose-headings:font-medium prose-a:text-golden-gradient hover:prose-a:text-pure-white prose-p:text-porcelain-text">
       <Content />
