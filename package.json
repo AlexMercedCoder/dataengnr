@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build && npx -y pagefind --site dist",
+    "dates": "node scripts/build-git-dates.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },

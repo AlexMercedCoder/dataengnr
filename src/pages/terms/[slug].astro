@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
 import { practicalExamples } from '../../data/practical-examples';
+import { fileDates } from '../../lib/git-dates.mjs';
 
 export async function getStaticPaths() {
   const termsEntries = await getCollection('terms');
@@ -45,9 +46,14 @@ const practical = practicalExamples[entry.id];
 
 const SITE = 'https://dataengnr.com';
 const url = `${SITE}/terms/${entry.id}/`;
-const published = new Date(entry.data.date);
+// datePublished: the frontmatter date, or the file's first commit if absent.
+// dateModified: the last commit that touched the term file (see lib/git-dates).
+const git = fileDates(entry.filePath ?? `src/content/terms/${entry.id}.md`);
+const published = entry.data.date ? new Date(entry.data.date) : new Date(git?.created ?? Date.now());
+const modified = git?.modified ? new Date(git.modified) : published;
 const isoDate = published.toISOString().slice(0, 10);
-const readableDate = published.toLocaleDateString('en-US', {
+const isoModified = (modified > published ? modified : published).toISOString().slice(0, 10);
+const readableDate = new Date(isoModified).toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
@@ -67,7 +73,7 @@ const jsonLd = [
     "inDefinedTermSet": {
       "@type": "DefinedTermSet",
       "@id": `${SITE}/terms/#termset`,
-      "name": "DataEngr.com Data Engineering Knowledge Base",
+      "name": "DataEngnr Data Engineering Knowledge Base",
       "url": `${SITE}/terms/`,
     },
   },
@@ -81,7 +87,7 @@ const jsonLd = [
     "mainEntityOfPage": { "@type": "WebPage", "@id": url },
     "about": { "@id": `${url}#term` },
     "datePublished": isoDate,
-    "dateModified": isoDate,
+    "dateModified": isoModified,
     "inLanguage": "en",
     "keywords": (entry.data.tags ?? []).join(', '),
     "author": { "@id": "https://alexmerced.com/#alexmerced" },
@@ -126,7 +132,7 @@ const breadcrumbs = [
       <p class="text-sm text-ash-text mt-6">
         By <a href="https://whoisalexmerced.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Alex Merced</a>
         <span aria-hidden="true"> &middot; </span>
-        Last updated <time datetime={isoDate}>{readableDate}</time>
+        Last updated <time datetime={isoModified}>{readableDate}</time>
       </p>
 
       {entry.data.tags && (

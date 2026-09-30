@@ -1,0 +1,889 @@
+{
+  "generatedBy": "scripts/build-git-dates.mjs",
+  "files": {
+    "src/components/Card.astro": {
+      "modified": "2026-05-17T14:04:07-04:00",
+      "created": "2026-05-17T14:04:07-04:00"
+    },
+    "src/components/GhostButton.astro": {
+      "modified": "2026-05-17T14:04:07-04:00",
+      "created": "2026-05-17T14:04:07-04:00"
+    },
+    "src/components/GhostLink.astro": {
+      "modified": "2026-05-17T14:04:07-04:00",
+      "created": "2026-05-17T14:04:07-04:00"
+    },
+    "src/components/HomeFilmShowcase.astro": {
+      "modified": "2026-09-03T08:43:46-04:00",
+      "created": "2026-09-03T08:43:46-04:00"
+    },
+    "src/components/PillButton.astro": {
+      "modified": "2026-05-17T14:04:07-04:00",
+      "created": "2026-05-17T14:04:07-04:00"
+    },
+    "src/content.config.ts": {
+      "modified": "2026-05-17T14:04:07-04:00",
+      "created": "2026-05-17T14:04:07-04:00"
+    },
+    "src/content/terms/abac.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T16:42:48-04:00"
+    },
+    "src/content/terms/active-data-governance.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:26:17-04:00"
+    },
+    "src/content/terms/agentic-analytics.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T14:48:17-04:00"
+    },
+    "src/content/terms/analytics-engineering.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:06:47-04:00"
+    },
+    "src/content/terms/apache-airflow.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T16:01:11-04:00"
+    },
+    "src/content/terms/apache-arrow.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:47:21-04:00"
+    },
+    "src/content/terms/apache-avro.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:59:34-04:00"
+    },
+    "src/content/terms/apache-calcite.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:14:09-04:00"
+    },
+    "src/content/terms/apache-flink.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:47:21-04:00"
+    },
+    "src/content/terms/apache-gravitino.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T17:55:45-04:00"
+    },
+    "src/content/terms/apache-hudi.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:21:05-04:00"
+    },
+    "src/content/terms/apache-iceberg.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T14:04:07-04:00"
+    },
+    "src/content/terms/apache-kafka-connect.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:27:01-04:00"
+    },
+    "src/content/terms/apache-kafka.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:47:21-04:00"
+    },
+    "src/content/terms/apache-nessie.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T18:31:50-04:00"
+    },
+    "src/content/terms/apache-orc.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T15:59:34-04:00"
+    },
+    "src/content/terms/apache-parquet.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:16:48-04:00"
+    },
+    "src/content/terms/apache-pinot.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T20:08:47-04:00"
+    },
+    "src/content/terms/apache-polaris.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:42:29-04:00"
+    },
+    "src/content/terms/apache-spark.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:47:21-04:00"
+    },
+    "src/content/terms/apache-superset.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:27:01-04:00"
+    },
+    "src/content/terms/api-gateway.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T20:06:15-04:00"
+    },
+    "src/content/terms/arrow-flight.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:59:34-04:00"
+    },
+    "src/content/terms/at-least-once-delivery.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:35:40-04:00"
+    },
+    "src/content/terms/aws-glue-data-catalog.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:59:34-04:00"
+    },
+    "src/content/terms/backfilling.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:36:23-04:00"
+    },
+    "src/content/terms/bias-variance-tradeoff.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T20:02:58-04:00"
+    },
+    "src/content/terms/bitemporal-data.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:34:58-04:00"
+    },
+    "src/content/terms/bloom-filters.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:04:55-04:00"
+    },
+    "src/content/terms/change-data-capture.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:16:48-04:00"
+    },
+    "src/content/terms/cloud-data-warehouse.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:26:17-04:00"
+    },
+    "src/content/terms/column-masking.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T17:57:13-04:00"
+    },
+    "src/content/terms/columnar-vs-row-storage.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:59:34-04:00"
+    },
+    "src/content/terms/compaction.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T16:45:51-04:00"
+    },
+    "src/content/terms/continuous-processing.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:36:23-04:00"
+    },
+    "src/content/terms/control-plane-data-plane.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:57:55-04:00"
+    },
+    "src/content/terms/copy-on-write.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:56:34-04:00"
+    },
+    "src/content/terms/cost-based-optimizer.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:56:09-04:00"
+    },
+    "src/content/terms/cqrs.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T20:07:45-04:00"
+    },
+    "src/content/terms/credential-vending.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T16:04:33-04:00"
+    },
+    "src/content/terms/data-annotation.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T20:04:37-04:00"
+    },
+    "src/content/terms/data-architecture.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:29:14-04:00"
+    },
+    "src/content/terms/data-archiving.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T20:01:12-04:00"
+    },
+    "src/content/terms/data-as-a-service.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T18:37:39-04:00"
+    },
+    "src/content/terms/data-catalog.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T16:02:48-04:00"
+    },
+    "src/content/terms/data-classification.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:37:07-04:00"
+    },
+    "src/content/terms/data-compliance.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:28:30-04:00"
+    },
+    "src/content/terms/data-contracts.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T17:55:45-04:00"
+    },
+    "src/content/terms/data-deduplication.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:15:01-04:00"
+    },
+    "src/content/terms/data-democratization.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:06:47-04:00"
+    },
+    "src/content/terms/data-discovery.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:15:42-04:00"
+    },
+    "src/content/terms/data-enrichment.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:15:01-04:00"
+    },
+    "src/content/terms/data-fabric.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:04:43-04:00"
+    },
+    "src/content/terms/data-governance.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:42:29-04:00"
+    },
+    "src/content/terms/data-gravity.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:57:55-04:00"
+    },
+    "src/content/terms/data-integration.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:16:20-04:00"
+    },
+    "src/content/terms/data-lake.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T14:36:29-04:00"
+    },
+    "src/content/terms/data-lakehouse-architecture.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T18:38:54-04:00"
+    },
+    "src/content/terms/data-lakehouse-vs-data-warehouse.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T18:37:39-04:00"
+    },
+    "src/content/terms/data-lakehouse.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T14:26:12-04:00"
+    },
+    "src/content/terms/data-lineage.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:44:07-04:00"
+    },
+    "src/content/terms/data-mesh-architecture.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:04:55-04:00"
+    },
+    "src/content/terms/data-mesh.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T14:53:27-04:00"
+    },
+    "src/content/terms/data-migration.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:37:07-04:00"
+    },
+    "src/content/terms/data-modeling.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:12:42-04:00"
+    },
+    "src/content/terms/data-observability.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T16:04:33-04:00"
+    },
+    "src/content/terms/data-pipeline-testing.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T18:31:50-04:00"
+    },
+    "src/content/terms/data-privacy.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:28:30-04:00"
+    },
+    "src/content/terms/data-products.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T16:47:35-04:00"
+    },
+    "src/content/terms/data-profiling.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T18:35:41-04:00"
+    },
+    "src/content/terms/data-quality.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:50:29-04:00"
+    },
+    "src/content/terms/data-reliability.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:16:20-04:00"
+    },
+    "src/content/terms/data-retention-policies.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T18:33:45-04:00"
+    },
+    "src/content/terms/data-serialization.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:38:05-04:00"
+    },
+    "src/content/terms/data-sharing.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T18:00:15-04:00"
+    },
+    "src/content/terms/data-silos.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:15:42-04:00"
+    },
+    "src/content/terms/data-skewness.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T16:50:36-04:00"
+    },
+    "src/content/terms/data-skipping.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:14:09-04:00"
+    },
+    "src/content/terms/data-sovereignty.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T18:01:47-04:00"
+    },
+    "src/content/terms/data-strategy.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:29:14-04:00"
+    },
+    "src/content/terms/data-topology.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:57:55-04:00"
+    },
+    "src/content/terms/data-trust.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:27:01-04:00"
+    },
+    "src/content/terms/data-vault-modeling.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:35:43-04:00"
+    },
+    "src/content/terms/data-virtualization.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:15:01-04:00"
+    },
+    "src/content/terms/data-warehouse.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T14:27:48-04:00"
+    },
+    "src/content/terms/dataops.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:06:47-04:00"
+    },
+    "src/content/terms/dbt.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T16:01:11-04:00"
+    },
+    "src/content/terms/delta-lake.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:21:05-04:00"
+    },
+    "src/content/terms/descriptive-analytics.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:27:44-04:00"
+    },
+    "src/content/terms/diagnostic-analytics.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:27:44-04:00"
+    },
+    "src/content/terms/dimension-tables.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:34:13-04:00"
+    },
+    "src/content/terms/dimensional-modeling.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:35:43-04:00"
+    },
+    "src/content/terms/directed-acyclic-graph.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:35:40-04:00"
+    },
+    "src/content/terms/dremio.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:49:09-04:00"
+    },
+    "src/content/terms/duckdb.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:49:09-04:00"
+    },
+    "src/content/terms/elt.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:12:42-04:00"
+    },
+    "src/content/terms/embedded-analytics.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:34:58-04:00"
+    },
+    "src/content/terms/etl-offloading.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:15:42-04:00"
+    },
+    "src/content/terms/etl.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:08:27-04:00"
+    },
+    "src/content/terms/event-sourcing.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T18:15:22-04:00"
+    },
+    "src/content/terms/exactly-once-processing.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:35:40-04:00"
+    },
+    "src/content/terms/fact-tables.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:34:13-04:00"
+    },
+    "src/content/terms/feature-engineering.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T20:02:58-04:00"
+    },
+    "src/content/terms/feature-store.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T18:13:25-04:00"
+    },
+    "src/content/terms/finops.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T20:06:15-04:00"
+    },
+    "src/content/terms/generative-ai.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T20:04:37-04:00"
+    },
+    "src/content/terms/graph-data.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:29:14-04:00"
+    },
+    "src/content/terms/hardware-acceleration.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T20:01:12-04:00"
+    },
+    "src/content/terms/headless-bi.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:34:58-04:00"
+    },
+    "src/content/terms/hidden-partitioning.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:39:02-04:00"
+    },
+    "src/content/terms/hive-metastore.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:56:34-04:00"
+    },
+    "src/content/terms/hyperparameter-tuning.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T20:02:58-04:00"
+    },
+    "src/content/terms/iceberg-branching.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T18:16:53-04:00"
+    },
+    "src/content/terms/iceberg-changelogs.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:15:01-04:00"
+    },
+    "src/content/terms/iceberg-rest-catalog.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T16:47:35-04:00"
+    },
+    "src/content/terms/iceberg-table-tags.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T18:37:39-04:00"
+    },
+    "src/content/terms/idempotency.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:35:40-04:00"
+    },
+    "src/content/terms/in-memory-processing.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T20:01:12-04:00"
+    },
+    "src/content/terms/incremental-processing.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T17:58:43-04:00"
+    },
+    "src/content/terms/jsonl.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T17:58:43-04:00"
+    },
+    "src/content/terms/kappa-architecture.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:08:27-04:00"
+    },
+    "src/content/terms/lakehouse-concurrency.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:37:07-04:00"
+    },
+    "src/content/terms/lambda-architecture.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:04:43-04:00"
+    },
+    "src/content/terms/large-language-models.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T20:04:37-04:00"
+    },
+    "src/content/terms/late-arriving-data.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:54:24-04:00"
+    },
+    "src/content/terms/liquid-clustering.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T18:31:50-04:00"
+    },
+    "src/content/terms/master-data-management.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:15:42-04:00"
+    },
+    "src/content/terms/materialized-views.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T18:15:22-04:00"
+    },
+    "src/content/terms/medallion-architecture.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T14:53:27-04:00"
+    },
+    "src/content/terms/merge-on-read.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:56:34-04:00"
+    },
+    "src/content/terms/metric-store.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:34:13-04:00"
+    },
+    "src/content/terms/micro-batching.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:36:23-04:00"
+    },
+    "src/content/terms/microservices.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T20:06:15-04:00"
+    },
+    "src/content/terms/model-drift.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T20:02:58-04:00"
+    },
+    "src/content/terms/multi-cloud-architecture.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:26:17-04:00"
+    },
+    "src/content/terms/multi-table-transactions.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T18:01:47-04:00"
+    },
+    "src/content/terms/multi-tenant-architecture.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:56:09-04:00"
+    },
+    "src/content/terms/nosql-databases.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:59:33-04:00"
+    },
+    "src/content/terms/object-storage.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T16:45:51-04:00"
+    },
+    "src/content/terms/olap-cubes.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T18:38:54-04:00"
+    },
+    "src/content/terms/open-table-formats.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T18:33:45-04:00"
+    },
+    "src/content/terms/operational-analytics.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:34:58-04:00"
+    },
+    "src/content/terms/optimistic-concurrency-control.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T15:42:29-04:00"
+    },
+    "src/content/terms/orchestration.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T18:37:39-04:00"
+    },
+    "src/content/terms/parquet-bloom-filters.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T16:49:03-04:00"
+    },
+    "src/content/terms/partition-evolution.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T16:42:48-04:00"
+    },
+    "src/content/terms/polars.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T17:57:13-04:00"
+    },
+    "src/content/terms/predicate-pushdown.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T16:45:51-04:00"
+    },
+    "src/content/terms/predictive-analytics.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:27:44-04:00"
+    },
+    "src/content/terms/prescriptive-analytics.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:27:44-04:00"
+    },
+    "src/content/terms/project-nessie.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:42:29-04:00"
+    },
+    "src/content/terms/prompt-engineering.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T20:04:37-04:00"
+    },
+    "src/content/terms/property-graphs.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:59:33-04:00"
+    },
+    "src/content/terms/pull-based-ingestion.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:54:24-04:00"
+    },
+    "src/content/terms/push-based-ingestion.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:54:24-04:00"
+    },
+    "src/content/terms/pyiceberg.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T16:50:36-04:00"
+    },
+    "src/content/terms/query-caching.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:52:42-04:00"
+    },
+    "src/content/terms/query-federation.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T16:49:03-04:00"
+    },
+    "src/content/terms/query-optimization.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T18:35:41-04:00"
+    },
+    "src/content/terms/query-planner.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:56:09-04:00"
+    },
+    "src/content/terms/rag-architecture.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T20:06:15-04:00"
+    },
+    "src/content/terms/real-time-analytics.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:06:47-04:00"
+    },
+    "src/content/terms/relational-databases.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:59:33-04:00"
+    },
+    "src/content/terms/result-set-caching.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:52:42-04:00"
+    },
+    "src/content/terms/retrieval-augmented-generation.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:27:01-04:00"
+    },
+    "src/content/terms/reverse-etl.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T18:13:25-04:00"
+    },
+    "src/content/terms/role-based-access-control.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:44:07-04:00"
+    },
+    "src/content/terms/rollup-tables.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:56:09-04:00"
+    },
+    "src/content/terms/row-level-security.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T18:00:15-04:00"
+    },
+    "src/content/terms/rust-in-data-engineering.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T18:38:54-04:00"
+    },
+    "src/content/terms/schema-evolution.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:39:02-04:00"
+    },
+    "src/content/terms/schema-on-read.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T20:08:08-04:00"
+    },
+    "src/content/terms/schema-registry.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T18:13:25-04:00"
+    },
+    "src/content/terms/semantic-layer.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T14:48:17-04:00"
+    },
+    "src/content/terms/semantic-search.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:52:42-04:00"
+    },
+    "src/content/terms/semi-structured-data.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:29:14-04:00"
+    },
+    "src/content/terms/serverless-architecture.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:59:33-04:00"
+    },
+    "src/content/terms/slowly-changing-dimensions.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T15:35:43-04:00"
+    },
+    "src/content/terms/snapshot-expiration.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T16:45:51-04:00"
+    },
+    "src/content/terms/snowflake-schema.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:34:13-04:00"
+    },
+    "src/content/terms/spark-structured-streaming.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T18:33:45-04:00"
+    },
+    "src/content/terms/star-schema.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T18:13:25-04:00"
+    },
+    "src/content/terms/storage-compute-separation.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:57:55-04:00"
+    },
+    "src/content/terms/streaming-lakehouse.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T17:55:45-04:00"
+    },
+    "src/content/terms/surrogate-keys.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T18:16:53-04:00"
+    },
+    "src/content/terms/table-format-metadata.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:39:02-04:00"
+    },
+    "src/content/terms/time-series-data.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:28:30-04:00"
+    },
+    "src/content/terms/time-to-live.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T20:01:12-04:00"
+    },
+    "src/content/terms/time-travel-queries.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T15:39:02-04:00"
+    },
+    "src/content/terms/trino.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T16:02:48-04:00"
+    },
+    "src/content/terms/unity-catalog.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T16:42:48-04:00"
+    },
+    "src/content/terms/unstructured-data.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:28:30-04:00"
+    },
+    "src/content/terms/vector-databases.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:26:17-04:00"
+    },
+    "src/content/terms/vector-embeddings.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:52:42-04:00"
+    },
+    "src/content/terms/vectorized-execution.md": {
+      "modified": "2026-08-31T11:39:24-04:00",
+      "created": "2026-05-17T19:04:55-04:00"
+    },
+    "src/content/terms/window-functions.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:54:24-04:00"
+    },
+    "src/content/terms/write-amplification.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:36:23-04:00"
+    },
+    "src/content/terms/write-audit-publish.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T17:57:13-04:00"
+    },
+    "src/content/terms/z-ordering.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T16:45:51-04:00"
+    },
+    "src/content/terms/zero-copy-cloning.md": {
+      "modified": "2026-08-08T16:04:08-04:00",
+      "created": "2026-05-17T19:16:20-04:00"
+    },
+    "src/data/books.json": {
+      "modified": "2026-09-26T11:26:44-04:00",
+      "created": "2026-08-29T14:14:00-04:00"
+    },
+    "src/data/practical-examples.ts": {
+      "modified": "2026-09-29T12:52:29-04:00",
+      "created": "2026-09-29T12:52:29-04:00"
+    },
+    "src/data/siteData.json": {
+      "modified": "2026-08-08T16:04:24-04:00",
+      "created": "2026-05-17T14:04:07-04:00"
+    },
+    "src/data/videos.json": {
+      "modified": "2026-08-08T16:04:36-04:00",
+      "created": "2026-08-08T16:04:36-04:00"
+    },
+    "src/layouts/BaseLayout.astro": {
+      "modified": "2026-09-29T20:17:33-04:00",
+      "created": "2026-05-17T14:04:07-04:00"
+    },
+    "src/pages/404.astro": {
+      "modified": "2026-09-29T20:17:33-04:00",
+      "created": "2026-08-08T16:04:24-04:00"
+    },
+    "src/pages/blogroll.astro": {
+      "modified": "2026-08-08T16:04:24-04:00",
+      "created": "2026-05-17T14:04:07-04:00"
+    },
+    "src/pages/books.astro": {
+      "modified": "2026-08-29T14:14:00-04:00",
+      "created": "2026-05-17T14:04:07-04:00"
+    },
+    "src/pages/index.astro": {
+      "modified": "2026-09-29T20:17:33-04:00",
+      "created": "2026-05-17T13:49:17-04:00"
+    },
+    "src/pages/llms.txt.ts": {
+      "modified": "2026-09-29T20:17:33-04:00",
+      "created": "2026-08-08T16:04:24-04:00"
+    },
+    "src/pages/search.astro": {
+      "modified": "2026-09-29T20:17:40-04:00",
+      "created": "2026-05-17T22:15:27-04:00"
+    },
+    "src/pages/terms/[slug].astro": {
+      "modified": "2026-09-29T12:52:29-04:00",
+      "created": "2026-05-17T14:04:07-04:00"
+    },
+    "src/pages/terms/index.astro": {
+      "modified": "2026-09-29T20:17:33-04:00",
+      "created": "2026-05-17T14:04:07-04:00"
+    },
+    "src/pages/videos.astro": {
+      "modified": "2026-09-29T20:17:33-04:00",
+      "created": "2026-08-08T16:04:36-04:00"
+    },
+    "src/styles/global.css": {
+      "modified": "2026-08-16T19:20:32-04:00",
+      "created": "2026-05-17T13:49:17-04:00"
+    }
+  }
+}
