@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import GhostLink from '../components/GhostLink.astro';
+import networkHead from '../../network/network-head.html?raw';
+import network from '../../network/network.json';
 
 interface Crumb {
   name: string;
@@ -18,6 +20,8 @@ interface Props {
   breadcrumbs?: Crumb[];
   /** Set when the page supplies its own full <title> and should not get the site suffix. */
   bareTitle?: boolean;
+  /** Keep the page out of search indexes (utility pages such as /search). */
+  noindex?: boolean;
 }
 
 const SITE = 'https://dataengnr.com';
@@ -30,9 +34,10 @@ const {
   ogType = "website",
   breadcrumbs = [],
   bareTitle = false,
+  noindex = false,
 } = Astro.props;
 
-const fullTitle = bareTitle ? title : `${title} | DataEngr.com`;
+const fullTitle = bareTitle ? title : `${title} | DataEngnr`;
 
 // Search engines truncate around 160 characters. Term descriptions are written
 // to read as a full definition on the page, so trim a copy for the meta tag
@@ -46,36 +51,6 @@ function metaDescription(text: string, max = 158) {
 
 const metaDesc = metaDescription(description);
 
-const person = {
-  "@type": "Person",
-  "@id": "https://alexmerced.com/#alexmerced",
-  "name": "Alex Merced",
-  "jobTitle": "Open Lakehouse & AI Advocate, Author & Technologist",
-  "description":
-    "Alex Merced writes and speaks about open data lakehouses, Apache Iceberg and agentic analytics. He co-authored 'Apache Iceberg: The Definitive Guide' and leads developer relations at Dremio.",
-  "url": "https://whoisalexmerced.com",
-  "sameAs": [
-    "https://branding.alexmerced.com",
-    "https://whoisalexmerced.com",
-    "https://alexmerced.com",
-    "https://alexmerceddata.com",
-    "https://alexmercedcoder.dev",
-    "https://books.alexmerced.com",
-    "https://www.linkedin.com/in/alexmerced",
-    "https://twitter.com/alexmercedcoder",
-    "https://www.youtube.com/@AlexMercedCoder",
-    "https://www.youtube.com/@alexmerceddata",
-  ],
-  "knowsAbout": [
-    "Data engineering",
-    "Apache Iceberg",
-    "Data lakehouse architecture",
-    "Apache Polaris",
-    "Semantic layers",
-    "Agentic analytics",
-  ],
-};
-
 const siteJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -83,7 +58,7 @@ const siteJsonLd = {
       "@type": "WebSite",
       "@id": `${SITE}/#website`,
       "url": `${SITE}/`,
-      "name": "DataEngr.com",
+      "name": "DataEngnr",
       "description":
         "A data engineering knowledge base covering pipelines, lakehouse architecture, Apache Iceberg and AI-era analytics.",
       "inLanguage": "en",
@@ -97,7 +72,6 @@ const siteJsonLd = {
         "query-input": "required name=search_term_string",
       },
     },
-    person,
   ],
 };
 
@@ -136,7 +110,7 @@ const navLinks = [
     <title>{fullTitle}</title>
     <meta name="description" content={metaDesc} />
     <meta name="author" content="Alex Merced" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="robots" content={noindex ? "noindex,follow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
     <meta name="theme-color" content="#000000" />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -149,17 +123,20 @@ const navLinks = [
     <meta property="og:image" content="https://dataengnr.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="DataEngr.com, a data engineering knowledge base" />
-    <meta property="og:site_name" content="DataEngr.com" />
+    <meta property="og:image:alt" content="DataEngnr, a data engineering knowledge base" />
+    <meta property="og:site_name" content="DataEngnr" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@alexmercedcoder" />
+    <meta name="twitter:site" content={network.twitterSite} />
     <meta name="twitter:creator" content="@alexmercedcoder" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={metaDesc} />
     <meta name="twitter:image" content="https://dataengnr.com/og-image.png" />
+
+    <!-- Network: GA4, click events and the canonical Person entity (generated, do not edit) -->
+    <Fragment set:html={networkHead} />
 
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(siteJsonLd)} />
@@ -179,7 +156,7 @@ const navLinks = [
     <header class="sticky top-0 z-50 bg-midnight-ink/80 backdrop-blur-md border-b border-ash-text/20">
       <div class="max-w-[1216px] mx-auto px-6 py-3 md:h-16 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
         <a href="/" class="font-ivy font-medium text-2xl tracking-wide text-pure-white hover:text-white-frost transition-colors">
-          DataEngr.com
+          DataEngnr
         </a>
         <nav aria-label="Primary" class="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm md:text-base">
           {navLinks.map((link) => (
@@ -193,6 +170,21 @@ const navLinks = [
       <slot />
     </main>
 
+    {network.cta && (
+      <section aria-labelledby="network-cta-heading" class="border-t border-ash-text/20 bg-charcoal-canvas/60">
+        <div class="max-w-[1216px] mx-auto px-6 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <h2 id="network-cta-heading" class="font-ivy text-heading text-pure-white">{network.cta.heading}</h2>
+          <ul class="flex flex-wrap gap-3">
+            {network.cta.links.map((link) => (
+              <li>
+                <a href={link.url} data-network-event={link.event} target="_blank" rel="noopener noreferrer" class="inline-block rounded-full border border-golden-gradient/60 px-5 py-2 text-sm text-pure-white hover:bg-golden-gradient hover:text-midnight-ink transition-colors">{link.label}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )}
+
     <footer class="border-t border-ash-text/20 py-12 mt-auto">
       <div class="max-w-[1216px] mx-auto px-6 flex flex-col gap-8">
         <nav aria-label="Site" class="flex flex-wrap justify-center md:justify-start gap-x-5 gap-y-2 text-sm text-ash-text">
@@ -204,39 +196,24 @@ const navLinks = [
         </nav>
         <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-ash-text">
           <p>&copy; {new Date().getFullYear()} Alex Merced. All rights reserved.</p>
-          <a href="https://alexmercedlibertarian.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">AlexMercedLibertarian.com</a>
         </div>
         <nav aria-label="The Alex Merced Network" class="border-t border-ash-text/20 pt-8">
-          <h2 class="text-xs font-semibold uppercase tracking-[0.16em] text-golden-gradient mb-4">The Alex Merced Network</h2>
-          <ul class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-ash-text footer-run-list">
-            <li><a href="https://alexmerced.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">AlexMerced.com</a></li>
-            <li><a href="https://branding.alexmerced.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Branding.AlexMerced.com</a></li>
-            <li><a href="https://whoisalexmerced.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">WhoIsAlexMerced.com</a></li>
-            <li><a href="https://alexmercedmedia.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">AlexMercedMedia.com</a></li>
-            <li><a href="https://books.alexmerced.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Books.AlexMerced.com</a></li>
-            <li><a href="https://resources.alexmerced.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Resources.AlexMerced.com</a></li>
-            <li><a href="https://alexmercedcoder.dev" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">AlexMercedCoder.dev</a></li>
-            <li><a href="https://alexmerceddata.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">AlexMercedData.com</a></li>
-            <li><a href="https://datalakehousehub.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">DataLakehouseHub.com</a></li>
-            <li><a href="https://datalakehouse.help" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">DataLakehouse.help</a></li>
-            <li><a href="https://iceberglakehouse.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">IcebergLakehouse.com</a></li>
-            <li><a href="https://agenticlakehouse.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">AgenticLakehouse.com</a></li>
-            <li><a href="https://agenticanalyticsnow.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">AgenticAnalyticsNow.com</a></li>
-            <li><a href="https://openagenticplatform.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">OpenAgenticPlatform.com</a></li>
-            <li><a href="https://www.alexmercedai.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">AlexMercedAI.com</a></li>
-            <li><a href="https://dataaiwiki.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">DataAIWiki.com</a></li>
-            <li><a href="https://semanticlakehouse.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">SemanticLakehouse.com</a></li>
-            <li><a href="https://openlakehouse.alexmerced.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">OpenLakehouse.AlexMerced.com</a></li>
-            <li><a href="https://opendatalakehouse.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">OpenDataLakehouse.com</a></li>
-            <li><a href="https://alexmerced.blog" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">AlexMerced.blog</a></li>
-            <li><a href="https://tuts.alexmercedcoder.dev" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">Tuts.AlexMercedCoder.dev</a></li>
-            <li><a href="https://grokoverflow.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">GrokOverflow.com</a></li>
-            <li><a href="https://ingestthis.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">IngestThis.com</a></li>
-            <li><a href="https://alexmercedmusic.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">AlexMercedMusic.com</a></li>
-            <li><a href="https://alexmercedlibertarian.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">AlexMercedLibertarian.com</a></li>
-            <li><a href="https://d6storyteller.alexmerced.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">D6Storyteller.AlexMerced.com</a></li>
-            <li><a href="https://weekofdata.com" target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">WeekOfData.com</a></li>
-          </ul>
+          <h2 class="text-xs font-semibold uppercase tracking-[0.16em] text-golden-gradient mb-6">The Alex Merced Network</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            {network.footer.groups.map((group) => (
+              <div>
+                <h3 class="text-sm font-semibold text-pure-white mb-3">{group.title}</h3>
+                <ul class="flex flex-col gap-2 text-sm text-ash-text">
+                  {group.links.map((link) => (
+                    <li><a href={link.url} target="_blank" rel="noopener noreferrer" class="hover:text-pure-white transition-colors">{link.title}</a></li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <p class="mt-6 text-sm">
+            <a href={network.footer.allSitesUrl} target="_blank" rel="noopener noreferrer" class="text-golden-gradient hover:text-pure-white transition-colors">{network.footer.allSitesLabel} <span aria-hidden="true">&rarr;</span></a>
+          </p>
         </nav>
         <nav aria-label="Free weekly newsletters" class="border-t border-ash-text/20 pt-8">
           <h2 class="text-xs font-semibold uppercase tracking-[0.16em] text-golden-gradient mb-4">Free Weekly Newsletters</h2>
