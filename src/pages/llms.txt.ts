@@ -14,7 +14,7 @@ export const GET: APIRoute = async () => {
     .map((t: any) => `- [${t.data.title}](${SITE}/terms/${t.id}/): ${t.data.description}`)
     .join('\n');
 
-  const body = `# DataEngr.com
+  const body = `# DataEngnr
 
 > A data engineering knowledge base: ${terms.length} terms covering pipelines, storage, modeling,
 > orchestration, governance, and the lakehouse and AI architectures they connect to. Each entry
