@@ -1,11 +1,12 @@
 /**
- * P2 (2026-10-13): the top 20 terms on this site that match a Data Lakehouse Hub
+ * P2 (2026-10-13): the top 21 terms on this site that match a Data Lakehouse Hub
  * glossary entry. Each matched term page shows a "See also on the Data Lakehouse
  * Hub glossary" link. The same pairs are recorded in
  * docs-and-audits/network-performance-audit-2026-10-13/status/small-sites.md so the
  * Hub can link back. Every URL was checked for HTTP 200 on 2026-10-13.
  */
 export const hubGlossary: Record<string, { url: string; title: string }> = {
+  'apache-iceberg': { url: 'https://datalakehousehub.com/knowledgebase/apache-iceberg/', title: "What is Apache Iceberg?" },
   'data-lakehouse': { url: 'https://datalakehousehub.com/knowledgebase/data-lakehouse/', title: "What is Data Lakehouse?" },
   'data-lake': { url: 'https://datalakehousehub.com/knowledgebase/data-lake/', title: "What is a Data Lake?" },
   'data-lakehouse-architecture': { url: 'https://datalakehousehub.com/knowledgebase/data-lakehouse-architecture/', title: "What is Data Lakehouse Architecture?" },
