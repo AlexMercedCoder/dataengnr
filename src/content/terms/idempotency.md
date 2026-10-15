@@ -25,14 +25,14 @@ Making a pipeline idempotent requires moving away from naive `INSERT` statements
 
 **Full Overwrite**: The simplest form of idempotency, often used in the Silver and Gold layers by tools like dbt (`materialized='table'`). The entire table is dropped and recreated from scratch on every run. While highly idempotent, it is computationally expensive for massive datasets.
 
-![Idempotency in Data Pipelines](/images/terms/idempotency.png)
+![Idempotency in Data Pipelines](/images/terms/idempotency.webp)
 
 ## Idempotency and Iceberg
 
-[Apache Iceberg](/terms/apache-iceberg) natively supports highly performant idempotent operations. Iceberg's `MERGE INTO` command handles row-level upserts efficiently, even across petabytes of data, rewriting only the necessary Parquet files. 
+[Apache Iceberg](/terms/apache-iceberg/) natively supports highly performant idempotent operations. Iceberg's `MERGE INTO` command handles row-level upserts efficiently, even across petabytes of data, rewriting only the necessary Parquet files. 
 
-More importantly, Iceberg's [Write-Audit-Publish (WAP)](/terms/write-audit-publish) pattern provides idempotency. If a pipeline runs, it writes data to a hidden branch. If it fails midway, that branch is simply discarded. The main table is never touched until the pipeline successfully completes and the branch is merged. If the pipeline is retried, it simply starts over on a fresh hidden branch, guaranteeing that partial, duplicate data is never exposed to downstream consumers.
+More importantly, Iceberg's [Write-Audit-Publish (WAP)](/terms/write-audit-publish/) pattern provides idempotency. If a pipeline runs, it writes data to a hidden branch. If it fails midway, that branch is simply discarded. The main table is never touched until the pipeline successfully completes and the branch is merged. If the pipeline is retried, it simply starts over on a fresh hidden branch, guaranteeing that partial, duplicate data is never exposed to downstream consumers.
 
 ## Learn More
 
-For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books/). You can also browse the rest of the [knowledge base](/terms/).

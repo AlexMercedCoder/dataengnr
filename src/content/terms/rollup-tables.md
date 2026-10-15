@@ -21,7 +21,7 @@ A rollup table (also known as an aggregate table or summary table) solves this p
 
 When the CEO opens the dashboard, the BI tool does not query the 500 million row base table. It queries the 50,000 row rollup table. The database returns the answer in milliseconds, consuming almost zero compute resources.
 
-![Rollup Tables Architecture](/images/terms/rollup_tables.png)
+![Rollup Tables Architecture](/images/terms/rollup_tables.webp)
 
 ## Managing Rollup Complexity
 
@@ -33,12 +33,12 @@ While rollup tables provide massive performance gains, they introduce significan
 
 ## The Modern Solution: Transparent Materialization
 
-Modern lakehouse engines like [Dremio](/terms/dremio) eliminate the manual management of rollup tables through features like Data Reflections. 
+Modern lakehouse engines like [Dremio](/terms/dremio/) eliminate the manual management of rollup tables through features like Data Reflections. 
 
-A data engineer still defines the aggregation (the rollup logic), but Dremio stores it as a hidden physical file (a Reflection) rather than a separate table. The BI analyst always queries the massive `fact_transactions` base table. When the query arrives, Dremio's [query planner](/terms/query-planner) automatically realizes, "I can answer this query using the hidden Reflection instead of scanning the base table," and transparently rewrites the query under the hood. 
+A data engineer still defines the aggregation (the rollup logic), but Dremio stores it as a hidden physical file (a Reflection) rather than a separate table. The BI analyst always queries the massive `fact_transactions` base table. When the query arrives, Dremio's [query planner](/terms/query-planner/) automatically realizes, "I can answer this query using the hidden Reflection instead of scanning the base table," and transparently rewrites the query under the hood. 
 
 This gives the performance of rollup tables without forcing analysts to understand which specific summary table to query.
 
 ## Learn More
 
-The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.
+The [books by Alex Merced](/books/) go further on this topic and the systems it sits inside. Short [video explainers](/videos/) cover the same ground in under a minute each.

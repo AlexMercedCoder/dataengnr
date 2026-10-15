@@ -7,7 +7,7 @@ tags: ["Property Graphs", "Graph Databases", "Data Modeling", "Data Engineering"
 
 ## Modeling the Connections
 
-[Relational databases](/terms/relational-databases) (like PostgreSQL) are exceptional at storing highly structured, tabular data. However, they struggle immensely when tasked with querying deep, complex relationships. 
+[Relational databases](/terms/relational-databases/) (like PostgreSQL) are exceptional at storing highly structured, tabular data. However, they struggle immensely when tasked with querying deep, complex relationships. 
 
 If you want to find "the friends of the friends of the friends of User A who also bought Product B," a relational database requires a series of massive `JOIN` operations across massive tables. As the network depth increases (from friends, to friends-of-friends, to third-degree connections), the SQL query becomes an unreadable nightmare, and the performance degrades exponentially.
 
@@ -21,7 +21,7 @@ A Property Graph consists of three core components:
 **2. Edges (Relationships)**: The lines connecting the nodes. An edge is directional and has a type (e.g., Person A `[KNOWS]` Person B, or Person A `[PURCHASED]` Product B).
 **3. Properties**: The key-value pairs of metadata attached to *both* nodes and edges. A Person node might have properties like `{name: "Alice", age: 30}`. Crucially, the `[KNOWS]` edge can also have properties, like `{since: 2015, trust_level: "High"}`.
 
-![Property Graph Architecture](/images/terms/property_graphs.png)
+![Property Graph Architecture](/images/terms/property_graphs.webp)
 
 ## Index-Free Adjacency
 
@@ -37,4 +37,4 @@ In a native graph database, every node physically stores physical memory pointer
 
 ## Learn More
 
-Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.
+Several of the [books by Alex Merced](/books/) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms/) is worth a look too.

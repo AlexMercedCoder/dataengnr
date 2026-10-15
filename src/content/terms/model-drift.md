@@ -25,7 +25,7 @@ The underlying statistical distribution of the input data changes, even if the d
 **2. Concept Drift**: 
 The actual relationship between the input data and the target changes. The definition of what you are trying to predict shifts. Before 2020, if a customer suddenly started buying massive quantities of toilet paper and hand sanitizer, the model correctly flagged it as "Institutional Buying." During the 2020 pandemic lockdowns, average families began doing this. The input data was the same, but the underlying human "concept" of the behavior had fundamentally changed.
 
-![Model Drift Architecture](/images/terms/model_drift.png)
+![Model Drift Architecture](/images/terms/model_drift.webp)
 
 ## Combating Drift with MLOps
 
@@ -37,4 +37,4 @@ When the MLOps monitoring system detects that the live data has drifted beyond a
 
 ## Learn More
 
-The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.
+The [books by Alex Merced](/books/) go further on this topic and the systems it sits inside. Short [video explainers](/videos/) cover the same ground in under a minute each.

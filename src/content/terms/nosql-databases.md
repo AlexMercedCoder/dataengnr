@@ -9,7 +9,7 @@ tags: ["NoSQL Databases", "Data Architecture", "Document Databases", "Data Engin
 
 In the late 2000s, the explosive growth of web applications, social media, and mobile devices created a data crisis. Applications were generating massive volumes of data at very high velocities, and the data rarely fit neatly into the rigid, pre-defined rows and columns of a traditional Relational Database (RDBMS).
 
-If a software developer wanted to add a new "Twitter Handle" field to a user profile, adding a new column to a massive relational table required a blocking database migration that could take the application offline for hours. Furthermore, [relational databases](/terms/relational-databases) scaled vertically (requiring bigger, more expensive servers), hitting physical limits.
+If a software developer wanted to add a new "Twitter Handle" field to a user profile, adding a new column to a massive relational table required a blocking database migration that could take the application offline for hours. Furthermore, [relational databases](/terms/relational-databases/) scaled vertically (requiring bigger, more expensive servers), hitting physical limits.
 
 NoSQL (often interpreted as "Not Only SQL") databases emerged as the solution. They abandoned the strict tabular constraints of the relational model in favor of flexible schemas and distributed, horizontal scalability (spreading the data across hundreds of cheap, commodity servers).
 
@@ -29,7 +29,7 @@ Designed for massive write throughput across distributed clusters. They store da
 **4. Graph Databases (e.g., Neo4j)**: 
 Designed specifically to model and navigate highly complex relationships (nodes and edges), such as social networks or fraud rings.
 
-![NoSQL Database Architecture](/images/terms/nosql_databases.png)
+![NoSQL Database Architecture](/images/terms/nosql_databases.webp)
 
 ## The CAP Theorem Trade-off
 
@@ -39,4 +39,4 @@ While traditional relational databases prioritize strict Consistency (guaranteei
 
 ## Learn More
 
-The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.
+The [books by Alex Merced](/books/) go further on this topic and the systems it sits inside. Short [video explainers](/videos/) cover the same ground in under a minute each.

@@ -25,16 +25,16 @@ If a computer calculates the mathematical distance (using Cosine Similarity) bet
 
 Real-world embedding models (like OpenAI's models or BERT) don't use 3 dimensions; they use 768 or 1,536 dimensions, capturing incredibly subtle nuances of grammar, context, and syntax that humans cannot even define.
 
-![Vector Embeddings Architecture](/images/terms/vector_embeddings.png)
+![Vector Embeddings Architecture](/images/terms/vector_embeddings.webp)
 
 ## Generating and Using Embeddings
 
-**The Generation Process**: Data engineers extract [unstructured data](/terms/unstructured-data) from the [data lake](/terms/data-lake) (e.g., millions of customer product reviews). They pass this text through a pre-trained neural network. The neural network's hidden layers generate the high-dimensional vectors. 
+**The Generation Process**: Data engineers extract [unstructured data](/terms/unstructured-data/) from the [data lake](/terms/data-lake/) (e.g., millions of customer product reviews). They pass this text through a pre-trained neural network. The neural network's hidden layers generate the high-dimensional vectors. 
 
-**Storage**: Because [relational databases](/terms/relational-databases) struggle to execute mathematical similarity searches across billions of 1,536-dimension arrays efficiently, these embeddings are loaded into specialized [Vector Databases](/terms/vector-databases) (like Pinecone, Weaviate, or Milvus) which index the vectors for sub-second retrieval.
+**Storage**: Because [relational databases](/terms/relational-databases/) struggle to execute mathematical similarity searches across billions of 1,536-dimension arrays efficiently, these embeddings are loaded into specialized [Vector Databases](/terms/vector-databases/) (like Pinecone, Weaviate, or Milvus) which index the vectors for sub-second retrieval.
 
 **Multimodal Embeddings**: The true power of modern embeddings is that they are not limited to text. Models like CLIP can embed an image (a picture of a red shoe) and a text string ("ruby colored sneaker") into the exact same vector space. Because the concepts are identical, their mathematical vectors will land close to each other, allowing users to type a text query and instantly search a database of millions of un-tagged images.
 
 ## Learn More
 
-The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.
+The [books by Alex Merced](/books/) go further on this topic and the systems it sits inside. Short [video explainers](/videos/) cover the same ground in under a minute each.

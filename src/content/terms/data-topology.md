@@ -15,20 +15,20 @@ If an IoT device in a factory in Berlin generates a sensor reading, the topology
 
 ## Key Topological Patterns
 
-**Hub and Spoke**: The traditional centralized model. All data from global operational systems (the spokes) is routed into a single, massive central [data lakehouse](/terms/data-lakehouse) (the hub) located in a primary cloud region. It simplifies governance and reporting but introduces high latency for users geographically distant from the hub.
+**Hub and Spoke**: The traditional centralized model. All data from global operational systems (the spokes) is routed into a single, massive central [data lakehouse](/terms/data-lakehouse/) (the hub) located in a primary cloud region. It simplifies governance and reporting but introduces high latency for users geographically distant from the hub.
 
 **Edge Computing Topology**: Pushing processing power to the absolute edge of the network, as close to the data source as possible. Used heavily in IoT and autonomous vehicles. The data is processed locally (e.g., a smart camera detecting a defect on an assembly line) to achieve millisecond reaction times, and only the metadata (e.g., "Defect found at 10:05 AM") is sent to the central cloud.
 
 **Multi-Region Active-Active**: The most complex and robust topology. Data is ingested, processed, and stored simultaneously across multiple geographic regions (e.g., US, Europe, Asia). If the US data center suffers a catastrophic failure, the European data center takes over. This requires complex cross-region replication strategies.
 
-![Data Topology Architecture](/images/terms/data_topology.png)
+![Data Topology Architecture](/images/terms/data_topology.webp)
 
 ## Topology and Compliance
 
 Data topology is increasingly dictated by international law rather than pure engineering efficiency. Regulations like GDPR (Europe), CCPA (California), and strict data residency laws in countries like Germany and India mandate that the personal data of their citizens must physically reside within their sovereign borders.
 
-A global [data architecture](/terms/data-architecture) can no longer rely on a single central bucket in the United States. Data engineers must design topologies that intelligently route European user traffic to European storage buckets and Asian user traffic to Asian buckets. Query engines like [Dremio](/terms/dremio) must then be capable of federating queries across these geographically distributed topological nodes, allowing a global CEO to see worldwide sales figures without violating the underlying physical data residency laws.
+A global [data architecture](/terms/data-architecture/) can no longer rely on a single central bucket in the United States. Data engineers must design topologies that intelligently route European user traffic to European storage buckets and Asian user traffic to Asian buckets. Query engines like [Dremio](/terms/dremio/) must then be capable of federating queries across these geographically distributed topological nodes, allowing a global CEO to see worldwide sales figures without violating the underlying physical data residency laws.
 
 ## Learn More
 
-If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).
+If you want the long-form version, start with the [books by Alex Merced](/books/). For a faster pass, there are short [video explainers](/videos/).

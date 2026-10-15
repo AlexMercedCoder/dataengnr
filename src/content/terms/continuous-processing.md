@@ -7,11 +7,11 @@ tags: ["Continuous Processing", "Streaming", "Apache Flink", "Real-Time Analytic
 
 ## Event-by-Event Analytics
 
-While [micro-batching](/terms/micro-batching) provides the illusion of real-time by running tiny batch jobs every few seconds, some use cases demand absolute immediacy. High-frequency algorithmic trading, live multiplayer gaming leaderboards, and autonomous vehicle sensor processing cannot wait 2 seconds for a batch window to close.
+While [micro-batching](/terms/micro-batching/) provides the illusion of real-time by running tiny batch jobs every few seconds, some use cases demand absolute immediacy. High-frequency algorithmic trading, live multiplayer gaming leaderboards, and autonomous vehicle sensor processing cannot wait 2 seconds for a batch window to close.
 
 Continuous processing (also known as true streaming or native streaming) is the architectural paradigm where data is processed strictly event-by-event, the exact millisecond it arrives. 
 
-In a continuous processing engine (like [Apache Flink](/terms/apache-flink) or Kafka Streams), there is no concept of a "batch." The computational graph is continuously running and always active. When a single JSON event drops into a Kafka topic, it flows immediately through the processing nodes, is evaluated, and the result is emitted instantly. 
+In a continuous processing engine (like [Apache Flink](/terms/apache-flink/) or Kafka Streams), there is no concept of a "batch." The computational graph is continuously running and always active. When a single JSON event drops into a Kafka topic, it flows immediately through the processing nodes, is evaluated, and the result is emitted instantly. 
 
 ## The Challenges of Continuous State
 
@@ -25,7 +25,7 @@ Because continuous engines process millions of events per second across distribu
 1. What happens if the server holding the user's running total crashes?
 2. What happens if events arrive out of order due to network lag (an event from 10:01 arrives at 10:05)?
 
-![Continuous Processing Architecture](/images/terms/continuous_processing.png)
+![Continuous Processing Architecture](/images/terms/continuous_processing.webp)
 
 ## Solving the Challenges: Flink and Watermarks
 
@@ -37,4 +37,4 @@ A Watermark is a signal the engine generates saying, "I am confident I have rece
 
 ## Learn More
 
-If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).
+If you want the long-form version, start with the [books by Alex Merced](/books/). For a faster pass, there are short [video explainers](/videos/).

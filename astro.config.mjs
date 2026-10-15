@@ -3,6 +3,11 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import { latestModified } from './src/lib/git-dates.mjs';
+import { readFileSync } from 'node:fs';
+
+// Intrinsic sizes of the term diagrams (written when they were converted to
+// WebP), so Markdown images get width/height and do not shift the layout.
+const IMAGE_DIMS = JSON.parse(readFileSync(new URL('./src/data/image-dims.json', import.meta.url), 'utf8'));
 
 // Source files behind each non-term URL, for git-derived <lastmod>.
 const PAGE_SOURCES = {
@@ -53,11 +58,21 @@ export default defineConfig({
             if (node.tagName === 'img') {
               node.properties.loading ??= 'lazy';
               node.properties.decoding ??= 'async';
+              const dims = IMAGE_DIMS[String(node.properties.src ?? '')];
+              if (dims) {
+                node.properties.width ??= dims[0];
+                node.properties.height ??= dims[1];
+              }
             }
             if (node.tagName === 'a') {
               const href = String(node.properties?.href ?? '');
               if (/^https?:\/\//.test(href) && !href.includes('dataengnr.com')) {
                 node.properties.rel ??= 'noopener noreferrer';
+              }
+              // Pages are served at /x/; a link to /x costs the reader a 301.
+              const m = href.match(/^(\/(?!\/)[^?#]*?)([?#].*)?$/);
+              if (m && !m[1].endsWith('/') && !/\.[a-z0-9]+$/i.test(m[1])) {
+                node.properties.href = `${m[1]}/${m[2] ?? ''}`;
               }
             }
           }

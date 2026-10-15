@@ -1,0 +1,5 @@
+# Duplicate knowledge base entries merged into the better-named term (2026-10-15 crawl, P2.11)
+/terms/data-mesh-architecture/   /terms/data-mesh/                        301
+/terms/data-mesh-architecture    /terms/data-mesh/                        301
+/terms/rag-architecture/         /terms/retrieval-augmented-generation/   301
+/terms/rag-architecture          /terms/retrieval-augmented-generation/   301

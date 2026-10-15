@@ -27,7 +27,7 @@ FROM employees;
 ```
 In this query, the `PARTITION BY` acts similarly to a `GROUP BY`, but instead of collapsing the rows, it calculates the department average and appends it to every single row in that department. The analyst can instantly see that John makes $60k, and his department's average is $75k.
 
-![Window Functions Architecture](/images/terms/window_functions.png)
+![Window Functions Architecture](/images/terms/window_functions.webp)
 
 ## Common Window Function Use Cases
 
@@ -45,4 +45,4 @@ By using `ROW_NUMBER() OVER (PARTITION BY transaction_id ORDER BY timestamp DESC
 
 ## Learn More
 
-For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books/). You can also browse the rest of the [knowledge base](/terms/).

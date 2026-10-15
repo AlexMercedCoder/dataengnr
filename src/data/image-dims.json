@@ -1,0 +1,614 @@
+{
+ "/images/terms/abac_vs_rbac.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/agentic_analytics_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/airflow_dag_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/apache_arrow_columnar.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/apache_avro_schema.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/apache_flink_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/apache_kafka_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/apache_pinot.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/apache_polaris_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/apache_spark_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/api_gateway.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/arrow_flight_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/aws_glue_catalog_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/backfilling.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/bitemporal_data.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/bronze_to_gold_pipeline.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/cdc_database_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/cdc_to_iceberg_flow.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/column_masking.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/columnar_vs_row_storage.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/compaction_process.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/continuous_processing.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/control_plane_data_plane.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/cow_vs_mor_strategy.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/cqrs.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/credential_vending_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_annotation.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_archiving.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_as_a_product.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_catalog_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_classification.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_contracts.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_fabric_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_fabric_governance.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_governance_framework.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_gravity.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_integration.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_lake_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_lineage.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_mesh_vs_monolith.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_migration.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_modeling_hierarchy.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_observability_framework.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_products_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_quality_pipeline.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_reliability.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_serialization.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_sharing.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_skewness.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_sovereignty.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_swamp_concept.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_topology.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_vault_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/data_warehouse_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/dbt_pipeline_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/dbt_transformation_pipeline.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/delta_lake_transaction_log.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/delta_to_iceberg.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/dimension_tables.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/dremio_execution_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/dremio_platform_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/duckdb_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/elt_architecture_flow.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/embedded_analytics.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/etl_pipeline.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/etl_pipeline_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/etl_vs_elt_lakehouse.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/event_sourcing.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/fact_tables.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/feature_engineering.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/feature_store.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/federated_query_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/finops.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/generative_ai.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/gravitino_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/hardware_acceleration.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/headless_bi.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/hive_metastore_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/hudi_cow_vs_mor.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/hudi_timeline_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/hyperparameter_tuning.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/iceberg_branching.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/iceberg_hidden_partitioning.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/iceberg_metadata_hierarchy.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/iceberg_metadata_tree.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/iceberg_rest_catalog.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/iceberg_time_travel.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/iceberg_time_travel_snapshots.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/idempotency.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/in_memory_processing.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/incremental_processing.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/jsonl_pipeline.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/kappa_architecture_overview.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/kappa_vs_lambda.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/lakehouse_architecture_diagram.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/lakehouse_concurrency.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/lambda_architecture_overview.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/lambda_modern_lakehouse.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/large_language_models.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/late_arriving_data.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/llm_rag_workflow.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/materialized_views.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/medallion_architecture_overview.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/metric_store.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/micro_batching.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/microservices.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/model_drift.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/mor_write_compaction.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/multi_table_transactions.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/nessie_branching_model.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/nosql_databases.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/object_storage_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/operational_analytics.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/parquet_bloom_filters.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/parquet_columnar_layout.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/parquet_query_flow.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/partition_evolution.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/polars_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/predicate_pushdown.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/prompt_engineering.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/property_graphs.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/pull_based_ingestion.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/pyiceberg_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/query_caching.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/query_planner.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/rag_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/rbac_lakehouse_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/real_time_analytics.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/relational_databases.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/result_set_caching.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/reverse_etl.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/rollup_tables.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/row_level_security.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/schema_evolution.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/schema_on_read.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/schema_registry.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/semantic_search.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/snapshot_expiration.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/snowflake_schema.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/star_schema.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/star_schema_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/star_vs_snowflake_schema.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/storage_compute_separation.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/streaming_lakehouse.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/surrogate_keys.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/time_to_live.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/unity_catalog_architecture.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/vector_embeddings.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/wap_pattern.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/window_functions.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/write_amplification.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/z_ordering_data_skipping.webp": [
+  1024,
+  1024
+ ],
+ "/images/terms/zero_copy_cloning.webp": [
+  1024,
+  1024
+ ]
+}

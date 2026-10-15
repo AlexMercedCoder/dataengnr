@@ -28,7 +28,7 @@ attribution to dataengnr.com is appreciated.
 
 - [Home](${SITE}/): starting points, common questions, and curated reading.
 - [Knowledge Base](${SITE}/terms/): every term, A to Z.
-- [Video explainers](${SITE}/videos): eight short silent animated explainers on core topics.
+- [Video explainers](${SITE}/videos/): eight short silent animated explainers on core topics.
 - [Blogroll](${SITE}/blogroll/): recent articles aggregated from datalakehousehub.com.
 - [Books](${SITE}/books/): books by Alex Merced on Iceberg, lakehouse architecture and AI.
 - [Search](${SITE}/search/): full-text search across the site.

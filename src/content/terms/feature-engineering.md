@@ -22,9 +22,9 @@ A raw timestamp `2025-12-25 18:30:00` is nearly useless to an algorithm predicti
 **3. Scaling and Normalization**: 
 If one column represents `Customer Age` (ranging from 18 to 90) and another represents `Account Balance` (ranging from $0 to $1,000,000), the model will mathematically assume the Account Balance is vastly more important simply because the numbers are bigger. Engineers "scale" all numerical features to fit within a tight range (like 0 to 1) so the model treats them equally.
 
-![Feature Engineering Architecture](/images/terms/feature_engineering.png)
+![Feature Engineering Architecture](/images/terms/feature_engineering.webp)
 
-## The [Feature Store](/terms/feature-store)
+## The [Feature Store](/terms/feature-store/)
 
 Historically, data scientists would write complex Python scripts in a Jupyter Notebook to perform feature engineering. This created massive problems: the code was isolated on their laptop, and the engineering team had to completely rewrite the logic in Java or Scala to deploy the model into a production streaming pipeline. If the two scripts were slightly different (Training-Serving Skew), the model would fail in production.
 
@@ -35,4 +35,4 @@ When the Data Science team wants to train a model, they pull the historical valu
 
 ## Learn More
 
-For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books/). You can also browse the rest of the [knowledge base](/terms/).

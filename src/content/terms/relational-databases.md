@@ -21,7 +21,7 @@ Data is split into logical entities: a `Customers` table and an `Orders` table.
 
 When a user wants to view the order alongside the customer's name, they write a SQL `JOIN` query. The database engine dynamically links the two tables together using these keys.
 
-![Relational Database Architecture](/images/terms/relational_databases.png)
+![Relational Database Architecture](/images/terms/relational_databases.webp)
 
 ## Strict ACID Compliance
 
@@ -37,4 +37,4 @@ While phenomenal for transactional workloads (OLTP), traditional relational data
 
 ## Learn More
 
-Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.
+Several of the [books by Alex Merced](/books/) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms/) is worth a look too.

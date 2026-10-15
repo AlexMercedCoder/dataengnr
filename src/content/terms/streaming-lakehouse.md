@@ -7,11 +7,11 @@ tags: ["Streaming Lakehouse", "Apache Flink", "Apache Iceberg", "Real-Time Analy
 
 ## Unifying Streaming and Batch in the Lakehouse
 
-The traditional [data architecture](/terms/data-architecture) dichotomy between streaming (real-time, low-latency) and batch (high-throughput, high-latency) processing gave rise to [Lambda Architecture](/terms/lambda-architecture): running separate streaming and batch pipelines in parallel and merging their results. This approach doubles engineering complexity and introduces the ongoing operational burden of keeping two pipeline systems synchronized.
+The traditional [data architecture](/terms/data-architecture/) dichotomy between streaming (real-time, low-latency) and batch (high-throughput, high-latency) processing gave rise to [Lambda Architecture](/terms/lambda-architecture/): running separate streaming and batch pipelines in parallel and merging their results. This approach doubles engineering complexity and introduces the ongoing operational burden of keeping two pipeline systems synchronized.
 
-The streaming lakehouse eliminates this dichotomy. It is an architecture where the lakehouse's analytical tables are written by streaming ingestion pipelines ([Apache Flink](/terms/apache-flink), [Spark Structured Streaming](/terms/spark-structured-streaming)) at sub-minute or sub-second latency, using [Apache Iceberg](/terms/apache-iceberg)'s ACID transaction semantics to maintain table consistency despite continuous concurrent writes and reads. The streaming lakehouse provides the low-latency freshness of a streaming system with the structured, queryable, governed format of an analytical table, all without a separate serving layer.
+The streaming lakehouse eliminates this dichotomy. It is an architecture where the lakehouse's analytical tables are written by streaming ingestion pipelines ([Apache Flink](/terms/apache-flink/), [Spark Structured Streaming](/terms/spark-structured-streaming/)) at sub-minute or sub-second latency, using [Apache Iceberg](/terms/apache-iceberg/)'s ACID transaction semantics to maintain table consistency despite continuous concurrent writes and reads. The streaming lakehouse provides the low-latency freshness of a streaming system with the structured, queryable, governed format of an analytical table, all without a separate serving layer.
 
-The key technical enabler of the streaming lakehouse is Iceberg's transactional write model. Each Flink or Spark streaming micro-batch commits a new Iceberg snapshot containing the records produced in that time window. Because Iceberg's snapshot commits are atomic, readers always see a consistent table state even as new snapshots are being continuously appended. A [Dremio](/terms/dremio) query reading the table between two streaming commits reads a complete, consistent snapshot without seeing partially-committed data.
+The key technical enabler of the streaming lakehouse is Iceberg's transactional write model. Each Flink or Spark streaming micro-batch commits a new Iceberg snapshot containing the records produced in that time window. Because Iceberg's snapshot commits are atomic, readers always see a consistent table state even as new snapshots are being continuously appended. A [Dremio](/terms/dremio/) query reading the table between two streaming commits reads a complete, consistent snapshot without seeing partially-committed data.
 
 ## Flink to Iceberg: The Core Pattern
 
@@ -19,9 +19,9 @@ Apache Flink with the Flink Iceberg sink is the most production-proven streaming
 
 The Flink Iceberg sink handles Iceberg's exactly-once semantics through Flink's checkpointing mechanism. At each Flink checkpoint, the sink atomically commits the buffered data files as a new Iceberg snapshot. If the Flink job fails and restarts from the last checkpoint, the sink will not re-commit data files that were already committed in the previous checkpoint, ensuring exactly-once delivery to the Iceberg table without duplicates.
 
-![Streaming Lakehouse Architecture](/images/terms/streaming_lakehouse.png)
+![Streaming Lakehouse Architecture](/images/terms/streaming_lakehouse.webp)
 
-## [Compaction](/terms/compaction) in Streaming Lakehouses
+## [Compaction](/terms/compaction/) in Streaming Lakehouses
 
 Streaming ingestion's frequent small commits produce many small Parquet files, the small file problem described in the compaction article. A Flink job committing every 2 minutes to an Iceberg table produces 720 snapshots per day, each containing a small batch of data files. Over weeks of streaming ingestion, file counts in the millions accumulate without compaction.
 
@@ -31,4 +31,4 @@ Dremio supports querying streaming Iceberg tables directly, providing analysts w
 
 ## Learn More
 
-Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.
+Several of the [books by Alex Merced](/books/) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms/) is worth a look too.

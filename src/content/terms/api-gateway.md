@@ -7,7 +7,7 @@ tags: ["API Gateway", "Data Architecture", "Microservices", "Cloud Computing", "
 
 ## The Front Door to the Backend
 
-In a modern, decentralized architecture, a single web application or data platform might rely on dozens or even hundreds of independent [microservices](/terms/microservices). 
+In a modern, decentralized architecture, a single web application or data platform might rely on dozens or even hundreds of independent [microservices](/terms/microservices/). 
 
 If a user opens a mobile banking app, the app needs to talk to the `User Authentication Service`, the `Account Balance Service`, and the `Transaction History Service`. If the mobile app had to hardcode the individual IP addresses and security protocols for all three of these independent backend servers, the app would be incredibly brittle and impossible to maintain.
 
@@ -24,14 +24,14 @@ Instead of forcing every single microservice to independently verify the user's 
 **3. Rate Limiting and Throttling**: 
 To protect backend databases from being overwhelmed by traffic spikes (or malicious DDoS attacks), the Gateway enforces strict quotas. It might dictate: "A free-tier user can only make 100 requests per minute." If they exceed that limit, the Gateway returns an HTTP 429 (Too Many Requests) error, protecting the downstream microservices.
 
-![API Gateway Architecture](/images/terms/api_gateway.png)
+![API Gateway Architecture](/images/terms/api_gateway.webp)
 
 ## API Gateways in Data Engineering
 
 While traditionally used in software engineering, API Gateways (like Kong, Apigee, or Amazon API Gateway) are becoming vital in modern Data Engineering, specifically for "Data as a Service" (DaaS).
 
-When a data team builds a highly valuable machine learning model or a [real-time analytics](/terms/real-time-analytics) aggregation, they don't want to give external partners direct SQL access to the Snowflake or [Dremio](/terms/dremio) [data warehouse](/terms/data-warehouse). Instead, they expose the data via REST APIs, placing an API Gateway in front of it to strictly monetize, monitor, and rate-limit the partners querying the data.
+When a data team builds a highly valuable machine learning model or a [real-time analytics](/terms/real-time-analytics/) aggregation, they don't want to give external partners direct SQL access to the Snowflake or [Dremio](/terms/dremio/) [data warehouse](/terms/data-warehouse/). Instead, they expose the data via REST APIs, placing an API Gateway in front of it to strictly monetize, monitor, and rate-limit the partners querying the data.
 
 ## Learn More
 
-The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.
+The [books by Alex Merced](/books/) go further on this topic and the systems it sits inside. Short [video explainers](/videos/) cover the same ground in under a minute each.

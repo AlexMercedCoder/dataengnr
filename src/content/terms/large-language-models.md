@@ -9,7 +9,7 @@ tags: ["Large Language Models", "Generative AI", "Artificial Intelligence", "Mac
 
 For decades, getting computers to understand human language was a brittle, frustrating process. Early Natural Language Processing (NLP) relied on hard-coded grammar rules and dictionaries. If a human used slang, sarcasm, or complex sentence structures, the computer failed to understand the intent.
 
-Large Language Models (LLMs) completely reshaped this field. An LLM (like GPT-4, Claude, or LLaMA) is a specific type of [Generative AI](/terms/generative-ai) model designed exclusively to understand and generate text. They do not rely on grammar rules; they rely on pure statistical probability derived from reading billions of pages of human text.
+Large Language Models (LLMs) completely reshaped this field. An LLM (like GPT-4, Claude, or LLaMA) is a specific type of [Generative AI](/terms/generative-ai/) model designed exclusively to understand and generate text. They do not rely on grammar rules; they rely on pure statistical probability derived from reading billions of pages of human text.
 
 ## The Transformer Architecture
 
@@ -19,7 +19,7 @@ Older language models read text sequentially, word by word. By the time they rea
 
 Transformers use a mechanism called **Self-Attention**. When a Transformer reads a sentence, it looks at every single word simultaneously and calculates how strongly each word relates to every other word in the sentence, regardless of how far apart they are. If the sentence says, "The bank of the river was muddy, so he couldn't deposit his boat," the self-attention mechanism instantly understands that the word "bank" refers to a muddy shoreline, not a financial institution, based on its mathematical relationship to the words "river" and "muddy."
 
-![Large Language Models Architecture](/images/terms/large_language_models.png)
+![Large Language Models Architecture](/images/terms/large_language_models.webp)
 
 ## Scale is All You Need
 
@@ -33,4 +33,4 @@ The astonishing discovery of LLMs is that as you increase the parameter count an
 
 ## Learn More
 
-For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books/). You can also browse the rest of the [knowledge base](/terms/).

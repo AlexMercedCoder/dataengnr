@@ -25,7 +25,7 @@ The specific hyperparameters vary drastically depending on the type of algorithm
 
 **Maximum Depth**: Determines how deep a decision tree is allowed to grow. A deep tree can learn highly complex patterns, but risks memorizing the training data perfectly (overfitting) and failing on new data.
 
-![Hyperparameter Tuning Architecture](/images/terms/hyperparameter_tuning.png)
+![Hyperparameter Tuning Architecture](/images/terms/hyperparameter_tuning.webp)
 
 ## Tuning Strategies
 
@@ -39,4 +39,4 @@ Because training a massive model on a lakehouse can take hours or days, data sci
 
 ## Learn More
 
-The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.
+The [books by Alex Merced](/books/) go further on this topic and the systems it sits inside. Short [video explainers](/videos/) cover the same ground in under a minute each.

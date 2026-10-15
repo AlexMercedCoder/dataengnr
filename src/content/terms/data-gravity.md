@@ -22,16 +22,16 @@ If the company later decides they want to use Google Cloud's BigQuery machine le
 
 Because the data cannot move, the company is forced to run their machine learning models on AWS using AWS tools, even if the GCP tools are superior. The gravity of the S3 bucket dictated the software architecture.
 
-![Data Gravity Architecture](/images/terms/data_gravity.png)
+![Data Gravity Architecture](/images/terms/data_gravity.webp)
 
 ## Mitigating Data Gravity
 
 Data gravity cannot be eliminated, but modern data engineering architectures attempt to mitigate its negative effects through specific design patterns:
 
-**Open Table Formats**: Storing data in proprietary database formats (like a Snowflake internal table) compounds gravity because the data is locked into that specific vendor's ecosystem. By storing data in open formats like [Apache Iceberg](/terms/apache-iceberg) on generic [object storage](/terms/object-storage), the data's gravity remains, but its accessibility increases. Multiple different compute engines ([Dremio](/terms/dremio), Spark, [Trino](/terms/trino)) can spin up in the same cloud region and access the Iceberg data simultaneously without moving it.
+**Open Table Formats**: Storing data in proprietary database formats (like a Snowflake internal table) compounds gravity because the data is locked into that specific vendor's ecosystem. By storing data in open formats like [Apache Iceberg](/terms/apache-iceberg/) on generic [object storage](/terms/object-storage/), the data's gravity remains, but its accessibility increases. Multiple different compute engines ([Dremio](/terms/dremio/), Spark, [Trino](/terms/trino/)) can spin up in the same cloud region and access the Iceberg data simultaneously without moving it.
 
-**[Data Mesh](/terms/data-mesh-architecture) and Federation**: Instead of trying to pull all enterprise data into a single, massive central repository (which creates a massive gravity well), a [Data Mesh](/terms/data-mesh) architecture leaves data in its distributed domains. [Query Federation](/terms/query-federation) tools are used to logically join data across these domains at query time, minimizing physical data movement while still providing a unified view to analysts.
+**Data Mesh and Federation**: Instead of trying to pull all enterprise data into a single, massive central repository (which creates a massive gravity well), a [Data Mesh](/terms/data-mesh/) architecture leaves data in its distributed domains. [Query Federation](/terms/query-federation/) tools are used to logically join data across these domains at query time, minimizing physical data movement while still providing a unified view to analysts.
 
 ## Learn More
 
-If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).
+If you want the long-form version, start with the [books by Alex Merced](/books/). For a faster pass, there are short [video explainers](/videos/).

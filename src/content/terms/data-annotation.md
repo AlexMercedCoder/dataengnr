@@ -11,7 +11,7 @@ Machine learning models, particularly deep neural networks, are incredibly power
 
 To teach the model, you must provide it with examples. You must show it 10,000 pictures of cats, and crucially, you must explicitly tell the model: "This picture contains a cat." 
 
-Data annotation (or data labeling) is the process of attaching these ground-truth metadata tags to raw, [unstructured data](/terms/unstructured-data). In supervised machine learning, the model looks at the raw data (the input), looks at the human-provided annotation (the target output), and mathematically adjusts its internal parameters to learn the mapping between the two.
+Data annotation (or data labeling) is the process of attaching these ground-truth metadata tags to raw, [unstructured data](/terms/unstructured-data/). In supervised machine learning, the model looks at the raw data (the input), looks at the human-provided annotation (the target output), and mathematically adjusts its internal parameters to learn the mapping between the two.
 
 ## Types of Data Annotation
 
@@ -26,7 +26,7 @@ Used for Natural Language Processing (NLP). Annotators might highlight specific 
 **Audio Annotation**: 
 Used for speech recognition. Annotators listen to a raw audio file of a person speaking and transcribe the exact text word-for-word, including tags for background noise or speaker changes.
 
-![Data Annotation Architecture](/images/terms/data_annotation.png)
+![Data Annotation Architecture](/images/terms/data_annotation.webp)
 
 ## The Engineering Challenge
 
@@ -38,4 +38,4 @@ To reduce costs, teams are increasingly using "Active Learning," where a partial
 
 ## Learn More
 
-The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.
+The [books by Alex Merced](/books/) go further on this topic and the systems it sits inside. Short [video explainers](/videos/) cover the same ground in under a minute each.

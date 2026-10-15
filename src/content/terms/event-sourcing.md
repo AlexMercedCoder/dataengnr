@@ -25,7 +25,7 @@ To find the user's current balance, the application fetches all events for that 
 
 Because replaying 10,000 events every time a user logs in is too slow, systems use **Snapshots** (calculating the balance once a night and saving it) so they only have to replay the events from today.
 
-![Event Sourcing Architecture](/images/terms/event_sourcing.png)
+![Event Sourcing Architecture](/images/terms/event_sourcing.webp)
 
 ## Benefits of Event Sourcing
 
@@ -33,8 +33,8 @@ Because replaying 10,000 events every time a user logs in is too slow, systems u
 
 **Time Travel Debugging**: If a bug in the code corrupted data on Tuesday, the engineering team doesn't have to restore from a massive backup tape. They simply fix the bug, delete the corrupted snapshot, and replay the raw events from Monday night using the fixed code, perfectly reconstructing the correct data.
 
-Event sourcing is heavily paired with **[Apache Kafka](/terms/apache-kafka)**, as Kafka is fundamentally an immutable, append-only event log designed specifically for this exact architectural pattern.
+Event sourcing is heavily paired with **[Apache Kafka](/terms/apache-kafka/)**, as Kafka is fundamentally an immutable, append-only event log designed specifically for this exact architectural pattern.
 
 ## Learn More
 
-If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).
+If you want the long-form version, start with the [books by Alex Merced](/books/). For a faster pass, there are short [video explainers](/videos/).

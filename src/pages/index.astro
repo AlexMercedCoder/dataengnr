@@ -41,27 +41,27 @@ const faqs = [
   {
     q: "What does a data engineer actually do?",
     a: "A data engineer builds and operates the systems that move data from the places it is created into the places it gets analyzed. That covers ingestion, storage, transformation and serving, plus the orchestration, testing and monitoring that keep those pipelines producing correct results on every run, not just the first one.",
-    href: "/terms/data-pipeline-testing",
+    href: "/terms/data-pipeline-testing/",
   },
   {
     q: "What is the difference between ETL and ELT?",
     a: "ETL transforms data on a separate tier before loading it, so the destination only ever stores modeled tables. ELT loads raw data into the warehouse or lakehouse first and transforms it there using the platform's own compute. ELT keeps a replayable raw copy; ETL discards it at transform time.",
-    href: "/terms/elt",
+    href: "/terms/elt/",
   },
   {
     q: "What is a data lakehouse?",
     a: "A data lakehouse is open files on object storage with a table format layered over them. The table format, usually Apache Iceberg, tracks every data file in metadata rather than inferring a table from a directory, which restores ACID transactions, schema evolution and time travel to data that any engine can still read.",
-    href: "/terms/data-lakehouse",
+    href: "/terms/data-lakehouse/",
   },
   {
     q: "Do I need streaming, or is batch enough?",
     a: "Batch is enough whenever the business can act on data that is minutes or hours old, and it is cheaper and simpler to operate. Streaming earns its complexity when a decision has to happen within seconds of the event. Micro-batching sits between the two and covers a large share of real requirements.",
-    href: "/terms/micro-batching",
+    href: "/terms/micro-batching/",
   },
   {
     q: "Where should I start if I am new to data engineering?",
     a: "Start with how analytical data is shaped and where it lives: data modeling, the difference between a warehouse, a lake and a lakehouse, and how a pipeline is scheduled. Those three ideas explain most architecture decisions you will meet, and every other term connects back to them.",
-    href: "/terms/data-modeling",
+    href: "/terms/data-modeling/",
   },
 ];
 
@@ -170,8 +170,8 @@ const { communities = [], events = [] } = siteData;
       co-author of <em>Apache Iceberg: The Definitive Guide</em>.
     </p>
     <div class="flex flex-wrap gap-4 justify-center">
-      <PillButton href="/terms">Explore the Knowledge Base</PillButton>
-      <PillButton href="/videos" class="!bg-transparent !text-pure-white border !border-pure-white hover:!bg-pure-white/10">Watch the Explainers</PillButton>
+      <PillButton href="/terms/">Explore the Knowledge Base</PillButton>
+      <PillButton href="/videos/" class="!bg-transparent !text-pure-white border !border-pure-white hover:!bg-pure-white/10">Watch the Explainers</PillButton>
     </div>
   </section>
 
@@ -192,7 +192,7 @@ const { communities = [], events = [] } = siteData;
       {startHere.map((t) => (
         <li>
           <a
-            href={`/terms/${t.slug}`}
+            href={`/terms/${t.slug}/`}
             class="inline-block rounded-full border border-ash-text/20 bg-charcoal-canvas px-5 py-2 text-sm text-white-frost hover:border-golden-gradient/50 hover:text-pure-white transition-colors"
           >
             {t.label}

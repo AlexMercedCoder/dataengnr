@@ -11,19 +11,19 @@ In a traditional Business Intelligence (BI) tool like Tableau or Power BI, the "
 
 This monolithic approach creates a massive problem when an organization wants to use that "Net Revenue" metric anywhere outside of that specific BI tool. If a developer wants to show Net Revenue in a custom React web application, or if a data scientist wants to use Net Revenue as a feature in a machine learning model, they cannot easily extract that logic from Tableau. They have to rewrite the SQL logic from scratch in their own application, leading to the classic problem of inconsistent metrics across the business.
 
-Headless BI (often used synonymously with a [Metric Store](/terms/metric-store)) solves this by decoupling the brain from the face. It extracts the semantic metric definitions out of the BI tools and centralizes them in a standalone, "headless" API layer that sits directly on top of the data platform.
+Headless BI (often used synonymously with a [Metric Store](/terms/metric-store/)) solves this by decoupling the brain from the face. It extracts the semantic metric definitions out of the BI tools and centralizes them in a standalone, "headless" API layer that sits directly on top of the data platform.
 
 ## The Headless BI Architecture
 
-A Headless BI platform (like Cube, [Semantic Layer](/terms/semantic-layer) by dbt, or Malloy) operates as a pure semantic engine without a built-in visualization interface.
+A Headless BI platform (like Cube, [Semantic Layer](/terms/semantic-layer/) by dbt, or Malloy) operates as a pure semantic engine without a built-in visualization interface.
 
 Data engineers write code (usually YAML or a specialized semantic language) within the Headless BI platform to define the entities, dimensions, measures, and complex business logic metrics. 
 
 Once defined, the Headless BI platform exposes these metrics via a suite of APIs: REST APIs for web applications, GraphQL for mobile apps, and standard SQL interfaces (JDBC/ODBC) for traditional BI tools.
 
-When a downstream application wants data, it doesn't send a raw SQL query. It sends an API request: "Give me Net Revenue, grouped by Region, for Q3." The Headless BI engine receives the request, translates it into the highly optimized, dialect-specific SQL required by the underlying [data warehouse](/terms/data-warehouse) or lakehouse (e.g., [Dremio](/terms/dremio) or Snowflake), executes the query, and returns the result to the application.
+When a downstream application wants data, it doesn't send a raw SQL query. It sends an API request: "Give me Net Revenue, grouped by Region, for Q3." The Headless BI engine receives the request, translates it into the highly optimized, dialect-specific SQL required by the underlying [data warehouse](/terms/data-warehouse/) or lakehouse (e.g., [Dremio](/terms/dremio/) or Snowflake), executes the query, and returns the result to the application.
 
-![Headless BI Architecture](/images/terms/headless_bi.png)
+![Headless BI Architecture](/images/terms/headless_bi.webp)
 
 ## Enabling Data as a Product
 
@@ -33,4 +33,4 @@ If the CFO changes the definition of "Net Revenue" to exclude a specific new tax
 
 ## Learn More
 
-The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.
+The [books by Alex Merced](/books/) go further on this topic and the systems it sits inside. Short [video explainers](/videos/) cover the same ground in under a minute each.

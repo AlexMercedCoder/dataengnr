@@ -100,7 +100,7 @@ const jsonLd = [
 
 const breadcrumbs = [
   { name: 'Home', href: '/' },
-  { name: 'Knowledge Base', href: '/terms' },
+  { name: 'Knowledge Base', href: '/terms/' },
 ];
 ---
 
@@ -116,7 +116,7 @@ const breadcrumbs = [
       <ol class="flex flex-wrap items-center gap-2">
         <li><a href="/" class="hover:text-pure-white transition-colors">Home</a></li>
         <li aria-hidden="true">&rsaquo;</li>
-        <li><a href="/terms" class="hover:text-pure-white transition-colors">Knowledge Base</a></li>
+        <li><a href="/terms/" class="hover:text-pure-white transition-colors">Knowledge Base</a></li>
         <li aria-hidden="true">&rsaquo;</li>
         <li aria-current="page" class="text-silver-text">{entry.data.title}</li>
       </ol>
@@ -174,7 +174,7 @@ const breadcrumbs = [
           {related.map((r: any) => (
             <li>
               <a
-                href={`/terms/${r.id}`}
+                href={`/terms/${r.id}/`}
                 class="block rounded-md border border-ash-text/10 bg-charcoal-canvas px-4 py-3 text-body text-white-frost hover:border-golden-gradient/50 hover:text-pure-white transition-colors"
               >
                 {r.title}
@@ -187,13 +187,13 @@ const breadcrumbs = [
 
     <nav aria-label="More terms" class="mt-12 pt-8 border-t border-ash-text/20 flex flex-col sm:flex-row justify-between gap-4 text-sm">
       {prev ? (
-        <a href={`/terms/${prev.id}`} class="text-ash-text hover:text-pure-white transition-colors">
+        <a href={`/terms/${prev.id}/`} class="text-ash-text hover:text-pure-white transition-colors">
           <span aria-hidden="true">&larr;</span> {prev.title}
         </a>
       ) : <span />}
-      <a href="/terms" class="text-ash-text hover:text-pure-white transition-colors">All terms</a>
+      <a href="/terms/" class="text-ash-text hover:text-pure-white transition-colors">All terms</a>
       {next ? (
-        <a href={`/terms/${next.id}`} class="text-ash-text hover:text-pure-white transition-colors sm:text-right">
+        <a href={`/terms/${next.id}/`} class="text-ash-text hover:text-pure-white transition-colors sm:text-right">
           {next.title} <span aria-hidden="true">&rarr;</span>
         </a>
       ) : <span />}

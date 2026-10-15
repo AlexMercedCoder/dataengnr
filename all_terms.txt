@@ -58,7 +58,6 @@ data-lakehouse.md
 data-lakehouse-vs-data-warehouse.md
 data-lake.md
 data-lineage.md
-data-mesh-architecture.md
 data-mesh.md
 data-migration.md
 data-modeling.md
@@ -157,7 +156,6 @@ query-caching.md
 query-federation.md
 query-optimization.md
 query-planner.md
-rag-architecture.md
 real-time-analytics.md
 relational-databases.md
 result-set-caching.md

@@ -13,7 +13,7 @@ However, standard SCD Type 2 fails when dealing with retroactive corrections. Im
 
 If an auditor asks, "What did our database *think* the customer's address was on January 15th?", standard SCD Type 2 struggles. The database has been corrected to show New Jersey since Jan 1st. The fact that the database *temporarily contained incorrect information* has been lost.
 
-Bitemporal [data modeling](/terms/data-modeling) solves this by tracking data across two entirely independent timelines simultaneously:
+Bitemporal [data modeling](/terms/data-modeling/) solves this by tracking data across two entirely independent timelines simultaneously:
 
 **1. Valid Time (State Time)**: The time period when the fact was true in the real world. (e.g., The customer actually lived in New Jersey starting Jan 1st).
 
@@ -34,7 +34,7 @@ When the correction happens on Feb 1st:
 The system "retires" the first row by updating its `transaction_to` to Feb 1st. (This record is now a historical artifact of what the database *used* to believe).
 The system inserts a new row with the correct data: Address=New Jersey, `valid_from`=Jan 1, `valid_to`=Infinity. `transaction_from`=Feb 1, `transaction_to`=Infinity.
 
-![Bitemporal Data Architecture](/images/terms/bitemporal_data.png)
+![Bitemporal Data Architecture](/images/terms/bitemporal_data.webp)
 
 ## Querying Bitemporal Data
 
@@ -44,7 +44,7 @@ By querying across both timelines, analysts can answer highly complex audit ques
 
 **"As-Was" Queries**: "What did the database *think* the state of the world was on January 15th?" (Query where Jan 15 falls between `valid_from` and `valid_to`, AND Jan 15 falls between `transaction_from` and `transaction_to`). This will return the incorrect "New York" record, perfectly recreating the state of the system for compliance auditing.
 
-## Bitemporal vs. [Apache Iceberg](/terms/apache-iceberg) Time Travel
+## Bitemporal vs. [Apache Iceberg](/terms/apache-iceberg/) Time Travel
 
 Apache Iceberg provides built-in "Time Travel," allowing users to query past snapshots of a table. Iceberg Time Travel natively handles the *Transaction Time* dimension: it allows you to see the database exactly as it existed at a past timestamp. 
 
@@ -52,4 +52,4 @@ However, Iceberg Time Travel does not automatically handle *Valid Time* (when th
 
 ## Learn More
 
-For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books/). You can also browse the rest of the [knowledge base](/terms/).

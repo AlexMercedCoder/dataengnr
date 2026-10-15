@@ -17,11 +17,11 @@ This line-oriented structure provides significant practical advantages. JSONL fi
 
 JSONL is the dominant format for log data ingestion. Web servers, application backends, and cloud services typically emit events as structured JSON log lines, one event per line. Log aggregation pipelines (Fluentd, Logstash, Vector) collect these JSONL streams and route them to analytical destinations.
 
-Kafka pipelines frequently use JSONL (or Avro with [Schema Registry](/terms/schema-registry) as a more governance-friendly alternative) as the message serialization format. Each Kafka message contains one JSONL record. Consumer pipelines read Kafka messages, parse the JSON, apply transformations, and write to Iceberg tables.
+Kafka pipelines frequently use JSONL (or Avro with [Schema Registry](/terms/schema-registry/) as a more governance-friendly alternative) as the message serialization format. Each Kafka message contains one JSONL record. Consumer pipelines read Kafka messages, parse the JSON, apply transformations, and write to Iceberg tables.
 
-[Apache Spark](/terms/apache-spark) and [Apache Flink](/terms/apache-flink) both have native JSONL readers that can process JSONL files in S3 or other [object storage](/terms/object-storage) in parallel across multiple tasks. [Dremio](/terms/dremio) reads JSONL files natively when configured with a file-based data source, allowing analysts to query JSONL logs in S3 directly through SQL without an explicit ETL step to convert them to Parquet.
+[Apache Spark](/terms/apache-spark/) and [Apache Flink](/terms/apache-flink/) both have native JSONL readers that can process JSONL files in S3 or other [object storage](/terms/object-storage/) in parallel across multiple tasks. [Dremio](/terms/dremio/) reads JSONL files natively when configured with a file-based data source, allowing analysts to query JSONL logs in S3 directly through SQL without an explicit ETL step to convert them to Parquet.
 
-![JSONL Pipeline Architecture](/images/terms/jsonl_pipeline.png)
+![JSONL Pipeline Architecture](/images/terms/jsonl_pipeline.webp)
 
 ## JSONL vs. Parquet for Analytics
 
@@ -31,4 +31,4 @@ For analytical workloads, JSONL serves as an ingestion and interchange format ra
 
 ## Learn More
 
-Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.
+Several of the [books by Alex Merced](/books/) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms/) is worth a look too.

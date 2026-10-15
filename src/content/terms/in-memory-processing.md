@@ -15,17 +15,17 @@ When the CPU executes the query, it reads the data directly from RAM at nanoseco
 
 ## The Architecture of In-Memory Engines
 
-[Apache Spark](/terms/apache-spark) popularized distributed in-memory processing for big data. Before Spark, Hadoop MapReduce wrote the intermediate results of every step to the physical hard drive, causing massive I/O delays. Spark's transformative architecture kept these intermediate results entirely in distributed RAM across the cluster, leading to a 100x performance increase.
+[Apache Spark](/terms/apache-spark/) popularized distributed in-memory processing for big data. Before Spark, Hadoop MapReduce wrote the intermediate results of every step to the physical hard drive, causing massive I/O delays. Spark's transformative architecture kept these intermediate results entirely in distributed RAM across the cluster, leading to a 100x performance increase.
 
-Modern in-memory engines often rely on **[Apache Arrow](/terms/apache-arrow)**, a standardized columnar memory format. When data is loaded into RAM, it is arranged in tight columns rather than scattered rows. This columnar layout in memory allows the CPU to use [Vectorized Execution](/terms/vectorized-execution) (SIMD instructions) to process millions of values simultaneously without skipping around the RAM chips.
+Modern in-memory engines often rely on **[Apache Arrow](/terms/apache-arrow/)**, a standardized columnar memory format. When data is loaded into RAM, it is arranged in tight columns rather than scattered rows. This columnar layout in memory allows the CPU to use [Vectorized Execution](/terms/vectorized-execution/) (SIMD instructions) to process millions of values simultaneously without skipping around the RAM chips.
 
-![In-Memory Processing Architecture](/images/terms/in_memory_processing.png)
+![In-Memory Processing Architecture](/images/terms/in_memory_processing.webp)
 
 ## The Cost Trade-off
 
-The primary constraint of in-memory processing is cost. RAM is exponentially more expensive per gigabyte than SSD or cloud [object storage](/terms/object-storage) (S3). 
+The primary constraint of in-memory processing is cost. RAM is exponentially more expensive per gigabyte than SSD or cloud [object storage](/terms/object-storage/) (S3). 
 
-It is financially impossible for most enterprises to load a 10 Petabyte historical [data lakehouse](/terms/data-lakehouse) entirely into RAM. Therefore, modern architectures use a tiered approach:
+It is financially impossible for most enterprises to load a 10 Petabyte historical [data lakehouse](/terms/data-lakehouse/) entirely into RAM. Therefore, modern architectures use a tiered approach:
 - **Cold Data**: 10 Petabytes of 5-year-old historical data sits on cheap S3 object storage.
 - **Warm Data**: 100 Terabytes of recent data is cached on the local NVMe SSDs of the compute nodes.
 - **Hot Data**: 1 Terabyte of today's highly-active sales data is pinned directly in RAM for instant, in-memory dashboard querying.
@@ -34,4 +34,4 @@ This tiered architecture balances the speed of in-memory processing with the pra
 
 ## Learn More
 
-For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books/). You can also browse the rest of the [knowledge base](/terms/).

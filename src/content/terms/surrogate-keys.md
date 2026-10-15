@@ -9,7 +9,7 @@ tags: ["Surrogate Keys", "Dimensional Modeling", "Data Warehouse", "Data Enginee
 
 A natural key is a business identifier that exists in the source system: a customer's email address, an order number from the order management system, a product SKU from the product catalog. Natural keys are meaningful to business users and identify entities in their source operational context.
 
-In [data warehouse](/terms/data-warehouse) dimensional models, using natural keys as join keys between [fact tables](/terms/fact-tables) and [dimension tables](/terms/dimension-tables) creates several problems. Natural keys change: customers change email addresses, products are rebranded with new SKUs, order numbers are reformatted when systems are migrated. When a natural key changes, every fact table row that references the old key must be updated, which is expensive in a billion-row fact table. Natural keys also reveal source system implementation details (the order numbering format, the product coding scheme) that should be abstracted in the analytical layer.
+In [data warehouse](/terms/data-warehouse/) dimensional models, using natural keys as join keys between [fact tables](/terms/fact-tables/) and [dimension tables](/terms/dimension-tables/) creates several problems. Natural keys change: customers change email addresses, products are rebranded with new SKUs, order numbers are reformatted when systems are migrated. When a natural key changes, every fact table row that references the old key must be updated, which is expensive in a billion-row fact table. Natural keys also reveal source system implementation details (the order numbering format, the product coding scheme) that should be abstracted in the analytical layer.
 
 Surrogate keys solve these problems. A surrogate key is a system-generated, meaningless integer identifier assigned by the data warehouse to uniquely identify each row in a dimension table, independent of any source system identifier. When a customer's email changes, the data warehouse creates a new dimension row for the new email (Type 2 SCD), assigns it a new surrogate key, and future fact rows reference the new surrogate key. Historical fact rows continue to reference the old surrogate key, preserving accurate history of which customer identity was in use at the time of each transaction.
 
@@ -21,7 +21,7 @@ In traditional data warehouses, surrogate keys were generated through auto-incre
 
 **Sequence generation with Spark's monotonically_increasing_id**: For tables that are built once from full historical loads, `monotonically_increasing_id()` generates unique, non-sequential IDs distributed across Spark partitions. These IDs are suitable as surrogate keys but are not reproducible (re-running the job produces different IDs for the same rows).
 
-![Surrogate Keys in Dimensional Modeling](/images/terms/surrogate_keys.png)
+![Surrogate Keys in Dimensional Modeling](/images/terms/surrogate_keys.webp)
 
 ## Surrogate Keys and Iceberg MERGE INTO
 
@@ -37,4 +37,4 @@ Fact tables join dimension tables on surrogate keys: `SELECT f.revenue, c.segmen
 
 ## Learn More
 
-Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.
+Several of the [books by Alex Merced](/books/) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms/) is worth a look too.

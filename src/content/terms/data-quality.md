@@ -23,16 +23,16 @@ dbt's testing framework implements these checks as part of the transformation pi
 
 Great Expectations is a more comprehensive Python-based data quality framework that supports the full spectrum of data quality checks, from basic null and uniqueness checks to complex statistical distribution validations. Great Expectations generates a "Data Docs" portal that displays the results of every quality check run in a human-readable HTML format, making data quality status visible to the entire data team without requiring SQL expertise.
 
-![Data Quality Pipeline](/images/terms/data_quality_pipeline.png)
+![Data Quality Pipeline](/images/terms/data_quality_pipeline.webp)
 
 ## Data Quality Monitoring and Alerting
 
 Declarative data quality tests catch known quality rules at pipeline run time. But data quality issues also arise in more subtle forms that are not easily expressed as declarative rules: gradual drift in column distributions, unexpected changes in row-level business logic results, or subtle correlation shifts between columns. These issues require statistical anomaly detection rather than declarative rule checking.
 
-[Data observability](/terms/data-observability) platforms like Monte Carlo, Acceldata, and Lightup monitor data assets continuously, learning baseline statistical profiles (typical row counts, typical column value distributions, typical null rates) from historical data and alerting when current pipeline outputs deviate significantly from these baselines. This statistical monitoring catches the classes of data quality issues that declarative tests miss: the third-party data vendor that gradually started delivering fewer records per day without changing their schema, or the ETL bug that causes one regional market's data to be systematically underrepresented.
+[Data observability](/terms/data-observability/) platforms like Monte Carlo, Acceldata, and Lightup monitor data assets continuously, learning baseline statistical profiles (typical row counts, typical column value distributions, typical null rates) from historical data and alerting when current pipeline outputs deviate significantly from these baselines. This statistical monitoring catches the classes of data quality issues that declarative tests miss: the third-party data vendor that gradually started delivering fewer records per day without changing their schema, or the ETL bug that causes one regional market's data to be systematically underrepresented.
 
-[Dremio](/terms/dremio)'s catalog metadata and job history provide the raw data that supports data observability workflows. Query patterns and table usage metrics visible through Dremio's REST API allow organizations to build custom freshness and quality dashboards that track data platform health from the analytical access layer perspective.
+[Dremio](/terms/dremio/)'s catalog metadata and job history provide the raw data that supports data observability workflows. Query patterns and table usage metrics visible through Dremio's REST API allow organizations to build custom freshness and quality dashboards that track data platform health from the analytical access layer perspective.
 
 ## Learn More
 
-For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books). You can also browse the rest of the [knowledge base](/terms).
+For a longer treatment of this and the architecture around it, see the [books by Alex Merced](/books/). You can also browse the rest of the [knowledge base](/terms/).

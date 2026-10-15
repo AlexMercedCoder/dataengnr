@@ -17,11 +17,11 @@ Microservices architecture solves these scaling and operational bottlenecks by s
 
 **Independent Deployment**: The `Billing Service`, the `User Profile Service`, and the `Inventory Service` are entirely separate codebases, often maintained by entirely separate engineering teams. The Billing team can deploy updates to their service 10 times a day without ever talking to the Inventory team or risking taking the Inventory service offline.
 
-**Loose Coupling**: Microservices communicate with each other over the network, usually using REST APIs or event streams (like [Apache Kafka](/terms/apache-kafka)), rather than calling internal functions within the same code. 
+**Loose Coupling**: Microservices communicate with each other over the network, usually using REST APIs or event streams (like [Apache Kafka](/terms/apache-kafka/)), rather than calling internal functions within the same code. 
 
 **Polyglot Programming**: Because the services only communicate via standard JSON APIs, they don't have to be written in the same language. The high-performance `Machine Learning Service` might be written in Python, while the highly-concurrent `Web Traffic Service` is written in Go, and the legacy `Billing Service` remains in Java. Teams use the best tool for the specific job.
 
-![Microservices Architecture](/images/terms/microservices.png)
+![Microservices Architecture](/images/terms/microservices.webp)
 
 ## The Trade-offs of Microservices
 
@@ -33,4 +33,4 @@ While microservices provide the strongest organizational scalability, they intro
 
 ## Learn More
 
-Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.
+Several of the [books by Alex Merced](/books/) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms/) is worth a look too.

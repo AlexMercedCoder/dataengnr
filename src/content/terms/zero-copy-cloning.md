@@ -15,13 +15,13 @@ Zero-Copy Cloning is the modern architectural solution. It allows data engineers
 
 ## How Metadata Makes It Possible
 
-Zero-copy cloning is only possible in systems that strictly decouple metadata from physical storage (like Snowflake, [Dremio](/terms/dremio), and [Apache Iceberg](/terms/apache-iceberg)).
+Zero-copy cloning is only possible in systems that strictly decouple metadata from physical storage (like Snowflake, [Dremio](/terms/dremio/), and [Apache Iceberg](/terms/apache-iceberg/)).
 
 When you execute a zero-copy clone command on an Iceberg table, the engine does not touch the massive Parquet files sitting on Amazon S3. Instead, the engine creates a brand new metadata file. This new metadata file simply contains pointers to the exact same raw Parquet files as the original table.
 
 To the data scientist querying the clone, it looks and acts like a completely separate table. But beneath the surface, both the production table and the clone table are reading the exact same physical files on S3.
 
-![Zero-Copy Cloning Architecture](/images/terms/zero_copy_cloning.png)
+![Zero-Copy Cloning Architecture](/images/terms/zero_copy_cloning.webp)
 
 ## Copy-on-Write (The Divergence)
 
@@ -33,4 +33,4 @@ The engine writes the new, modified data as brand new Parquet files on S3. It th
 
 ## Learn More
 
-The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.
+The [books by Alex Merced](/books/) go further on this topic and the systems it sits inside. Short [video explainers](/videos/) cover the same ground in under a minute each.

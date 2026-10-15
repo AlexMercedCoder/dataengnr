@@ -19,9 +19,9 @@ This is achieved using a Directed Acyclic Graph (DAG). A DAG is a conceptual rep
 
 **Edges (Dependencies)**: The lines connecting the nodes define the dependencies. If an edge points from Node A to Node B, it means Node B is "downstream" of Node A. Node B cannot start executing until Node A has successfully completed. 
 
-## DAGs in Practice: [Orchestration](/terms/orchestration)
+## DAGs in Practice: [Orchestration](/terms/orchestration/)
 
-The concept of the DAG is the foundational architecture for modern data orchestration tools, most notably [Apache Airflow](/terms/apache-airflow), Prefect, and Dagster.
+The concept of the DAG is the foundational architecture for modern data orchestration tools, most notably [Apache Airflow](/terms/apache-airflow/), Prefect, and Dagster.
 
 When a data engineer writes an Airflow pipeline in Python, they are explicitly constructing a DAG. They define the individual operators (tasks) and use bitshift operators (`Task_A >> Task_B`) to define the directed edges. Airflow then reads this code and renders a visual graph of the pipeline.
 
@@ -31,4 +31,4 @@ Data transformation tools like dbt also rely entirely on DAGs. When you run `dbt
 
 ## Learn More
 
-The [books by Alex Merced](/books) go further on this topic and the systems it sits inside. Short [video explainers](/videos) cover the same ground in under a minute each.
+The [books by Alex Merced](/books/) go further on this topic and the systems it sits inside. Short [video explainers](/videos/) cover the same ground in under a minute each.

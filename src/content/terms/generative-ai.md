@@ -21,16 +21,16 @@ During this massive training process, the model learns the underlying probabilit
 
 When prompted, the model uses this deep statistical understanding to sample from that probability distribution, constructing the new output piece by piece (pixel by pixel, or word by word) in a way that perfectly mimics human creation.
 
-![Generative AI Architecture](/images/terms/generative_ai.png)
+![Generative AI Architecture](/images/terms/generative_ai.webp)
 
 ## The Data Engineering Implications
 
 Generative AI has radically shifted the priorities of data engineering. 
 
-Historically, data engineers spent 80% of their time cleaning highly structured tabular data (CSV, SQL) for traditional BI dashboards and discriminative ML models. The massive unstructured text documents, PDFs, and images sitting in the [data lake](/terms/data-lake) were largely ignored because they were too difficult to query.
+Historically, data engineers spent 80% of their time cleaning highly structured tabular data (CSV, SQL) for traditional BI dashboards and discriminative ML models. The massive unstructured text documents, PDFs, and images sitting in the [data lake](/terms/data-lake/) were largely ignored because they were too difficult to query.
 
-Because Generative AI thrives on unstructured text, data engineers are now building entirely new pipelines designed to extract, chunk, and embed these massive unstructured datasets. The focus has shifted from building traditional ETL pipelines for Data Warehouses to building Vector Pipelines for [Retrieval-Augmented Generation (RAG)](/terms/rag-architecture) applications, transforming the previously dormant "dark data" into the most valuable asset in the enterprise.
+Because Generative AI thrives on unstructured text, data engineers are now building entirely new pipelines designed to extract, chunk, and embed these massive unstructured datasets. The focus has shifted from building traditional ETL pipelines for Data Warehouses to building Vector Pipelines for [Retrieval-Augmented Generation (RAG)](/terms/retrieval-augmented-generation/) applications, transforming the previously dormant "dark data" into the most valuable asset in the enterprise.
 
 ## Learn More
 
-Several of the [books by Alex Merced](/books) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms) is worth a look too.
+Several of the [books by Alex Merced](/books/) cover this in depth, and a few of them are free. The rest of the [knowledge base](/terms/) is worth a look too.

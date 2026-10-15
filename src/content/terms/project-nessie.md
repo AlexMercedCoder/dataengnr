@@ -7,9 +7,9 @@ tags: ["Project Nessie", "Iceberg Catalog", "Data Versioning", "Data Lakehouse"]
 
 ## Git Semantics for Data Lakehouses
 
-Project Nessie is an open-source catalog developed by [Dremio](/terms/dremio) that applies the branching and merging concepts of Git version control to the management of [Apache Iceberg](/terms/apache-iceberg) tables. The core insight behind Nessie is that data engineers working on complex transformations, schema migrations, and [data quality](/terms/data-quality) validations face problems analogous to those software engineers face when modifying code: they need to work in isolation without affecting production users, test changes against real data before committing, and merge their changes back into the main data branch when ready.
+Project Nessie is an open-source catalog developed by [Dremio](/terms/dremio/) that applies the branching and merging concepts of Git version control to the management of [Apache Iceberg](/terms/apache-iceberg/) tables. The core insight behind Nessie is that data engineers working on complex transformations, schema migrations, and [data quality](/terms/data-quality/) validations face problems analogous to those software engineers face when modifying code: they need to work in isolation without affecting production users, test changes against real data before committing, and merge their changes back into the main data branch when ready.
 
-Without branching semantics, data engineers must either apply all changes directly to the production tables (risking broken dashboards and wrong reports during the development process) or maintain expensive physical copies of production tables for development and testing (doubling storage costs and creating synchronization challenges). Nessie resolves this dilemma by providing lightweight logical branches that create an isolated view of the [data catalog](/terms/data-catalog) without physically copying any data files.
+Without branching semantics, data engineers must either apply all changes directly to the production tables (risking broken dashboards and wrong reports during the development process) or maintain expensive physical copies of production tables for development and testing (doubling storage costs and creating synchronization challenges). Nessie resolves this dilemma by providing lightweight logical branches that create an isolated view of the [data catalog](/terms/data-catalog/) without physically copying any data files.
 
 When a data engineer creates a Nessie branch, they get a snapshot of the catalog at that moment. All table operations performed on the branch (creating new tables, appending data, running transformations) are recorded in the Nessie branch's commit history and affect only that branch. The main production branch continues serving analysts with the unmodified production state. When the engineer is satisfied with their work, they merge the branch back into main with a single operation, atomically advancing the production catalog state to include all the branch's changes.
 
@@ -19,7 +19,7 @@ Nessie models the catalog state as a commit graph with branches and tags, struct
 
 A branch is simply a named pointer to a specific commit in this commit graph. When new commits are added to a branch, the branch pointer advances to the latest commit. The main branch represents the production catalog state. Developer branches can diverge from main, accumulate their own commits, and be merged back when ready.
 
-The critical insight is that Nessie does not store data files. It stores only pointers to Iceberg table metadata files. When a Nessie commit records that a table named `customer_events` has a new Iceberg snapshot, it stores the path to the new Iceberg metadata file that describes that snapshot. The actual Parquet data files remain on [object storage](/terms/object-storage) unchanged. This means that creating a Nessie branch and making extensive table modifications costs almost nothing in storage: only the Nessie commit records and Iceberg metadata files are created for branch operations; no data is physically copied.
+The critical insight is that Nessie does not store data files. It stores only pointers to Iceberg table metadata files. When a Nessie commit records that a table named `customer_events` has a new Iceberg snapshot, it stores the path to the new Iceberg metadata file that describes that snapshot. The actual Parquet data files remain on [object storage](/terms/object-storage/) unchanged. This means that creating a Nessie branch and making extensive table modifications costs almost nothing in storage: only the Nessie commit records and Iceberg metadata files are created for branch operations; no data is physically copied.
 
 ## Practical Branching Workflows
 
@@ -29,14 +29,14 @@ The critical insight is that Nessie does not store data files. It stores only po
 
 **Data Quality Gates**: Before merging a development branch to main, automated data quality checks can run against the branch's tables. If any quality checks fail, the merge is blocked and the engineer corrects the issues on the branch before retrying the merge. This quality gate pattern prevents bad data from ever reaching production consumers.
 
-![Project Nessie Branching Model](/images/terms/nessie_branching_model.png)
+![Project Nessie Branching Model](/images/terms/nessie_branching_model.webp)
 
 ## Nessie and Dremio
 
 Dremio once offered a managed Nessie service called Dremio Arctic, with branch creation, branch-aware SQL, and merges available from Dremio's UI. Arctic has since become Dremio Catalog, which is built on Apache Polaris and is no longer based on Nessie. Project Nessie continues as its own open source project, and Dremio can still query a self-hosted Nessie catalog through its Iceberg REST catalog support.
 
-When Dremio is connected to a Nessie catalog, Nessie's branching semantics and Dremio's [Semantic Layer](/terms/semantic-layer) support a development workflow. Data engineers can build and test new virtual datasets on a development branch, validate the results using Dremio's query engine, and promote the branch to production when ready, all within a single, unified data platform interface.
+When Dremio is connected to a Nessie catalog, Nessie's branching semantics and Dremio's [Semantic Layer](/terms/semantic-layer/) support a development workflow. Data engineers can build and test new virtual datasets on a development branch, validate the results using Dremio's query engine, and promote the branch to production when ready, all within a single, unified data platform interface.
 
 ## Learn More
 
-If you want the long-form version, start with the [books by Alex Merced](/books). For a faster pass, there are short [video explainers](/videos).
+If you want the long-form version, start with the [books by Alex Merced](/books/). For a faster pass, there are short [video explainers](/videos/).

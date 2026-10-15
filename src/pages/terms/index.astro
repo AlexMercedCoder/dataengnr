@@ -79,7 +79,7 @@ const breadcrumbs = [{ name: 'Home', href: '/' }];
         just name it.
       </p>
       <p class="text-ash-text text-sm mt-4">
-        Looking for something specific? <a href="/search" class="text-golden-gradient hover:text-pure-white transition-colors">Search the whole site</a>,
+        Looking for something specific? <a href="/search/" class="text-golden-gradient hover:text-pure-white transition-colors">Search the whole site</a>,
         or jump to a letter below.
       </p>
     </div>
@@ -103,7 +103,7 @@ const breadcrumbs = [{ name: 'Home', href: '/' }];
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {groups.get(letter)!.map((term: any) => (
-              <a href={`/terms/${term.id}`} class="block h-full group">
+              <a href={`/terms/${term.id}/`} class="block h-full group">
                 <Card hoverEffect={true} class="flex flex-col h-full bg-charcoal-canvas">
                   <h3 class="text-subheading font-semibold text-pure-white mb-3 group-hover:text-golden-gradient transition-colors">{term.data.title}</h3>
                   <p class="text-sm text-ash-text mb-6 line-clamp-3 flex-grow">{term.data.description}</p>
