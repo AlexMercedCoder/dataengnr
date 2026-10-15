@@ -12,7 +12,6 @@ apache-hudi.md
 apache-iceberg.md
 apache-kafka-connect.md
 apache-kafka.md
-apache-nessie.md
 apache-orc.md
 apache-parquet.md
 apache-polaris.md

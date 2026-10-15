@@ -31,6 +31,16 @@ The critical insight is that Nessie does not store data files. It stores only po
 
 ![Project Nessie Branching Model](/images/terms/nessie_branching_model.webp)
 
+## Multi-Table Transactions, Rollback and Audit
+
+Iceberg's own snapshots give each table an independent history, but nothing in table-level snapshots updates several tables' current pointers at once. Because a Nessie commit can carry metadata pointer changes for many tables, it gives the catalog capabilities that table snapshots alone do not:
+
+**[Multi-table transactions](/terms/multi-table-transactions/)**: Updates to several tables are committed as one Nessie commit. Either all of the new metadata pointers become visible or none do, which gives cross-table consistency without distributed locking.
+
+**Catalog rollback**: If a pipeline bug damages several production tables, the branch can be reset to the last known-good commit, restoring every affected table's metadata pointer in one step. Per-table rollback with Iceberg's `rollback_to_snapshot` procedure is still available.
+
+**Audit trail**: The commit log records every table creation, change, and drop with a timestamp and commit message, which supports [data governance](/terms/data-governance/) requirements for tracking catalog changes. Tags mark specific commits, such as an end-of-quarter state, so they can be queried later.
+
 ## Nessie and Dremio
 
 Dremio once offered a managed Nessie service called Dremio Arctic, with branch creation, branch-aware SQL, and merges available from Dremio's UI. Arctic has since become Dremio Catalog, which is built on Apache Polaris and is no longer based on Nessie. Project Nessie continues as its own open source project, and Dremio can still query a self-hosted Nessie catalog through its Iceberg REST catalog support.
