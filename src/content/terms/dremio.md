@@ -43,7 +43,7 @@ Dremio includes integrated Iceberg table management capabilities, including tabl
 
 This integrated management reduces the operational overhead of running a production Iceberg lakehouse. Rather than maintaining separate Spark jobs for compaction and maintenance, data engineering teams can manage these lifecycle operations directly through Dremio's SQL interface or through its automated table maintenance scheduling.
 
-Dremio Cloud, the managed SaaS version of Dremio, provides additional operational benefits including elastic compute scaling, automatic software updates, built-in [Project Nessie](/terms/project-nessie)-based catalog branching through Arctic, and integrated connector management for popular data sources.
+Dremio Cloud, the managed SaaS version of Dremio, provides additional operational benefits including elastic compute scaling, automatic software updates, a built-in catalog, Dremio Catalog (built on Apache Polaris), and integrated connector management for popular data sources.
 
 ## Learn More
 

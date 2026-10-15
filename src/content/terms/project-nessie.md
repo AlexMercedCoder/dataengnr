@@ -31,11 +31,11 @@ The critical insight is that Nessie does not store data files. It stores only po
 
 ![Project Nessie Branching Model](/images/terms/nessie_branching_model.png)
 
-## Nessie and Dremio Arctic
+## Nessie and Dremio
 
-Dremio integrates Project Nessie natively through its Arctic capability, providing a managed Nessie service that is deeply integrated with Dremio's query and governance infrastructure. When an organization uses Arctic as its catalog, data engineers can create and manage branches through Dremio's UI, run SQL queries against specific branches directly from Dremio's SQL editor, and merge branches through Dremio's data management interface.
+Dremio once offered a managed Nessie service called Dremio Arctic, with branch creation, branch-aware SQL, and merges available from Dremio's UI. Arctic has since become Dremio Catalog, which is built on Apache Polaris and is no longer based on Nessie. Project Nessie continues as its own open source project, and Dremio can still query a self-hosted Nessie catalog through its Iceberg REST catalog support.
 
-The combination of Nessie's branching semantics and Dremio's [Semantic Layer](/terms/semantic-layer) creates a powerful development workflow. Data engineers can build and test new virtual datasets on a development branch, validate the results using Dremio's query engine, and promote the branch to production when ready, all within a single, unified data platform interface.
+When Dremio is connected to a Nessie catalog, Nessie's branching semantics and Dremio's [Semantic Layer](/terms/semantic-layer) support a development workflow. Data engineers can build and test new virtual datasets on a development branch, validate the results using Dremio's query engine, and promote the branch to production when ready, all within a single, unified data platform interface.
 
 ## Learn More
 

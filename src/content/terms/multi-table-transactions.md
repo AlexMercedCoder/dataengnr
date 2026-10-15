@@ -44,7 +44,7 @@ Project Nessie provides particularly strong multi-table transaction semantics th
 
 This branch-level atomicity is equivalent to a multi-table transaction: all tables' updates within a Nessie commit are visible atomically to readers. A reader on the main branch either sees all updates from the commit or none of them, providing cross-table consistency that aligns with Git's commit atomicity model applied to data.
 
-For complex data engineering pipelines requiring cross-table consistency guarantees, Nessie-backed Iceberg catalogs (available through Project Nessie or [Dremio](/terms/dremio)'s Arctic catalog) provide the strongest multi-table consistency semantics in the open lakehouse ecosystem.
+For complex data engineering pipelines requiring cross-table consistency guarantees, Nessie-backed Iceberg catalogs (available through Project Nessie) provide the strongest multi-table consistency semantics in the open lakehouse ecosystem.
 
 ## Learn More
 

@@ -37,7 +37,7 @@ The main table reference (the default read target) is itself implemented as a br
 
 **Blue-green deployments for data**: A "green" branch of the table is prepared and validated in advance of a scheduled cutover. At the scheduled time, main is fast-forwarded to the green branch, atomically switching all readers to the new version with zero downtime and immediate rollback capability.
 
-Nessie ([Project Nessie](/terms/project-nessie)) and [Dremio](/terms/dremio)'s Arctic catalog extend Iceberg branching to catalog-level branches, enabling branch semantics across all tables in the catalog simultaneously, providing a complete Git-for-data-catalog workflow.
+[Project Nessie](/terms/project-nessie) extends Iceberg branching to catalog-level branches, enabling branch semantics across all tables in the catalog simultaneously, providing a complete Git-for-data-catalog workflow.
 
 ## Learn More
 

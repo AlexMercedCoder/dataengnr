@@ -29,7 +29,7 @@ Named branches in Nessie are mutable references to commits that advance with eac
 
 **Audit trail**: The Nessie commit log provides a complete, immutable audit trail of every table creation, modification, and deletion in the catalog, with timestamps and commit messages, enabling compliance with [data governance](/terms/data-governance) requirements for catalog change tracking.
 
-Dremio integrates natively with Project Nessie through its Arctic catalog (a managed Nessie service), providing Nessie's catalog branching capabilities with Dremio's governed query execution and [Semantic Layer](/terms/semantic-layer).
+Dremio once offered Nessie as a managed service called Dremio Arctic. That product has since become Dremio Catalog, which is built on Apache Polaris rather than Nessie. Nessie continues as its own open source project, and Dremio can still query a self-hosted Nessie catalog through its Iceberg REST catalog support, pairing Nessie's catalog branching with Dremio's governed query execution and [Semantic Layer](/terms/semantic-layer).
 
 ## Learn More
 

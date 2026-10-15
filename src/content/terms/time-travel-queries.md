@@ -57,7 +57,7 @@ SELECT * FROM sales_fact VERSION AS OF 'audit_2024_q4';
 
 Time travel is only possible for Snapshots that have been retained. Retaining every Snapshot indefinitely would consume significant storage for the associated metadata and data files. Apache Iceberg provides the `expire_snapshots` procedure to remove old Snapshots and their associated unreferenced data files.
 
-The typical retention policy balances time travel needs against storage costs. A common configuration retains all Snapshots from the last seven days (for operational debugging) and keeps only tagged Snapshots indefinitely (for regulatory audit requirements). [Dremio](/terms/dremio)'s Arctic (now Nessie-based) catalog management includes automated snapshot lifecycle management that enforces retention policies without requiring manual execution of the expire_snapshots procedure.
+The typical retention policy balances time travel needs against storage costs. A common configuration retains all Snapshots from the last seven days (for operational debugging) and keeps only tagged Snapshots indefinitely (for regulatory audit requirements). [Dremio](/terms/dremio) Catalog (built on Apache Polaris) includes automated snapshot lifecycle management that enforces retention policies without requiring manual execution of the expire_snapshots procedure.
 
 When Dremio queries Iceberg tables through its [Semantic Layer](/terms/semantic-layer), analysts can use time travel syntax in their SQL queries directly. This allows BI tools connected to Dremio to issue time travel queries transparently, without requiring direct access to the Iceberg metadata layer.
 
